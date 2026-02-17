@@ -1,0 +1,18 @@
+*.m8
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+
+# Generated output data
+misc/
+
+# OS
+.DS_Store

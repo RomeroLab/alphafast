@@ -1,0 +1,38 @@
+# Git
+.git
+.gitignore
+
+# Output dirs
+af_output/
+af_msa_output/
+
+# Docker files (not needed in build context)
+.dockerignore
+
+# Documentation and notes (keep README.md for pyproject.toml)
+docs/
+notes/
+legal/
+todo/
+CONTRIBUTING.md
+CHANGELOG.md
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,2467 @@
+data_6YDW
+#
+_entry.id 6YDW
+#
+loop_
+_chem_comp.formula
+_chem_comp.formula_weight
+_chem_comp.id
+_chem_comp.mon_nstd_flag
+_chem_comp.name
+_chem_comp.pdbx_synonyms
+_chem_comp.type
+"C10 H14 N5 O8 P"   363.221 5GP . "GUANOSINE-5'-MONOPHOSPHATE"                  ? non-polymer         
+"C10 H14 N5 O7 P"   347.221 A   y "ADENOSINE-5'-MONOPHOSPHATE"                  ? "RNA linking"       
+"C3 H7 N O2"        89.093  ALA y ALANINE                                       ? "L-peptide linking" 
+"C6 H15 N4 O2 1"    175.209 ARG y ARGININE                                      ? "L-peptide linking" 
+"C4 H8 N2 O3"       132.118 ASN y ASPARAGINE                                    ? "L-peptide linking" 
+"C4 H7 N O4"        133.103 ASP y "ASPARTIC ACID"                               ? "L-peptide linking" 
+"C9 H14 N3 O8 P"    323.197 C   y "CYTIDINE-5'-MONOPHOSPHATE"                   ? "RNA linking"       
+"C3 H7 N O2 S"      121.158 CYS y CYSTEINE                                      ? "L-peptide linking" 
+"C6 H11 N O3 S"     177.221 FME n N-FORMYLMETHIONINE                            ? "L-peptide linking" 
+"C10 H14 N5 O8 P"   363.221 G   y "GUANOSINE-5'-MONOPHOSPHATE"                  ? "RNA linking"       
+"C5 H10 N2 O3"      146.144 GLN y GLUTAMINE                                     ? "L-peptide linking" 
+"C5 H9 N O4"        147.129 GLU y "GLUTAMIC ACID"                               ? "L-peptide linking" 
+"C2 H5 N O2"        75.067  GLY y GLYCINE                                       ? "peptide linking"   
+"C10 H17 N6 O13 P3" 522.196 GNP . "PHOSPHOAMINOPHOSPHONIC ACID-GUANYLATE ESTER" ? non-polymer         
+"C10 H16 N5 O14 P3" 523.180 GTP n "GUANOSINE-5'-TRIPHOSPHATE"                   ? non-polymer         
+"C6 H10 N3 O2 1"    156.162 HIS y HISTIDINE                                     ? "L-peptide linking" 
+"H2 O"              18.015  HOH . WATER                                         ? non-polymer         
+"C6 H13 N O2"       131.173 ILE y ISOLEUCINE                                    ? "L-peptide linking" 
+"C6 H13 N O2"       131.173 LEU y LEUCINE                                       ? "L-peptide linking" 
+"C6 H15 N2 O2 1"    147.195 LYS y LYSINE                                        ? "L-peptide linking" 
+"C5 H11 N O2 S"     149.211 MET y METHIONINE                                    ? "L-peptide linking" 
+"Mg 2"              24.305  MG  . "MAGNESIUM ION"                               ? non-polymer         
+"C9 H11 N O2"       165.189 PHE y PHENYLALANINE                                 ? "L-peptide linking" 
+"C5 H9 N O2"        115.130 PRO y PROLINE                                       ? "L-peptide linking" 
+"C3 H7 N O3"        105.093 SER y SERINE                                        ? "L-peptide linking" 
+"C10 H26 N4"        202.340 SPM . SPERMINE                                      ? non-polymer         
+"C4 H9 N O3"        119.119 THR y THREONINE                                     ? "L-peptide linking" 
+"C11 H12 N2 O2"     204.225 TRP y TRYPTOPHAN                                    ? "L-peptide linking" 
+"C9 H11 N O3"       181.189 TYR y TYROSINE                                      ? "L-peptide linking" 
+"C9 H13 N2 O9 P"    324.181 U   y "URIDINE-5'-MONOPHOSPHATE"                    ? "RNA linking"       
+"C4 H9 N O2"        103.120 UNK . UNKNOWN                                       ? "L-peptide linking" 
+"C5 H11 N O2"       117.146 VAL y VALINE                                        ? "L-peptide linking" 
+"Zn 2"              65.409  ZN  . "ZINC ION"                                    ? non-polymer         
+#
+_entity.id               17
+_entity.pdbx_description "Mitochondrial ribosomal protein L46"
+_entity.type             polymer
+#
+_entity_poly.entity_id      17
+_entity_poly.pdbx_strand_id Bj
+_entity_poly.type           polypeptide(L)
+#
+loop_
+_entity_poly_seq.entity_id
+_entity_poly_seq.hetero
+_entity_poly_seq.mon_id
+_entity_poly_seq.num
+17 n MET 1   
+17 n ALA 2   
+17 n ALA 3   
+17 n PRO 4   
+17 n VAL 5   
+17 n ARG 6   
+17 n ARG 7   
+17 n THR 8   
+17 n MET 9   
+17 n LEU 10  
+17 n ARG 11  
+17 n VAL 12  
+17 n VAL 13  
+17 n ARG 14  
+17 n GLY 15  
+17 n TRP 16  
+17 n ARG 17  
+17 n ARG 18  
+17 n PHE 19  
+17 n GLU 20  
+17 n GLY 21  
+17 n PRO 22  
+17 n TRP 23  
+17 n ALA 24  
+17 n HIS 25  
+17 n SER 26  
+17 n LEU 27  
+17 n GLY 28  
+17 n SER 29  
+17 n ARG 30  
+17 n ASN 31  
+17 n LEU 32  
+17 n ALA 33  
+17 n LEU 34  
+17 n ALA 35  
+17 n VAL 36  
+17 n ALA 37  
+17 n PRO 38  
+17 n SER 39  
+17 n SER 40  
+17 n SER 41  
+17 n SER 42  
+17 n SER 43  
+17 n PRO 44  
+17 n TRP 45  
+17 n ARG 46  
+17 n LEU 47  
+17 n LEU 48  
+17 n GLY 49  
+17 n ALA 50  
+17 n LEU 51  
+17 n CYS 52  
+17 n LEU 53  
+17 n GLN 54  
+17 n ARG 55  
+17 n PRO 56  
+17 n PRO 57  
+17 n LEU 58  
+17 n VAL 59  
+17 n THR 60  
+17 n LYS 61  
+17 n PRO 62  
+17 n LEU 63  
+17 n THR 64  
+17 n PRO 65  
+17 n LEU 66  
+17 n GLN 67  
+17 n GLU 68  
+17 n GLU 69  
+17 n MET 70  
+17 n ALA 71  
+17 n ASP 72  
+17 n LEU 73  
+17 n LEU 74  
+17 n GLN 75  
+17 n GLN 76  
+17 n ILE 77  
+17 n GLU 78  
+17 n ILE 79  
+17 n GLU 80  
+17 n ARG 81  
+17 n SER 82  
+17 n LEU 83  
+17 n TYR 84  
+17 n SER 85  
+17 n ASP 86  
+17 n HIS 87  
+17 n GLU 88  
+17 n LEU 89  
+17 n ARG 90  
+17 n ALA 91  
+17 n LEU 92  
+17 n ASP 93  
+17 n GLU 94  
+17 n ALA 95  
+17 n GLN 96  
+17 n GLN 97  
+17 n LEU 98  
+17 n ALA 99  
+17 n LYS 100 
+17 n LYS 101 
+17 n LYS 102 
+17 n SER 103 
+17 n ASP 104 
+17 n LEU 105 
+17 n TYR 106 
+17 n GLU 107 
+17 n GLU 108 
+17 n GLU 109 
+17 n ASP 110 
+17 n GLU 111 
+17 n GLN 112 
+17 n ASN 113 
+17 n ILE 114 
+17 n LEU 115 
+17 n LEU 116 
+17 n ALA 117 
+17 n GLN 118 
+17 n ASP 119 
+17 n LEU 120 
+17 n GLU 121 
+17 n ASP 122 
+17 n MET 123 
+17 n TRP 124 
+17 n GLU 125 
+17 n GLN 126 
+17 n LYS 127 
+17 n PHE 128 
+17 n LEU 129 
+17 n HIS 130 
+17 n PHE 131 
+17 n LYS 132 
+17 n LEU 133 
+17 n GLY 134 
+17 n ALA 135 
+17 n ARG 136 
+17 n LEU 137 
+17 n THR 138 
+17 n GLU 139 
+17 n ALA 140 
+17 n ASP 141 
+17 n LYS 142 
+17 n LYS 143 
+17 n ASP 144 
+17 n ASP 145 
+17 n ARG 146 
+17 n THR 147 
+17 n SER 148 
+17 n LEU 149 
+17 n HIS 150 
+17 n ARG 151 
+17 n LYS 152 
+17 n LEU 153 
+17 n ASP 154 
+17 n ARG 155 
+17 n ASN 156 
+17 n LEU 157 
+17 n ILE 158 
+17 n LEU 159 
+17 n LEU 160 
+17 n VAL 161 
+17 n ARG 162 
+17 n GLU 163 
+17 n LYS 164 
+17 n LEU 165 
+17 n GLY 166 
+17 n ASP 167 
+17 n GLN 168 
+17 n ASP 169 
+17 n ILE 170 
+17 n TRP 171 
+17 n MET 172 
+17 n LEU 173 
+17 n PRO 174 
+17 n GLN 175 
+17 n SER 176 
+17 n ASP 177 
+17 n TRP 178 
+17 n GLN 179 
+17 n PRO 180 
+17 n GLY 181 
+17 n GLU 182 
+17 n THR 183 
+17 n LEU 184 
+17 n ARG 185 
+17 n GLN 186 
+17 n THR 187 
+17 n ALA 188 
+17 n GLU 189 
+17 n ARG 190 
+17 n THR 191 
+17 n LEU 192 
+17 n ALA 193 
+17 n THR 194 
+17 n LEU 195 
+17 n SER 196 
+17 n GLU 197 
+17 n ASN 198 
+17 n ASN 199 
+17 n MET 200 
+17 n GLU 201 
+17 n ALA 202 
+17 n LYS 203 
+17 n PHE 204 
+17 n LEU 205 
+17 n GLY 206 
+17 n ASN 207 
+17 n ALA 208 
+17 n PRO 209 
+17 n CYS 210 
+17 n GLY 211 
+17 n HIS 212 
+17 n TYR 213 
+17 n LYS 214 
+17 n PHE 215 
+17 n LYS 216 
+17 n PHE 217 
+17 n PRO 218 
+17 n GLN 219 
+17 n ALA 220 
+17 n MET 221 
+17 n ARG 222 
+17 n THR 223 
+17 n GLU 224 
+17 n THR 225 
+17 n SER 226 
+17 n LEU 227 
+17 n GLY 228 
+17 n ALA 229 
+17 n LYS 230 
+17 n VAL 231 
+17 n PHE 232 
+17 n PHE 233 
+17 n PHE 234 
+17 n LYS 235 
+17 n ALA 236 
+17 n LEU 237 
+17 n LEU 238 
+17 n LEU 239 
+17 n THR 240 
+17 n GLY 241 
+17 n ASP 242 
+17 n PHE 243 
+17 n SER 244 
+17 n GLN 245 
+17 n ALA 246 
+17 n GLY 247 
+17 n LYS 248 
+17 n LYS 249 
+17 n GLY 250 
+17 n HIS 251 
+17 n HIS 252 
+17 n VAL 253 
+17 n TRP 254 
+17 n VAL 255 
+17 n SER 256 
+17 n LYS 257 
+17 n GLU 258 
+17 n GLU 259 
+17 n LEU 260 
+17 n GLY 261 
+17 n ASP 262 
+17 n TYR 263 
+17 n LEU 264 
+17 n LYS 265 
+17 n PRO 266 
+17 n LYS 267 
+17 n TYR 268 
+17 n LEU 269 
+17 n ALA 270 
+17 n GLN 271 
+17 n VAL 272 
+17 n ARG 273 
+17 n ARG 274 
+17 n PHE 275 
+17 n LEU 276 
+17 n LEU 277 
+17 n ASP 278 
+17 n LEU 279 
+#
+_exptl.method "ELECTRON MICROSCOPY"
+#
+_pdbx_audit_revision_history.revision_date 2020-07-15
+#
+_pdbx_database_status.recvd_initial_deposition_date 2020-07-15
+#
+loop_
+_pdbx_poly_seq_scheme.asym_id
+_pdbx_poly_seq_scheme.auth_seq_num
+_pdbx_poly_seq_scheme.entity_id
+_pdbx_poly_seq_scheme.hetero
+_pdbx_poly_seq_scheme.mon_id
+_pdbx_poly_seq_scheme.pdb_ins_code
+_pdbx_poly_seq_scheme.pdb_seq_num
+_pdbx_poly_seq_scheme.pdb_strand_id
+_pdbx_poly_seq_scheme.seq_id
+Q ?   17 n MET . 1   Bj 1   
+Q ?   17 n ALA . 2   Bj 2   
+Q ?   17 n ALA . 3   Bj 3   
+Q ?   17 n PRO . 4   Bj 4   
+Q ?   17 n VAL . 5   Bj 5   
+Q ?   17 n ARG . 6   Bj 6   
+Q ?   17 n ARG . 7   Bj 7   
+Q ?   17 n THR . 8   Bj 8   
+Q ?   17 n MET . 9   Bj 9   
+Q ?   17 n LEU . 10  Bj 10  
+Q ?   17 n ARG . 11  Bj 11  
+Q ?   17 n VAL . 12  Bj 12  
+Q ?   17 n VAL . 13  Bj 13  
+Q ?   17 n ARG . 14  Bj 14  
+Q ?   17 n GLY . 15  Bj 15  
+Q ?   17 n TRP . 16  Bj 16  
+Q ?   17 n ARG . 17  Bj 17  
+Q ?   17 n ARG . 18  Bj 18  
+Q ?   17 n PHE . 19  Bj 19  
+Q ?   17 n GLU . 20  Bj 20  
+Q ?   17 n GLY . 21  Bj 21  
+Q ?   17 n PRO . 22  Bj 22  
+Q ?   17 n TRP . 23  Bj 23  
+Q ?   17 n ALA . 24  Bj 24  
+Q ?   17 n HIS . 25  Bj 25  
+Q ?   17 n SER . 26  Bj 26  
+Q ?   17 n LEU . 27  Bj 27  
+Q ?   17 n GLY . 28  Bj 28  
+Q ?   17 n SER . 29  Bj 29  
+Q ?   17 n ARG . 30  Bj 30  
+Q ?   17 n ASN . 31  Bj 31  
+Q ?   17 n LEU . 32  Bj 32  
+Q ?   17 n ALA . 33  Bj 33  
+Q ?   17 n LEU . 34  Bj 34  
+Q ?   17 n ALA . 35  Bj 35  
+Q ?   17 n VAL . 36  Bj 36  
+Q ?   17 n ALA . 37  Bj 37  
+Q ?   17 n PRO . 38  Bj 38  
+Q ?   17 n SER . 39  Bj 39  
+Q ?   17 n SER . 40  Bj 40  
+Q ?   17 n SER . 41  Bj 41  
+Q ?   17 n SER . 42  Bj 42  
+Q 43  17 n SER . 43  Bj 43  
+Q 44  17 n PRO . 44  Bj 44  
+Q 45  17 n TRP . 45  Bj 45  
+Q 46  17 n ARG . 46  Bj 46  
+Q 47  17 n LEU . 47  Bj 47  
+Q 48  17 n LEU . 48  Bj 48  
+Q 49  17 n GLY . 49  Bj 49  
+Q 50  17 n ALA . 50  Bj 50  
+Q 51  17 n LEU . 51  Bj 51  
+Q 52  17 n CYS . 52  Bj 52  
+Q 53  17 n LEU . 53  Bj 53  
+Q 54  17 n GLN . 54  Bj 54  
+Q 55  17 n ARG . 55  Bj 55  
+Q 56  17 n PRO . 56  Bj 56  
+Q 57  17 n PRO . 57  Bj 57  
+Q 58  17 n LEU . 58  Bj 58  
+Q 59  17 n VAL . 59  Bj 59  
+Q 60  17 n THR . 60  Bj 60  
+Q 61  17 n LYS . 61  Bj 61  
+Q 62  17 n PRO . 62  Bj 62  
+Q 63  17 n LEU . 63  Bj 63  
+Q 64  17 n THR . 64  Bj 64  
+Q 65  17 n PRO . 65  Bj 65  
+Q 66  17 n LEU . 66  Bj 66  
+Q 67  17 n GLN . 67  Bj 67  
+Q 68  17 n GLU . 68  Bj 68  
+Q 69  17 n GLU . 69  Bj 69  
+Q 70  17 n MET . 70  Bj 70  
+Q 71  17 n ALA . 71  Bj 71  
+Q 72  17 n ASP . 72  Bj 72  
+Q 73  17 n LEU . 73  Bj 73  
+Q 74  17 n LEU . 74  Bj 74  
+Q 75  17 n GLN . 75  Bj 75  
+Q 76  17 n GLN . 76  Bj 76  
+Q 77  17 n ILE . 77  Bj 77  
+Q 78  17 n GLU . 78  Bj 78  
+Q 79  17 n ILE . 79  Bj 79  
+Q 80  17 n GLU . 80  Bj 80  
+Q 81  17 n ARG . 81  Bj 81  
+Q 82  17 n SER . 82  Bj 82  
+Q 83  17 n LEU . 83  Bj 83  
+Q 84  17 n TYR . 84  Bj 84  
+Q 85  17 n SER . 85  Bj 85  
+Q 86  17 n ASP . 86  Bj 86  
+Q 87  17 n HIS . 87  Bj 87  
+Q 88  17 n GLU . 88  Bj 88  
+Q 89  17 n LEU . 89  Bj 89  
+Q 90  17 n ARG . 90  Bj 90  
+Q 91  17 n ALA . 91  Bj 91  
+Q 92  17 n LEU . 92  Bj 92  
+Q 93  17 n ASP . 93  Bj 93  
+Q 94  17 n GLU . 94  Bj 94  
+Q 95  17 n ALA . 95  Bj 95  
+Q 96  17 n GLN . 96  Bj 96  
+Q 97  17 n GLN . 97  Bj 97  
+Q 98  17 n LEU . 98  Bj 98  
+Q 99  17 n ALA . 99  Bj 99  
+Q 100 17 n LYS . 100 Bj 100 
+Q 101 17 n LYS . 101 Bj 101 
+Q 102 17 n LYS . 102 Bj 102 
+Q 103 17 n SER . 103 Bj 103 
+Q 104 17 n ASP . 104 Bj 104 
+Q ?   17 n LEU . 105 Bj 105 
+Q ?   17 n TYR . 106 Bj 106 
+Q ?   17 n GLU . 107 Bj 107 
+Q ?   17 n GLU . 108 Bj 108 
+Q ?   17 n GLU . 109 Bj 109 
+Q ?   17 n ASP . 110 Bj 110 
+Q ?   17 n GLU . 111 Bj 111 
+Q ?   17 n GLN . 112 Bj 112 
+Q ?   17 n ASN . 113 Bj 113 
+Q ?   17 n ILE . 114 Bj 114 
+Q ?   17 n LEU . 115 Bj 115 
+Q 116 17 n LEU . 116 Bj 116 
+Q 117 17 n ALA . 117 Bj 117 
+Q 118 17 n GLN . 118 Bj 118 
+Q 119 17 n ASP . 119 Bj 119 
+Q 120 17 n LEU . 120 Bj 120 
+Q 121 17 n GLU . 121 Bj 121 
+Q 122 17 n ASP . 122 Bj 122 
+Q 123 17 n MET . 123 Bj 123 
+Q 124 17 n TRP . 124 Bj 124 
+Q 125 17 n GLU . 125 Bj 125 
+Q 126 17 n GLN . 126 Bj 126 
+Q 127 17 n LYS . 127 Bj 127 
+Q 128 17 n PHE . 128 Bj 128 
+Q 129 17 n LEU . 129 Bj 129 
+Q 130 17 n HIS . 130 Bj 130 
+Q 131 17 n PHE . 131 Bj 131 
+Q 132 17 n LYS . 132 Bj 132 
+Q 133 17 n LEU . 133 Bj 133 
+Q 134 17 n GLY . 134 Bj 134 
+Q 135 17 n ALA . 135 Bj 135 
+Q 136 17 n ARG . 136 Bj 136 
+Q 137 17 n LEU . 137 Bj 137 
+Q 138 17 n THR . 138 Bj 138 
+Q 139 17 n GLU . 139 Bj 139 
+Q 140 17 n ALA . 140 Bj 140 
+Q 141 17 n ASP . 141 Bj 141 
+Q 142 17 n LYS . 142 Bj 142 
+Q 143 17 n LYS . 143 Bj 143 
+Q 144 17 n ASP . 144 Bj 144 
+Q 145 17 n ASP . 145 Bj 145 
+Q 146 17 n ARG . 146 Bj 146 
+Q 147 17 n THR . 147 Bj 147 
+Q 148 17 n SER . 148 Bj 148 
+Q 149 17 n LEU . 149 Bj 149 
+Q 150 17 n HIS . 150 Bj 150 
+Q 151 17 n ARG . 151 Bj 151 
+Q 152 17 n LYS . 152 Bj 152 
+Q 153 17 n LEU . 153 Bj 153 
+Q 154 17 n ASP . 154 Bj 154 
+Q 155 17 n ARG . 155 Bj 155 
+Q 156 17 n ASN . 156 Bj 156 
+Q 157 17 n LEU . 157 Bj 157 
+Q 158 17 n ILE . 158 Bj 158 
+Q 159 17 n LEU . 159 Bj 159 
+Q 160 17 n LEU . 160 Bj 160 
+Q 161 17 n VAL . 161 Bj 161 
+Q 162 17 n ARG . 162 Bj 162 
+Q 163 17 n GLU . 163 Bj 163 
+Q 164 17 n LYS . 164 Bj 164 
+Q 165 17 n LEU . 165 Bj 165 
+Q 166 17 n GLY . 166 Bj 166 
+Q 167 17 n ASP . 167 Bj 167 
+Q 168 17 n GLN . 168 Bj 168 
+Q 169 17 n ASP . 169 Bj 169 
+Q 170 17 n ILE . 170 Bj 170 
+Q 171 17 n TRP . 171 Bj 171 
+Q 172 17 n MET . 172 Bj 172 
+Q 173 17 n LEU . 173 Bj 173 
+Q 174 17 n PRO . 174 Bj 174 
+Q 175 17 n GLN . 175 Bj 175 
+Q 176 17 n SER . 176 Bj 176 
+Q 177 17 n ASP . 177 Bj 177 
+Q 178 17 n TRP . 178 Bj 178 
+Q 179 17 n GLN . 179 Bj 179 
+Q 180 17 n PRO . 180 Bj 180 
+Q 181 17 n GLY . 181 Bj 181 
+Q 182 17 n GLU . 182 Bj 182 
+Q 183 17 n THR . 183 Bj 183 
+Q 184 17 n LEU . 184 Bj 184 
+Q 185 17 n ARG . 185 Bj 185 
+Q 186 17 n GLN . 186 Bj 186 
+Q 187 17 n THR . 187 Bj 187 
+Q 188 17 n ALA . 188 Bj 188 
+Q 189 17 n GLU . 189 Bj 189 
+Q 190 17 n ARG . 190 Bj 190 
+Q 191 17 n THR . 191 Bj 191 
+Q 192 17 n LEU . 192 Bj 192 
+Q 193 17 n ALA . 193 Bj 193 
+Q 194 17 n THR . 194 Bj 194 
+Q 195 17 n LEU . 195 Bj 195 
+Q 196 17 n SER . 196 Bj 196 
+Q 197 17 n GLU . 197 Bj 197 
+Q 198 17 n ASN . 198 Bj 198 
+Q 199 17 n ASN . 199 Bj 199 
+Q 200 17 n MET . 200 Bj 200 
+Q 201 17 n GLU . 201 Bj 201 
+Q 202 17 n ALA . 202 Bj 202 
+Q 203 17 n LYS . 203 Bj 203 
+Q 204 17 n PHE . 204 Bj 204 
+Q 205 17 n LEU . 205 Bj 205 
+Q 206 17 n GLY . 206 Bj 206 
+Q 207 17 n ASN . 207 Bj 207 
+Q 208 17 n ALA . 208 Bj 208 
+Q 209 17 n PRO . 209 Bj 209 
+Q 210 17 n CYS . 210 Bj 210 
+Q 211 17 n GLY . 211 Bj 211 
+Q 212 17 n HIS . 212 Bj 212 
+Q 213 17 n TYR . 213 Bj 213 
+Q 214 17 n LYS . 214 Bj 214 
+Q 215 17 n PHE . 215 Bj 215 
+Q 216 17 n LYS . 216 Bj 216 
+Q 217 17 n PHE . 217 Bj 217 
+Q ?   17 n PRO . 218 Bj 218 
+Q ?   17 n GLN . 219 Bj 219 
+Q ?   17 n ALA . 220 Bj 220 
+Q ?   17 n MET . 221 Bj 221 
+Q ?   17 n ARG . 222 Bj 222 
+Q ?   17 n THR . 223 Bj 223 
+Q ?   17 n GLU . 224 Bj 224 
+Q ?   17 n THR . 225 Bj 225 
+Q ?   17 n SER . 226 Bj 226 
+Q 227 17 n LEU . 227 Bj 227 
+Q 228 17 n GLY . 228 Bj 228 
+Q 229 17 n ALA . 229 Bj 229 
+Q 230 17 n LYS . 230 Bj 230 
+Q 231 17 n VAL . 231 Bj 231 
+Q 232 17 n PHE . 232 Bj 232 
+Q 233 17 n PHE . 233 Bj 233 
+Q 234 17 n PHE . 234 Bj 234 
+Q 235 17 n LYS . 235 Bj 235 
+Q 236 17 n ALA . 236 Bj 236 
+Q 237 17 n LEU . 237 Bj 237 
+Q 238 17 n LEU . 238 Bj 238 
+Q 239 17 n LEU . 239 Bj 239 
+Q 240 17 n THR . 240 Bj 240 
+Q 241 17 n GLY . 241 Bj 241 
+Q 242 17 n ASP . 242 Bj 242 
+Q 243 17 n PHE . 243 Bj 243 
+Q 244 17 n SER . 244 Bj 244 
+Q 245 17 n GLN . 245 Bj 245 
+Q 246 17 n ALA . 246 Bj 246 
+Q 247 17 n GLY . 247 Bj 247 
+Q 248 17 n LYS . 248 Bj 248 
+Q 249 17 n LYS . 249 Bj 249 
+Q 250 17 n GLY . 250 Bj 250 
+Q 251 17 n HIS . 251 Bj 251 
+Q 252 17 n HIS . 252 Bj 252 
+Q 253 17 n VAL . 253 Bj 253 
+Q 254 17 n TRP . 254 Bj 254 
+Q 255 17 n VAL . 255 Bj 255 
+Q 256 17 n SER . 256 Bj 256 
+Q 257 17 n LYS . 257 Bj 257 
+Q 258 17 n GLU . 258 Bj 258 
+Q 259 17 n GLU . 259 Bj 259 
+Q 260 17 n LEU . 260 Bj 260 
+Q 261 17 n GLY . 261 Bj 261 
+Q 262 17 n ASP . 262 Bj 262 
+Q 263 17 n TYR . 263 Bj 263 
+Q 264 17 n LEU . 264 Bj 264 
+Q 265 17 n LYS . 265 Bj 265 
+Q 266 17 n PRO . 266 Bj 266 
+Q 267 17 n LYS . 267 Bj 267 
+Q 268 17 n TYR . 268 Bj 268 
+Q 269 17 n LEU . 269 Bj 269 
+Q 270 17 n ALA . 270 Bj 270 
+Q 271 17 n GLN . 271 Bj 271 
+Q 272 17 n VAL . 272 Bj 272 
+Q 273 17 n ARG . 273 Bj 273 
+Q 274 17 n ARG . 274 Bj 274 
+Q 275 17 n PHE . 275 Bj 275 
+Q 276 17 n LEU . 276 Bj 276 
+Q 277 17 n LEU . 277 Bj 277 
+Q 278 17 n ASP . 278 Bj 278 
+Q 279 17 n LEU . 279 Bj 279 
+#
+_pdbx_struct_assembly.details            author_defined_assembly
+_pdbx_struct_assembly.id                 1
+_pdbx_struct_assembly.method_details     ?
+_pdbx_struct_assembly.oligomeric_count   95
+_pdbx_struct_assembly.oligomeric_details 95-meric
+#
+_pdbx_struct_assembly_gen.assembly_id     1
+_pdbx_struct_assembly_gen.asym_id_list    A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,AA,BA,CA,DA,EA,FA,GA,HA,IA,JA,KA,LA,MA,NA,OA,PA,QA,RA,SA,TA,UA,VA,WA,XA,YA,ZA,AB,BB,CB,DB,EB,FB,GB,HB,IB,JB,KB,LB,MB,NB,OB,PB,QB,RB,SB,TB,UB,VB,WB,XB,YB,ZB,AC,BC,CC,DC,EC,FC,GC,HC,IC,JC,KC,LC,MC,NC,OC,PC,QC,RC,SC,TC,UC,VC,WC,XC,YC,ZC,AD,BD,CD,DD,ED,FD,GD,HD,ID,JD,KD,LD,MD,ND,OD,PD,QD,RD,SD,TD,UD,VD,WD,XD,YD,ZD,AE,BE,CE,DE,EE,FE,GE,HE,IE,JE,KE,LE,ME,NE,OE,PE,QE,RE,SE,TE,UE,VE,WE,XE,YE,ZE,AF,BF,CF,DF,EF,FF,GF,HF,IF,JF,KF,LF,MF,NF,OF,PF,QF,RF,SF,TF,UF,VF,WF,XF,YF,ZF,AG,BG,CG,DG,EG,FG,GG,HG,IG,JG,KG,LG,MG,NG,OG,PG,QG,RG,SG,TG,UG,VG,WG,XG,YG,ZG,AH,BH,CH,DH,EH,FH,GH,HH,IH,JH,KH,LH,MH,NH,OH,PH,QH,RH,SH,TH,UH,VH,WH,XH,YH,ZH,AI,BI,CI,DI,EI,FI,GI,HI,II,JI,KI,LI,MI,NI,OI,PI,QI,RI,SI,TI,UI,VI,WI,XI,YI,ZI,AJ,BJ,CJ,DJ,EJ,FJ,GJ,HJ,IJ,JJ,KJ,LJ,MJ,NJ,OJ,PJ,QJ,RJ,SJ,TJ,UJ,VJ,WJ,XJ,YJ,ZJ,AK,BK,CK,DK,EK,FK,GK,HK,IK,JK,KK,LK,MK,NK,OK,PK,QK,RK,SK,TK,UK,VK,WK,XK,YK,ZK,AL,BL,CL,DL,EL,FL,GL,HL,IL,JL,KL,LL,ML,NL,OL,PL,QL,RL,SL,TL,UL,VL,WL,XL,YL,ZL,AM,BM,CM,DM,EM,FM,GM,HM,IM,JM,KM,LM,MM,NM,OM,PM,QM,RM,SM,TM,UM,VM,WM,XM,YM,ZM,AN,BN,CN,DN,EN,FN,GN,HN,IN,JN,KN,LN,MN,NN,ON,PN,QN,RN,SN,TN,UN,VN,WN,XN,YN,ZN,AO,BO,CO,DO,EO,FO,GO,HO,IO,JO,KO,LO,MO,NO,OO,PO,QO,RO,SO,TO,UO,VO,WO,XO,YO,ZO,AP,BP,CP,DP,EP,FP,GP,HP,IP,JP,KP,LP,MP,NP,OP,PP,QP,RP,SP
+_pdbx_struct_assembly_gen.oper_expression 1
+#
+_pdbx_struct_oper_list.id                 1
+_pdbx_struct_oper_list.matrix[1][1]       1.0000000000
+_pdbx_struct_oper_list.matrix[1][2]       0.0000000000
+_pdbx_struct_oper_list.matrix[1][3]       0.0000000000
+_pdbx_struct_oper_list.matrix[2][1]       0.0000000000
+_pdbx_struct_oper_list.matrix[2][2]       1.0000000000
+_pdbx_struct_oper_list.matrix[2][3]       0.0000000000
+_pdbx_struct_oper_list.matrix[3][1]       0.0000000000
+_pdbx_struct_oper_list.matrix[3][2]       0.0000000000
+_pdbx_struct_oper_list.matrix[3][3]       1.0000000000
+_pdbx_struct_oper_list.name               1_555
+_pdbx_struct_oper_list.symmetry_operation ?
+_pdbx_struct_oper_list.type               "identity operation"
+_pdbx_struct_oper_list.vector[1]          0.0000000000
+_pdbx_struct_oper_list.vector[2]          0.0000000000
+_pdbx_struct_oper_list.vector[3]          0.0000000000
+#
+_refine.ls_d_res_high 4.20
+#
+_software.classification other
+_software.name           "DeepMind Structure Class"
+_software.pdbx_ordinal   1
+_software.version        2.0.0
+#
+_struct_asym.entity_id 17
+_struct_asym.id        Q
+#
+loop_
+_atom_site.group_PDB
+_atom_site.id
+_atom_site.type_symbol
+_atom_site.label_atom_id
+_atom_site.label_alt_id
+_atom_site.label_comp_id
+_atom_site.label_asym_id
+_atom_site.label_entity_id
+_atom_site.label_seq_id
+_atom_site.pdbx_PDB_ins_code
+_atom_site.Cartn_x
+_atom_site.Cartn_y
+_atom_site.Cartn_z
+_atom_site.occupancy
+_atom_site.B_iso_or_equiv
+_atom_site.auth_seq_id
+_atom_site.auth_asym_id
+_atom_site.pdbx_PDB_model_num
+ATOM 1    N N   . SER Q 17 43  ? 162.672 264.147 303.911 1.00 104.46 43  Bj 1 
+ATOM 2    C CA  . SER Q 17 43  ? 161.478 264.930 303.620 1.00 104.46 43  Bj 1 
+ATOM 3    C C   . SER Q 17 43  ? 160.551 264.181 302.669 1.00 104.46 43  Bj 1 
+ATOM 4    O O   . SER Q 17 43  ? 160.970 263.766 301.589 1.00 104.46 43  Bj 1 
+ATOM 5    C CB  . SER Q 17 43  ? 161.857 266.287 303.024 1.00 104.46 43  Bj 1 
+ATOM 6    O OG  . SER Q 17 43  ? 162.640 267.043 303.931 1.00 104.46 43  Bj 1 
+ATOM 7    N N   . PRO Q 17 44  ? 159.295 264.000 303.074 1.00 115.21 44  Bj 1 
+ATOM 8    C CA  . PRO Q 17 44  ? 158.333 263.328 302.193 1.00 115.21 44  Bj 1 
+ATOM 9    C C   . PRO Q 17 44  ? 157.997 264.188 300.984 1.00 115.21 44  Bj 1 
+ATOM 10   O O   . PRO Q 17 44  ? 157.754 265.392 301.099 1.00 115.21 44  Bj 1 
+ATOM 11   C CB  . PRO Q 17 44  ? 157.110 263.118 303.093 1.00 115.21 44  Bj 1 
+ATOM 12   C CG  . PRO Q 17 44  ? 157.236 264.161 304.150 1.00 115.21 44  Bj 1 
+ATOM 13   C CD  . PRO Q 17 44  ? 158.707 264.346 304.379 1.00 115.21 44  Bj 1 
+ATOM 14   N N   . TRP Q 17 45  ? 157.996 263.551 299.814 1.00 124.11 45  Bj 1 
+ATOM 15   C CA  . TRP Q 17 45  ? 157.732 264.221 298.549 1.00 124.11 45  Bj 1 
+ATOM 16   C C   . TRP Q 17 45  ? 156.706 263.430 297.755 1.00 124.11 45  Bj 1 
+ATOM 17   O O   . TRP Q 17 45  ? 156.918 262.249 297.460 1.00 124.11 45  Bj 1 
+ATOM 18   C CB  . TRP Q 17 45  ? 159.014 264.384 297.726 1.00 124.11 45  Bj 1 
+ATOM 19   C CG  . TRP Q 17 45  ? 159.872 265.522 298.174 1.00 124.11 45  Bj 1 
+ATOM 20   C CD1 . TRP Q 17 45  ? 160.962 265.456 298.990 1.00 124.11 45  Bj 1 
+ATOM 21   C CD2 . TRP Q 17 45  ? 159.709 266.903 297.831 1.00 124.11 45  Bj 1 
+ATOM 22   N NE1 . TRP Q 17 45  ? 161.490 266.710 299.176 1.00 124.11 45  Bj 1 
+ATOM 23   C CE2 . TRP Q 17 45  ? 160.738 267.616 298.475 1.00 124.11 45  Bj 1 
+ATOM 24   C CE3 . TRP Q 17 45  ? 158.793 267.605 297.042 1.00 124.11 45  Bj 1 
+ATOM 25   C CZ2 . TRP Q 17 45  ? 160.877 268.997 298.355 1.00 124.11 45  Bj 1 
+ATOM 26   C CZ3 . TRP Q 17 45  ? 158.932 268.975 296.925 1.00 124.11 45  Bj 1 
+ATOM 27   C CH2 . TRP Q 17 45  ? 159.966 269.656 297.577 1.00 124.11 45  Bj 1 
+ATOM 28   N N   . ARG Q 17 46  ? 155.602 264.083 297.413 1.00 135.34 46  Bj 1 
+ATOM 29   C CA  . ARG Q 17 46  ? 154.591 263.520 296.531 1.00 135.34 46  Bj 1 
+ATOM 30   C C   . ARG Q 17 46  ? 154.887 263.943 295.098 1.00 135.34 46  Bj 1 
+ATOM 31   O O   . ARG Q 17 46  ? 155.343 265.063 294.855 1.00 135.34 46  Bj 1 
+ATOM 32   C CB  . ARG Q 17 46  ? 153.191 263.983 296.943 1.00 135.34 46  Bj 1 
+ATOM 33   C CG  . ARG Q 17 46  ? 152.052 263.259 296.243 1.00 135.34 46  Bj 1 
+ATOM 34   C CD  . ARG Q 17 46  ? 150.703 263.776 296.723 1.00 135.34 46  Bj 1 
+ATOM 35   N NE  . ARG Q 17 46  ? 149.585 263.097 296.074 1.00 135.34 46  Bj 1 
+ATOM 36   C CZ  . ARG Q 17 46  ? 148.306 263.372 296.309 1.00 135.34 46  Bj 1 
+ATOM 37   N NH1 . ARG Q 17 46  ? 147.977 264.316 297.180 1.00 135.34 46  Bj 1 
+ATOM 38   N NH2 . ARG Q 17 46  ? 147.353 262.704 295.673 1.00 135.34 46  Bj 1 
+ATOM 39   N N   . LEU Q 17 47  ? 154.641 263.040 294.152 1.00 137.26 47  Bj 1 
+ATOM 40   C CA  . LEU Q 17 47  ? 154.910 263.296 292.743 1.00 137.26 47  Bj 1 
+ATOM 41   C C   . LEU Q 17 47  ? 153.644 263.057 291.937 1.00 137.26 47  Bj 1 
+ATOM 42   O O   . LEU Q 17 47  ? 152.955 262.053 292.143 1.00 137.26 47  Bj 1 
+ATOM 43   C CB  . LEU Q 17 47  ? 156.056 262.414 292.233 1.00 137.26 47  Bj 1 
+ATOM 44   C CG  . LEU Q 17 47  ? 156.329 261.107 292.986 1.00 137.26 47  Bj 1 
+ATOM 45   C CD1 . LEU Q 17 47  ? 155.350 260.012 292.587 1.00 137.26 47  Bj 1 
+ATOM 46   C CD2 . LEU Q 17 47  ? 157.766 260.652 292.776 1.00 137.26 47  Bj 1 
+ATOM 47   N N   . LEU Q 17 48  ? 153.331 263.982 291.030 1.00 138.18 48  Bj 1 
+ATOM 48   C CA  . LEU Q 17 48  ? 152.120 263.883 290.230 1.00 138.18 48  Bj 1 
+ATOM 49   C C   . LEU Q 17 48  ? 152.394 264.339 288.806 1.00 138.18 48  Bj 1 
+ATOM 50   O O   . LEU Q 17 48  ? 153.199 265.246 288.575 1.00 138.18 48  Bj 1 
+ATOM 51   C CB  . LEU Q 17 48  ? 150.977 264.725 290.818 1.00 138.18 48  Bj 1 
+ATOM 52   C CG  . LEU Q 17 48  ? 150.485 264.427 292.237 1.00 138.18 48  Bj 1 
+ATOM 53   C CD1 . LEU Q 17 48  ? 151.283 265.210 293.269 1.00 138.18 48  Bj 1 
+ATOM 54   C CD2 . LEU Q 17 48  ? 149.000 264.730 292.359 1.00 138.18 48  Bj 1 
+ATOM 55   N N   . GLY Q 17 49  ? 151.716 263.701 287.855 1.00 135.43 49  Bj 1 
+ATOM 56   C CA  . GLY Q 17 49  ? 151.707 264.149 286.482 1.00 135.43 49  Bj 1 
+ATOM 57   C C   . GLY Q 17 49  ? 150.384 264.812 286.131 1.00 135.43 49  Bj 1 
+ATOM 58   O O   . GLY Q 17 49  ? 149.360 264.601 286.775 1.00 135.43 49  Bj 1 
+ATOM 59   N N   . ALA Q 17 50  ? 150.428 265.639 285.090 1.00 130.02 50  Bj 1 
+ATOM 60   C CA  . ALA Q 17 50  ? 149.244 266.346 284.629 1.00 130.02 50  Bj 1 
+ATOM 61   C C   . ALA Q 17 50  ? 149.304 266.468 283.116 1.00 130.02 50  Bj 1 
+ATOM 62   O O   . ALA Q 17 50  ? 150.384 266.588 282.529 1.00 130.02 50  Bj 1 
+ATOM 63   C CB  . ALA Q 17 50  ? 149.121 267.730 285.275 1.00 130.02 50  Bj 1 
+ATOM 64   N N   . LEU Q 17 51  ? 148.131 266.439 282.491 1.00 127.85 51  Bj 1 
+ATOM 65   C CA  . LEU Q 17 51  ? 148.013 266.429 281.039 1.00 127.85 51  Bj 1 
+ATOM 66   C C   . LEU Q 17 51  ? 147.458 267.759 280.549 1.00 127.85 51  Bj 1 
+ATOM 67   O O   . LEU Q 17 51  ? 146.498 268.285 281.121 1.00 127.85 51  Bj 1 
+ATOM 68   C CB  . LEU Q 17 51  ? 147.117 265.280 280.572 1.00 127.85 51  Bj 1 
+ATOM 69   C CG  . LEU Q 17 51  ? 146.876 265.173 279.065 1.00 127.85 51  Bj 1 
+ATOM 70   C CD1 . LEU Q 17 51  ? 148.194 265.030 278.321 1.00 127.85 51  Bj 1 
+ATOM 71   C CD2 . LEU Q 17 51  ? 145.949 264.010 278.748 1.00 127.85 51  Bj 1 
+ATOM 72   N N   . CYS Q 17 52  ? 148.064 268.295 279.492 1.00 126.27 52  Bj 1 
+ATOM 73   C CA  . CYS Q 17 52  ? 147.580 269.488 278.806 1.00 126.27 52  Bj 1 
+ATOM 74   C C   . CYS Q 17 52  ? 147.282 269.077 277.369 1.00 126.27 52  Bj 1 
+ATOM 75   O O   . CYS Q 17 52  ? 148.176 269.073 276.517 1.00 126.27 52  Bj 1 
+ATOM 76   C CB  . CYS Q 17 52  ? 148.607 270.615 278.866 1.00 126.27 52  Bj 1 
+ATOM 77   S SG  . CYS Q 17 52  ? 149.201 271.004 280.527 1.00 126.27 52  Bj 1 
+ATOM 78   N N   . LEU Q 17 53  ? 146.033 268.707 277.107 1.00 117.88 53  Bj 1 
+ATOM 79   C CA  . LEU Q 17 53  ? 145.621 268.248 275.787 1.00 117.88 53  Bj 1 
+ATOM 80   C C   . LEU Q 17 53  ? 145.134 269.436 274.969 1.00 117.88 53  Bj 1 
+ATOM 81   O O   . LEU Q 17 53  ? 144.159 270.096 275.343 1.00 117.88 53  Bj 1 
+ATOM 82   C CB  . LEU Q 17 53  ? 144.526 267.191 275.898 1.00 117.88 53  Bj 1 
+ATOM 83   C CG  . LEU Q 17 53  ? 143.910 266.774 274.563 1.00 117.88 53  Bj 1 
+ATOM 84   C CD1 . LEU Q 17 53  ? 144.958 266.142 273.659 1.00 117.88 53  Bj 1 
+ATOM 85   C CD2 . LEU Q 17 53  ? 142.749 265.828 274.792 1.00 117.88 53  Bj 1 
+ATOM 86   N N   . GLN Q 17 54  ? 145.803 269.698 273.851 1.00 118.52 54  Bj 1 
+ATOM 87   C CA  . GLN Q 17 54  ? 145.488 270.830 272.992 1.00 118.52 54  Bj 1 
+ATOM 88   C C   . GLN Q 17 54  ? 144.817 270.326 271.723 1.00 118.52 54  Bj 1 
+ATOM 89   O O   . GLN Q 17 54  ? 145.391 269.510 270.993 1.00 118.52 54  Bj 1 
+ATOM 90   C CB  . GLN Q 17 54  ? 146.748 271.626 272.652 1.00 118.52 54  Bj 1 
+ATOM 91   C CG  . GLN Q 17 54  ? 147.464 272.202 273.860 1.00 118.52 54  Bj 1 
+ATOM 92   C CD  . GLN Q 17 54  ? 148.683 273.016 273.478 1.00 118.52 54  Bj 1 
+ATOM 93   O OE1 . GLN Q 17 54  ? 148.961 273.222 272.297 1.00 118.52 54  Bj 1 
+ATOM 94   N NE2 . GLN Q 17 54  ? 149.419 273.484 274.478 1.00 118.52 54  Bj 1 
+ATOM 95   N N   . ARG Q 17 55  ? 143.598 270.796 271.480 1.00 113.62 55  Bj 1 
+ATOM 96   C CA  . ARG Q 17 55  ? 142.952 270.625 270.189 1.00 113.62 55  Bj 1 
+ATOM 97   C C   . ARG Q 17 55  ? 143.238 271.852 269.337 1.00 113.62 55  Bj 1 
+ATOM 98   O O   . ARG Q 17 55  ? 142.879 272.968 269.740 1.00 113.62 55  Bj 1 
+ATOM 99   C CB  . ARG Q 17 55  ? 141.455 270.444 270.349 1.00 113.62 55  Bj 1 
+ATOM 100  C CG  . ARG Q 17 55  ? 140.733 270.185 269.037 1.00 113.62 55  Bj 1 
+ATOM 101  C CD  . ARG Q 17 55  ? 139.290 270.650 269.102 1.00 113.62 55  Bj 1 
+ATOM 102  N NE  . ARG Q 17 55  ? 139.013 271.693 268.119 1.00 113.62 55  Bj 1 
+ATOM 103  C CZ  . ARG Q 17 55  ? 139.321 272.974 268.284 1.00 113.62 55  Bj 1 
+ATOM 104  N NH1 . ARG Q 17 55  ? 139.923 273.375 269.395 1.00 113.62 55  Bj 1 
+ATOM 105  N NH2 . ARG Q 17 55  ? 139.032 273.855 267.337 1.00 113.62 55  Bj 1 
+ATOM 106  N N   . PRO Q 17 56  ? 143.874 271.703 268.180 1.00 114.98 56  Bj 1 
+ATOM 107  C CA  . PRO Q 17 56  ? 144.258 272.868 267.384 1.00 114.98 56  Bj 1 
+ATOM 108  C C   . PRO Q 17 56  ? 143.057 273.471 266.683 1.00 114.98 56  Bj 1 
+ATOM 109  O O   . PRO Q 17 56  ? 142.018 272.811 266.528 1.00 114.98 56  Bj 1 
+ATOM 110  C CB  . PRO Q 17 56  ? 145.255 272.283 266.375 1.00 114.98 56  Bj 1 
+ATOM 111  C CG  . PRO Q 17 56  ? 144.800 270.875 266.201 1.00 114.98 56  Bj 1 
+ATOM 112  C CD  . PRO Q 17 56  ? 144.288 270.438 267.549 1.00 114.98 56  Bj 1 
+ATOM 113  N N   . PRO Q 17 57  ? 143.156 274.726 266.247 1.00 116.15 57  Bj 1 
+ATOM 114  C CA  . PRO Q 17 57  ? 142.053 275.331 265.494 1.00 116.15 57  Bj 1 
+ATOM 115  C C   . PRO Q 17 57  ? 141.864 274.658 264.144 1.00 116.15 57  Bj 1 
+ATOM 116  O O   . PRO Q 17 57  ? 142.830 274.337 263.446 1.00 116.15 57  Bj 1 
+ATOM 117  C CB  . PRO Q 17 57  ? 142.492 276.791 265.334 1.00 116.15 57  Bj 1 
+ATOM 118  C CG  . PRO Q 17 57  ? 143.977 276.762 265.492 1.00 116.15 57  Bj 1 
+ATOM 119  C CD  . PRO Q 17 57  ? 144.251 275.681 266.490 1.00 116.15 57  Bj 1 
+ATOM 120  N N   . LEU Q 17 58  ? 140.600 274.449 263.778 1.00 116.27 58  Bj 1 
+ATOM 121  C CA  . LEU Q 17 58  ? 140.270 273.823 262.504 1.00 116.27 58  Bj 1 
+ATOM 122  C C   . LEU Q 17 58  ? 140.215 274.830 261.361 1.00 116.27 58  Bj 1 
+ATOM 123  O O   . LEU Q 17 58  ? 140.604 274.507 260.234 1.00 116.27 58  Bj 1 
+ATOM 124  C CB  . LEU Q 17 58  ? 138.934 273.084 262.609 1.00 116.27 58  Bj 1 
+ATOM 125  C CG  . LEU Q 17 58  ? 138.884 271.888 263.562 1.00 116.27 58  Bj 1 
+ATOM 126  C CD1 . LEU Q 17 58  ? 137.503 271.254 263.554 1.00 116.27 58  Bj 1 
+ATOM 127  C CD2 . LEU Q 17 58  ? 139.946 270.864 263.194 1.00 116.27 58  Bj 1 
+ATOM 128  N N   . VAL Q 17 59  ? 139.743 276.044 261.628 1.00 110.63 59  Bj 1 
+ATOM 129  C CA  . VAL Q 17 59  ? 139.613 277.074 260.606 1.00 110.63 59  Bj 1 
+ATOM 130  C C   . VAL Q 17 59  ? 140.674 278.138 260.846 1.00 110.63 59  Bj 1 
+ATOM 131  O O   . VAL Q 17 59  ? 141.190 278.295 261.959 1.00 110.63 59  Bj 1 
+ATOM 132  C CB  . VAL Q 17 59  ? 138.197 277.692 260.596 1.00 110.63 59  Bj 1 
+ATOM 133  C CG1 . VAL Q 17 59  ? 138.060 278.749 261.681 1.00 110.63 59  Bj 1 
+ATOM 134  C CG2 . VAL Q 17 59  ? 137.873 278.271 259.228 1.00 110.63 59  Bj 1 
+ATOM 135  N N   . THR Q 17 60  ? 141.010 278.864 259.784 1.00 105.54 60  Bj 1 
+ATOM 136  C CA  . THR Q 17 60  ? 142.011 279.914 259.869 1.00 105.54 60  Bj 1 
+ATOM 137  C C   . THR Q 17 60  ? 141.427 281.168 260.510 1.00 105.54 60  Bj 1 
+ATOM 138  O O   . THR Q 17 60  ? 140.245 281.483 260.349 1.00 105.54 60  Bj 1 
+ATOM 139  C CB  . THR Q 17 60  ? 142.562 280.246 258.481 1.00 105.54 60  Bj 1 
+ATOM 140  O OG1 . THR Q 17 60  ? 143.384 281.417 258.558 1.00 105.54 60  Bj 1 
+ATOM 141  C CG2 . THR Q 17 60  ? 141.426 280.489 257.498 1.00 105.54 60  Bj 1 
+ATOM 142  N N   . LYS Q 17 61  ? 142.275 281.882 261.244 1.00 98.53  61  Bj 1 
+ATOM 143  C CA  . LYS Q 17 61  ? 141.844 283.097 261.913 1.00 98.53  61  Bj 1 
+ATOM 144  C C   . LYS Q 17 61  ? 141.540 284.190 260.890 1.00 98.53  61  Bj 1 
+ATOM 145  O O   . LYS Q 17 61  ? 142.039 284.151 259.762 1.00 98.53  61  Bj 1 
+ATOM 146  C CB  . LYS Q 17 61  ? 142.918 283.578 262.886 1.00 98.53  61  Bj 1 
+ATOM 147  C CG  . LYS Q 17 61  ? 143.171 282.633 264.046 1.00 98.53  61  Bj 1 
+ATOM 148  C CD  . LYS Q 17 61  ? 144.091 283.258 265.081 1.00 98.53  61  Bj 1 
+ATOM 149  C CE  . LYS Q 17 61  ? 144.264 282.348 266.288 1.00 98.53  61  Bj 1 
+ATOM 150  N NZ  . LYS Q 17 61  ? 145.130 282.959 267.333 1.00 98.53  61  Bj 1 
+ATOM 151  N N   . PRO Q 17 62  ? 140.716 285.171 261.253 1.00 97.74  62  Bj 1 
+ATOM 152  C CA  . PRO Q 17 62  ? 140.458 286.288 260.340 1.00 97.74  62  Bj 1 
+ATOM 153  C C   . PRO Q 17 62  ? 141.703 287.136 260.133 1.00 97.74  62  Bj 1 
+ATOM 154  O O   . PRO Q 17 62  ? 142.668 287.080 260.898 1.00 97.74  62  Bj 1 
+ATOM 155  C CB  . PRO Q 17 62  ? 139.357 287.083 261.049 1.00 97.74  62  Bj 1 
+ATOM 156  C CG  . PRO Q 17 62  ? 139.506 286.725 262.488 1.00 97.74  62  Bj 1 
+ATOM 157  C CD  . PRO Q 17 62  ? 139.933 285.287 262.495 1.00 97.74  62  Bj 1 
+ATOM 158  N N   . LEU Q 17 63  ? 141.667 287.934 259.071 1.00 100.40 63  Bj 1 
+ATOM 159  C CA  . LEU Q 17 63  ? 142.797 288.761 258.672 1.00 100.40 63  Bj 1 
+ATOM 160  C C   . LEU Q 17 63  ? 142.618 290.179 259.198 1.00 100.40 63  Bj 1 
+ATOM 161  O O   . LEU Q 17 63  ? 141.553 290.781 259.027 1.00 100.40 63  Bj 1 
+ATOM 162  C CB  . LEU Q 17 63  ? 142.946 288.779 257.150 1.00 100.40 63  Bj 1 
+ATOM 163  C CG  . LEU Q 17 63  ? 143.056 287.411 256.475 1.00 100.40 63  Bj 1 
+ATOM 164  C CD1 . LEU Q 17 63  ? 143.238 287.556 254.972 1.00 100.40 63  Bj 1 
+ATOM 165  C CD2 . LEU Q 17 63  ? 144.195 286.614 257.080 1.00 100.40 63  Bj 1 
+ATOM 166  N N   . THR Q 17 64  ? 143.657 290.697 259.845 1.00 107.97 64  Bj 1 
+ATOM 167  C CA  . THR Q 17 64  ? 143.667 292.093 260.253 1.00 107.97 64  Bj 1 
+ATOM 168  C C   . THR Q 17 64  ? 143.516 292.982 259.019 1.00 107.97 64  Bj 1 
+ATOM 169  O O   . THR Q 17 64  ? 144.073 292.666 257.964 1.00 107.97 64  Bj 1 
+ATOM 170  C CB  . THR Q 17 64  ? 144.974 292.410 260.987 1.00 107.97 64  Bj 1 
+ATOM 171  O OG1 . THR Q 17 64  ? 145.120 291.524 262.105 1.00 107.97 64  Bj 1 
+ATOM 172  C CG2 . THR Q 17 64  ? 145.005 293.848 261.485 1.00 107.97 64  Bj 1 
+ATOM 173  N N   . PRO Q 17 65  ? 142.750 294.076 259.102 1.00 107.81 65  Bj 1 
+ATOM 174  C CA  . PRO Q 17 65  ? 142.603 294.962 257.932 1.00 107.81 65  Bj 1 
+ATOM 175  C C   . PRO Q 17 65  ? 143.921 295.427 257.333 1.00 107.81 65  Bj 1 
+ATOM 176  O O   . PRO Q 17 65  ? 144.005 295.621 256.112 1.00 107.81 65  Bj 1 
+ATOM 177  C CB  . PRO Q 17 65  ? 141.785 296.141 258.486 1.00 107.81 65  Bj 1 
+ATOM 178  C CG  . PRO Q 17 65  ? 141.775 295.966 259.988 1.00 107.81 65  Bj 1 
+ATOM 179  C CD  . PRO Q 17 65  ? 141.881 294.498 260.212 1.00 107.81 65  Bj 1 
+ATOM 180  N N   . LEU Q 17 66  ? 144.958 295.608 258.152 1.00 108.37 66  Bj 1 
+ATOM 181  C CA  . LEU Q 17 66  ? 146.280 295.907 257.613 1.00 108.37 66  Bj 1 
+ATOM 182  C C   . LEU Q 17 66  ? 146.764 294.776 256.714 1.00 108.37 66  Bj 1 
+ATOM 183  O O   . LEU Q 17 66  ? 147.264 295.010 255.605 1.00 108.37 66  Bj 1 
+ATOM 184  C CB  . LEU Q 17 66  ? 147.261 296.150 258.760 1.00 108.37 66  Bj 1 
+ATOM 185  C CG  . LEU Q 17 66  ? 148.674 296.601 258.394 1.00 108.37 66  Bj 1 
+ATOM 186  C CD1 . LEU Q 17 66  ? 148.637 297.948 257.693 1.00 108.37 66  Bj 1 
+ATOM 187  C CD2 . LEU Q 17 66  ? 149.550 296.661 259.635 1.00 108.37 66  Bj 1 
+ATOM 188  N N   . GLN Q 17 67  ? 146.602 293.533 257.172 1.00 108.81 67  Bj 1 
+ATOM 189  C CA  . GLN Q 17 67  ? 146.992 292.387 256.360 1.00 108.81 67  Bj 1 
+ATOM 190  C C   . GLN Q 17 67  ? 146.109 292.247 255.126 1.00 108.81 67  Bj 1 
+ATOM 191  O O   . GLN Q 17 67  ? 146.569 291.758 254.091 1.00 108.81 67  Bj 1 
+ATOM 192  C CB  . GLN Q 17 67  ? 146.951 291.114 257.204 1.00 108.81 67  Bj 1 
+ATOM 193  C CG  . GLN Q 17 67  ? 147.901 291.140 258.391 1.00 108.81 67  Bj 1 
+ATOM 194  C CD  . GLN Q 17 67  ? 148.113 289.770 259.002 1.00 108.81 67  Bj 1 
+ATOM 195  O OE1 . GLN Q 17 67  ? 147.728 288.754 258.424 1.00 108.81 67  Bj 1 
+ATOM 196  N NE2 . GLN Q 17 67  ? 148.730 289.735 260.177 1.00 108.81 67  Bj 1 
+ATOM 197  N N   . GLU Q 17 68  ? 144.851 292.683 255.209 1.00 110.89 68  Bj 1 
+ATOM 198  C CA  . GLU Q 17 68  ? 143.985 292.678 254.034 1.00 110.89 68  Bj 1 
+ATOM 199  C C   . GLU Q 17 68  ? 144.476 293.670 252.987 1.00 110.89 68  Bj 1 
+ATOM 200  O O   . GLU Q 17 68  ? 144.512 293.356 251.791 1.00 110.89 68  Bj 1 
+ATOM 201  C CB  . GLU Q 17 68  ? 142.545 292.997 254.438 1.00 110.89 68  Bj 1 
+ATOM 202  C CG  . GLU Q 17 68  ? 141.839 291.878 255.186 1.00 110.89 68  Bj 1 
+ATOM 203  C CD  . GLU Q 17 68  ? 141.367 290.766 254.268 1.00 110.89 68  Bj 1 
+ATOM 204  O OE1 . GLU Q 17 68  ? 141.481 290.917 253.034 1.00 110.89 68  Bj 1 
+ATOM 205  O OE2 . GLU Q 17 68  ? 140.877 289.740 254.783 1.00 110.89 68  Bj 1 
+ATOM 206  N N   . GLU Q 17 69  ? 144.845 294.877 253.421 1.00 119.08 69  Bj 1 
+ATOM 207  C CA  . GLU Q 17 69  ? 145.448 295.841 252.506 1.00 119.08 69  Bj 1 
+ATOM 208  C C   . GLU Q 17 69  ? 146.723 295.281 251.888 1.00 119.08 69  Bj 1 
+ATOM 209  O O   . GLU Q 17 69  ? 146.964 295.440 250.684 1.00 119.08 69  Bj 1 
+ATOM 210  C CB  . GLU Q 17 69  ? 145.744 297.150 253.237 1.00 119.08 69  Bj 1 
+ATOM 211  C CG  . GLU Q 17 69  ? 144.526 297.820 253.844 1.00 119.08 69  Bj 1 
+ATOM 212  C CD  . GLU Q 17 69  ? 144.878 299.094 254.586 1.00 119.08 69  Bj 1 
+ATOM 213  O OE1 . GLU Q 17 69  ? 146.016 299.584 254.422 1.00 119.08 69  Bj 1 
+ATOM 214  O OE2 . GLU Q 17 69  ? 144.018 299.605 255.334 1.00 119.08 69  Bj 1 
+ATOM 215  N N   . MET Q 17 70  ? 147.551 294.620 252.702 1.00 119.12 70  Bj 1 
+ATOM 216  C CA  . MET Q 17 70  ? 148.786 294.039 252.184 1.00 119.12 70  Bj 1 
+ATOM 217  C C   . MET Q 17 70  ? 148.499 292.952 251.153 1.00 119.12 70  Bj 1 
+ATOM 218  O O   . MET Q 17 70  ? 149.177 292.872 250.123 1.00 119.12 70  Bj 1 
+ATOM 219  C CB  . MET Q 17 70  ? 149.628 293.487 253.335 1.00 119.12 70  Bj 1 
+ATOM 220  C CG  . MET Q 17 70  ? 150.879 292.746 252.892 1.00 119.12 70  Bj 1 
+ATOM 221  S SD  . MET Q 17 70  ? 151.859 293.670 251.693 1.00 119.12 70  Bj 1 
+ATOM 222  C CE  . MET Q 17 70  ? 152.198 295.174 252.604 1.00 119.12 70  Bj 1 
+ATOM 223  N N   . ALA Q 17 71  ? 147.494 292.112 251.408 1.00 117.23 71  Bj 1 
+ATOM 224  C CA  . ALA Q 17 71  ? 147.151 291.056 250.461 1.00 117.23 71  Bj 1 
+ATOM 225  C C   . ALA Q 17 71  ? 146.601 291.635 249.164 1.00 117.23 71  Bj 1 
+ATOM 226  O O   . ALA Q 17 71  ? 146.901 291.130 248.075 1.00 117.23 71  Bj 1 
+ATOM 227  C CB  . ALA Q 17 71  ? 146.146 290.093 251.089 1.00 117.23 71  Bj 1 
+ATOM 228  N N   . ASP Q 17 72  ? 145.790 292.690 249.260 1.00 117.37 72  Bj 1 
+ATOM 229  C CA  . ASP Q 17 72  ? 145.300 293.360 248.060 1.00 117.37 72  Bj 1 
+ATOM 230  C C   . ASP Q 17 72  ? 146.459 293.920 247.245 1.00 117.37 72  Bj 1 
+ATOM 231  O O   . ASP Q 17 72  ? 146.511 293.759 246.020 1.00 117.37 72  Bj 1 
+ATOM 232  C CB  . ASP Q 17 72  ? 144.317 294.468 248.446 1.00 117.37 72  Bj 1 
+ATOM 233  C CG  . ASP Q 17 72  ? 143.468 294.941 247.276 1.00 117.37 72  Bj 1 
+ATOM 234  O OD1 . ASP Q 17 72  ? 143.969 294.974 246.132 1.00 117.37 72  Bj 1 
+ATOM 235  O OD2 . ASP Q 17 72  ? 142.289 295.283 247.504 1.00 117.37 72  Bj 1 
+ATOM 236  N N   . LEU Q 17 73  ? 147.405 294.580 247.919 1.00 119.96 73  Bj 1 
+ATOM 237  C CA  . LEU Q 17 73  ? 148.572 295.115 247.226 1.00 119.96 73  Bj 1 
+ATOM 238  C C   . LEU Q 17 73  ? 149.385 294.005 246.571 1.00 119.96 73  Bj 1 
+ATOM 239  O O   . LEU Q 17 73  ? 149.873 294.161 245.443 1.00 119.96 73  Bj 1 
+ATOM 240  C CB  . LEU Q 17 73  ? 149.436 295.910 248.205 1.00 119.96 73  Bj 1 
+ATOM 241  C CG  . LEU Q 17 73  ? 150.798 296.368 247.685 1.00 119.96 73  Bj 1 
+ATOM 242  C CD1 . LEU Q 17 73  ? 150.633 297.215 246.438 1.00 119.96 73  Bj 1 
+ATOM 243  C CD2 . LEU Q 17 73  ? 151.550 297.134 248.760 1.00 119.96 73  Bj 1 
+ATOM 244  N N   . LEU Q 17 74  ? 149.546 292.877 247.266 1.00 118.44 74  Bj 1 
+ATOM 245  C CA  . LEU Q 17 74  ? 150.309 291.766 246.709 1.00 118.44 74  Bj 1 
+ATOM 246  C C   . LEU Q 17 74  ? 149.627 291.192 245.476 1.00 118.44 74  Bj 1 
+ATOM 247  O O   . LEU Q 17 74  ? 150.288 290.911 244.472 1.00 118.44 74  Bj 1 
+ATOM 248  C CB  . LEU Q 17 74  ? 150.513 290.683 247.766 1.00 118.44 74  Bj 1 
+ATOM 249  C CG  . LEU Q 17 74  ? 151.495 291.024 248.888 1.00 118.44 74  Bj 1 
+ATOM 250  C CD1 . LEU Q 17 74  ? 151.535 289.909 249.915 1.00 118.44 74  Bj 1 
+ATOM 251  C CD2 . LEU Q 17 74  ? 152.883 291.289 248.326 1.00 118.44 74  Bj 1 
+ATOM 252  N N   . GLN Q 17 75  ? 148.305 291.017 245.529 1.00 121.57 75  Bj 1 
+ATOM 253  C CA  . GLN Q 17 75  ? 147.584 290.533 244.356 1.00 121.57 75  Bj 1 
+ATOM 254  C C   . GLN Q 17 75  ? 147.705 291.512 243.195 1.00 121.57 75  Bj 1 
+ATOM 255  O O   . GLN Q 17 75  ? 147.891 291.101 242.042 1.00 121.57 75  Bj 1 
+ATOM 256  C CB  . GLN Q 17 75  ? 146.116 290.286 244.704 1.00 121.57 75  Bj 1 
+ATOM 257  C CG  . GLN Q 17 75  ? 145.881 289.058 245.568 1.00 121.57 75  Bj 1 
+ATOM 258  C CD  . GLN Q 17 75  ? 146.176 287.763 244.836 1.00 121.57 75  Bj 1 
+ATOM 259  O OE1 . GLN Q 17 75  ? 146.161 287.713 243.606 1.00 121.57 75  Bj 1 
+ATOM 260  N NE2 . GLN Q 17 75  ? 146.449 286.705 245.592 1.00 121.57 75  Bj 1 
+ATOM 261  N N   . GLN Q 17 76  ? 147.617 292.813 243.483 1.00 121.41 76  Bj 1 
+ATOM 262  C CA  . GLN Q 17 76  ? 147.734 293.811 242.425 1.00 121.41 76  Bj 1 
+ATOM 263  C C   . GLN Q 17 76  ? 149.103 293.751 241.760 1.00 121.41 76  Bj 1 
+ATOM 264  O O   . GLN Q 17 76  ? 149.204 293.703 240.529 1.00 121.41 76  Bj 1 
+ATOM 265  C CB  . GLN Q 17 76  ? 147.468 295.209 242.984 1.00 121.41 76  Bj 1 
+ATOM 266  C CG  . GLN Q 17 76  ? 146.016 295.474 243.336 1.00 121.41 76  Bj 1 
+ATOM 267  C CD  . GLN Q 17 76  ? 145.782 296.899 243.795 1.00 121.41 76  Bj 1 
+ATOM 268  O OE1 . GLN Q 17 76  ? 146.644 297.764 243.637 1.00 121.41 76  Bj 1 
+ATOM 269  N NE2 . GLN Q 17 76  ? 144.612 297.151 244.370 1.00 121.41 76  Bj 1 
+ATOM 270  N N   . ILE Q 17 77  ? 150.173 293.743 242.560 1.00 121.50 77  Bj 1 
+ATOM 271  C CA  . ILE Q 17 77  ? 151.509 293.737 241.969 1.00 121.50 77  Bj 1 
+ATOM 272  C C   . ILE Q 17 77  ? 151.794 292.406 241.283 1.00 121.50 77  Bj 1 
+ATOM 273  O O   . ILE Q 17 77  ? 152.530 292.360 240.289 1.00 121.50 77  Bj 1 
+ATOM 274  C CB  . ILE Q 17 77  ? 152.579 294.076 243.026 1.00 121.50 77  Bj 1 
+ATOM 275  C CG1 . ILE Q 17 77  ? 152.598 293.031 244.141 1.00 121.50 77  Bj 1 
+ATOM 276  C CG2 . ILE Q 17 77  ? 152.341 295.466 243.594 1.00 121.50 77  Bj 1 
+ATOM 277  C CD1 . ILE Q 17 77  ? 153.596 293.329 245.239 1.00 121.50 77  Bj 1 
+ATOM 278  N N   . GLU Q 17 78  ? 151.203 291.311 241.770 1.00 127.63 78  Bj 1 
+ATOM 279  C CA  . GLU Q 17 78  ? 151.360 290.022 241.105 1.00 127.63 78  Bj 1 
+ATOM 280  C C   . GLU Q 17 78  ? 150.720 290.042 239.724 1.00 127.63 78  Bj 1 
+ATOM 281  O O   . GLU Q 17 78  ? 151.334 289.616 238.738 1.00 127.63 78  Bj 1 
+ATOM 282  C CB  . GLU Q 17 78  ? 150.751 288.916 241.968 1.00 127.63 78  Bj 1 
+ATOM 283  C CG  . GLU Q 17 78  ? 150.750 287.538 241.324 1.00 127.63 78  Bj 1 
+ATOM 284  C CD  . GLU Q 17 78  ? 149.964 286.520 242.129 1.00 127.63 78  Bj 1 
+ATOM 285  O OE1 . GLU Q 17 78  ? 149.341 286.910 243.139 1.00 127.63 78  Bj 1 
+ATOM 286  O OE2 . GLU Q 17 78  ? 149.967 285.329 241.753 1.00 127.63 78  Bj 1 
+ATOM 287  N N   . ILE Q 17 79  ? 149.483 290.539 239.634 1.00 128.89 79  Bj 1 
+ATOM 288  C CA  . ILE Q 17 79  ? 148.823 290.642 238.336 1.00 128.89 79  Bj 1 
+ATOM 289  C C   . ILE Q 17 79  ? 149.572 291.607 237.426 1.00 128.89 79  Bj 1 
+ATOM 290  O O   . ILE Q 17 79  ? 149.639 291.400 236.208 1.00 128.89 79  Bj 1 
+ATOM 291  C CB  . ILE Q 17 79  ? 147.349 291.057 238.519 1.00 128.89 79  Bj 1 
+ATOM 292  C CG1 . ILE Q 17 79  ? 146.601 290.011 239.349 1.00 128.89 79  Bj 1 
+ATOM 293  C CG2 . ILE Q 17 79  ? 146.667 291.245 237.171 1.00 128.89 79  Bj 1 
+ATOM 294  C CD1 . ILE Q 17 79  ? 145.159 290.370 239.635 1.00 128.89 79  Bj 1 
+ATOM 295  N N   . GLU Q 17 80  ? 150.159 292.661 237.996 1.00 120.51 80  Bj 1 
+ATOM 296  C CA  . GLU Q 17 80  ? 150.899 293.625 237.187 1.00 120.51 80  Bj 1 
+ATOM 297  C C   . GLU Q 17 80  ? 152.154 292.998 236.589 1.00 120.51 80  Bj 1 
+ATOM 298  O O   . GLU Q 17 80  ? 152.403 293.116 235.384 1.00 120.51 80  Bj 1 
+ATOM 299  C CB  . GLU Q 17 80  ? 151.254 294.849 238.029 1.00 120.51 80  Bj 1 
+ATOM 300  C CG  . GLU Q 17 80  ? 150.076 295.764 238.317 1.00 120.51 80  Bj 1 
+ATOM 301  C CD  . GLU Q 17 80  ? 150.361 296.745 239.436 1.00 120.51 80  Bj 1 
+ATOM 302  O OE1 . GLU Q 17 80  ? 151.384 296.573 240.132 1.00 120.51 80  Bj 1 
+ATOM 303  O OE2 . GLU Q 17 80  ? 149.562 297.686 239.621 1.00 120.51 80  Bj 1 
+ATOM 304  N N   . ARG Q 17 81  ? 152.958 292.327 237.415 1.00 127.65 81  Bj 1 
+ATOM 305  C CA  . ARG Q 17 81  ? 154.175 291.694 236.924 1.00 127.65 81  Bj 1 
+ATOM 306  C C   . ARG Q 17 81  ? 153.910 290.416 236.139 1.00 127.65 81  Bj 1 
+ATOM 307  O O   . ARG Q 17 81  ? 154.830 289.913 235.485 1.00 127.65 81  Bj 1 
+ATOM 308  C CB  . ARG Q 17 81  ? 155.125 291.390 238.086 1.00 127.65 81  Bj 1 
+ATOM 309  C CG  . ARG Q 17 81  ? 155.793 292.620 238.677 1.00 127.65 81  Bj 1 
+ATOM 310  C CD  . ARG Q 17 81  ? 156.934 292.237 239.606 1.00 127.65 81  Bj 1 
+ATOM 311  N NE  . ARG Q 17 81  ? 157.606 293.409 240.160 1.00 127.65 81  Bj 1 
+ATOM 312  C CZ  . ARG Q 17 81  ? 158.686 293.357 240.933 1.00 127.65 81  Bj 1 
+ATOM 313  N NH1 . ARG Q 17 81  ? 159.223 292.186 241.246 1.00 127.65 81  Bj 1 
+ATOM 314  N NH2 . ARG Q 17 81  ? 159.230 294.475 241.393 1.00 127.65 81  Bj 1 
+ATOM 315  N N   . SER Q 17 82  ? 152.693 289.881 236.188 1.00 132.55 82  Bj 1 
+ATOM 316  C CA  . SER Q 17 82  ? 152.370 288.695 235.409 1.00 132.55 82  Bj 1 
+ATOM 317  C C   . SER Q 17 82  ? 152.400 289.006 233.917 1.00 132.55 82  Bj 1 
+ATOM 318  O O   . SER Q 17 82  ? 152.138 290.132 233.487 1.00 132.55 82  Bj 1 
+ATOM 319  C CB  . SER Q 17 82  ? 150.995 288.155 235.799 1.00 132.55 82  Bj 1 
+ATOM 320  O OG  . SER Q 17 82  ? 150.618 287.084 234.953 1.00 132.55 82  Bj 1 
+ATOM 321  N N   . LEU Q 17 83  ? 152.726 287.986 233.123 1.00 141.40 83  Bj 1 
+ATOM 322  C CA  . LEU Q 17 83  ? 152.784 288.167 231.677 1.00 141.40 83  Bj 1 
+ATOM 323  C C   . LEU Q 17 83  ? 151.391 288.102 231.062 1.00 141.40 83  Bj 1 
+ATOM 324  O O   . LEU Q 17 83  ? 150.906 289.086 230.495 1.00 141.40 83  Bj 1 
+ATOM 325  C CB  . LEU Q 17 83  ? 153.703 287.117 231.046 1.00 141.40 83  Bj 1 
+ATOM 326  C CG  . LEU Q 17 83  ? 155.217 287.359 231.080 1.00 141.40 83  Bj 1 
+ATOM 327  C CD1 . LEU Q 17 83  ? 155.777 287.271 232.494 1.00 141.40 83  Bj 1 
+ATOM 328  C CD2 . LEU Q 17 83  ? 155.934 286.382 230.159 1.00 141.40 83  Bj 1 
+ATOM 329  N N   . TYR Q 17 84  ? 150.729 286.953 231.185 1.00 138.40 84  Bj 1 
+ATOM 330  C CA  . TYR Q 17 84  ? 149.374 286.749 230.687 1.00 138.40 84  Bj 1 
+ATOM 331  C C   . TYR Q 17 84  ? 148.911 285.361 231.099 1.00 138.40 84  Bj 1 
+ATOM 332  O O   . TYR Q 17 84  ? 149.722 284.476 231.384 1.00 138.40 84  Bj 1 
+ATOM 333  C CB  . TYR Q 17 84  ? 149.286 286.904 229.164 1.00 138.40 84  Bj 1 
+ATOM 334  C CG  . TYR Q 17 84  ? 148.728 288.236 228.722 1.00 138.40 84  Bj 1 
+ATOM 335  C CD1 . TYR Q 17 84  ? 147.825 288.929 229.517 1.00 138.40 84  Bj 1 
+ATOM 336  C CD2 . TYR Q 17 84  ? 149.110 288.805 227.515 1.00 138.40 84  Bj 1 
+ATOM 337  C CE1 . TYR Q 17 84  ? 147.313 290.147 229.120 1.00 138.40 84  Bj 1 
+ATOM 338  C CE2 . TYR Q 17 84  ? 148.604 290.023 227.109 1.00 138.40 84  Bj 1 
+ATOM 339  C CZ  . TYR Q 17 84  ? 147.706 290.690 227.916 1.00 138.40 84  Bj 1 
+ATOM 340  O OH  . TYR Q 17 84  ? 147.198 291.905 227.517 1.00 138.40 84  Bj 1 
+ATOM 341  N N   . SER Q 17 85  ? 147.594 285.185 231.119 1.00 142.26 85  Bj 1 
+ATOM 342  C CA  . SER Q 17 85  ? 146.972 283.899 231.385 1.00 142.26 85  Bj 1 
+ATOM 343  C C   . SER Q 17 85  ? 146.297 283.383 230.122 1.00 142.26 85  Bj 1 
+ATOM 344  O O   . SER Q 17 85  ? 145.916 284.154 229.237 1.00 142.26 85  Bj 1 
+ATOM 345  C CB  . SER Q 17 85  ? 145.951 284.005 232.523 1.00 142.26 85  Bj 1 
+ATOM 346  O OG  . SER Q 17 85  ? 145.350 282.749 232.786 1.00 142.26 85  Bj 1 
+ATOM 347  N N   . ASP Q 17 86  ? 146.159 282.058 230.045 1.00 146.76 86  Bj 1 
+ATOM 348  C CA  . ASP Q 17 86  ? 145.513 281.453 228.884 1.00 146.76 86  Bj 1 
+ATOM 349  C C   . ASP Q 17 86  ? 144.067 281.911 228.760 1.00 146.76 86  Bj 1 
+ATOM 350  O O   . ASP Q 17 86  ? 143.592 282.202 227.656 1.00 146.76 86  Bj 1 
+ATOM 351  C CB  . ASP Q 17 86  ? 145.586 279.929 228.976 1.00 146.76 86  Bj 1 
+ATOM 352  C CG  . ASP Q 17 86  ? 147.009 279.410 228.939 1.00 146.76 86  Bj 1 
+ATOM 353  O OD1 . ASP Q 17 86  ? 147.939 280.227 228.775 1.00 146.76 86  Bj 1 
+ATOM 354  O OD2 . ASP Q 17 86  ? 147.198 278.182 229.073 1.00 146.76 86  Bj 1 
+ATOM 355  N N   . HIS Q 17 87  ? 143.355 281.991 229.886 1.00 143.58 87  Bj 1 
+ATOM 356  C CA  . HIS Q 17 87  ? 141.955 282.403 229.864 1.00 143.58 87  Bj 1 
+ATOM 357  C C   . HIS Q 17 87  ? 141.808 283.826 229.339 1.00 143.58 87  Bj 1 
+ATOM 358  O O   . HIS Q 17 87  ? 141.013 284.086 228.428 1.00 143.58 87  Bj 1 
+ATOM 359  C CB  . HIS Q 17 87  ? 141.361 282.274 231.266 1.00 143.58 87  Bj 1 
+ATOM 360  C CG  . HIS Q 17 87  ? 139.966 282.801 231.387 1.00 143.58 87  Bj 1 
+ATOM 361  N ND1 . HIS Q 17 87  ? 138.892 282.220 230.748 1.00 143.58 87  Bj 1 
+ATOM 362  C CD2 . HIS Q 17 87  ? 139.468 283.854 232.078 1.00 143.58 87  Bj 1 
+ATOM 363  C CE1 . HIS Q 17 87  ? 137.793 282.893 231.039 1.00 143.58 87  Bj 1 
+ATOM 364  N NE2 . HIS Q 17 87  ? 138.115 283.889 231.844 1.00 143.58 87  Bj 1 
+ATOM 365  N N   . GLU Q 17 88  ? 142.573 284.764 229.906 1.00 144.20 88  Bj 1 
+ATOM 366  C CA  . GLU Q 17 88  ? 142.496 286.152 229.463 1.00 144.20 88  Bj 1 
+ATOM 367  C C   . GLU Q 17 88  ? 142.938 286.295 228.013 1.00 144.20 88  Bj 1 
+ATOM 368  O O   . GLU Q 17 88  ? 142.350 287.073 227.251 1.00 144.20 88  Bj 1 
+ATOM 369  C CB  . GLU Q 17 88  ? 143.348 287.040 230.370 1.00 144.20 88  Bj 1 
+ATOM 370  C CG  . GLU Q 17 88  ? 142.916 287.043 231.827 1.00 144.20 88  Bj 1 
+ATOM 371  C CD  . GLU Q 17 88  ? 141.589 287.744 232.044 1.00 144.20 88  Bj 1 
+ATOM 372  O OE1 . GLU Q 17 88  ? 141.201 288.571 231.193 1.00 144.20 88  Bj 1 
+ATOM 373  O OE2 . GLU Q 17 88  ? 140.932 287.466 233.070 1.00 144.20 88  Bj 1 
+ATOM 374  N N   . LEU Q 17 89  ? 143.972 285.551 227.614 1.00 150.45 89  Bj 1 
+ATOM 375  C CA  . LEU Q 17 89  ? 144.455 285.625 226.240 1.00 150.45 89  Bj 1 
+ATOM 376  C C   . LEU Q 17 89  ? 143.384 285.161 225.263 1.00 150.45 89  Bj 1 
+ATOM 377  O O   . LEU Q 17 89  ? 143.108 285.834 224.263 1.00 150.45 89  Bj 1 
+ATOM 378  C CB  . LEU Q 17 89  ? 145.732 284.795 226.090 1.00 150.45 89  Bj 1 
+ATOM 379  C CG  . LEU Q 17 89  ? 146.537 284.942 224.794 1.00 150.45 89  Bj 1 
+ATOM 380  C CD1 . LEU Q 17 89  ? 148.022 284.792 225.081 1.00 150.45 89  Bj 1 
+ATOM 381  C CD2 . LEU Q 17 89  ? 146.100 283.926 223.748 1.00 150.45 89  Bj 1 
+ATOM 382  N N   . ARG Q 17 90  ? 142.765 284.008 225.537 1.00 152.73 90  Bj 1 
+ATOM 383  C CA  . ARG Q 17 90  ? 141.701 283.518 224.667 1.00 152.73 90  Bj 1 
+ATOM 384  C C   . ARG Q 17 90  ? 140.519 284.478 224.647 1.00 152.73 90  Bj 1 
+ATOM 385  O O   . ARG Q 17 90  ? 139.922 284.715 223.590 1.00 152.73 90  Bj 1 
+ATOM 386  C CB  . ARG Q 17 90  ? 141.249 282.128 225.114 1.00 152.73 90  Bj 1 
+ATOM 387  C CG  . ARG Q 17 90  ? 142.304 281.042 224.985 1.00 152.73 90  Bj 1 
+ATOM 388  C CD  . ARG Q 17 90  ? 141.785 279.721 225.532 1.00 152.73 90  Bj 1 
+ATOM 389  N NE  . ARG Q 17 90  ? 142.813 278.685 225.563 1.00 152.73 90  Bj 1 
+ATOM 390  C CZ  . ARG Q 17 90  ? 142.621 277.456 226.032 1.00 152.73 90  Bj 1 
+ATOM 391  N NH1 . ARG Q 17 90  ? 141.435 277.105 226.511 1.00 152.73 90  Bj 1 
+ATOM 392  N NH2 . ARG Q 17 90  ? 143.613 276.577 226.022 1.00 152.73 90  Bj 1 
+ATOM 393  N N   . ALA Q 17 91  ? 140.174 285.051 225.804 1.00 151.16 91  Bj 1 
+ATOM 394  C CA  . ALA Q 17 91  ? 139.046 285.974 225.863 1.00 151.16 91  Bj 1 
+ATOM 395  C C   . ALA Q 17 91  ? 139.295 287.204 225.000 1.00 151.16 91  Bj 1 
+ATOM 396  O O   . ALA Q 17 91  ? 138.448 287.586 224.184 1.00 151.16 91  Bj 1 
+ATOM 397  C CB  . ALA Q 17 91  ? 138.774 286.377 227.313 1.00 151.16 91  Bj 1 
+ATOM 398  N N   . LEU Q 17 92  ? 140.462 287.836 225.160 1.00 153.35 92  Bj 1 
+ATOM 399  C CA  . LEU Q 17 92  ? 140.757 289.032 224.378 1.00 153.35 92  Bj 1 
+ATOM 400  C C   . LEU Q 17 92  ? 140.911 288.700 222.898 1.00 153.35 92  Bj 1 
+ATOM 401  O O   . LEU Q 17 92  ? 140.504 289.488 222.035 1.00 153.35 92  Bj 1 
+ATOM 402  C CB  . LEU Q 17 92  ? 142.008 289.729 224.920 1.00 153.35 92  Bj 1 
+ATOM 403  C CG  . LEU Q 17 92  ? 143.367 289.021 224.908 1.00 153.35 92  Bj 1 
+ATOM 404  C CD1 . LEU Q 17 92  ? 144.128 289.267 223.608 1.00 153.35 92  Bj 1 
+ATOM 405  C CD2 . LEU Q 17 92  ? 144.198 289.456 226.107 1.00 153.35 92  Bj 1 
+ATOM 406  N N   . ASP Q 17 93  ? 141.477 287.531 222.583 1.00 158.04 93  Bj 1 
+ATOM 407  C CA  . ASP Q 17 93  ? 141.618 287.134 221.188 1.00 158.04 93  Bj 1 
+ATOM 408  C C   . ASP Q 17 93  ? 140.259 286.958 220.528 1.00 158.04 93  Bj 1 
+ATOM 409  O O   . ASP Q 17 93  ? 140.031 287.459 219.422 1.00 158.04 93  Bj 1 
+ATOM 410  C CB  . ASP Q 17 93  ? 142.435 285.845 221.091 1.00 158.04 93  Bj 1 
+ATOM 411  C CG  . ASP Q 17 93  ? 142.537 285.325 219.671 1.00 158.04 93  Bj 1 
+ATOM 412  O OD1 . ASP Q 17 93  ? 143.236 285.958 218.852 1.00 158.04 93  Bj 1 
+ATOM 413  O OD2 . ASP Q 17 93  ? 141.915 284.283 219.372 1.00 158.04 93  Bj 1 
+ATOM 414  N N   . GLU Q 17 94  ? 139.338 286.257 221.195 1.00 152.75 94  Bj 1 
+ATOM 415  C CA  . GLU Q 17 94  ? 138.009 286.061 220.624 1.00 152.75 94  Bj 1 
+ATOM 416  C C   . GLU Q 17 94  ? 137.242 287.374 220.544 1.00 152.75 94  Bj 1 
+ATOM 417  O O   . GLU Q 17 94  ? 136.508 287.609 219.576 1.00 152.75 94  Bj 1 
+ATOM 418  C CB  . GLU Q 17 94  ? 137.232 285.028 221.439 1.00 152.75 94  Bj 1 
+ATOM 419  C CG  . GLU Q 17 94  ? 137.821 283.622 221.404 1.00 152.75 94  Bj 1 
+ATOM 420  C CD  . GLU Q 17 94  ? 137.812 283.008 220.014 1.00 152.75 94  Bj 1 
+ATOM 421  O OE1 . GLU Q 17 94  ? 138.701 283.342 219.202 1.00 152.75 94  Bj 1 
+ATOM 422  O OE2 . GLU Q 17 94  ? 136.913 282.189 219.734 1.00 152.75 94  Bj 1 
+ATOM 423  N N   . ALA Q 17 95  ? 137.404 288.249 221.541 1.00 149.73 95  Bj 1 
+ATOM 424  C CA  . ALA Q 17 95  ? 136.744 289.549 221.485 1.00 149.73 95  Bj 1 
+ATOM 425  C C   . ALA Q 17 95  ? 137.228 290.374 220.300 1.00 149.73 95  Bj 1 
+ATOM 426  O O   . ALA Q 17 95  ? 136.409 290.925 219.556 1.00 149.73 95  Bj 1 
+ATOM 427  C CB  . ALA Q 17 95  ? 136.966 290.311 222.791 1.00 149.73 95  Bj 1 
+ATOM 428  N N   . GLN Q 17 96  ? 138.545 290.458 220.098 1.00 150.30 96  Bj 1 
+ATOM 429  C CA  . GLN Q 17 96  ? 139.069 291.205 218.961 1.00 150.30 96  Bj 1 
+ATOM 430  C C   . GLN Q 17 96  ? 138.693 290.549 217.637 1.00 150.30 96  Bj 1 
+ATOM 431  O O   . GLN Q 17 96  ? 138.419 291.247 216.653 1.00 150.30 96  Bj 1 
+ATOM 432  C CB  . GLN Q 17 96  ? 140.587 291.346 219.080 1.00 150.30 96  Bj 1 
+ATOM 433  C CG  . GLN Q 17 96  ? 141.037 292.145 220.293 1.00 150.30 96  Bj 1 
+ATOM 434  C CD  . GLN Q 17 96  ? 142.543 292.301 220.364 1.00 150.30 96  Bj 1 
+ATOM 435  O OE1 . GLN Q 17 96  ? 143.262 291.925 219.438 1.00 150.30 96  Bj 1 
+ATOM 436  N NE2 . GLN Q 17 96  ? 143.029 292.859 221.467 1.00 150.30 96  Bj 1 
+ATOM 437  N N   . GLN Q 17 97  ? 138.657 289.214 217.595 1.00 151.44 97  Bj 1 
+ATOM 438  C CA  . GLN Q 17 97  ? 138.274 288.528 216.367 1.00 151.44 97  Bj 1 
+ATOM 439  C C   . GLN Q 17 97  ? 136.824 288.819 216.005 1.00 151.44 97  Bj 1 
+ATOM 440  O O   . GLN Q 17 97  ? 136.511 289.077 214.838 1.00 151.44 97  Bj 1 
+ATOM 441  C CB  . GLN Q 17 97  ? 138.504 287.024 216.512 1.00 151.44 97  Bj 1 
+ATOM 442  C CG  . GLN Q 17 97  ? 138.299 286.242 215.225 1.00 151.44 97  Bj 1 
+ATOM 443  C CD  . GLN Q 17 97  ? 138.665 284.777 215.367 1.00 151.44 97  Bj 1 
+ATOM 444  O OE1 . GLN Q 17 97  ? 138.752 284.049 214.377 1.00 151.44 97  Bj 1 
+ATOM 445  N NE2 . GLN Q 17 97  ? 138.881 284.336 216.601 1.00 151.44 97  Bj 1 
+ATOM 446  N N   . LEU Q 17 98  ? 135.926 288.798 216.992 1.00 148.86 98  Bj 1 
+ATOM 447  C CA  . LEU Q 17 98  ? 134.535 289.147 216.723 1.00 148.86 98  Bj 1 
+ATOM 448  C C   . LEU Q 17 98  ? 134.399 290.617 216.343 1.00 148.86 98  Bj 1 
+ATOM 449  O O   . LEU Q 17 98  ? 133.602 290.963 215.462 1.00 148.86 98  Bj 1 
+ATOM 450  C CB  . LEU Q 17 98  ? 133.663 288.821 217.936 1.00 148.86 98  Bj 1 
+ATOM 451  C CG  . LEU Q 17 98  ? 132.970 287.455 217.941 1.00 148.86 98  Bj 1 
+ATOM 452  C CD1 . LEU Q 17 98  ? 133.982 286.318 217.938 1.00 148.86 98  Bj 1 
+ATOM 453  C CD2 . LEU Q 17 98  ? 132.028 287.335 219.129 1.00 148.86 98  Bj 1 
+ATOM 454  N N   . ALA Q 17 99  ? 135.174 291.494 216.988 1.00 145.68 99  Bj 1 
+ATOM 455  C CA  . ALA Q 17 99  ? 135.111 292.915 216.661 1.00 145.68 99  Bj 1 
+ATOM 456  C C   . ALA Q 17 99  ? 135.546 293.172 215.225 1.00 145.68 99  Bj 1 
+ATOM 457  O O   . ALA Q 17 99  ? 134.966 294.018 214.534 1.00 145.68 99  Bj 1 
+ATOM 458  C CB  . ALA Q 17 99  ? 135.974 293.716 217.636 1.00 145.68 99  Bj 1 
+ATOM 459  N N   . LYS Q 17 100 ? 136.567 292.452 214.755 1.00 146.95 100 Bj 1 
+ATOM 460  C CA  . LYS Q 17 100 ? 137.039 292.630 213.387 1.00 146.95 100 Bj 1 
+ATOM 461  C C   . LYS Q 17 100 ? 136.219 291.845 212.371 1.00 146.95 100 Bj 1 
+ATOM 462  O O   . LYS Q 17 100 ? 136.274 292.159 211.177 1.00 146.95 100 Bj 1 
+ATOM 463  C CB  . LYS Q 17 100 ? 138.514 292.233 213.279 1.00 146.95 100 Bj 1 
+ATOM 464  C CG  . LYS Q 17 100 ? 139.442 293.056 214.160 1.00 146.95 100 Bj 1 
+ATOM 465  C CD  . LYS Q 17 100 ? 139.237 294.550 213.946 1.00 146.95 100 Bj 1 
+ATOM 466  C CE  . LYS Q 17 100 ? 139.610 294.973 212.533 1.00 146.95 100 Bj 1 
+ATOM 467  N NZ  . LYS Q 17 100 ? 139.301 296.408 212.288 1.00 146.95 100 Bj 1 
+ATOM 468  N N   . LYS Q 17 101 ? 135.468 290.833 212.812 1.00 146.63 101 Bj 1 
+ATOM 469  C CA  . LYS Q 17 101 ? 134.598 290.100 211.900 1.00 146.63 101 Bj 1 
+ATOM 470  C C   . LYS Q 17 101 ? 133.263 290.804 211.699 1.00 146.63 101 Bj 1 
+ATOM 471  O O   . LYS Q 17 101 ? 132.679 290.714 210.613 1.00 146.63 101 Bj 1 
+ATOM 472  C CB  . LYS Q 17 101 ? 134.377 288.677 212.420 1.00 146.63 101 Bj 1 
+ATOM 473  C CG  . LYS Q 17 101 ? 133.447 287.827 211.565 1.00 146.63 101 Bj 1 
+ATOM 474  C CD  . LYS Q 17 101 ? 133.953 287.708 210.137 1.00 146.63 101 Bj 1 
+ATOM 475  C CE  . LYS Q 17 101 ? 132.991 286.903 209.277 1.00 146.63 101 Bj 1 
+ATOM 476  N NZ  . LYS Q 17 101 ? 133.449 286.811 207.864 1.00 146.63 101 Bj 1 
+ATOM 477  N N   . LYS Q 17 102 ? 132.768 291.510 212.721 1.00 149.37 102 Bj 1 
+ATOM 478  C CA  . LYS Q 17 102 ? 131.516 292.243 212.568 1.00 149.37 102 Bj 1 
+ATOM 479  C C   . LYS Q 17 102 ? 131.629 293.337 211.515 1.00 149.37 102 Bj 1 
+ATOM 480  O O   . LYS Q 17 102 ? 130.622 293.722 210.910 1.00 149.37 102 Bj 1 
+ATOM 481  C CB  . LYS Q 17 102 ? 131.084 292.839 213.908 1.00 149.37 102 Bj 1 
+ATOM 482  C CG  . LYS Q 17 102 ? 130.550 291.819 214.900 1.00 149.37 102 Bj 1 
+ATOM 483  C CD  . LYS Q 17 102 ? 130.124 292.485 216.198 1.00 149.37 102 Bj 1 
+ATOM 484  C CE  . LYS Q 17 102 ? 129.052 293.533 215.952 1.00 149.37 102 Bj 1 
+ATOM 485  N NZ  . LYS Q 17 102 ? 127.840 292.944 215.321 1.00 149.37 102 Bj 1 
+ATOM 486  N N   . SER Q 17 103 ? 132.836 293.849 211.283 1.00 153.12 103 Bj 1 
+ATOM 487  C CA  . SER Q 17 103 ? 133.065 294.846 210.248 1.00 153.12 103 Bj 1 
+ATOM 488  C C   . SER Q 17 103 ? 133.347 294.232 208.883 1.00 153.12 103 Bj 1 
+ATOM 489  O O   . SER Q 17 103 ? 133.244 294.935 207.872 1.00 153.12 103 Bj 1 
+ATOM 490  C CB  . SER Q 17 103 ? 134.228 295.762 210.645 1.00 153.12 103 Bj 1 
+ATOM 491  O OG  . SER Q 17 103 ? 135.428 295.024 210.805 1.00 153.12 103 Bj 1 
+ATOM 492  N N   . ASP Q 17 104 ? 133.696 292.950 208.828 1.00 150.06 104 Bj 1 
+ATOM 493  C CA  . ASP Q 17 104 ? 133.990 292.286 207.564 1.00 150.06 104 Bj 1 
+ATOM 494  C C   . ASP Q 17 104 ? 133.253 290.954 207.461 1.00 150.06 104 Bj 1 
+ATOM 495  O O   . ASP Q 17 104 ? 132.042 290.886 207.671 1.00 150.06 104 Bj 1 
+ATOM 496  C CB  . ASP Q 17 104 ? 135.497 292.067 207.412 1.00 150.06 104 Bj 1 
+ATOM 497  C CG  . ASP Q 17 104 ? 135.859 291.377 206.111 1.00 150.06 104 Bj 1 
+ATOM 498  O OD1 . ASP Q 17 104 ? 135.698 292.000 205.040 1.00 150.06 104 Bj 1 
+ATOM 499  O OD2 . ASP Q 17 104 ? 136.307 290.212 206.158 1.00 150.06 104 Bj 1 
+ATOM 500  N N   . LEU Q 17 116 ? 133.163 280.213 224.046 1.00 145.92 116 Bj 1 
+ATOM 501  C CA  . LEU Q 17 116 ? 133.824 281.452 224.439 1.00 145.92 116 Bj 1 
+ATOM 502  C C   . LEU Q 17 116 ? 134.248 281.400 225.904 1.00 145.92 116 Bj 1 
+ATOM 503  O O   . LEU Q 17 116 ? 134.010 280.409 226.594 1.00 145.92 116 Bj 1 
+ATOM 504  C CB  . LEU Q 17 116 ? 132.909 282.657 224.197 1.00 145.92 116 Bj 1 
+ATOM 505  C CG  . LEU Q 17 116 ? 132.645 283.081 222.748 1.00 145.92 116 Bj 1 
+ATOM 506  C CD1 . LEU Q 17 116 ? 133.940 283.098 221.947 1.00 145.92 116 Bj 1 
+ATOM 507  C CD2 . LEU Q 17 116 ? 131.596 282.203 222.072 1.00 145.92 116 Bj 1 
+ATOM 508  N N   . ALA Q 17 117 ? 134.878 282.476 226.373 1.00 150.38 117 Bj 1 
+ATOM 509  C CA  . ALA Q 17 117 ? 135.358 282.543 227.748 1.00 150.38 117 Bj 1 
+ATOM 510  C C   . ALA Q 17 117 ? 134.316 283.114 228.702 1.00 150.38 117 Bj 1 
+ATOM 511  O O   . ALA Q 17 117 ? 134.259 282.710 229.870 1.00 150.38 117 Bj 1 
+ATOM 512  C CB  . ALA Q 17 117 ? 136.638 283.378 227.815 1.00 150.38 117 Bj 1 
+ATOM 513  N N   . GLN Q 17 118 ? 133.490 284.050 228.229 1.00 142.89 118 Bj 1 
+ATOM 514  C CA  . GLN Q 17 118 ? 132.488 284.656 229.099 1.00 142.89 118 Bj 1 
+ATOM 515  C C   . GLN Q 17 118 ? 131.425 283.644 229.507 1.00 142.89 118 Bj 1 
+ATOM 516  O O   . GLN Q 17 118 ? 130.930 283.680 230.639 1.00 142.89 118 Bj 1 
+ATOM 517  C CB  . GLN Q 17 118 ? 131.852 285.861 228.409 1.00 142.89 118 Bj 1 
+ATOM 518  C CG  . GLN Q 17 118 ? 132.831 286.982 228.103 1.00 142.89 118 Bj 1 
+ATOM 519  C CD  . GLN Q 17 118 ? 132.150 288.215 227.546 1.00 142.89 118 Bj 1 
+ATOM 520  O OE1 . GLN Q 17 118 ? 130.942 288.218 227.309 1.00 142.89 118 Bj 1 
+ATOM 521  N NE2 . GLN Q 17 118 ? 132.924 289.274 227.337 1.00 142.89 118 Bj 1 
+ATOM 522  N N   . ASP Q 17 119 ? 131.065 282.731 228.601 1.00 146.82 119 Bj 1 
+ATOM 523  C CA  . ASP Q 17 119 ? 130.108 281.686 228.951 1.00 146.82 119 Bj 1 
+ATOM 524  C C   . ASP Q 17 119 ? 130.655 280.792 230.056 1.00 146.82 119 Bj 1 
+ATOM 525  O O   . ASP Q 17 119 ? 129.943 280.472 231.016 1.00 146.82 119 Bj 1 
+ATOM 526  C CB  . ASP Q 17 119 ? 129.759 280.857 227.715 1.00 146.82 119 Bj 1 
+ATOM 527  C CG  . ASP Q 17 119 ? 129.136 281.688 226.613 1.00 146.82 119 Bj 1 
+ATOM 528  O OD1 . ASP Q 17 119 ? 128.456 282.687 226.932 1.00 146.82 119 Bj 1 
+ATOM 529  O OD2 . ASP Q 17 119 ? 129.325 281.343 225.428 1.00 146.82 119 Bj 1 
+ATOM 530  N N   . LEU Q 17 120 ? 131.922 280.388 229.941 1.00 143.97 120 Bj 1 
+ATOM 531  C CA  . LEU Q 17 120 ? 132.531 279.559 230.976 1.00 143.97 120 Bj 1 
+ATOM 532  C C   . LEU Q 17 120 ? 132.639 280.316 232.294 1.00 143.97 120 Bj 1 
+ATOM 533  O O   . LEU Q 17 120 ? 132.434 279.736 233.367 1.00 143.97 120 Bj 1 
+ATOM 534  C CB  . LEU Q 17 120 ? 133.907 279.077 230.517 1.00 143.97 120 Bj 1 
+ATOM 535  C CG  . LEU Q 17 120 ? 133.963 278.376 229.157 1.00 143.97 120 Bj 1 
+ATOM 536  C CD1 . LEU Q 17 120 ? 135.379 277.917 228.843 1.00 143.97 120 Bj 1 
+ATOM 537  C CD2 . LEU Q 17 120 ? 132.992 277.205 229.107 1.00 143.97 120 Bj 1 
+ATOM 538  N N   . GLU Q 17 121 ? 132.949 281.613 232.235 1.00 138.39 121 Bj 1 
+ATOM 539  C CA  . GLU Q 17 121 ? 133.032 282.405 233.459 1.00 138.39 121 Bj 1 
+ATOM 540  C C   . GLU Q 17 121 ? 131.674 282.510 234.141 1.00 138.39 121 Bj 1 
+ATOM 541  O O   . GLU Q 17 121 ? 131.573 282.370 235.366 1.00 138.39 121 Bj 1 
+ATOM 542  C CB  . GLU Q 17 121 ? 133.586 283.796 233.152 1.00 138.39 121 Bj 1 
+ATOM 543  C CG  . GLU Q 17 121 ? 133.560 284.751 234.337 1.00 138.39 121 Bj 1 
+ATOM 544  C CD  . GLU Q 17 121 ? 134.430 284.285 235.491 1.00 138.39 121 Bj 1 
+ATOM 545  O OE1 . GLU Q 17 121 ? 135.428 283.575 235.242 1.00 138.39 121 Bj 1 
+ATOM 546  O OE2 . GLU Q 17 121 ? 134.114 284.628 236.650 1.00 138.39 121 Bj 1 
+ATOM 547  N N   . ASP Q 17 122 ? 130.617 282.755 233.364 1.00 136.27 122 Bj 1 
+ATOM 548  C CA  . ASP Q 17 122 ? 129.278 282.822 233.938 1.00 136.27 122 Bj 1 
+ATOM 549  C C   . ASP Q 17 122 ? 128.853 281.471 234.501 1.00 136.27 122 Bj 1 
+ATOM 550  O O   . ASP Q 17 122 ? 128.190 281.408 235.543 1.00 136.27 122 Bj 1 
+ATOM 551  C CB  . ASP Q 17 122 ? 128.281 283.308 232.888 1.00 136.27 122 Bj 1 
+ATOM 552  C CG  . ASP Q 17 122 ? 128.626 284.682 232.352 1.00 136.27 122 Bj 1 
+ATOM 553  O OD1 . ASP Q 17 122 ? 129.645 285.254 232.793 1.00 136.27 122 Bj 1 
+ATOM 554  O OD2 . ASP Q 17 122 ? 127.881 285.189 231.488 1.00 136.27 122 Bj 1 
+ATOM 555  N N   . MET Q 17 123 ? 129.232 280.381 233.829 1.00 138.10 123 Bj 1 
+ATOM 556  C CA  . MET Q 17 123 ? 128.929 279.051 234.345 1.00 138.10 123 Bj 1 
+ATOM 557  C C   . MET Q 17 123 ? 129.632 278.806 235.675 1.00 138.10 123 Bj 1 
+ATOM 558  O O   . MET Q 17 123 ? 129.032 278.278 236.618 1.00 138.10 123 Bj 1 
+ATOM 559  C CB  . MET Q 17 123 ? 129.329 277.991 233.319 1.00 138.10 123 Bj 1 
+ATOM 560  C CG  . MET Q 17 123 ? 128.950 276.572 233.702 1.00 138.10 123 Bj 1 
+ATOM 561  S SD  . MET Q 17 123 ? 129.525 275.362 232.494 1.00 138.10 123 Bj 1 
+ATOM 562  C CE  . MET Q 17 123 ? 128.763 275.986 230.998 1.00 138.10 123 Bj 1 
+ATOM 563  N N   . TRP Q 17 124 ? 130.906 279.192 235.770 1.00 136.46 124 Bj 1 
+ATOM 564  C CA  . TRP Q 17 124 ? 131.634 279.040 237.027 1.00 136.46 124 Bj 1 
+ATOM 565  C C   . TRP Q 17 124 ? 131.008 279.885 238.129 1.00 136.46 124 Bj 1 
+ATOM 566  O O   . TRP Q 17 124 ? 130.875 279.430 239.272 1.00 136.46 124 Bj 1 
+ATOM 567  C CB  . TRP Q 17 124 ? 133.102 279.416 236.828 1.00 136.46 124 Bj 1 
+ATOM 568  C CG  . TRP Q 17 124 ? 133.795 278.588 235.791 1.00 136.46 124 Bj 1 
+ATOM 569  C CD1 . TRP Q 17 124 ? 133.472 277.320 235.405 1.00 136.46 124 Bj 1 
+ATOM 570  C CD2 . TRP Q 17 124 ? 134.920 278.975 234.994 1.00 136.46 124 Bj 1 
+ATOM 571  N NE1 . TRP Q 17 124 ? 134.331 276.891 234.423 1.00 136.46 124 Bj 1 
+ATOM 572  C CE2 . TRP Q 17 124 ? 135.229 277.889 234.152 1.00 136.46 124 Bj 1 
+ATOM 573  C CE3 . TRP Q 17 124 ? 135.698 280.134 234.913 1.00 136.46 124 Bj 1 
+ATOM 574  C CZ2 . TRP Q 17 124 ? 136.283 277.927 233.242 1.00 136.46 124 Bj 1 
+ATOM 575  C CZ3 . TRP Q 17 124 ? 136.743 280.169 234.009 1.00 136.46 124 Bj 1 
+ATOM 576  C CH2 . TRP Q 17 124 ? 137.026 279.073 233.186 1.00 136.46 124 Bj 1 
+ATOM 577  N N   . GLU Q 17 125 ? 130.604 281.116 237.802 1.00 133.02 125 Bj 1 
+ATOM 578  C CA  . GLU Q 17 125 ? 129.992 281.984 238.803 1.00 133.02 125 Bj 1 
+ATOM 579  C C   . GLU Q 17 125 ? 128.671 281.413 239.299 1.00 133.02 125 Bj 1 
+ATOM 580  O O   . GLU Q 17 125 ? 128.403 281.405 240.507 1.00 133.02 125 Bj 1 
+ATOM 581  C CB  . GLU Q 17 125 ? 129.785 283.386 238.231 1.00 133.02 125 Bj 1 
+ATOM 582  C CG  . GLU Q 17 125 ? 131.071 284.154 237.985 1.00 133.02 125 Bj 1 
+ATOM 583  C CD  . GLU Q 17 125 ? 130.819 285.533 237.408 1.00 133.02 125 Bj 1 
+ATOM 584  O OE1 . GLU Q 17 125 ? 129.640 285.874 237.179 1.00 133.02 125 Bj 1 
+ATOM 585  O OE2 . GLU Q 17 125 ? 131.799 286.274 237.184 1.00 133.02 125 Bj 1 
+ATOM 586  N N   . GLN Q 17 126 ? 127.828 280.928 238.383 1.00 132.06 126 Bj 1 
+ATOM 587  C CA  . GLN Q 17 126 ? 126.550 280.374 238.808 1.00 132.06 126 Bj 1 
+ATOM 588  C C   . GLN Q 17 126 ? 126.735 279.073 239.580 1.00 132.06 126 Bj 1 
+ATOM 589  O O   . GLN Q 17 126 ? 125.981 278.808 240.520 1.00 132.06 126 Bj 1 
+ATOM 590  C CB  . GLN Q 17 126 ? 125.624 280.176 237.605 1.00 132.06 126 Bj 1 
+ATOM 591  C CG  . GLN Q 17 126 ? 126.097 279.164 236.583 1.00 132.06 126 Bj 1 
+ATOM 592  C CD  . GLN Q 17 126 ? 125.303 279.223 235.293 1.00 132.06 126 Bj 1 
+ATOM 593  O OE1 . GLN Q 17 126 ? 124.412 280.057 235.137 1.00 132.06 126 Bj 1 
+ATOM 594  N NE2 . GLN Q 17 126 ? 125.624 278.335 234.359 1.00 132.06 126 Bj 1 
+ATOM 595  N N   . LYS Q 17 127 ? 127.748 278.271 239.234 1.00 128.96 127 Bj 1 
+ATOM 596  C CA  . LYS Q 17 127 ? 128.037 277.081 240.029 1.00 128.96 127 Bj 1 
+ATOM 597  C C   . LYS Q 17 127 ? 128.495 277.455 241.433 1.00 128.96 127 Bj 1 
+ATOM 598  O O   . LYS Q 17 127 ? 128.100 276.813 242.414 1.00 128.96 127 Bj 1 
+ATOM 599  C CB  . LYS Q 17 127 ? 129.093 276.223 239.332 1.00 128.96 127 Bj 1 
+ATOM 600  C CG  . LYS Q 17 127 ? 128.593 275.496 238.093 1.00 128.96 127 Bj 1 
+ATOM 601  C CD  . LYS Q 17 127 ? 129.699 274.667 237.457 1.00 128.96 127 Bj 1 
+ATOM 602  C CE  . LYS Q 17 127 ? 129.191 273.901 236.246 1.00 128.96 127 Bj 1 
+ATOM 603  N NZ  . LYS Q 17 127 ? 130.253 273.047 235.645 1.00 128.96 127 Bj 1 
+ATOM 604  N N   . PHE Q 17 128 ? 129.328 278.493 241.547 1.00 124.78 128 Bj 1 
+ATOM 605  C CA  . PHE Q 17 128 ? 129.778 278.943 242.861 1.00 124.78 128 Bj 1 
+ATOM 606  C C   . PHE Q 17 128 ? 128.613 279.459 243.694 1.00 124.78 128 Bj 1 
+ATOM 607  O O   . PHE Q 17 128 ? 128.543 279.208 244.903 1.00 124.78 128 Bj 1 
+ATOM 608  C CB  . PHE Q 17 128 ? 130.845 280.026 242.703 1.00 124.78 128 Bj 1 
+ATOM 609  C CG  . PHE Q 17 128 ? 131.325 280.607 244.004 1.00 124.78 128 Bj 1 
+ATOM 610  C CD1 . PHE Q 17 128 ? 132.290 279.956 244.754 1.00 124.78 128 Bj 1 
+ATOM 611  C CD2 . PHE Q 17 128 ? 130.821 281.810 244.470 1.00 124.78 128 Bj 1 
+ATOM 612  C CE1 . PHE Q 17 128 ? 132.737 280.489 245.948 1.00 124.78 128 Bj 1 
+ATOM 613  C CE2 . PHE Q 17 128 ? 131.264 282.348 245.663 1.00 124.78 128 Bj 1 
+ATOM 614  C CZ  . PHE Q 17 128 ? 132.223 281.687 246.403 1.00 124.78 128 Bj 1 
+ATOM 615  N N   . LEU Q 17 129 ? 127.688 280.186 243.064 1.00 122.50 129 Bj 1 
+ATOM 616  C CA  . LEU Q 17 129 ? 126.535 280.696 243.799 1.00 122.50 129 Bj 1 
+ATOM 617  C C   . LEU Q 17 129 ? 125.558 279.583 244.162 1.00 122.50 129 Bj 1 
+ATOM 618  O O   . LEU Q 17 129 ? 124.879 279.670 245.192 1.00 122.50 129 Bj 1 
+ATOM 619  C CB  . LEU Q 17 129 ? 125.829 281.784 242.989 1.00 122.50 129 Bj 1 
+ATOM 620  C CG  . LEU Q 17 129 ? 126.260 283.226 243.273 1.00 122.50 129 Bj 1 
+ATOM 621  C CD1 . LEU Q 17 129 ? 126.103 283.546 244.752 1.00 122.50 129 Bj 1 
+ATOM 622  C CD2 . LEU Q 17 129 ? 127.688 283.484 242.817 1.00 122.50 129 Bj 1 
+ATOM 623  N N   . HIS Q 17 130 ? 125.472 278.535 243.339 1.00 124.27 130 Bj 1 
+ATOM 624  C CA  . HIS Q 17 130 ? 124.581 277.424 243.653 1.00 124.27 130 Bj 1 
+ATOM 625  C C   . HIS Q 17 130 ? 125.137 276.570 244.785 1.00 124.27 130 Bj 1 
+ATOM 626  O O   . HIS Q 17 130 ? 124.395 276.174 245.691 1.00 124.27 130 Bj 1 
+ATOM 627  C CB  . HIS Q 17 130 ? 124.343 276.571 242.407 1.00 124.27 130 Bj 1 
+ATOM 628  C CG  . HIS Q 17 130 ? 123.598 277.281 241.320 1.00 124.27 130 Bj 1 
+ATOM 629  N ND1 . HIS Q 17 130 ? 122.957 278.485 241.521 1.00 124.27 130 Bj 1 
+ATOM 630  C CD2 . HIS Q 17 130 ? 123.400 276.962 240.019 1.00 124.27 130 Bj 1 
+ATOM 631  C CE1 . HIS Q 17 130 ? 122.391 278.873 240.392 1.00 124.27 130 Bj 1 
+ATOM 632  N NE2 . HIS Q 17 130 ? 122.645 277.967 239.465 1.00 124.27 130 Bj 1 
+ATOM 633  N N   . PHE Q 17 131 ? 126.434 276.275 244.753 1.00 123.12 131 Bj 1 
+ATOM 634  C CA  . PHE Q 17 131 ? 127.041 275.459 245.795 1.00 123.12 131 Bj 1 
+ATOM 635  C C   . PHE Q 17 131 ? 127.241 276.280 247.061 1.00 123.12 131 Bj 1 
+ATOM 636  O O   . PHE Q 17 131 ? 127.634 277.449 247.007 1.00 123.12 131 Bj 1 
+ATOM 637  C CB  . PHE Q 17 131 ? 128.378 274.890 245.322 1.00 123.12 131 Bj 1 
+ATOM 638  C CG  . PHE Q 17 131 ? 128.932 273.819 246.221 1.00 123.12 131 Bj 1 
+ATOM 639  C CD1 . PHE Q 17 131 ? 128.636 272.485 245.993 1.00 123.12 131 Bj 1 
+ATOM 640  C CD2 . PHE Q 17 131 ? 129.747 274.145 247.292 1.00 123.12 131 Bj 1 
+ATOM 641  C CE1 . PHE Q 17 131 ? 129.144 271.497 246.816 1.00 123.12 131 Bj 1 
+ATOM 642  C CE2 . PHE Q 17 131 ? 130.257 273.162 248.118 1.00 123.12 131 Bj 1 
+ATOM 643  C CZ  . PHE Q 17 131 ? 129.955 271.837 247.880 1.00 123.12 131 Bj 1 
+ATOM 644  N N   . LYS Q 17 132 ? 126.965 275.659 248.206 1.00 116.35 132 Bj 1 
+ATOM 645  C CA  . LYS Q 17 132 ? 127.090 276.303 249.505 1.00 116.35 132 Bj 1 
+ATOM 646  C C   . LYS Q 17 132 ? 128.171 275.612 250.323 1.00 116.35 132 Bj 1 
+ATOM 647  O O   . LYS Q 17 132 ? 128.289 274.383 250.305 1.00 116.35 132 Bj 1 
+ATOM 648  C CB  . LYS Q 17 132 ? 125.759 276.283 250.264 1.00 116.35 132 Bj 1 
+ATOM 649  C CG  . LYS Q 17 132 ? 125.018 277.611 250.239 1.00 116.35 132 Bj 1 
+ATOM 650  C CD  . LYS Q 17 132 ? 124.841 278.121 248.819 1.00 116.35 132 Bj 1 
+ATOM 651  C CE  . LYS Q 17 132 ? 124.220 279.507 248.803 1.00 116.35 132 Bj 1 
+ATOM 652  N NZ  . LYS Q 17 132 ? 124.099 280.040 247.419 1.00 116.35 132 Bj 1 
+ATOM 653  N N   . LEU Q 17 133 ? 128.955 276.411 251.041 1.00 122.76 133 Bj 1 
+ATOM 654  C CA  . LEU Q 17 133 ? 130.066 275.909 251.829 1.00 122.76 133 Bj 1 
+ATOM 655  C C   . LEU Q 17 133 ? 129.629 275.679 253.274 1.00 122.76 133 Bj 1 
+ATOM 656  O O   . LEU Q 17 133 ? 128.461 275.844 253.634 1.00 122.76 133 Bj 1 
+ATOM 657  C CB  . LEU Q 17 133 ? 131.244 276.879 251.757 1.00 122.76 133 Bj 1 
+ATOM 658  C CG  . LEU Q 17 133 ? 131.666 277.326 250.356 1.00 122.76 133 Bj 1 
+ATOM 659  C CD1 . LEU Q 17 133 ? 132.813 278.319 250.434 1.00 122.76 133 Bj 1 
+ATOM 660  C CD2 . LEU Q 17 133 ? 132.045 276.128 249.501 1.00 122.76 133 Bj 1 
+ATOM 661  N N   . GLY Q 17 134 ? 130.584 275.293 254.118 1.00 129.65 134 Bj 1 
+ATOM 662  C CA  . GLY Q 17 134 ? 130.282 275.055 255.514 1.00 129.65 134 Bj 1 
+ATOM 663  C C   . GLY Q 17 134 ? 130.327 276.328 256.339 1.00 129.65 134 Bj 1 
+ATOM 664  O O   . GLY Q 17 134 ? 131.088 277.255 256.064 1.00 129.65 134 Bj 1 
+ATOM 665  N N   . ALA Q 17 135 ? 129.488 276.366 257.371 1.00 138.35 135 Bj 1 
+ATOM 666  C CA  . ALA Q 17 135 ? 129.408 277.524 258.252 1.00 138.35 135 Bj 1 
+ATOM 667  C C   . ALA Q 17 135 ? 130.539 277.469 259.271 1.00 138.35 135 Bj 1 
+ATOM 668  O O   . ALA Q 17 135 ? 130.677 276.482 260.002 1.00 138.35 135 Bj 1 
+ATOM 669  C CB  . ALA Q 17 135 ? 128.051 277.571 258.950 1.00 138.35 135 Bj 1 
+ATOM 670  N N   . ARG Q 17 136 ? 131.347 278.530 259.322 1.00 130.79 136 Bj 1 
+ATOM 671  C CA  . ARG Q 17 136 ? 132.483 278.568 260.234 1.00 130.79 136 Bj 1 
+ATOM 672  C C   . ARG Q 17 136 ? 132.087 278.942 261.655 1.00 130.79 136 Bj 1 
+ATOM 673  O O   . ARG Q 17 136 ? 132.785 278.556 262.599 1.00 130.79 136 Bj 1 
+ATOM 674  C CB  . ARG Q 17 136 ? 133.536 279.556 259.727 1.00 130.79 136 Bj 1 
+ATOM 675  C CG  . ARG Q 17 136 ? 133.810 279.469 258.237 1.00 130.79 136 Bj 1 
+ATOM 676  C CD  . ARG Q 17 136 ? 135.032 280.286 257.861 1.00 130.79 136 Bj 1 
+ATOM 677  N NE  . ARG Q 17 136 ? 134.968 281.647 258.384 1.00 130.79 136 Bj 1 
+ATOM 678  C CZ  . ARG Q 17 136 ? 135.943 282.541 258.256 1.00 130.79 136 Bj 1 
+ATOM 679  N NH1 . ARG Q 17 136 ? 137.061 282.218 257.620 1.00 130.79 136 Bj 1 
+ATOM 680  N NH2 . ARG Q 17 136 ? 135.801 283.757 258.764 1.00 130.79 136 Bj 1 
+ATOM 681  N N   . LEU Q 17 137 ? 130.992 279.683 261.830 1.00 133.57 137 Bj 1 
+ATOM 682  C CA  . LEU Q 17 137 ? 130.559 280.141 263.149 1.00 133.57 137 Bj 1 
+ATOM 683  C C   . LEU Q 17 137 ? 129.570 279.126 263.717 1.00 133.57 137 Bj 1 
+ATOM 684  O O   . LEU Q 17 137 ? 128.360 279.345 263.762 1.00 133.57 137 Bj 1 
+ATOM 685  C CB  . LEU Q 17 137 ? 129.956 281.539 263.059 1.00 133.57 137 Bj 1 
+ATOM 686  C CG  . LEU Q 17 137 ? 130.891 282.628 262.527 1.00 133.57 137 Bj 1 
+ATOM 687  C CD1 . LEU Q 17 137 ? 130.188 283.977 262.488 1.00 133.57 137 Bj 1 
+ATOM 688  C CD2 . LEU Q 17 137 ? 132.159 282.703 263.364 1.00 133.57 137 Bj 1 
+ATOM 689  N N   . THR Q 17 138 ? 130.111 277.993 264.160 1.00 133.35 138 Bj 1 
+ATOM 690  C CA  . THR Q 17 138 ? 129.322 276.936 264.778 1.00 133.35 138 Bj 1 
+ATOM 691  C C   . THR Q 17 138 ? 129.133 277.144 266.275 1.00 133.35 138 Bj 1 
+ATOM 692  O O   . THR Q 17 138 ? 128.651 276.236 266.959 1.00 133.35 138 Bj 1 
+ATOM 693  C CB  . THR Q 17 138 ? 129.970 275.573 264.522 1.00 133.35 138 Bj 1 
+ATOM 694  O OG1 . THR Q 17 138 ? 131.309 275.575 265.032 1.00 133.35 138 Bj 1 
+ATOM 695  C CG2 . THR Q 17 138 ? 129.999 275.269 263.033 1.00 133.35 138 Bj 1 
+ATOM 696  N N   . GLU Q 17 139 ? 129.508 278.309 266.795 1.00 134.95 139 Bj 1 
+ATOM 697  C CA  . GLU Q 17 139 ? 129.306 278.647 268.196 1.00 134.95 139 Bj 1 
+ATOM 698  C C   . GLU Q 17 139 ? 128.457 279.891 268.396 1.00 134.95 139 Bj 1 
+ATOM 699  O O   . GLU Q 17 139 ? 127.841 280.034 269.453 1.00 134.95 139 Bj 1 
+ATOM 700  C CB  . GLU Q 17 139 ? 130.659 278.842 268.900 1.00 134.95 139 Bj 1 
+ATOM 701  C CG  . GLU Q 17 139 ? 130.604 278.798 270.422 1.00 134.95 139 Bj 1 
+ATOM 702  C CD  . GLU Q 17 139 ? 130.428 280.169 271.046 1.00 134.95 139 Bj 1 
+ATOM 703  O OE1 . GLU Q 17 139 ? 130.488 281.174 270.307 1.00 134.95 139 Bj 1 
+ATOM 704  O OE2 . GLU Q 17 139 ? 130.231 280.241 272.277 1.00 134.95 139 Bj 1 
+ATOM 705  N N   . ALA Q 17 140 ? 128.404 280.792 267.412 1.00 139.06 140 Bj 1 
+ATOM 706  C CA  . ALA Q 17 140 ? 127.569 281.980 267.543 1.00 139.06 140 Bj 1 
+ATOM 707  C C   . ALA Q 17 140 ? 126.090 281.623 267.616 1.00 139.06 140 Bj 1 
+ATOM 708  O O   . ALA Q 17 140 ? 125.316 282.326 268.275 1.00 139.06 140 Bj 1 
+ATOM 709  C CB  . ALA Q 17 140 ? 127.829 282.937 266.380 1.00 139.06 140 Bj 1 
+ATOM 710  N N   . ASP Q 17 141 ? 125.681 280.539 266.954 1.00 140.48 141 Bj 1 
+ATOM 711  C CA  . ASP Q 17 141 ? 124.289 280.111 267.023 1.00 140.48 141 Bj 1 
+ATOM 712  C C   . ASP Q 17 141 ? 124.001 279.307 268.283 1.00 140.48 141 Bj 1 
+ATOM 713  O O   . ASP Q 17 141 ? 122.859 279.293 268.754 1.00 140.48 141 Bj 1 
+ATOM 714  C CB  . ASP Q 17 141 ? 123.924 279.291 265.784 1.00 140.48 141 Bj 1 
+ATOM 715  C CG  . ASP Q 17 141 ? 124.675 277.976 265.714 1.00 140.48 141 Bj 1 
+ATOM 716  O OD1 . ASP Q 17 141 ? 125.822 277.916 266.203 1.00 140.48 141 Bj 1 
+ATOM 717  O OD2 . ASP Q 17 141 ? 124.116 277.002 265.168 1.00 140.48 141 Bj 1 
+ATOM 718  N N   . LYS Q 17 142 ? 125.010 278.635 268.840 1.00 134.61 142 Bj 1 
+ATOM 719  C CA  . LYS Q 17 142 ? 124.797 277.853 270.053 1.00 134.61 142 Bj 1 
+ATOM 720  C C   . LYS Q 17 142 ? 124.838 278.740 271.293 1.00 134.61 142 Bj 1 
+ATOM 721  O O   . LYS Q 17 142 ? 123.839 278.877 272.005 1.00 134.61 142 Bj 1 
+ATOM 722  C CB  . LYS Q 17 142 ? 125.847 276.744 270.155 1.00 134.61 142 Bj 1 
+ATOM 723  C CG  . LYS Q 17 142 ? 126.107 276.000 268.857 1.00 134.61 142 Bj 1 
+ATOM 724  C CD  . LYS Q 17 142 ? 124.858 275.311 268.339 1.00 134.61 142 Bj 1 
+ATOM 725  C CE  . LYS Q 17 142 ? 125.153 274.532 267.067 1.00 134.61 142 Bj 1 
+ATOM 726  N NZ  . LYS Q 17 142 ? 123.939 273.858 266.530 1.00 134.61 142 Bj 1 
+ATOM 727  N N   . LYS Q 17 143 ? 125.993 279.349 271.561 1.00 130.78 143 Bj 1 
+ATOM 728  C CA  . LYS Q 17 143 ? 126.225 280.262 272.679 1.00 130.78 143 Bj 1 
+ATOM 729  C C   . LYS Q 17 143 ? 125.934 279.638 274.039 1.00 130.78 143 Bj 1 
+ATOM 730  O O   . LYS Q 17 143 ? 125.924 280.350 275.050 1.00 130.78 143 Bj 1 
+ATOM 731  C CB  . LYS Q 17 143 ? 125.421 281.559 272.519 1.00 130.78 143 Bj 1 
+ATOM 732  C CG  . LYS Q 17 143 ? 125.982 282.503 271.471 1.00 130.78 143 Bj 1 
+ATOM 733  C CD  . LYS Q 17 143 ? 127.408 282.899 271.812 1.00 130.78 143 Bj 1 
+ATOM 734  C CE  . LYS Q 17 143 ? 127.980 283.857 270.782 1.00 130.78 143 Bj 1 
+ATOM 735  N NZ  . LYS Q 17 143 ? 129.382 284.238 271.109 1.00 130.78 143 Bj 1 
+ATOM 736  N N   . ASP Q 17 144 ? 125.698 278.330 274.099 1.00 131.40 144 Bj 1 
+ATOM 737  C CA  . ASP Q 17 144 ? 125.447 277.643 275.360 1.00 131.40 144 Bj 1 
+ATOM 738  C C   . ASP Q 17 144 ? 126.492 276.583 275.666 1.00 131.40 144 Bj 1 
+ATOM 739  O O   . ASP Q 17 144 ? 127.062 276.578 276.763 1.00 131.40 144 Bj 1 
+ATOM 740  C CB  . ASP Q 17 144 ? 124.048 277.003 275.351 1.00 131.40 144 Bj 1 
+ATOM 741  C CG  . ASP Q 17 144 ? 122.935 278.027 275.449 1.00 131.40 144 Bj 1 
+ATOM 742  O OD1 . ASP Q 17 144 ? 122.551 278.595 274.407 1.00 131.40 144 Bj 1 
+ATOM 743  O OD2 . ASP Q 17 144 ? 122.442 278.263 276.571 1.00 131.40 144 Bj 1 
+ATOM 744  N N   . ASP Q 17 145 ? 126.762 275.685 274.723 1.00 125.63 145 Bj 1 
+ATOM 745  C CA  . ASP Q 17 145 ? 127.651 274.554 274.962 1.00 125.63 145 Bj 1 
+ATOM 746  C C   . ASP Q 17 145 ? 129.095 275.042 274.977 1.00 125.63 145 Bj 1 
+ATOM 747  O O   . ASP Q 17 145 ? 129.719 275.197 273.922 1.00 125.63 145 Bj 1 
+ATOM 748  C CB  . ASP Q 17 145 ? 127.441 273.482 273.897 1.00 125.63 145 Bj 1 
+ATOM 749  C CG  . ASP Q 17 145 ? 128.031 272.142 274.292 1.00 125.63 145 Bj 1 
+ATOM 750  O OD1 . ASP Q 17 145 ? 128.682 272.064 275.355 1.00 125.63 145 Bj 1 
+ATOM 751  O OD2 . ASP Q 17 145 ? 127.837 271.162 273.542 1.00 125.63 145 Bj 1 
+ATOM 752  N N   . ARG Q 17 146 ? 129.624 275.289 276.173 1.00 123.19 146 Bj 1 
+ATOM 753  C CA  . ARG Q 17 146 ? 131.031 275.617 276.354 1.00 123.19 146 Bj 1 
+ATOM 754  C C   . ARG Q 17 146 ? 131.912 274.378 276.423 1.00 123.19 146 Bj 1 
+ATOM 755  O O   . ARG Q 17 146 ? 133.141 274.505 276.438 1.00 123.19 146 Bj 1 
+ATOM 756  C CB  . ARG Q 17 146 ? 131.221 276.448 277.628 1.00 123.19 146 Bj 1 
+ATOM 757  C CG  . ARG Q 17 146 ? 130.339 277.684 277.717 1.00 123.19 146 Bj 1 
+ATOM 758  C CD  . ARG Q 17 146 ? 130.774 278.756 276.734 1.00 123.19 146 Bj 1 
+ATOM 759  N NE  . ARG Q 17 146 ? 130.058 280.011 276.945 1.00 123.19 146 Bj 1 
+ATOM 760  C CZ  . ARG Q 17 146 ? 130.291 281.128 276.265 1.00 123.19 146 Bj 1 
+ATOM 761  N NH1 . ARG Q 17 146 ? 131.225 281.151 275.325 1.00 123.19 146 Bj 1 
+ATOM 762  N NH2 . ARG Q 17 146 ? 129.590 282.224 276.524 1.00 123.19 146 Bj 1 
+ATOM 763  N N   . THR Q 17 147 ? 131.314 273.189 276.464 1.00 120.18 147 Bj 1 
+ATOM 764  C CA  . THR Q 17 147 ? 132.038 271.936 276.619 1.00 120.18 147 Bj 1 
+ATOM 765  C C   . THR Q 17 147 ? 132.125 271.136 275.328 1.00 120.18 147 Bj 1 
+ATOM 766  O O   . THR Q 17 147 ? 132.651 270.018 275.343 1.00 120.18 147 Bj 1 
+ATOM 767  C CB  . THR Q 17 147 ? 131.373 271.081 277.702 1.00 120.18 147 Bj 1 
+ATOM 768  O OG1 . THR Q 17 147 ? 130.082 270.655 277.249 1.00 120.18 147 Bj 1 
+ATOM 769  C CG2 . THR Q 17 147 ? 131.209 271.884 278.982 1.00 120.18 147 Bj 1 
+ATOM 770  N N   . SER Q 17 148 ? 131.625 271.672 274.219 1.00 118.54 148 Bj 1 
+ATOM 771  C CA  . SER Q 17 148 ? 131.618 270.943 272.961 1.00 118.54 148 Bj 1 
+ATOM 772  C C   . SER Q 17 148 ? 133.006 270.928 272.336 1.00 118.54 148 Bj 1 
+ATOM 773  O O   . SER Q 17 148 ? 133.743 271.916 272.398 1.00 118.54 148 Bj 1 
+ATOM 774  C CB  . SER Q 17 148 ? 130.617 271.567 271.988 1.00 118.54 148 Bj 1 
+ATOM 775  O OG  . SER Q 17 148 ? 130.928 272.926 271.735 1.00 118.54 148 Bj 1 
+ATOM 776  N N   . LEU Q 17 149 ? 133.361 269.790 271.735 1.00 117.15 149 Bj 1 
+ATOM 777  C CA  . LEU Q 17 149 ? 134.619 269.711 271.001 1.00 117.15 149 Bj 1 
+ATOM 778  C C   . LEU Q 17 149 ? 134.608 270.627 269.785 1.00 117.15 149 Bj 1 
+ATOM 779  O O   . LEU Q 17 149 ? 135.662 271.129 269.377 1.00 117.15 149 Bj 1 
+ATOM 780  C CB  . LEU Q 17 149 ? 134.891 268.267 270.579 1.00 117.15 149 Bj 1 
+ATOM 781  C CG  . LEU Q 17 149 ? 136.256 267.992 269.944 1.00 117.15 149 Bj 1 
+ATOM 782  C CD1 . LEU Q 17 149 ? 137.367 268.200 270.960 1.00 117.15 149 Bj 1 
+ATOM 783  C CD2 . LEU Q 17 149 ? 136.314 266.588 269.358 1.00 117.15 149 Bj 1 
+ATOM 784  N N   . HIS Q 17 150 ? 133.431 270.864 269.203 1.00 119.46 150 Bj 1 
+ATOM 785  C CA  . HIS Q 17 150 ? 133.275 271.750 268.056 1.00 119.46 150 Bj 1 
+ATOM 786  C C   . HIS Q 17 150 ? 132.939 273.179 268.467 1.00 119.46 150 Bj 1 
+ATOM 787  O O   . HIS Q 17 150 ? 132.307 273.912 267.695 1.00 119.46 150 Bj 1 
+ATOM 788  C CB  . HIS Q 17 150 ? 132.203 271.196 267.115 1.00 119.46 150 Bj 1 
+ATOM 789  C CG  . HIS Q 17 150 ? 132.333 271.667 265.700 1.00 119.46 150 Bj 1 
+ATOM 790  N ND1 . HIS Q 17 150 ? 133.406 271.334 264.901 1.00 119.46 150 Bj 1 
+ATOM 791  C CD2 . HIS Q 17 150 ? 131.523 272.440 264.939 1.00 119.46 150 Bj 1 
+ATOM 792  C CE1 . HIS Q 17 150 ? 133.252 271.884 263.709 1.00 119.46 150 Bj 1 
+ATOM 793  N NE2 . HIS Q 17 150 ? 132.118 272.561 263.706 1.00 119.46 150 Bj 1 
+ATOM 794  N N   . ARG Q 17 151 ? 133.334 273.589 269.675 1.00 116.45 151 Bj 1 
+ATOM 795  C CA  . ARG Q 17 151 ? 133.014 274.930 270.155 1.00 116.45 151 Bj 1 
+ATOM 796  C C   . ARG Q 17 151 ? 133.683 276.000 269.299 1.00 116.45 151 Bj 1 
+ATOM 797  O O   . ARG Q 17 151 ? 133.011 276.780 268.616 1.00 116.45 151 Bj 1 
+ATOM 798  C CB  . ARG Q 17 151 ? 133.432 275.069 271.620 1.00 116.45 151 Bj 1 
+ATOM 799  C CG  . ARG Q 17 151 ? 133.285 276.474 272.176 1.00 116.45 151 Bj 1 
+ATOM 800  C CD  . ARG Q 17 151 ? 133.694 276.533 273.637 1.00 116.45 151 Bj 1 
+ATOM 801  N NE  . ARG Q 17 151 ? 133.681 277.899 274.151 1.00 116.45 151 Bj 1 
+ATOM 802  C CZ  . ARG Q 17 151 ? 133.957 278.225 275.408 1.00 116.45 151 Bj 1 
+ATOM 803  N NH1 . ARG Q 17 151 ? 134.267 277.282 276.287 1.00 116.45 151 Bj 1 
+ATOM 804  N NH2 . ARG Q 17 151 ? 133.923 279.495 275.788 1.00 116.45 151 Bj 1 
+ATOM 805  N N   . LYS Q 17 152 ? 135.011 276.043 269.313 1.00 117.42 152 Bj 1 
+ATOM 806  C CA  . LYS Q 17 152 ? 135.770 277.054 268.591 1.00 117.42 152 Bj 1 
+ATOM 807  C C   . LYS Q 17 152 ? 136.622 276.389 267.521 1.00 117.42 152 Bj 1 
+ATOM 808  O O   . LYS Q 17 152 ? 137.171 275.304 267.735 1.00 117.42 152 Bj 1 
+ATOM 809  C CB  . LYS Q 17 152 ? 136.655 277.866 269.542 1.00 117.42 152 Bj 1 
+ATOM 810  C CG  . LYS Q 17 152 ? 135.879 278.626 270.605 1.00 117.42 152 Bj 1 
+ATOM 811  C CD  . LYS Q 17 152 ? 136.809 279.386 271.538 1.00 117.42 152 Bj 1 
+ATOM 812  C CE  . LYS Q 17 152 ? 136.029 280.083 272.644 1.00 117.42 152 Bj 1 
+ATOM 813  N NZ  . LYS Q 17 152 ? 136.923 280.801 273.593 1.00 117.42 152 Bj 1 
+ATOM 814  N N   . LEU Q 17 153 ? 136.727 277.048 266.368 1.00 116.24 153 Bj 1 
+ATOM 815  C CA  . LEU Q 17 153 ? 137.460 276.511 265.234 1.00 116.24 153 Bj 1 
+ATOM 816  C C   . LEU Q 17 153 ? 138.638 277.371 264.802 1.00 116.24 153 Bj 1 
+ATOM 817  O O   . LEU Q 17 153 ? 139.490 276.883 264.051 1.00 116.24 153 Bj 1 
+ATOM 818  C CB  . LEU Q 17 153 ? 136.518 276.317 264.036 1.00 116.24 153 Bj 1 
+ATOM 819  C CG  . LEU Q 17 153 ? 135.239 275.539 264.342 1.00 116.24 153 Bj 1 
+ATOM 820  C CD1 . LEU Q 17 153 ? 134.370 275.417 263.102 1.00 116.24 153 Bj 1 
+ATOM 821  C CD2 . LEU Q 17 153 ? 135.573 274.168 264.908 1.00 116.24 153 Bj 1 
+ATOM 822  N N   . ASP Q 17 154 ? 138.712 278.626 265.242 1.00 114.21 154 Bj 1 
+ATOM 823  C CA  . ASP Q 17 154 ? 139.819 279.499 264.880 1.00 114.21 154 Bj 1 
+ATOM 824  C C   . ASP Q 17 154 ? 140.864 279.628 265.977 1.00 114.21 154 Bj 1 
+ATOM 825  O O   . ASP Q 17 154 ? 141.912 280.237 265.742 1.00 114.21 154 Bj 1 
+ATOM 826  C CB  . ASP Q 17 154 ? 139.301 280.893 264.510 1.00 114.21 154 Bj 1 
+ATOM 827  C CG  . ASP Q 17 154 ? 138.591 281.574 265.661 1.00 114.21 154 Bj 1 
+ATOM 828  O OD1 . ASP Q 17 154 ? 138.041 280.861 266.526 1.00 114.21 154 Bj 1 
+ATOM 829  O OD2 . ASP Q 17 154 ? 138.580 282.823 265.698 1.00 114.21 154 Bj 1 
+ATOM 830  N N   . ARG Q 17 155 ? 140.614 279.065 267.154 1.00 117.24 155 Bj 1 
+ATOM 831  C CA  . ARG Q 17 155 ? 141.560 279.082 268.258 1.00 117.24 155 Bj 1 
+ATOM 832  C C   . ARG Q 17 155 ? 141.854 277.656 268.702 1.00 117.24 155 Bj 1 
+ATOM 833  O O   . ARG Q 17 155 ? 141.141 276.711 268.356 1.00 117.24 155 Bj 1 
+ATOM 834  C CB  . ARG Q 17 155 ? 141.020 279.897 269.441 1.00 117.24 155 Bj 1 
+ATOM 835  C CG  . ARG Q 17 155 ? 140.581 281.306 269.091 1.00 117.24 155 Bj 1 
+ATOM 836  C CD  . ARG Q 17 155 ? 140.132 282.057 270.334 1.00 117.24 155 Bj 1 
+ATOM 837  N NE  . ARG Q 17 155 ? 139.613 283.382 270.013 1.00 117.24 155 Bj 1 
+ATOM 838  C CZ  . ARG Q 17 155 ? 139.268 284.288 270.921 1.00 117.24 155 Bj 1 
+ATOM 839  N NH1 . ARG Q 17 155 ? 139.392 284.015 272.212 1.00 117.24 155 Bj 1 
+ATOM 840  N NH2 . ARG Q 17 155 ? 138.803 285.469 270.538 1.00 117.24 155 Bj 1 
+ATOM 841  N N   . ASN Q 17 156 ? 142.922 277.508 269.478 1.00 113.83 156 Bj 1 
+ATOM 842  C CA  . ASN Q 17 156 ? 143.233 276.233 270.102 1.00 113.83 156 Bj 1 
+ATOM 843  C C   . ASN Q 17 156 ? 142.516 276.132 271.441 1.00 113.83 156 Bj 1 
+ATOM 844  O O   . ASN Q 17 156 ? 142.286 277.135 272.123 1.00 113.83 156 Bj 1 
+ATOM 845  C CB  . ASN Q 17 156 ? 144.741 276.067 270.300 1.00 113.83 156 Bj 1 
+ATOM 846  C CG  . ASN Q 17 156 ? 145.277 276.908 271.442 1.00 113.83 156 Bj 1 
+ATOM 847  O OD1 . ASN Q 17 156 ? 144.906 278.071 271.601 1.00 113.83 156 Bj 1 
+ATOM 848  N ND2 . ASN Q 17 156 ? 146.154 276.320 272.247 1.00 113.83 156 Bj 1 
+ATOM 849  N N   . LEU Q 17 157 ? 142.156 274.908 271.811 1.00 117.97 157 Bj 1 
+ATOM 850  C CA  . LEU Q 17 157 ? 141.427 274.665 273.045 1.00 117.97 157 Bj 1 
+ATOM 851  C C   . LEU Q 17 157 ? 142.163 273.643 273.900 1.00 117.97 157 Bj 1 
+ATOM 852  O O   . LEU Q 17 157 ? 142.908 272.801 273.397 1.00 117.97 157 Bj 1 
+ATOM 853  C CB  . LEU Q 17 157 ? 139.997 274.188 272.760 1.00 117.97 157 Bj 1 
+ATOM 854  C CG  . LEU Q 17 157 ? 139.112 275.189 272.013 1.00 117.97 157 Bj 1 
+ATOM 855  C CD1 . LEU Q 17 157 ? 137.703 274.642 271.833 1.00 117.97 157 Bj 1 
+ATOM 856  C CD2 . LEU Q 17 157 ? 139.084 276.528 272.733 1.00 117.97 157 Bj 1 
+ATOM 857  N N   . ILE Q 17 158 ? 141.952 273.734 275.213 1.00 113.83 158 Bj 1 
+ATOM 858  C CA  . ILE Q 17 158 ? 142.549 272.815 276.169 1.00 113.83 158 Bj 1 
+ATOM 859  C C   . ILE Q 17 158 ? 141.443 272.284 277.071 1.00 113.83 158 Bj 1 
+ATOM 860  O O   . ILE Q 17 158 ? 140.365 272.871 277.184 1.00 113.83 158 Bj 1 
+ATOM 861  C CB  . ILE Q 17 158 ? 143.669 273.481 276.999 1.00 113.83 158 Bj 1 
+ATOM 862  C CG1 . ILE Q 17 158 ? 144.690 272.440 277.466 1.00 113.83 158 Bj 1 
+ATOM 863  C CG2 . ILE Q 17 158 ? 143.086 274.213 278.188 1.00 113.83 158 Bj 1 
+ATOM 864  C CD1 . ILE Q 17 158 ? 145.859 273.029 278.223 1.00 113.83 158 Bj 1 
+ATOM 865  N N   . LEU Q 17 159 ? 141.723 271.155 277.716 1.00 117.96 159 Bj 1 
+ATOM 866  C CA  . LEU Q 17 159 ? 140.729 270.429 278.495 1.00 117.96 159 Bj 1 
+ATOM 867  C C   . LEU Q 17 159 ? 140.864 270.768 279.973 1.00 117.96 159 Bj 1 
+ATOM 868  O O   . LEU Q 17 159 ? 141.962 270.695 280.535 1.00 117.96 159 Bj 1 
+ATOM 869  C CB  . LEU Q 17 159 ? 140.876 268.922 278.285 1.00 117.96 159 Bj 1 
+ATOM 870  C CG  . LEU Q 17 159 ? 139.756 268.048 278.849 1.00 117.96 159 Bj 1 
+ATOM 871  C CD1 . LEU Q 17 159 ? 138.420 268.435 278.235 1.00 117.96 159 Bj 1 
+ATOM 872  C CD2 . LEU Q 17 159 ? 140.053 266.577 278.608 1.00 117.96 159 Bj 1 
+ATOM 873  N N   . LEU Q 17 160 ? 139.745 271.135 280.597 1.00 129.48 160 Bj 1 
+ATOM 874  C CA  . LEU Q 17 160 ? 139.681 271.396 282.030 1.00 129.48 160 Bj 1 
+ATOM 875  C C   . LEU Q 17 160 ? 138.594 270.526 282.642 1.00 129.48 160 Bj 1 
+ATOM 876  O O   . LEU Q 17 160 ? 137.483 270.456 282.110 1.00 129.48 160 Bj 1 
+ATOM 877  C CB  . LEU Q 17 160 ? 139.396 272.874 282.319 1.00 129.48 160 Bj 1 
+ATOM 878  C CG  . LEU Q 17 160 ? 140.586 273.780 282.641 1.00 129.48 160 Bj 1 
+ATOM 879  C CD1 . LEU Q 17 160 ? 141.302 273.297 283.894 1.00 129.48 160 Bj 1 
+ATOM 880  C CD2 . LEU Q 17 160 ? 141.543 273.865 281.466 1.00 129.48 160 Bj 1 
+ATOM 881  N N   . VAL Q 17 161 ? 138.908 269.869 283.754 1.00 136.87 161 Bj 1 
+ATOM 882  C CA  . VAL Q 17 161 ? 137.973 268.976 284.427 1.00 136.87 161 Bj 1 
+ATOM 883  C C   . VAL Q 17 161 ? 137.583 269.581 285.768 1.00 136.87 161 Bj 1 
+ATOM 884  O O   . VAL Q 17 161 ? 138.402 270.219 286.438 1.00 136.87 161 Bj 1 
+ATOM 885  C CB  . VAL Q 17 161 ? 138.566 267.564 284.611 1.00 136.87 161 Bj 1 
+ATOM 886  C CG1 . VAL Q 17 161 ? 138.693 266.867 283.267 1.00 136.87 161 Bj 1 
+ATOM 887  C CG2 . VAL Q 17 161 ? 139.917 267.637 285.303 1.00 136.87 161 Bj 1 
+ATOM 888  N N   . ARG Q 17 162 ? 136.323 269.392 286.149 1.00 151.13 162 Bj 1 
+ATOM 889  C CA  . ARG Q 17 162 ? 135.837 269.829 287.450 1.00 151.13 162 Bj 1 
+ATOM 890  C C   . ARG Q 17 162 ? 135.852 268.656 288.420 1.00 151.13 162 Bj 1 
+ATOM 891  O O   . ARG Q 17 162 ? 135.243 267.615 288.155 1.00 151.13 162 Bj 1 
+ATOM 892  C CB  . ARG Q 17 162 ? 134.425 270.405 287.339 1.00 151.13 162 Bj 1 
+ATOM 893  C CG  . ARG Q 17 162 ? 133.794 270.771 288.675 1.00 151.13 162 Bj 1 
+ATOM 894  C CD  . ARG Q 17 162 ? 134.649 271.772 289.435 1.00 151.13 162 Bj 1 
+ATOM 895  N NE  . ARG Q 17 162 ? 134.041 272.166 290.702 1.00 151.13 162 Bj 1 
+ATOM 896  C CZ  . ARG Q 17 162 ? 134.595 273.012 291.565 1.00 151.13 162 Bj 1 
+ATOM 897  N NH1 . ARG Q 17 162 ? 135.775 273.556 291.298 1.00 151.13 162 Bj 1 
+ATOM 898  N NH2 . ARG Q 17 162 ? 133.971 273.316 292.694 1.00 151.13 162 Bj 1 
+ATOM 899  N N   . GLU Q 17 163 ? 136.552 268.826 289.540 1.00 162.19 163 Bj 1 
+ATOM 900  C CA  . GLU Q 17 163 ? 136.655 267.786 290.555 1.00 162.19 163 Bj 1 
+ATOM 901  C C   . GLU Q 17 163 ? 136.528 268.410 291.935 1.00 162.19 163 Bj 1 
+ATOM 902  O O   . GLU Q 17 163 ? 137.204 269.398 292.237 1.00 162.19 163 Bj 1 
+ATOM 903  C CB  . GLU Q 17 163 ? 137.981 267.024 290.442 1.00 162.19 163 Bj 1 
+ATOM 904  C CG  . GLU Q 17 163 ? 138.128 266.212 289.165 1.00 162.19 163 Bj 1 
+ATOM 905  C CD  . GLU Q 17 163 ? 139.362 265.332 289.175 1.00 162.19 163 Bj 1 
+ATOM 906  O OE1 . GLU Q 17 163 ? 140.126 265.387 290.161 1.00 162.19 163 Bj 1 
+ATOM 907  O OE2 . GLU Q 17 163 ? 139.566 264.582 288.197 1.00 162.19 163 Bj 1 
+ATOM 908  N N   . LYS Q 17 164 ? 135.663 267.833 292.764 1.00 165.97 164 Bj 1 
+ATOM 909  C CA  . LYS Q 17 164 ? 135.477 268.256 294.149 1.00 165.97 164 Bj 1 
+ATOM 910  C C   . LYS Q 17 164 ? 136.057 267.171 295.050 1.00 165.97 164 Bj 1 
+ATOM 911  O O   . LYS Q 17 164 ? 135.463 266.101 295.210 1.00 165.97 164 Bj 1 
+ATOM 912  C CB  . LYS Q 17 164 ? 134.004 268.509 294.456 1.00 165.97 164 Bj 1 
+ATOM 913  C CG  . LYS Q 17 164 ? 133.424 269.735 293.773 1.00 165.97 164 Bj 1 
+ATOM 914  C CD  . LYS Q 17 164 ? 132.024 270.035 294.284 1.00 165.97 164 Bj 1 
+ATOM 915  C CE  . LYS Q 17 164 ? 131.472 271.312 293.673 1.00 165.97 164 Bj 1 
+ATOM 916  N NZ  . LYS Q 17 164 ? 130.115 271.638 294.195 1.00 165.97 164 Bj 1 
+ATOM 917  N N   . LEU Q 17 165 ? 137.217 267.450 295.636 1.00 168.90 165 Bj 1 
+ATOM 918  C CA  . LEU Q 17 165 ? 137.880 266.496 296.515 1.00 168.90 165 Bj 1 
+ATOM 919  C C   . LEU Q 17 165 ? 137.275 266.587 297.915 1.00 168.90 165 Bj 1 
+ATOM 920  O O   . LEU Q 17 165 ? 136.251 267.238 298.138 1.00 168.90 165 Bj 1 
+ATOM 921  C CB  . LEU Q 17 165 ? 139.386 266.743 296.518 1.00 168.90 165 Bj 1 
+ATOM 922  C CG  . LEU Q 17 165 ? 140.073 266.659 295.154 1.00 168.90 165 Bj 1 
+ATOM 923  C CD1 . LEU Q 17 165 ? 141.578 266.829 295.293 1.00 168.90 165 Bj 1 
+ATOM 924  C CD2 . LEU Q 17 165 ? 139.738 265.346 294.462 1.00 168.90 165 Bj 1 
+ATOM 925  N N   . GLY Q 17 166 ? 137.912 265.927 298.884 1.00 171.61 166 Bj 1 
+ATOM 926  C CA  . GLY Q 17 166 ? 137.369 265.914 300.232 1.00 171.61 166 Bj 1 
+ATOM 927  C C   . GLY Q 17 166 ? 137.561 267.231 300.961 1.00 171.61 166 Bj 1 
+ATOM 928  O O   . GLY Q 17 166 ? 136.656 267.703 301.656 1.00 171.61 166 Bj 1 
+ATOM 929  N N   . ASP Q 17 167 ? 138.736 267.843 300.815 1.00 174.91 167 Bj 1 
+ATOM 930  C CA  . ASP Q 17 167 ? 139.046 269.091 301.495 1.00 174.91 167 Bj 1 
+ATOM 931  C C   . ASP Q 17 167 ? 139.291 270.254 300.545 1.00 174.91 167 Bj 1 
+ATOM 932  O O   . ASP Q 17 167 ? 139.620 271.352 301.010 1.00 174.91 167 Bj 1 
+ATOM 933  C CB  . ASP Q 17 167 ? 140.268 268.910 302.408 1.00 174.91 167 Bj 1 
+ATOM 934  C CG  . ASP Q 17 167 ? 141.477 268.372 301.667 1.00 174.91 167 Bj 1 
+ATOM 935  O OD1 . ASP Q 17 167 ? 142.126 269.149 300.937 1.00 174.91 167 Bj 1 
+ATOM 936  O OD2 . ASP Q 17 167 ? 141.778 267.169 301.815 1.00 174.91 167 Bj 1 
+ATOM 937  N N   . GLN Q 17 168 ? 139.144 270.054 299.236 1.00 175.00 168 Bj 1 
+ATOM 938  C CA  . GLN Q 17 168 ? 139.378 271.108 298.261 1.00 175.00 168 Bj 1 
+ATOM 939  C C   . GLN Q 17 168 ? 138.382 270.985 297.119 1.00 175.00 168 Bj 1 
+ATOM 940  O O   . GLN Q 17 168 ? 138.082 269.879 296.661 1.00 175.00 168 Bj 1 
+ATOM 941  C CB  . GLN Q 17 168 ? 140.810 271.056 297.710 1.00 175.00 168 Bj 1 
+ATOM 942  C CG  . GLN Q 17 168 ? 141.878 271.477 298.705 1.00 175.00 168 Bj 1 
+ATOM 943  C CD  . GLN Q 17 168 ? 143.281 271.320 298.157 1.00 175.00 168 Bj 1 
+ATOM 944  O OE1 . GLN Q 17 168 ? 143.477 270.789 297.063 1.00 175.00 168 Bj 1 
+ATOM 945  N NE2 . GLN Q 17 168 ? 144.267 271.783 298.916 1.00 175.00 168 Bj 1 
+ATOM 946  N N   . ASP Q 17 169 ? 137.876 272.129 296.665 1.00 168.27 169 Bj 1 
+ATOM 947  C CA  . ASP Q 17 169 ? 136.985 272.221 295.510 1.00 168.27 169 Bj 1 
+ATOM 948  C C   . ASP Q 17 169 ? 137.646 273.173 294.517 1.00 168.27 169 Bj 1 
+ATOM 949  O O   . ASP Q 17 169 ? 137.390 274.379 294.534 1.00 168.27 169 Bj 1 
+ATOM 950  C CB  . ASP Q 17 169 ? 135.589 272.706 295.915 1.00 168.27 169 Bj 1 
+ATOM 951  C CG  . ASP Q 17 169 ? 134.950 271.832 296.978 1.00 168.27 169 Bj 1 
+ATOM 952  O OD1 . ASP Q 17 169 ? 135.285 270.631 297.048 1.00 168.27 169 Bj 1 
+ATOM 953  O OD2 . ASP Q 17 169 ? 134.109 272.348 297.743 1.00 168.27 169 Bj 1 
+ATOM 954  N N   . ILE Q 17 170 ? 138.499 272.629 293.653 1.00 159.42 170 Bj 1 
+ATOM 955  C CA  . ILE Q 17 170 ? 139.305 273.423 292.734 1.00 159.42 170 Bj 1 
+ATOM 956  C C   . ILE Q 17 170 ? 138.930 273.073 291.301 1.00 159.42 170 Bj 1 
+ATOM 957  O O   . ILE Q 17 170 ? 138.527 271.941 291.010 1.00 159.42 170 Bj 1 
+ATOM 958  C CB  . ILE Q 17 170 ? 140.815 273.204 292.968 1.00 159.42 170 Bj 1 
+ATOM 959  C CG1 . ILE Q 17 170 ? 141.172 271.723 292.823 1.00 159.42 170 Bj 1 
+ATOM 960  C CG2 . ILE Q 17 170 ? 141.225 273.726 294.336 1.00 159.42 170 Bj 1 
+ATOM 961  C CD1 . ILE Q 17 170 ? 142.645 271.427 293.007 1.00 159.42 170 Bj 1 
+ATOM 962  N N   . TRP Q 17 171 ? 139.059 274.056 290.411 1.00 144.42 171 Bj 1 
+ATOM 963  C CA  . TRP Q 17 171 ? 138.893 273.855 288.972 1.00 144.42 171 Bj 1 
+ATOM 964  C C   . TRP Q 17 171 ? 140.241 273.390 288.437 1.00 144.42 171 Bj 1 
+ATOM 965  O O   . TRP Q 17 171 ? 141.054 274.182 287.960 1.00 144.42 171 Bj 1 
+ATOM 966  C CB  . TRP Q 17 171 ? 138.414 275.138 288.303 1.00 144.42 171 Bj 1 
+ATOM 967  C CG  . TRP Q 17 171 ? 138.043 274.985 286.860 1.00 144.42 171 Bj 1 
+ATOM 968  C CD1 . TRP Q 17 171 ? 138.831 275.252 285.779 1.00 144.42 171 Bj 1 
+ATOM 969  C CD2 . TRP Q 17 171 ? 136.785 274.539 286.340 1.00 144.42 171 Bj 1 
+ATOM 970  N NE1 . TRP Q 17 171 ? 138.144 274.997 284.618 1.00 144.42 171 Bj 1 
+ATOM 971  C CE2 . TRP Q 17 171 ? 136.885 274.557 284.935 1.00 144.42 171 Bj 1 
+ATOM 972  C CE3 . TRP Q 17 171 ? 135.586 274.124 286.925 1.00 144.42 171 Bj 1 
+ATOM 973  C CZ2 . TRP Q 17 171 ? 135.832 274.177 284.106 1.00 144.42 171 Bj 1 
+ATOM 974  C CZ3 . TRP Q 17 171 ? 134.541 273.747 286.101 1.00 144.42 171 Bj 1 
+ATOM 975  C CH2 . TRP Q 17 171 ? 134.672 273.775 284.707 1.00 144.42 171 Bj 1 
+ATOM 976  N N   . MET Q 17 172 ? 140.479 272.086 288.520 1.00 147.69 172 Bj 1 
+ATOM 977  C CA  . MET Q 17 172 ? 141.806 271.514 288.352 1.00 147.69 172 Bj 1 
+ATOM 978  C C   . MET Q 17 172 ? 142.015 270.976 286.940 1.00 147.69 172 Bj 1 
+ATOM 979  O O   . MET Q 17 172 ? 141.082 270.507 286.285 1.00 147.69 172 Bj 1 
+ATOM 980  C CB  . MET Q 17 172 ? 142.030 270.391 289.368 1.00 147.69 172 Bj 1 
+ATOM 981  C CG  . MET Q 17 172 ? 143.468 269.917 289.488 1.00 147.69 172 Bj 1 
+ATOM 982  S SD  . MET Q 17 172 ? 143.610 268.411 290.466 1.00 147.69 172 Bj 1 
+ATOM 983  C CE  . MET Q 17 172 ? 142.770 267.241 289.402 1.00 147.69 172 Bj 1 
+ATOM 984  N N   . LEU Q 17 173 ? 143.260 271.057 286.478 1.00 139.16 173 Bj 1 
+ATOM 985  C CA  . LEU Q 17 173 ? 143.650 270.404 285.241 1.00 139.16 173 Bj 1 
+ATOM 986  C C   . LEU Q 17 173 ? 143.738 268.894 285.468 1.00 139.16 173 Bj 1 
+ATOM 987  O O   . LEU Q 17 173 ? 143.996 268.445 286.588 1.00 139.16 173 Bj 1 
+ATOM 988  C CB  . LEU Q 17 173 ? 144.996 270.950 284.764 1.00 139.16 173 Bj 1 
+ATOM 989  C CG  . LEU Q 17 173 ? 145.334 270.960 283.270 1.00 139.16 173 Bj 1 
+ATOM 990  C CD1 . LEU Q 17 173 ? 144.311 271.766 282.496 1.00 139.16 173 Bj 1 
+ATOM 991  C CD2 . LEU Q 17 173 ? 146.725 271.512 283.037 1.00 139.16 173 Bj 1 
+ATOM 992  N N   . PRO Q 17 174 ? 143.500 268.080 284.423 1.00 136.31 174 Bj 1 
+ATOM 993  C CA  . PRO Q 17 174 ? 143.610 266.621 284.586 1.00 136.31 174 Bj 1 
+ATOM 994  C C   . PRO Q 17 174 ? 144.959 266.176 285.134 1.00 136.31 174 Bj 1 
+ATOM 995  O O   . PRO Q 17 174 ? 146.003 266.377 284.503 1.00 136.31 174 Bj 1 
+ATOM 996  C CB  . PRO Q 17 174 ? 143.377 266.087 283.164 1.00 136.31 174 Bj 1 
+ATOM 997  C CG  . PRO Q 17 174 ? 143.447 267.291 282.257 1.00 136.31 174 Bj 1 
+ATOM 998  C CD  . PRO Q 17 174 ? 142.983 268.434 283.092 1.00 136.31 174 Bj 1 
+ATOM 999  N N   . GLN Q 17 175 ? 144.935 265.578 286.323 1.00 135.35 175 Bj 1 
+ATOM 1000 C CA  . GLN Q 17 175 ? 146.121 265.112 287.030 1.00 135.35 175 Bj 1 
+ATOM 1001 C C   . GLN Q 17 175 ? 146.040 263.602 287.238 1.00 135.35 175 Bj 1 
+ATOM 1002 O O   . GLN Q 17 175 ? 145.028 262.962 286.944 1.00 135.35 175 Bj 1 
+ATOM 1003 C CB  . GLN Q 17 175 ? 146.278 265.834 288.372 1.00 135.35 175 Bj 1 
+ATOM 1004 C CG  . GLN Q 17 175 ? 146.579 267.318 288.255 1.00 135.35 175 Bj 1 
+ATOM 1005 C CD  . GLN Q 17 175 ? 146.837 267.965 289.602 1.00 135.35 175 Bj 1 
+ATOM 1006 O OE1 . GLN Q 17 175 ? 146.707 267.325 290.646 1.00 135.35 175 Bj 1 
+ATOM 1007 N NE2 . GLN Q 17 175 ? 147.204 269.241 289.585 1.00 135.35 175 Bj 1 
+ATOM 1008 N N   . SER Q 17 176 ? 147.130 263.036 287.754 1.00 133.75 176 Bj 1 
+ATOM 1009 C CA  . SER Q 17 176 ? 147.220 261.598 287.965 1.00 133.75 176 Bj 1 
+ATOM 1010 C C   . SER Q 17 176 ? 148.177 261.315 289.116 1.00 133.75 176 Bj 1 
+ATOM 1011 O O   . SER Q 17 176 ? 148.730 262.227 289.736 1.00 133.75 176 Bj 1 
+ATOM 1012 C CB  . SER Q 17 176 ? 147.683 260.882 286.694 1.00 133.75 176 Bj 1 
+ATOM 1013 O OG  . SER Q 17 176 ? 146.894 261.256 285.582 1.00 133.75 176 Bj 1 
+ATOM 1014 N N   . ASP Q 17 177 ? 148.364 260.026 289.395 1.00 134.79 177 Bj 1 
+ATOM 1015 C CA  . ASP Q 17 177 ? 149.341 259.551 290.362 1.00 134.79 177 Bj 1 
+ATOM 1016 C C   . ASP Q 17 177 ? 149.995 258.296 289.806 1.00 134.79 177 Bj 1 
+ATOM 1017 O O   . ASP Q 17 177 ? 149.390 257.559 289.023 1.00 134.79 177 Bj 1 
+ATOM 1018 C CB  . ASP Q 17 177 ? 148.706 259.260 291.728 1.00 134.79 177 Bj 1 
+ATOM 1019 C CG  . ASP Q 17 177 ? 148.221 260.516 292.424 1.00 134.79 177 Bj 1 
+ATOM 1020 O OD1 . ASP Q 17 177 ? 147.166 261.051 292.025 1.00 134.79 177 Bj 1 
+ATOM 1021 O OD2 . ASP Q 17 177 ? 148.898 260.969 293.370 1.00 134.79 177 Bj 1 
+ATOM 1022 N N   . TRP Q 17 178 ? 151.238 258.056 290.216 1.00 142.13 178 Bj 1 
+ATOM 1023 C CA  . TRP Q 17 178 ? 152.031 256.996 289.615 1.00 142.13 178 Bj 1 
+ATOM 1024 C C   . TRP Q 17 178 ? 153.041 256.465 290.620 1.00 142.13 178 Bj 1 
+ATOM 1025 O O   . TRP Q 17 178 ? 153.592 257.217 291.429 1.00 142.13 178 Bj 1 
+ATOM 1026 C CB  . TRP Q 17 178 ? 152.752 257.500 288.360 1.00 142.13 178 Bj 1 
+ATOM 1027 C CG  . TRP Q 17 178 ? 153.556 258.740 288.606 1.00 142.13 178 Bj 1 
+ATOM 1028 C CD1 . TRP Q 17 178 ? 153.092 260.023 288.654 1.00 142.13 178 Bj 1 
+ATOM 1029 C CD2 . TRP Q 17 178 ? 154.966 258.815 288.843 1.00 142.13 178 Bj 1 
+ATOM 1030 N NE1 . TRP Q 17 178 ? 154.126 260.891 288.906 1.00 142.13 178 Bj 1 
+ATOM 1031 C CE2 . TRP Q 17 178 ? 155.287 260.173 289.026 1.00 142.13 178 Bj 1 
+ATOM 1032 C CE3 . TRP Q 17 178 ? 155.987 257.865 288.916 1.00 142.13 178 Bj 1 
+ATOM 1033 C CZ2 . TRP Q 17 178 ? 156.588 260.604 289.277 1.00 142.13 178 Bj 1 
+ATOM 1034 C CZ3 . TRP Q 17 178 ? 157.276 258.293 289.166 1.00 142.13 178 Bj 1 
+ATOM 1035 C CH2 . TRP Q 17 178 ? 157.565 259.650 289.344 1.00 142.13 178 Bj 1 
+ATOM 1036 N N   . GLN Q 17 179 ? 153.282 255.155 290.554 1.00 140.75 179 Bj 1 
+ATOM 1037 C CA  . GLN Q 17 179 ? 154.303 254.528 291.375 1.00 140.75 179 Bj 1 
+ATOM 1038 C C   . GLN Q 17 179 ? 155.685 254.777 290.770 1.00 140.75 179 Bj 1 
+ATOM 1039 O O   . GLN Q 17 179 ? 155.812 254.956 289.556 1.00 140.75 179 Bj 1 
+ATOM 1040 C CB  . GLN Q 17 179 ? 154.047 253.026 291.496 1.00 140.75 179 Bj 1 
+ATOM 1041 C CG  . GLN Q 17 179 ? 154.330 252.219 290.233 1.00 140.75 179 Bj 1 
+ATOM 1042 C CD  . GLN Q 17 179 ? 153.239 252.345 289.187 1.00 140.75 179 Bj 1 
+ATOM 1043 O OE1 . GLN Q 17 179 ? 152.254 253.059 289.380 1.00 140.75 179 Bj 1 
+ATOM 1044 N NE2 . GLN Q 17 179 ? 153.408 251.645 288.072 1.00 140.75 179 Bj 1 
+ATOM 1045 N N   . PRO Q 17 180 ? 156.741 254.792 291.602 1.00 139.20 180 Bj 1 
+ATOM 1046 C CA  . PRO Q 17 180 ? 158.082 255.138 291.101 1.00 139.20 180 Bj 1 
+ATOM 1047 C C   . PRO Q 17 180 ? 158.545 254.295 289.922 1.00 139.20 180 Bj 1 
+ATOM 1048 O O   . PRO Q 17 180 ? 159.406 254.726 289.148 1.00 139.20 180 Bj 1 
+ATOM 1049 C CB  . PRO Q 17 180 ? 158.976 254.914 292.327 1.00 139.20 180 Bj 1 
+ATOM 1050 C CG  . PRO Q 17 180 ? 158.072 255.131 293.486 1.00 139.20 180 Bj 1 
+ATOM 1051 C CD  . PRO Q 17 180 ? 156.734 254.597 293.063 1.00 139.20 180 Bj 1 
+ATOM 1052 N N   . GLY Q 17 181 ? 157.983 253.098 289.770 1.00 135.25 181 Bj 1 
+ATOM 1053 C CA  . GLY Q 17 181 ? 158.324 252.240 288.655 1.00 135.25 181 Bj 1 
+ATOM 1054 C C   . GLY Q 17 181 ? 157.674 252.589 287.337 1.00 135.25 181 Bj 1 
+ATOM 1055 O O   . GLY Q 17 181 ? 157.880 251.875 286.352 1.00 135.25 181 Bj 1 
+ATOM 1056 N N   . GLU Q 17 182 ? 156.897 253.667 287.282 1.00 137.08 182 Bj 1 
+ATOM 1057 C CA  . GLU Q 17 182 ? 156.183 254.062 286.078 1.00 137.08 182 Bj 1 
+ATOM 1058 C C   . GLU Q 17 182 ? 156.697 255.404 285.572 1.00 137.08 182 Bj 1 
+ATOM 1059 O O   . GLU Q 17 182 ? 157.089 256.276 286.354 1.00 137.08 182 Bj 1 
+ATOM 1060 C CB  . GLU Q 17 182 ? 154.675 254.141 286.339 1.00 137.08 182 Bj 1 
+ATOM 1061 C CG  . GLU Q 17 182 ? 153.829 254.307 285.086 1.00 137.08 182 Bj 1 
+ATOM 1062 C CD  . GLU Q 17 182 ? 152.344 254.191 285.367 1.00 137.08 182 Bj 1 
+ATOM 1063 O OE1 . GLU Q 17 182 ? 151.980 253.776 286.487 1.00 137.08 182 Bj 1 
+ATOM 1064 O OE2 . GLU Q 17 182 ? 151.541 254.515 284.466 1.00 137.08 182 Bj 1 
+ATOM 1065 N N   . THR Q 17 183 ? 156.690 255.560 284.252 1.00 130.92 183 Bj 1 
+ATOM 1066 C CA  . THR Q 17 183 ? 157.170 256.770 283.603 1.00 130.92 183 Bj 1 
+ATOM 1067 C C   . THR Q 17 183 ? 156.071 257.827 283.567 1.00 130.92 183 Bj 1 
+ATOM 1068 O O   . THR Q 17 183 ? 154.878 257.512 283.596 1.00 130.92 183 Bj 1 
+ATOM 1069 C CB  . THR Q 17 183 ? 157.647 256.460 282.182 1.00 130.92 183 Bj 1 
+ATOM 1070 O OG1 . THR Q 17 183 ? 158.349 255.210 282.177 1.00 130.92 183 Bj 1 
+ATOM 1071 C CG2 . THR Q 17 183 ? 158.582 257.550 281.671 1.00 130.92 183 Bj 1 
+ATOM 1072 N N   . LEU Q 17 184 ? 156.490 259.094 283.506 1.00 129.02 184 Bj 1 
+ATOM 1073 C CA  . LEU Q 17 184 ? 155.532 260.194 283.444 1.00 129.02 184 Bj 1 
+ATOM 1074 C C   . LEU Q 17 184 ? 154.716 260.147 282.159 1.00 129.02 184 Bj 1 
+ATOM 1075 O O   . LEU Q 17 184 ? 153.502 260.384 282.173 1.00 129.02 184 Bj 1 
+ATOM 1076 C CB  . LEU Q 17 184 ? 156.266 261.528 283.563 1.00 129.02 184 Bj 1 
+ATOM 1077 C CG  . LEU Q 17 184 ? 157.066 261.730 284.849 1.00 129.02 184 Bj 1 
+ATOM 1078 C CD1 . LEU Q 17 184 ? 157.941 262.967 284.754 1.00 129.02 184 Bj 1 
+ATOM 1079 C CD2 . LEU Q 17 184 ? 156.125 261.830 286.034 1.00 129.02 184 Bj 1 
+ATOM 1080 N N   . ARG Q 17 185 ? 155.367 259.842 281.035 1.00 125.72 185 Bj 1 
+ATOM 1081 C CA  . ARG Q 17 185 ? 154.653 259.763 279.767 1.00 125.72 185 Bj 1 
+ATOM 1082 C C   . ARG Q 17 185 ? 153.671 258.598 279.760 1.00 125.72 185 Bj 1 
+ATOM 1083 O O   . ARG Q 17 185 ? 152.540 258.735 279.279 1.00 125.72 185 Bj 1 
+ATOM 1084 C CB  . ARG Q 17 185 ? 155.652 259.644 278.618 1.00 125.72 185 Bj 1 
+ATOM 1085 C CG  . ARG Q 17 185 ? 155.034 259.681 277.235 1.00 125.72 185 Bj 1 
+ATOM 1086 C CD  . ARG Q 17 185 ? 156.064 260.119 276.211 1.00 125.72 185 Bj 1 
+ATOM 1087 N NE  . ARG Q 17 185 ? 155.563 260.025 274.845 1.00 125.72 185 Bj 1 
+ATOM 1088 C CZ  . ARG Q 17 185 ? 156.149 260.598 273.800 1.00 125.72 185 Bj 1 
+ATOM 1089 N NH1 . ARG Q 17 185 ? 157.250 261.316 273.971 1.00 125.72 185 Bj 1 
+ATOM 1090 N NH2 . ARG Q 17 185 ? 155.631 260.462 272.587 1.00 125.72 185 Bj 1 
+ATOM 1091 N N   . GLN Q 17 186 ? 154.083 257.448 280.298 1.00 132.51 186 Bj 1 
+ATOM 1092 C CA  . GLN Q 17 186 ? 153.167 256.318 280.411 1.00 132.51 186 Bj 1 
+ATOM 1093 C C   . GLN Q 17 186 ? 151.994 256.642 281.326 1.00 132.51 186 Bj 1 
+ATOM 1094 O O   . GLN Q 17 186 ? 150.860 256.229 281.055 1.00 132.51 186 Bj 1 
+ATOM 1095 C CB  . GLN Q 17 186 ? 153.914 255.087 280.925 1.00 132.51 186 Bj 1 
+ATOM 1096 C CG  . GLN Q 17 186 ? 155.119 254.696 280.089 1.00 132.51 186 Bj 1 
+ATOM 1097 C CD  . GLN Q 17 186 ? 155.882 253.529 280.683 1.00 132.51 186 Bj 1 
+ATOM 1098 O OE1 . GLN Q 17 186 ? 155.493 252.978 281.713 1.00 132.51 186 Bj 1 
+ATOM 1099 N NE2 . GLN Q 17 186 ? 156.978 253.147 280.037 1.00 132.51 186 Bj 1 
+ATOM 1100 N N   . THR Q 17 187 ? 152.245 257.383 282.408 1.00 131.91 187 Bj 1 
+ATOM 1101 C CA  . THR Q 17 187 ? 151.163 257.778 283.304 1.00 131.91 187 Bj 1 
+ATOM 1102 C C   . THR Q 17 187 ? 150.188 258.718 282.606 1.00 131.91 187 Bj 1 
+ATOM 1103 O O   . THR Q 17 187 ? 148.971 258.593 282.773 1.00 131.91 187 Bj 1 
+ATOM 1104 C CB  . THR Q 17 187 ? 151.737 258.432 284.560 1.00 131.91 187 Bj 1 
+ATOM 1105 O OG1 . THR Q 17 187 ? 152.712 257.561 285.147 1.00 131.91 187 Bj 1 
+ATOM 1106 C CG2 . THR Q 17 187 ? 150.634 258.703 285.570 1.00 131.91 187 Bj 1 
+ATOM 1107 N N   . ALA Q 17 188 ? 150.705 259.659 281.814 1.00 133.19 188 Bj 1 
+ATOM 1108 C CA  . ALA Q 17 188 ? 149.827 260.556 281.066 1.00 133.19 188 Bj 1 
+ATOM 1109 C C   . ALA Q 17 188 ? 149.020 259.794 280.020 1.00 133.19 188 Bj 1 
+ATOM 1110 O O   . ALA Q 17 188 ? 147.848 260.110 279.775 1.00 133.19 188 Bj 1 
+ATOM 1111 C CB  . ALA Q 17 188 ? 150.647 261.666 280.409 1.00 133.19 188 Bj 1 
+ATOM 1112 N N   . GLU Q 17 189 ? 149.632 258.789 279.390 1.00 135.20 189 Bj 1 
+ATOM 1113 C CA  . GLU Q 17 189 ? 148.905 257.958 278.433 1.00 135.20 189 Bj 1 
+ATOM 1114 C C   . GLU Q 17 189 ? 147.783 257.190 279.121 1.00 135.20 189 Bj 1 
+ATOM 1115 O O   . GLU Q 17 189 ? 146.649 257.145 278.628 1.00 135.20 189 Bj 1 
+ATOM 1116 C CB  . GLU Q 17 189 ? 149.869 257.000 277.732 1.00 135.20 189 Bj 1 
+ATOM 1117 C CG  . GLU Q 17 189 ? 150.860 257.688 276.807 1.00 135.20 189 Bj 1 
+ATOM 1118 C CD  . GLU Q 17 189 ? 151.898 256.735 276.247 1.00 135.20 189 Bj 1 
+ATOM 1119 O OE1 . GLU Q 17 189 ? 151.856 255.537 276.598 1.00 135.20 189 Bj 1 
+ATOM 1120 O OE2 . GLU Q 17 189 ? 152.755 257.183 275.457 1.00 135.20 189 Bj 1 
+ATOM 1121 N N   . ARG Q 17 190 ? 148.085 256.576 280.268 1.00 137.16 190 Bj 1 
+ATOM 1122 C CA  . ARG Q 17 190 ? 147.053 255.885 281.035 1.00 137.16 190 Bj 1 
+ATOM 1123 C C   . ARG Q 17 190 ? 145.950 256.847 281.459 1.00 137.16 190 Bj 1 
+ATOM 1124 O O   . ARG Q 17 190 ? 144.768 256.483 281.473 1.00 137.16 190 Bj 1 
+ATOM 1125 C CB  . ARG Q 17 190 ? 147.674 255.206 282.256 1.00 137.16 190 Bj 1 
+ATOM 1126 C CG  . ARG Q 17 190 ? 146.670 254.507 283.159 1.00 137.16 190 Bj 1 
+ATOM 1127 C CD  . ARG Q 17 190 ? 147.358 253.841 284.338 1.00 137.16 190 Bj 1 
+ATOM 1128 N NE  . ARG Q 17 190 ? 148.133 254.792 285.129 1.00 137.16 190 Bj 1 
+ATOM 1129 C CZ  . ARG Q 17 190 ? 147.632 255.522 286.120 1.00 137.16 190 Bj 1 
+ATOM 1130 N NH1 . ARG Q 17 190 ? 146.352 255.413 286.445 1.00 137.16 190 Bj 1 
+ATOM 1131 N NH2 . ARG Q 17 190 ? 148.412 256.362 286.786 1.00 137.16 190 Bj 1 
+ATOM 1132 N N   . THR Q 17 191 ? 146.318 258.084 281.795 1.00 139.17 191 Bj 1 
+ATOM 1133 C CA  . THR Q 17 191 ? 145.327 259.090 282.158 1.00 139.17 191 Bj 1 
+ATOM 1134 C C   . THR Q 17 191 ? 144.388 259.378 280.996 1.00 139.17 191 Bj 1 
+ATOM 1135 O O   . THR Q 17 191 ? 143.164 259.268 281.131 1.00 139.17 191 Bj 1 
+ATOM 1136 C CB  . THR Q 17 191 ? 146.024 260.373 282.606 1.00 139.17 191 Bj 1 
+ATOM 1137 O OG1 . THR Q 17 191 ? 146.894 260.085 283.707 1.00 139.17 191 Bj 1 
+ATOM 1138 C CG2 . THR Q 17 191 ? 144.999 261.416 283.027 1.00 139.17 191 Bj 1 
+ATOM 1139 N N   . LEU Q 17 192 ? 144.945 259.747 279.841 1.00 141.63 192 Bj 1 
+ATOM 1140 C CA  . LEU Q 17 192 ? 144.109 260.056 278.687 1.00 141.63 192 Bj 1 
+ATOM 1141 C C   . LEU Q 17 192 ? 143.341 258.840 278.185 1.00 141.63 192 Bj 1 
+ATOM 1142 O O   . LEU Q 17 192 ? 142.352 259.004 277.463 1.00 141.63 192 Bj 1 
+ATOM 1143 C CB  . LEU Q 17 192 ? 144.956 260.651 277.557 1.00 141.63 192 Bj 1 
+ATOM 1144 C CG  . LEU Q 17 192 ? 146.099 259.830 276.954 1.00 141.63 192 Bj 1 
+ATOM 1145 C CD1 . LEU Q 17 192 ? 145.628 258.957 275.794 1.00 141.63 192 Bj 1 
+ATOM 1146 C CD2 . LEU Q 17 192 ? 147.225 260.747 276.511 1.00 141.63 192 Bj 1 
+ATOM 1147 N N   . ALA Q 17 193 ? 143.770 257.628 278.546 1.00 143.93 193 Bj 1 
+ATOM 1148 C CA  . ALA Q 17 193 ? 143.045 256.438 278.119 1.00 143.93 193 Bj 1 
+ATOM 1149 C C   . ALA Q 17 193 ? 141.916 256.066 279.074 1.00 143.93 193 Bj 1 
+ATOM 1150 O O   . ALA Q 17 193 ? 140.870 255.584 278.626 1.00 143.93 193 Bj 1 
+ATOM 1151 C CB  . ALA Q 17 193 ? 144.010 255.261 277.971 1.00 143.93 193 Bj 1 
+ATOM 1152 N N   . THR Q 17 194 ? 142.098 256.279 280.377 1.00 145.46 194 Bj 1 
+ATOM 1153 C CA  . THR Q 17 194 ? 141.129 255.841 281.375 1.00 145.46 194 Bj 1 
+ATOM 1154 C C   . THR Q 17 194 ? 140.242 256.970 281.888 1.00 145.46 194 Bj 1 
+ATOM 1155 O O   . THR Q 17 194 ? 139.014 256.846 281.870 1.00 145.46 194 Bj 1 
+ATOM 1156 C CB  . THR Q 17 194 ? 141.855 255.179 282.553 1.00 145.46 194 Bj 1 
+ATOM 1157 O OG1 . THR Q 17 194 ? 142.819 256.090 283.094 1.00 145.46 194 Bj 1 
+ATOM 1158 C CG2 . THR Q 17 194 ? 142.563 253.912 282.096 1.00 145.46 194 Bj 1 
+ATOM 1159 N N   . LEU Q 17 195 ? 140.840 258.069 282.358 1.00 142.21 195 Bj 1 
+ATOM 1160 C CA  . LEU Q 17 195 ? 140.050 259.165 282.911 1.00 142.21 195 Bj 1 
+ATOM 1161 C C   . LEU Q 17 195 ? 139.145 259.793 281.860 1.00 142.21 195 Bj 1 
+ATOM 1162 O O   . LEU Q 17 195 ? 138.038 260.239 282.181 1.00 142.21 195 Bj 1 
+ATOM 1163 C CB  . LEU Q 17 195 ? 140.968 260.229 283.517 1.00 142.21 195 Bj 1 
+ATOM 1164 C CG  . LEU Q 17 195 ? 141.597 259.972 284.891 1.00 142.21 195 Bj 1 
+ATOM 1165 C CD1 . LEU Q 17 195 ? 142.698 258.923 284.829 1.00 142.21 195 Bj 1 
+ATOM 1166 C CD2 . LEU Q 17 195 ? 142.128 261.271 285.480 1.00 142.21 195 Bj 1 
+ATOM 1167 N N   . SER Q 17 196 ? 139.594 259.839 280.604 1.00 140.98 196 Bj 1 
+ATOM 1168 C CA  . SER Q 17 196 ? 138.776 260.410 279.541 1.00 140.98 196 Bj 1 
+ATOM 1169 C C   . SER Q 17 196 ? 137.616 259.503 279.154 1.00 140.98 196 Bj 1 
+ATOM 1170 O O   . SER Q 17 196 ? 136.610 259.998 278.635 1.00 140.98 196 Bj 1 
+ATOM 1171 C CB  . SER Q 17 196 ? 139.642 260.710 278.317 1.00 140.98 196 Bj 1 
+ATOM 1172 O OG  . SER Q 17 196 ? 138.870 261.273 277.272 1.00 140.98 196 Bj 1 
+ATOM 1173 N N   . GLU Q 17 197 ? 137.739 258.194 279.389 1.00 135.62 197 Bj 1 
+ATOM 1174 C CA  . GLU Q 17 197 ? 136.656 257.236 279.156 1.00 135.62 197 Bj 1 
+ATOM 1175 C C   . GLU Q 17 197 ? 136.208 257.234 277.696 1.00 135.62 197 Bj 1 
+ATOM 1176 O O   . GLU Q 17 197 ? 135.013 257.193 277.396 1.00 135.62 197 Bj 1 
+ATOM 1177 C CB  . GLU Q 17 197 ? 135.470 257.510 280.085 1.00 135.62 197 Bj 1 
+ATOM 1178 C CG  . GLU Q 17 197 ? 135.840 257.617 281.554 1.00 135.62 197 Bj 1 
+ATOM 1179 C CD  . GLU Q 17 197 ? 134.680 258.079 282.413 1.00 135.62 197 Bj 1 
+ATOM 1180 O OE1 . GLU Q 17 197 ? 133.581 258.302 281.863 1.00 135.62 197 Bj 1 
+ATOM 1181 O OE2 . GLU Q 17 197 ? 134.868 258.222 283.639 1.00 135.62 197 Bj 1 
+ATOM 1182 N N   . ASN Q 17 198 ? 137.171 257.276 276.779 1.00 129.66 198 Bj 1 
+ATOM 1183 C CA  . ASN Q 17 198 ? 136.857 257.290 275.358 1.00 129.66 198 Bj 1 
+ATOM 1184 C C   . ASN Q 17 198 ? 138.089 256.875 274.568 1.00 129.66 198 Bj 1 
+ATOM 1185 O O   . ASN Q 17 198 ? 139.210 256.881 275.082 1.00 129.66 198 Bj 1 
+ATOM 1186 C CB  . ASN Q 17 198 ? 136.372 258.671 274.903 1.00 129.66 198 Bj 1 
+ATOM 1187 C CG  . ASN Q 17 198 ? 137.500 259.681 274.800 1.00 129.66 198 Bj 1 
+ATOM 1188 O OD1 . ASN Q 17 198 ? 138.430 259.675 275.605 1.00 129.66 198 Bj 1 
+ATOM 1189 N ND2 . ASN Q 17 198 ? 137.425 260.552 273.801 1.00 129.66 198 Bj 1 
+ATOM 1190 N N   . ASN Q 17 199 ? 137.862 256.515 273.307 1.00 121.02 199 Bj 1 
+ATOM 1191 C CA  . ASN Q 17 199 ? 138.944 256.208 272.374 1.00 121.02 199 Bj 1 
+ATOM 1192 C C   . ASN Q 17 199 ? 139.384 257.519 271.734 1.00 121.02 199 Bj 1 
+ATOM 1193 O O   . ASN Q 17 199 ? 138.711 258.055 270.850 1.00 121.02 199 Bj 1 
+ATOM 1194 C CB  . ASN Q 17 199 ? 138.496 255.185 271.335 1.00 121.02 199 Bj 1 
+ATOM 1195 C CG  . ASN Q 17 199 ? 137.204 255.577 270.646 1.00 121.02 199 Bj 1 
+ATOM 1196 O OD1 . ASN Q 17 199 ? 136.405 256.339 271.189 1.00 121.02 199 Bj 1 
+ATOM 1197 N ND2 . ASN Q 17 199 ? 136.993 255.057 269.443 1.00 121.02 199 Bj 1 
+ATOM 1198 N N   . MET Q 17 200 ? 140.516 258.044 272.190 1.00 123.96 200 Bj 1 
+ATOM 1199 C CA  . MET Q 17 200 ? 141.014 259.341 271.760 1.00 123.96 200 Bj 1 
+ATOM 1200 C C   . MET Q 17 200 ? 142.451 259.205 271.279 1.00 123.96 200 Bj 1 
+ATOM 1201 O O   . MET Q 17 200 ? 143.258 258.501 271.895 1.00 123.96 200 Bj 1 
+ATOM 1202 C CB  . MET Q 17 200 ? 140.927 260.358 272.901 1.00 123.96 200 Bj 1 
+ATOM 1203 C CG  . MET Q 17 200 ? 141.315 261.768 272.517 1.00 123.96 200 Bj 1 
+ATOM 1204 S SD  . MET Q 17 200 ? 141.001 262.928 273.857 1.00 123.96 200 Bj 1 
+ATOM 1205 C CE  . MET Q 17 200 ? 141.986 262.202 275.165 1.00 123.96 200 Bj 1 
+ATOM 1206 N N   . GLU Q 17 201 ? 142.767 259.880 270.176 1.00 115.66 201 Bj 1 
+ATOM 1207 C CA  . GLU Q 17 201 ? 144.092 259.821 269.570 1.00 115.66 201 Bj 1 
+ATOM 1208 C C   . GLU Q 17 201 ? 144.889 261.040 270.022 1.00 115.66 201 Bj 1 
+ATOM 1209 O O   . GLU Q 17 201 ? 144.619 262.164 269.586 1.00 115.66 201 Bj 1 
+ATOM 1210 C CB  . GLU Q 17 201 ? 143.988 259.759 268.048 1.00 115.66 201 Bj 1 
+ATOM 1211 C CG  . GLU Q 17 201 ? 143.149 258.601 267.531 1.00 115.66 201 Bj 1 
+ATOM 1212 C CD  . GLU Q 17 201 ? 143.120 258.531 266.017 1.00 115.66 201 Bj 1 
+ATOM 1213 O OE1 . GLU Q 17 201 ? 143.950 259.207 265.373 1.00 115.66 201 Bj 1 
+ATOM 1214 O OE2 . GLU Q 17 201 ? 142.265 257.803 265.470 1.00 115.66 201 Bj 1 
+ATOM 1215 N N   . ALA Q 17 202 ? 145.869 260.814 270.892 1.00 117.10 202 Bj 1 
+ATOM 1216 C CA  . ALA Q 17 202 ? 146.717 261.870 271.422 1.00 117.10 202 Bj 1 
+ATOM 1217 C C   . ALA Q 17 202 ? 148.131 261.723 270.876 1.00 117.10 202 Bj 1 
+ATOM 1218 O O   . ALA Q 17 202 ? 148.651 260.609 270.767 1.00 117.10 202 Bj 1 
+ATOM 1219 C CB  . ALA Q 17 202 ? 146.744 261.840 272.952 1.00 117.10 202 Bj 1 
+ATOM 1220 N N   . LYS Q 17 203 ? 148.748 262.853 270.539 1.00 120.82 203 Bj 1 
+ATOM 1221 C CA  . LYS Q 17 203 ? 150.096 262.887 269.981 1.00 120.82 203 Bj 1 
+ATOM 1222 C C   . LYS Q 17 203 ? 150.986 263.704 270.910 1.00 120.82 203 Bj 1 
+ATOM 1223 O O   . LYS Q 17 203 ? 150.846 264.929 270.994 1.00 120.82 203 Bj 1 
+ATOM 1224 C CB  . LYS Q 17 203 ? 150.087 263.476 268.572 1.00 120.82 203 Bj 1 
+ATOM 1225 C CG  . LYS Q 17 203 ? 151.408 263.346 267.834 1.00 120.82 203 Bj 1 
+ATOM 1226 C CD  . LYS Q 17 203 ? 151.757 261.888 267.591 1.00 120.82 203 Bj 1 
+ATOM 1227 C CE  . LYS Q 17 203 ? 153.066 261.752 266.833 1.00 120.82 203 Bj 1 
+ATOM 1228 N NZ  . LYS Q 17 203 ? 153.409 260.327 266.571 1.00 120.82 203 Bj 1 
+ATOM 1229 N N   . PHE Q 17 204 ? 151.897 263.028 271.606 1.00 125.72 204 Bj 1 
+ATOM 1230 C CA  . PHE Q 17 204 ? 152.832 263.707 272.490 1.00 125.72 204 Bj 1 
+ATOM 1231 C C   . PHE Q 17 204 ? 153.972 264.322 271.689 1.00 125.72 204 Bj 1 
+ATOM 1232 O O   . PHE Q 17 204 ? 154.445 263.744 270.707 1.00 125.72 204 Bj 1 
+ATOM 1233 C CB  . PHE Q 17 204 ? 153.391 262.739 273.531 1.00 125.72 204 Bj 1 
+ATOM 1234 C CG  . PHE Q 17 204 ? 152.415 262.383 274.614 1.00 125.72 204 Bj 1 
+ATOM 1235 C CD1 . PHE Q 17 204 ? 151.538 261.325 274.454 1.00 125.72 204 Bj 1 
+ATOM 1236 C CD2 . PHE Q 17 204 ? 152.379 263.106 275.795 1.00 125.72 204 Bj 1 
+ATOM 1237 C CE1 . PHE Q 17 204 ? 150.641 260.996 275.451 1.00 125.72 204 Bj 1 
+ATOM 1238 C CE2 . PHE Q 17 204 ? 151.484 262.782 276.795 1.00 125.72 204 Bj 1 
+ATOM 1239 C CZ  . PHE Q 17 204 ? 150.615 261.725 276.624 1.00 125.72 204 Bj 1 
+ATOM 1240 N N   . LEU Q 17 205 ? 154.414 265.504 272.120 1.00 121.24 205 Bj 1 
+ATOM 1241 C CA  . LEU Q 17 205 ? 155.467 266.215 271.402 1.00 121.24 205 Bj 1 
+ATOM 1242 C C   . LEU Q 17 205 ? 156.851 265.713 271.799 1.00 121.24 205 Bj 1 
+ATOM 1243 O O   . LEU Q 17 205 ? 157.602 265.202 270.961 1.00 121.24 205 Bj 1 
+ATOM 1244 C CB  . LEU Q 17 205 ? 155.344 267.719 271.658 1.00 121.24 205 Bj 1 
+ATOM 1245 C CG  . LEU Q 17 205 ? 153.967 268.330 271.399 1.00 121.24 205 Bj 1 
+ATOM 1246 C CD1 . LEU Q 17 205 ? 153.973 269.814 271.724 1.00 121.24 205 Bj 1 
+ATOM 1247 C CD2 . LEU Q 17 205 ? 153.536 268.092 269.962 1.00 121.24 205 Bj 1 
+ATOM 1248 N N   . GLY Q 17 206 ? 157.202 265.847 273.070 1.00 130.10 206 Bj 1 
+ATOM 1249 C CA  . GLY Q 17 206 ? 158.515 265.444 273.539 1.00 130.10 206 Bj 1 
+ATOM 1250 C C   . GLY Q 17 206 ? 158.419 264.700 274.853 1.00 130.10 206 Bj 1 
+ATOM 1251 O O   . GLY Q 17 206 ? 157.446 264.831 275.598 1.00 130.10 206 Bj 1 
+ATOM 1252 N N   . ASN Q 17 207 ? 159.458 263.909 275.133 1.00 132.28 207 Bj 1 
+ATOM 1253 C CA  . ASN Q 17 207 ? 159.476 263.119 276.359 1.00 132.28 207 Bj 1 
+ATOM 1254 C C   . ASN Q 17 207 ? 159.764 263.982 277.581 1.00 132.28 207 Bj 1 
+ATOM 1255 O O   . ASN Q 17 207 ? 159.380 263.618 278.699 1.00 132.28 207 Bj 1 
+ATOM 1256 C CB  . ASN Q 17 207 ? 160.510 261.999 276.242 1.00 132.28 207 Bj 1 
+ATOM 1257 C CG  . ASN Q 17 207 ? 160.456 261.029 277.405 1.00 132.28 207 Bj 1 
+ATOM 1258 O OD1 . ASN Q 17 207 ? 159.414 260.859 278.039 1.00 132.28 207 Bj 1 
+ATOM 1259 N ND2 . ASN Q 17 207 ? 161.581 260.384 277.690 1.00 132.28 207 Bj 1 
+ATOM 1260 N N   . ALA Q 17 208 ? 160.429 265.117 277.395 1.00 129.27 208 Bj 1 
+ATOM 1261 C CA  . ALA Q 17 208 ? 160.739 265.987 278.515 1.00 129.27 208 Bj 1 
+ATOM 1262 C C   . ALA Q 17 208 ? 159.476 266.692 279.008 1.00 129.27 208 Bj 1 
+ATOM 1263 O O   . ALA Q 17 208 ? 158.549 266.940 278.230 1.00 129.27 208 Bj 1 
+ATOM 1264 C CB  . ALA Q 17 208 ? 161.789 267.020 278.115 1.00 129.27 208 Bj 1 
+ATOM 1265 N N   . PRO Q 17 209 ? 159.410 267.019 280.299 1.00 132.17 209 Bj 1 
+ATOM 1266 C CA  . PRO Q 17 209 ? 158.236 267.726 280.821 1.00 132.17 209 Bj 1 
+ATOM 1267 C C   . PRO Q 17 209 ? 158.110 269.117 280.221 1.00 132.17 209 Bj 1 
+ATOM 1268 O O   . PRO Q 17 209 ? 159.065 269.686 279.688 1.00 132.17 209 Bj 1 
+ATOM 1269 C CB  . PRO Q 17 209 ? 158.499 267.795 282.331 1.00 132.17 209 Bj 1 
+ATOM 1270 C CG  . PRO Q 17 209 ? 159.515 266.734 282.598 1.00 132.17 209 Bj 1 
+ATOM 1271 C CD  . PRO Q 17 209 ? 160.359 266.661 281.366 1.00 132.17 209 Bj 1 
+ATOM 1272 N N   . CYS Q 17 210 ? 156.902 269.668 280.318 1.00 129.55 210 Bj 1 
+ATOM 1273 C CA  . CYS Q 17 210 ? 156.616 271.006 279.817 1.00 129.55 210 Bj 1 
+ATOM 1274 C C   . CYS Q 17 210 ? 156.563 272.051 280.922 1.00 129.55 210 Bj 1 
+ATOM 1275 O O   . CYS Q 17 210 ? 156.967 273.196 280.703 1.00 129.55 210 Bj 1 
+ATOM 1276 C CB  . CYS Q 17 210 ? 155.294 271.012 279.044 1.00 129.55 210 Bj 1 
+ATOM 1277 S SG  . CYS Q 17 210 ? 155.139 269.674 277.842 1.00 129.55 210 Bj 1 
+ATOM 1278 N N   . GLY Q 17 211 ? 156.076 271.687 282.100 1.00 136.75 211 Bj 1 
+ATOM 1279 C CA  . GLY Q 17 211 ? 156.066 272.608 283.225 1.00 136.75 211 Bj 1 
+ATOM 1280 C C   . GLY Q 17 211 ? 156.247 271.868 284.528 1.00 136.75 211 Bj 1 
+ATOM 1281 O O   . GLY Q 17 211 ? 155.885 270.695 284.650 1.00 136.75 211 Bj 1 
+ATOM 1282 N N   . HIS Q 17 212 ? 156.808 272.561 285.516 1.00 134.65 212 Bj 1 
+ATOM 1283 C CA  . HIS Q 17 212 ? 157.023 272.000 286.842 1.00 134.65 212 Bj 1 
+ATOM 1284 C C   . HIS Q 17 212 ? 156.523 272.973 287.897 1.00 134.65 212 Bj 1 
+ATOM 1285 O O   . HIS Q 17 212 ? 156.786 274.177 287.812 1.00 134.65 212 Bj 1 
+ATOM 1286 C CB  . HIS Q 17 212 ? 158.502 271.694 287.090 1.00 134.65 212 Bj 1 
+ATOM 1287 C CG  . HIS Q 17 212 ? 158.933 270.348 286.601 1.00 134.65 212 Bj 1 
+ATOM 1288 N ND1 . HIS Q 17 212 ? 159.905 269.605 287.236 1.00 134.65 212 Bj 1 
+ATOM 1289 C CD2 . HIS Q 17 212 ? 158.530 269.612 285.539 1.00 134.65 212 Bj 1 
+ATOM 1290 C CE1 . HIS Q 17 212 ? 160.079 268.468 286.587 1.00 134.65 212 Bj 1 
+ATOM 1291 N NE2 . HIS Q 17 212 ? 159.258 268.447 285.553 1.00 134.65 212 Bj 1 
+ATOM 1292 N N   . TYR Q 17 213 ? 155.805 272.454 288.892 1.00 135.25 213 Bj 1 
+ATOM 1293 C CA  . TYR Q 17 213 ? 155.323 273.300 289.979 1.00 135.25 213 Bj 1 
+ATOM 1294 C C   . TYR Q 17 213 ? 155.377 272.542 291.296 1.00 135.25 213 Bj 1 
+ATOM 1295 O O   . TYR Q 17 213 ? 154.938 271.392 291.372 1.00 135.25 213 Bj 1 
+ATOM 1296 C CB  . TYR Q 17 213 ? 153.896 273.793 289.707 1.00 135.25 213 Bj 1 
+ATOM 1297 C CG  . TYR Q 17 213 ? 153.785 274.683 288.490 1.00 135.25 213 Bj 1 
+ATOM 1298 C CD1 . TYR Q 17 213 ? 153.974 276.055 288.588 1.00 135.25 213 Bj 1 
+ATOM 1299 C CD2 . TYR Q 17 213 ? 153.497 274.151 287.241 1.00 135.25 213 Bj 1 
+ATOM 1300 C CE1 . TYR Q 17 213 ? 153.875 276.870 287.476 1.00 135.25 213 Bj 1 
+ATOM 1301 C CE2 . TYR Q 17 213 ? 153.395 274.957 286.125 1.00 135.25 213 Bj 1 
+ATOM 1302 C CZ  . TYR Q 17 213 ? 153.585 276.315 286.248 1.00 135.25 213 Bj 1 
+ATOM 1303 O OH  . TYR Q 17 213 ? 153.485 277.120 285.137 1.00 135.25 213 Bj 1 
+ATOM 1304 N N   . LYS Q 17 214 ? 155.902 273.189 292.333 1.00 138.67 214 Bj 1 
+ATOM 1305 C CA  . LYS Q 17 214 ? 156.024 272.582 293.650 1.00 138.67 214 Bj 1 
+ATOM 1306 C C   . LYS Q 17 214 ? 155.177 273.334 294.667 1.00 138.67 214 Bj 1 
+ATOM 1307 O O   . LYS Q 17 214 ? 154.975 274.547 294.559 1.00 138.67 214 Bj 1 
+ATOM 1308 C CB  . LYS Q 17 214 ? 157.483 272.554 294.123 1.00 138.67 214 Bj 1 
+ATOM 1309 C CG  . LYS Q 17 214 ? 158.319 271.446 293.510 1.00 138.67 214 Bj 1 
+ATOM 1310 C CD  . LYS Q 17 214 ? 159.715 271.422 294.112 1.00 138.67 214 Bj 1 
+ATOM 1311 C CE  . LYS Q 17 214 ? 160.537 270.265 293.567 1.00 138.67 214 Bj 1 
+ATOM 1312 N NZ  . LYS Q 17 214 ? 159.905 268.949 293.855 1.00 138.67 214 Bj 1 
+ATOM 1313 N N   . PHE Q 17 215 ? 154.684 272.594 295.658 1.00 143.45 215 Bj 1 
+ATOM 1314 C CA  . PHE Q 17 215 ? 153.944 273.179 296.769 1.00 143.45 215 Bj 1 
+ATOM 1315 C C   . PHE Q 17 215 ? 154.171 272.332 298.012 1.00 143.45 215 Bj 1 
+ATOM 1316 O O   . PHE Q 17 215 ? 154.077 271.103 297.954 1.00 143.45 215 Bj 1 
+ATOM 1317 C CB  . PHE Q 17 215 ? 152.446 273.293 296.456 1.00 143.45 215 Bj 1 
+ATOM 1318 C CG  . PHE Q 17 215 ? 151.816 272.015 295.975 1.00 143.45 215 Bj 1 
+ATOM 1319 C CD1 . PHE Q 17 215 ? 151.873 271.659 294.637 1.00 143.45 215 Bj 1 
+ATOM 1320 C CD2 . PHE Q 17 215 ? 151.143 271.185 296.855 1.00 143.45 215 Bj 1 
+ATOM 1321 C CE1 . PHE Q 17 215 ? 151.287 270.489 294.190 1.00 143.45 215 Bj 1 
+ATOM 1322 C CE2 . PHE Q 17 215 ? 150.553 270.015 296.414 1.00 143.45 215 Bj 1 
+ATOM 1323 C CZ  . PHE Q 17 215 ? 150.626 269.667 295.079 1.00 143.45 215 Bj 1 
+ATOM 1324 N N   . LYS Q 17 216 ? 154.477 272.988 299.126 1.00 149.62 216 Bj 1 
+ATOM 1325 C CA  . LYS Q 17 216 ? 154.790 272.310 300.375 1.00 149.62 216 Bj 1 
+ATOM 1326 C C   . LYS Q 17 216 ? 153.709 272.593 301.408 1.00 149.62 216 Bj 1 
+ATOM 1327 O O   . LYS Q 17 216 ? 153.137 273.687 301.440 1.00 149.62 216 Bj 1 
+ATOM 1328 C CB  . LYS Q 17 216 ? 156.158 272.749 300.906 1.00 149.62 216 Bj 1 
+ATOM 1329 C CG  . LYS Q 17 216 ? 157.300 272.479 299.940 1.00 149.62 216 Bj 1 
+ATOM 1330 C CD  . LYS Q 17 216 ? 158.639 272.904 300.519 1.00 149.62 216 Bj 1 
+ATOM 1331 C CE  . LYS Q 17 216 ? 159.771 272.621 299.544 1.00 149.62 216 Bj 1 
+ATOM 1332 N NZ  . LYS Q 17 216 ? 161.098 272.996 300.105 1.00 149.62 216 Bj 1 
+ATOM 1333 N N   . PHE Q 17 217 ? 153.435 271.602 302.250 1.00 143.58 217 Bj 1 
+ATOM 1334 C CA  . PHE Q 17 217 ? 152.407 271.732 303.275 1.00 143.58 217 Bj 1 
+ATOM 1335 C C   . PHE Q 17 217 ? 153.018 272.091 304.624 1.00 143.58 217 Bj 1 
+ATOM 1336 O O   . PHE Q 17 217 ? 152.899 271.339 305.590 1.00 143.58 217 Bj 1 
+ATOM 1337 C CB  . PHE Q 17 217 ? 151.599 270.437 303.392 1.00 143.58 217 Bj 1 
+ATOM 1338 C CG  . PHE Q 17 217 ? 150.831 270.087 302.150 1.00 143.58 217 Bj 1 
+ATOM 1339 C CD1 . PHE Q 17 217 ? 150.463 271.069 301.245 1.00 143.58 217 Bj 1 
+ATOM 1340 C CD2 . PHE Q 17 217 ? 150.477 268.774 301.886 1.00 143.58 217 Bj 1 
+ATOM 1341 C CE1 . PHE Q 17 217 ? 149.756 270.748 300.101 1.00 143.58 217 Bj 1 
+ATOM 1342 C CE2 . PHE Q 17 217 ? 149.771 268.447 300.744 1.00 143.58 217 Bj 1 
+ATOM 1343 C CZ  . PHE Q 17 217 ? 149.410 269.435 299.851 1.00 143.58 217 Bj 1 
+ATOM 1344 N N   . LEU Q 17 227 ? 157.135 268.148 304.312 1.00 125.05 227 Bj 1 
+ATOM 1345 C CA  . LEU Q 17 227 ? 156.195 267.564 303.362 1.00 125.05 227 Bj 1 
+ATOM 1346 C C   . LEU Q 17 227 ? 156.009 268.470 302.151 1.00 125.05 227 Bj 1 
+ATOM 1347 O O   . LEU Q 17 227 ? 155.534 269.599 302.277 1.00 125.05 227 Bj 1 
+ATOM 1348 C CB  . LEU Q 17 227 ? 154.846 267.299 304.034 1.00 125.05 227 Bj 1 
+ATOM 1349 C CG  . LEU Q 17 227 ? 153.726 266.761 303.141 1.00 125.05 227 Bj 1 
+ATOM 1350 C CD1 . LEU Q 17 227 ? 154.132 265.448 302.492 1.00 125.05 227 Bj 1 
+ATOM 1351 C CD2 . LEU Q 17 227 ? 152.443 266.591 303.938 1.00 125.05 227 Bj 1 
+ATOM 1352 N N   . GLY Q 17 228 ? 156.388 267.969 300.971 1.00 128.22 228 Bj 1 
+ATOM 1353 C CA  . GLY Q 17 228 ? 156.244 268.718 299.745 1.00 128.22 228 Bj 1 
+ATOM 1354 C C   . GLY Q 17 228 ? 155.646 267.856 298.647 1.00 128.22 228 Bj 1 
+ATOM 1355 O O   . GLY Q 17 228 ? 155.531 266.635 298.775 1.00 128.22 228 Bj 1 
+ATOM 1356 N N   . ALA Q 17 229 ? 155.272 268.518 297.555 1.00 135.59 229 Bj 1 
+ATOM 1357 C CA  . ALA Q 17 229 ? 154.709 267.825 296.410 1.00 135.59 229 Bj 1 
+ATOM 1358 C C   . ALA Q 17 229 ? 155.086 268.574 295.142 1.00 135.59 229 Bj 1 
+ATOM 1359 O O   . ALA Q 17 229 ? 155.273 269.793 295.151 1.00 135.59 229 Bj 1 
+ATOM 1360 C CB  . ALA Q 17 229 ? 153.186 267.691 296.522 1.00 135.59 229 Bj 1 
+ATOM 1361 N N   . LYS Q 17 230 ? 155.195 267.821 294.052 1.00 134.09 230 Bj 1 
+ATOM 1362 C CA  . LYS Q 17 230 ? 155.610 268.330 292.755 1.00 134.09 230 Bj 1 
+ATOM 1363 C C   . LYS Q 17 230 ? 154.658 267.812 291.689 1.00 134.09 230 Bj 1 
+ATOM 1364 O O   . LYS Q 17 230 ? 154.215 266.660 291.748 1.00 134.09 230 Bj 1 
+ATOM 1365 C CB  . LYS Q 17 230 ? 157.044 267.900 292.437 1.00 134.09 230 Bj 1 
+ATOM 1366 C CG  . LYS Q 17 230 ? 157.266 266.407 292.605 1.00 134.09 230 Bj 1 
+ATOM 1367 C CD  . LYS Q 17 230 ? 158.738 266.053 292.685 1.00 134.09 230 Bj 1 
+ATOM 1368 C CE  . LYS Q 17 230 ? 158.919 264.566 292.931 1.00 134.09 230 Bj 1 
+ATOM 1369 N NZ  . LYS Q 17 230 ? 158.240 264.126 294.181 1.00 134.09 230 Bj 1 
+ATOM 1370 N N   . VAL Q 17 231 ? 154.339 268.668 290.723 1.00 135.01 231 Bj 1 
+ATOM 1371 C CA  . VAL Q 17 231 ? 153.447 268.325 289.624 1.00 135.01 231 Bj 1 
+ATOM 1372 C C   . VAL Q 17 231 ? 154.143 268.676 288.317 1.00 135.01 231 Bj 1 
+ATOM 1373 O O   . VAL Q 17 231 ? 154.717 269.766 288.179 1.00 135.01 231 Bj 1 
+ATOM 1374 C CB  . VAL Q 17 231 ? 152.083 269.037 289.740 1.00 135.01 231 Bj 1 
+ATOM 1375 C CG1 . VAL Q 17 231 ? 152.256 270.540 289.888 1.00 135.01 231 Bj 1 
+ATOM 1376 C CG2 . VAL Q 17 231 ? 151.200 268.706 288.544 1.00 135.01 231 Bj 1 
+ATOM 1377 N N   . PHE Q 17 232 ? 154.109 267.736 287.371 1.00 135.12 232 Bj 1 
+ATOM 1378 C CA  . PHE Q 17 232 ? 154.776 267.856 286.079 1.00 135.12 232 Bj 1 
+ATOM 1379 C C   . PHE Q 17 232 ? 153.708 267.897 284.994 1.00 135.12 232 Bj 1 
+ATOM 1380 O O   . PHE Q 17 232 ? 152.998 266.910 284.777 1.00 135.12 232 Bj 1 
+ATOM 1381 C CB  . PHE Q 17 232 ? 155.736 266.691 285.848 1.00 135.12 232 Bj 1 
+ATOM 1382 C CG  . PHE Q 17 232 ? 156.600 266.370 287.032 1.00 135.12 232 Bj 1 
+ATOM 1383 C CD1 . PHE Q 17 232 ? 157.175 267.378 287.786 1.00 135.12 232 Bj 1 
+ATOM 1384 C CD2 . PHE Q 17 232 ? 156.831 265.055 287.394 1.00 135.12 232 Bj 1 
+ATOM 1385 C CE1 . PHE Q 17 232 ? 157.968 267.079 288.875 1.00 135.12 232 Bj 1 
+ATOM 1386 C CE2 . PHE Q 17 232 ? 157.623 264.749 288.481 1.00 135.12 232 Bj 1 
+ATOM 1387 C CZ  . PHE Q 17 232 ? 158.192 265.763 289.223 1.00 135.12 232 Bj 1 
+ATOM 1388 N N   . PHE Q 17 233 ? 153.597 269.034 284.318 1.00 138.91 233 Bj 1 
+ATOM 1389 C CA  . PHE Q 17 233 ? 152.629 269.220 283.246 1.00 138.91 233 Bj 1 
+ATOM 1390 C C   . PHE Q 17 233 ? 153.266 268.835 281.917 1.00 138.91 233 Bj 1 
+ATOM 1391 O O   . PHE Q 17 233 ? 154.289 269.410 281.525 1.00 138.91 233 Bj 1 
+ATOM 1392 C CB  . PHE Q 17 233 ? 152.141 270.667 283.211 1.00 138.91 233 Bj 1 
+ATOM 1393 C CG  . PHE Q 17 233 ? 151.342 271.064 284.416 1.00 138.91 233 Bj 1 
+ATOM 1394 C CD1 . PHE Q 17 233 ? 151.971 271.457 285.584 1.00 138.91 233 Bj 1 
+ATOM 1395 C CD2 . PHE Q 17 233 ? 149.959 271.042 284.380 1.00 138.91 233 Bj 1 
+ATOM 1396 C CE1 . PHE Q 17 233 ? 151.233 271.818 286.695 1.00 138.91 233 Bj 1 
+ATOM 1397 C CE2 . PHE Q 17 233 ? 149.218 271.404 285.489 1.00 138.91 233 Bj 1 
+ATOM 1398 C CZ  . PHE Q 17 233 ? 149.856 271.793 286.646 1.00 138.91 233 Bj 1 
+ATOM 1399 N N   . PHE Q 17 234 ? 152.663 267.863 281.235 1.00 134.22 234 Bj 1 
+ATOM 1400 C CA  . PHE Q 17 234 ? 153.088 267.418 279.917 1.00 134.22 234 Bj 1 
+ATOM 1401 C C   . PHE Q 17 234 ? 152.037 267.799 278.884 1.00 134.22 234 Bj 1 
+ATOM 1402 O O   . PHE Q 17 234 ? 150.840 267.584 279.098 1.00 134.22 234 Bj 1 
+ATOM 1403 C CB  . PHE Q 17 234 ? 153.301 265.902 279.885 1.00 134.22 234 Bj 1 
+ATOM 1404 C CG  . PHE Q 17 234 ? 154.564 265.447 280.554 1.00 134.22 234 Bj 1 
+ATOM 1405 C CD1 . PHE Q 17 234 ? 154.684 265.473 281.933 1.00 134.22 234 Bj 1 
+ATOM 1406 C CD2 . PHE Q 17 234 ? 155.625 264.972 279.802 1.00 134.22 234 Bj 1 
+ATOM 1407 C CE1 . PHE Q 17 234 ? 155.845 265.047 282.547 1.00 134.22 234 Bj 1 
+ATOM 1408 C CE2 . PHE Q 17 234 ? 156.786 264.542 280.410 1.00 134.22 234 Bj 1 
+ATOM 1409 C CZ  . PHE Q 17 234 ? 156.896 264.580 281.784 1.00 134.22 234 Bj 1 
+ATOM 1410 N N   . LYS Q 17 235 ? 152.488 268.350 277.760 1.00 127.98 235 Bj 1 
+ATOM 1411 C CA  . LYS Q 17 235 ? 151.591 268.748 276.685 1.00 127.98 235 Bj 1 
+ATOM 1412 C C   . LYS Q 17 235 ? 151.407 267.614 275.685 1.00 127.98 235 Bj 1 
+ATOM 1413 O O   . LYS Q 17 235 ? 152.342 266.861 275.399 1.00 127.98 235 Bj 1 
+ATOM 1414 C CB  . LYS Q 17 235 ? 152.120 269.988 275.962 1.00 127.98 235 Bj 1 
+ATOM 1415 C CG  . LYS Q 17 235 ? 151.913 271.288 276.717 1.00 127.98 235 Bj 1 
+ATOM 1416 C CD  . LYS Q 17 235 ? 152.321 272.477 275.865 1.00 127.98 235 Bj 1 
+ATOM 1417 C CE  . LYS Q 17 235 ? 151.978 273.788 276.547 1.00 127.98 235 Bj 1 
+ATOM 1418 N NZ  . LYS Q 17 235 ? 152.378 274.957 275.719 1.00 127.98 235 Bj 1 
+ATOM 1419 N N   . ALA Q 17 236 ? 150.191 267.503 275.155 1.00 124.65 236 Bj 1 
+ATOM 1420 C CA  . ALA Q 17 236 ? 149.871 266.534 274.120 1.00 124.65 236 Bj 1 
+ATOM 1421 C C   . ALA Q 17 236 ? 148.912 267.176 273.129 1.00 124.65 236 Bj 1 
+ATOM 1422 O O   . ALA Q 17 236 ? 148.201 268.130 273.453 1.00 124.65 236 Bj 1 
+ATOM 1423 C CB  . ALA Q 17 236 ? 149.260 265.254 274.706 1.00 124.65 236 Bj 1 
+ATOM 1424 N N   . LEU Q 17 237 ? 148.905 266.645 271.911 1.00 117.02 237 Bj 1 
+ATOM 1425 C CA  . LEU Q 17 237 ? 148.078 267.159 270.829 1.00 117.02 237 Bj 1 
+ATOM 1426 C C   . LEU Q 17 237 ? 146.925 266.201 270.561 1.00 117.02 237 Bj 1 
+ATOM 1427 O O   . LEU Q 17 237 ? 147.072 264.984 270.709 1.00 117.02 237 Bj 1 
+ATOM 1428 C CB  . LEU Q 17 237 ? 148.906 267.358 269.556 1.00 117.02 237 Bj 1 
+ATOM 1429 C CG  . LEU Q 17 237 ? 148.232 268.081 268.388 1.00 117.02 237 Bj 1 
+ATOM 1430 C CD1 . LEU Q 17 237 ? 147.874 269.508 268.773 1.00 117.02 237 Bj 1 
+ATOM 1431 C CD2 . LEU Q 17 237 ? 149.124 268.062 267.157 1.00 117.02 237 Bj 1 
+ATOM 1432 N N   . LEU Q 17 238 ? 145.780 266.752 270.167 1.00 111.74 238 Bj 1 
+ATOM 1433 C CA  . LEU Q 17 238 ? 144.598 265.953 269.875 1.00 111.74 238 Bj 1 
+ATOM 1434 C C   . LEU Q 17 238 ? 144.550 265.637 268.385 1.00 111.74 238 Bj 1 
+ATOM 1435 O O   . LEU Q 17 238 ? 144.436 266.545 267.555 1.00 111.74 238 Bj 1 
+ATOM 1436 C CB  . LEU Q 17 238 ? 143.330 266.688 270.308 1.00 111.74 238 Bj 1 
+ATOM 1437 C CG  . LEU Q 17 238 ? 142.006 266.022 269.930 1.00 111.74 238 Bj 1 
+ATOM 1438 C CD1 . LEU Q 17 238 ? 141.964 264.588 270.427 1.00 111.74 238 Bj 1 
+ATOM 1439 C CD2 . LEU Q 17 238 ? 140.831 266.812 270.482 1.00 111.74 238 Bj 1 
+ATOM 1440 N N   . LEU Q 17 239 ? 144.634 264.350 268.050 1.00 112.02 239 Bj 1 
+ATOM 1441 C CA  . LEU Q 17 239 ? 144.528 263.909 266.665 1.00 112.02 239 Bj 1 
+ATOM 1442 C C   . LEU Q 17 239 ? 143.084 263.603 266.282 1.00 112.02 239 Bj 1 
+ATOM 1443 O O   . LEU Q 17 239 ? 142.601 264.068 265.245 1.00 112.02 239 Bj 1 
+ATOM 1444 C CB  . LEU Q 17 239 ? 145.409 262.678 266.433 1.00 112.02 239 Bj 1 
+ATOM 1445 C CG  . LEU Q 17 239 ? 146.918 262.867 266.591 1.00 112.02 239 Bj 1 
+ATOM 1446 C CD1 . LEU Q 17 239 ? 147.642 261.536 266.459 1.00 112.02 239 Bj 1 
+ATOM 1447 C CD2 . LEU Q 17 239 ? 147.442 263.866 265.571 1.00 112.02 239 Bj 1 
+ATOM 1448 N N   . THR Q 17 240 ? 142.387 262.825 267.107 1.00 112.72 240 Bj 1 
+ATOM 1449 C CA  . THR Q 17 240 ? 140.988 262.492 266.862 1.00 112.72 240 Bj 1 
+ATOM 1450 C C   . THR Q 17 240 ? 140.284 262.360 268.201 1.00 112.72 240 Bj 1 
+ATOM 1451 O O   . THR Q 17 240 ? 140.656 261.510 269.017 1.00 112.72 240 Bj 1 
+ATOM 1452 C CB  . THR Q 17 240 ? 140.855 261.198 266.056 1.00 112.72 240 Bj 1 
+ATOM 1453 O OG1 . THR Q 17 240 ? 141.478 261.363 264.776 1.00 112.72 240 Bj 1 
+ATOM 1454 C CG2 . THR Q 17 240 ? 139.389 260.842 265.860 1.00 112.72 240 Bj 1 
+ATOM 1455 N N   . GLY Q 17 241 ? 139.281 263.204 268.427 1.00 112.39 241 Bj 1 
+ATOM 1456 C CA  . GLY Q 17 241 ? 138.518 263.163 269.658 1.00 112.39 241 Bj 1 
+ATOM 1457 C C   . GLY Q 17 241 ? 137.166 262.503 269.490 1.00 112.39 241 Bj 1 
+ATOM 1458 O O   . GLY Q 17 241 ? 136.235 263.106 268.948 1.00 112.39 241 Bj 1 
+ATOM 1459 N N   . ASP Q 17 242 ? 137.047 261.262 269.950 1.00 120.39 242 Bj 1 
+ATOM 1460 C CA  . ASP Q 17 242 ? 135.806 260.495 269.875 1.00 120.39 242 Bj 1 
+ATOM 1461 C C   . ASP Q 17 242 ? 135.359 260.229 271.309 1.00 120.39 242 Bj 1 
+ATOM 1462 O O   . ASP Q 17 242 ? 135.683 259.189 271.887 1.00 120.39 242 Bj 1 
+ATOM 1463 C CB  . ASP Q 17 242 ? 136.006 259.200 269.088 1.00 120.39 242 Bj 1 
+ATOM 1464 C CG  . ASP Q 17 242 ? 134.704 258.479 268.811 1.00 120.39 242 Bj 1 
+ATOM 1465 O OD1 . ASP Q 17 242 ? 133.900 258.990 268.004 1.00 120.39 242 Bj 1 
+ATOM 1466 O OD2 . ASP Q 17 242 ? 134.484 257.400 269.399 1.00 120.39 242 Bj 1 
+ATOM 1467 N N   . PHE Q 17 243 ? 134.612 261.172 271.876 1.00 125.10 243 Bj 1 
+ATOM 1468 C CA  . PHE Q 17 243 ? 134.205 261.109 273.274 1.00 125.10 243 Bj 1 
+ATOM 1469 C C   . PHE Q 17 243 ? 132.791 260.548 273.376 1.00 125.10 243 Bj 1 
+ATOM 1470 O O   . PHE Q 17 243 ? 131.858 261.086 272.771 1.00 125.10 243 Bj 1 
+ATOM 1471 C CB  . PHE Q 17 243 ? 134.284 262.493 273.916 1.00 125.10 243 Bj 1 
+ATOM 1472 C CG  . PHE Q 17 243 ? 133.967 262.500 275.384 1.00 125.10 243 Bj 1 
+ATOM 1473 C CD1 . PHE Q 17 243 ? 134.948 262.216 276.319 1.00 125.10 243 Bj 1 
+ATOM 1474 C CD2 . PHE Q 17 243 ? 132.690 262.797 275.830 1.00 125.10 243 Bj 1 
+ATOM 1475 C CE1 . PHE Q 17 243 ? 134.661 262.224 277.670 1.00 125.10 243 Bj 1 
+ATOM 1476 C CE2 . PHE Q 17 243 ? 132.398 262.805 277.179 1.00 125.10 243 Bj 1 
+ATOM 1477 C CZ  . PHE Q 17 243 ? 133.384 262.518 278.100 1.00 125.10 243 Bj 1 
+ATOM 1478 N N   . SER Q 17 244 ? 132.637 259.471 274.141 1.00 130.58 244 Bj 1 
+ATOM 1479 C CA  . SER Q 17 244 ? 131.334 258.873 274.383 1.00 130.58 244 Bj 1 
+ATOM 1480 C C   . SER Q 17 244 ? 130.729 259.423 275.668 1.00 130.58 244 Bj 1 
+ATOM 1481 O O   . SER Q 17 244 ? 131.444 259.824 276.591 1.00 130.58 244 Bj 1 
+ATOM 1482 C CB  . SER Q 17 244 ? 131.443 257.349 274.467 1.00 130.58 244 Bj 1 
+ATOM 1483 O OG  . SER Q 17 244 ? 130.182 256.759 274.733 1.00 130.58 244 Bj 1 
+ATOM 1484 N N   . GLN Q 17 245 ? 129.395 259.434 275.717 1.00 128.80 245 Bj 1 
+ATOM 1485 C CA  . GLN Q 17 245 ? 128.640 259.945 276.861 1.00 128.80 245 Bj 1 
+ATOM 1486 C C   . GLN Q 17 245 ? 129.024 261.398 277.157 1.00 128.80 245 Bj 1 
+ATOM 1487 O O   . GLN Q 17 245 ? 129.573 261.730 278.209 1.00 128.80 245 Bj 1 
+ATOM 1488 C CB  . GLN Q 17 245 ? 128.834 259.050 278.092 1.00 128.80 245 Bj 1 
+ATOM 1489 C CG  . GLN Q 17 245 ? 127.890 259.349 279.253 1.00 128.80 245 Bj 1 
+ATOM 1490 C CD  . GLN Q 17 245 ? 126.435 259.074 278.920 1.00 128.80 245 Bj 1 
+ATOM 1491 O OE1 . GLN Q 17 245 ? 126.126 258.253 278.055 1.00 128.80 245 Bj 1 
+ATOM 1492 N NE2 . GLN Q 17 245 ? 125.531 259.762 279.608 1.00 128.80 245 Bj 1 
+ATOM 1493 N N   . ALA Q 17 246 ? 128.731 262.266 276.186 1.00 127.68 246 Bj 1 
+ATOM 1494 C CA  . ALA Q 17 246 ? 129.038 263.683 276.337 1.00 127.68 246 Bj 1 
+ATOM 1495 C C   . ALA Q 17 246 ? 128.140 264.366 277.359 1.00 127.68 246 Bj 1 
+ATOM 1496 O O   . ALA Q 17 246 ? 128.472 265.463 277.821 1.00 127.68 246 Bj 1 
+ATOM 1497 C CB  . ALA Q 17 246 ? 128.926 264.394 274.987 1.00 127.68 246 Bj 1 
+ATOM 1498 N N   . GLY Q 17 247 ? 127.018 263.748 277.720 1.00 128.61 247 Bj 1 
+ATOM 1499 C CA  . GLY Q 17 247 ? 126.115 264.325 278.695 1.00 128.61 247 Bj 1 
+ATOM 1500 C C   . GLY Q 17 247 ? 126.252 263.710 280.072 1.00 128.61 247 Bj 1 
+ATOM 1501 O O   . GLY Q 17 247 ? 125.267 263.595 280.808 1.00 128.61 247 Bj 1 
+ATOM 1502 N N   . LYS Q 17 248 ? 127.468 263.311 280.433 1.00 125.96 248 Bj 1 
+ATOM 1503 C CA  . LYS Q 17 248 ? 127.713 262.724 281.739 1.00 125.96 248 Bj 1 
+ATOM 1504 C C   . LYS Q 17 248 ? 127.891 263.817 282.791 1.00 125.96 248 Bj 1 
+ATOM 1505 O O   . LYS Q 17 248 ? 127.941 265.012 282.488 1.00 125.96 248 Bj 1 
+ATOM 1506 C CB  . LYS Q 17 248 ? 128.946 261.822 281.702 1.00 125.96 248 Bj 1 
+ATOM 1507 C CG  . LYS Q 17 248 ? 130.258 262.572 281.540 1.00 125.96 248 Bj 1 
+ATOM 1508 C CD  . LYS Q 17 248 ? 131.448 261.630 281.626 1.00 125.96 248 Bj 1 
+ATOM 1509 C CE  . LYS Q 17 248 ? 132.761 262.393 281.596 1.00 125.96 248 Bj 1 
+ATOM 1510 N NZ  . LYS Q 17 248 ? 133.934 261.479 281.668 1.00 125.96 248 Bj 1 
+ATOM 1511 N N   . LYS Q 17 249 ? 127.991 263.389 284.050 1.00 120.94 249 Bj 1 
+ATOM 1512 C CA  . LYS Q 17 249 ? 128.204 264.319 285.150 1.00 120.94 249 Bj 1 
+ATOM 1513 C C   . LYS Q 17 249 ? 129.630 264.849 285.213 1.00 120.94 249 Bj 1 
+ATOM 1514 O O   . LYS Q 17 249 ? 129.879 265.823 285.932 1.00 120.94 249 Bj 1 
+ATOM 1515 C CB  . LYS Q 17 249 ? 127.843 263.653 286.481 1.00 120.94 249 Bj 1 
+ATOM 1516 C CG  . LYS Q 17 249 ? 126.360 263.355 286.649 1.00 120.94 249 Bj 1 
+ATOM 1517 C CD  . LYS Q 17 249 ? 125.530 264.631 286.660 1.00 120.94 249 Bj 1 
+ATOM 1518 C CE  . LYS Q 17 249 ? 124.617 264.713 285.447 1.00 120.94 249 Bj 1 
+ATOM 1519 N NZ  . LYS Q 17 249 ? 123.811 265.964 285.445 1.00 120.94 249 Bj 1 
+ATOM 1520 N N   . GLY Q 17 250 ? 130.565 264.239 284.488 1.00 123.18 250 Bj 1 
+ATOM 1521 C CA  . GLY Q 17 250 ? 131.923 264.742 284.431 1.00 123.18 250 Bj 1 
+ATOM 1522 C C   . GLY Q 17 250 ? 132.013 266.047 283.669 1.00 123.18 250 Bj 1 
+ATOM 1523 O O   . GLY Q 17 250 ? 131.833 266.074 282.448 1.00 123.18 250 Bj 1 
+ATOM 1524 N N   . HIS Q 17 251 ? 132.289 267.138 284.379 1.00 125.29 251 Bj 1 
+ATOM 1525 C CA  . HIS Q 17 251 ? 132.322 268.470 283.778 1.00 125.29 251 Bj 1 
+ATOM 1526 C C   . HIS Q 17 251 ? 133.687 268.686 283.137 1.00 125.29 251 Bj 1 
+ATOM 1527 O O   . HIS Q 17 251 ? 134.647 269.104 283.786 1.00 125.29 251 Bj 1 
+ATOM 1528 C CB  . HIS Q 17 251 ? 132.019 269.538 284.821 1.00 125.29 251 Bj 1 
+ATOM 1529 C CG  . HIS Q 17 251 ? 130.737 269.315 285.560 1.00 125.29 251 Bj 1 
+ATOM 1530 N ND1 . HIS Q 17 251 ? 129.511 269.688 285.053 1.00 125.29 251 Bj 1 
+ATOM 1531 C CD2 . HIS Q 17 251 ? 130.489 268.757 286.769 1.00 125.29 251 Bj 1 
+ATOM 1532 C CE1 . HIS Q 17 251 ? 128.563 269.370 285.917 1.00 125.29 251 Bj 1 
+ATOM 1533 N NE2 . HIS Q 17 251 ? 129.131 268.803 286.966 1.00 125.29 251 Bj 1 
+ATOM 1534 N N   . HIS Q 17 252 ? 133.771 268.392 281.842 1.00 117.65 252 Bj 1 
+ATOM 1535 C CA  . HIS Q 17 252 ? 134.965 268.633 281.044 1.00 117.65 252 Bj 1 
+ATOM 1536 C C   . HIS Q 17 252 ? 134.674 269.751 280.053 1.00 117.65 252 Bj 1 
+ATOM 1537 O O   . HIS Q 17 252 ? 133.661 269.713 279.348 1.00 117.65 252 Bj 1 
+ATOM 1538 C CB  . HIS Q 17 252 ? 135.405 267.363 280.309 1.00 117.65 252 Bj 1 
+ATOM 1539 C CG  . HIS Q 17 252 ? 134.422 266.883 279.289 1.00 117.65 252 Bj 1 
+ATOM 1540 N ND1 . HIS Q 17 252 ? 133.315 266.131 279.617 1.00 117.65 252 Bj 1 
+ATOM 1541 C CD2 . HIS Q 17 252 ? 134.377 267.051 277.946 1.00 117.65 252 Bj 1 
+ATOM 1542 C CE1 . HIS Q 17 252 ? 132.631 265.856 278.521 1.00 117.65 252 Bj 1 
+ATOM 1543 N NE2 . HIS Q 17 252 ? 133.254 266.403 277.493 1.00 117.65 252 Bj 1 
+ATOM 1544 N N   . VAL Q 17 253 ? 135.556 270.746 280.008 1.00 119.25 253 Bj 1 
+ATOM 1545 C CA  . VAL Q 17 253 ? 135.344 271.959 279.228 1.00 119.25 253 Bj 1 
+ATOM 1546 C C   . VAL Q 17 253 ? 136.541 272.173 278.314 1.00 119.25 253 Bj 1 
+ATOM 1547 O O   . VAL Q 17 253 ? 137.691 272.100 278.762 1.00 119.25 253 Bj 1 
+ATOM 1548 C CB  . VAL Q 17 253 ? 135.137 273.190 280.131 1.00 119.25 253 Bj 1 
+ATOM 1549 C CG1 . VAL Q 17 253 ? 134.861 274.428 279.291 1.00 119.25 253 Bj 1 
+ATOM 1550 C CG2 . VAL Q 17 253 ? 134.007 272.948 281.121 1.00 119.25 253 Bj 1 
+ATOM 1551 N N   . TRP Q 17 254 ? 136.269 272.431 277.036 1.00 115.00 254 Bj 1 
+ATOM 1552 C CA  . TRP Q 17 254 ? 137.283 272.897 276.101 1.00 115.00 254 Bj 1 
+ATOM 1553 C C   . TRP Q 17 254 ? 137.325 274.418 276.147 1.00 115.00 254 Bj 1 
+ATOM 1554 O O   . TRP Q 17 254 ? 136.330 275.082 275.836 1.00 115.00 254 Bj 1 
+ATOM 1555 C CB  . TRP Q 17 254 ? 136.987 272.415 274.681 1.00 115.00 254 Bj 1 
+ATOM 1556 C CG  . TRP Q 17 254 ? 136.967 270.928 274.547 1.00 115.00 254 Bj 1 
+ATOM 1557 C CD1 . TRP Q 17 254 ? 135.876 270.139 274.334 1.00 115.00 254 Bj 1 
+ATOM 1558 C CD2 . TRP Q 17 254 ? 138.092 270.046 274.625 1.00 115.00 254 Bj 1 
+ATOM 1559 N NE1 . TRP Q 17 254 ? 136.251 268.819 274.269 1.00 115.00 254 Bj 1 
+ATOM 1560 C CE2 . TRP Q 17 254 ? 137.607 268.735 274.446 1.00 115.00 254 Bj 1 
+ATOM 1561 C CE3 . TRP Q 17 254 ? 139.461 270.236 274.827 1.00 115.00 254 Bj 1 
+ATOM 1562 C CZ2 . TRP Q 17 254 ? 138.443 267.622 274.463 1.00 115.00 254 Bj 1 
+ATOM 1563 C CZ3 . TRP Q 17 254 ? 140.289 269.130 274.842 1.00 115.00 254 Bj 1 
+ATOM 1564 C CH2 . TRP Q 17 254 ? 139.778 267.840 274.662 1.00 115.00 254 Bj 1 
+ATOM 1565 N N   . VAL Q 17 255 ? 138.473 274.965 276.535 1.00 119.35 255 Bj 1 
+ATOM 1566 C CA  . VAL Q 17 255 ? 138.586 276.379 276.870 1.00 119.35 255 Bj 1 
+ATOM 1567 C C   . VAL Q 17 255 ? 139.797 276.969 276.160 1.00 119.35 255 Bj 1 
+ATOM 1568 O O   . VAL Q 17 255 ? 140.791 276.276 275.919 1.00 119.35 255 Bj 1 
+ATOM 1569 C CB  . VAL Q 17 255 ? 138.678 276.575 278.400 1.00 119.35 255 Bj 1 
+ATOM 1570 C CG1 . VAL Q 17 255 ? 139.988 276.026 278.940 1.00 119.35 255 Bj 1 
+ATOM 1571 C CG2 . VAL Q 17 255 ? 138.506 278.030 278.766 1.00 119.35 255 Bj 1 
+ATOM 1572 N N   . SER Q 17 256 ? 139.702 278.248 275.804 1.00 122.61 256 Bj 1 
+ATOM 1573 C CA  . SER Q 17 256 ? 140.792 278.967 275.164 1.00 122.61 256 Bj 1 
+ATOM 1574 C C   . SER Q 17 256 ? 141.580 279.743 276.219 1.00 122.61 256 Bj 1 
+ATOM 1575 O O   . SER Q 17 256 ? 141.375 279.576 277.423 1.00 122.61 256 Bj 1 
+ATOM 1576 C CB  . SER Q 17 256 ? 140.249 279.877 274.066 1.00 122.61 256 Bj 1 
+ATOM 1577 O OG  . SER Q 17 256 ? 141.298 280.548 273.390 1.00 122.61 256 Bj 1 
+ATOM 1578 N N   . LYS Q 17 257 ? 142.489 280.613 275.772 1.00 127.00 257 Bj 1 
+ATOM 1579 C CA  . LYS Q 17 257 ? 143.375 281.318 276.695 1.00 127.00 257 Bj 1 
+ATOM 1580 C C   . LYS Q 17 257 ? 142.610 282.285 277.595 1.00 127.00 257 Bj 1 
+ATOM 1581 O O   . LYS Q 17 257 ? 142.840 282.324 278.811 1.00 127.00 257 Bj 1 
+ATOM 1582 C CB  . LYS Q 17 257 ? 144.455 282.054 275.899 1.00 127.00 257 Bj 1 
+ATOM 1583 C CG  . LYS Q 17 257 ? 144.923 283.367 276.506 1.00 127.00 257 Bj 1 
+ATOM 1584 C CD  . LYS Q 17 257 ? 146.041 283.168 277.511 1.00 127.00 257 Bj 1 
+ATOM 1585 C CE  . LYS Q 17 257 ? 146.569 284.511 277.993 1.00 127.00 257 Bj 1 
+ATOM 1586 N NZ  . LYS Q 17 257 ? 147.753 284.372 278.882 1.00 127.00 257 Bj 1 
+ATOM 1587 N N   . GLU Q 17 258 ? 141.695 283.069 277.021 1.00 126.69 258 Bj 1 
+ATOM 1588 C CA  . GLU Q 17 258 ? 141.007 284.103 277.788 1.00 126.69 258 Bj 1 
+ATOM 1589 C C   . GLU Q 17 258 ? 140.134 283.494 278.880 1.00 126.69 258 Bj 1 
+ATOM 1590 O O   . GLU Q 17 258 ? 140.313 283.776 280.071 1.00 126.69 258 Bj 1 
+ATOM 1591 C CB  . GLU Q 17 258 ? 140.173 284.979 276.851 1.00 126.69 258 Bj 1 
+ATOM 1592 C CG  . GLU Q 17 258 ? 140.982 285.777 275.834 1.00 126.69 258 Bj 1 
+ATOM 1593 C CD  . GLU Q 17 258 ? 141.362 284.971 274.602 1.00 126.69 258 Bj 1 
+ATOM 1594 O OE1 . GLU Q 17 258 ? 141.635 283.760 274.732 1.00 126.69 258 Bj 1 
+ATOM 1595 O OE2 . GLU Q 17 258 ? 141.381 285.553 273.498 1.00 126.69 258 Bj 1 
+ATOM 1596 N N   . GLU Q 17 259 ? 139.174 282.652 278.490 1.00 129.80 259 Bj 1 
+ATOM 1597 C CA  . GLU Q 17 259 ? 138.332 281.997 279.482 1.00 129.80 259 Bj 1 
+ATOM 1598 C C   . GLU Q 17 259 ? 139.126 281.043 280.365 1.00 129.80 259 Bj 1 
+ATOM 1599 O O   . GLU Q 17 259 ? 138.712 280.779 281.498 1.00 129.80 259 Bj 1 
+ATOM 1600 C CB  . GLU Q 17 259 ? 137.179 281.259 278.797 1.00 129.80 259 Bj 1 
+ATOM 1601 C CG  . GLU Q 17 259 ? 136.278 282.148 277.950 1.00 129.80 259 Bj 1 
+ATOM 1602 C CD  . GLU Q 17 259 ? 136.700 282.197 276.494 1.00 129.80 259 Bj 1 
+ATOM 1603 O OE1 . GLU Q 17 259 ? 137.140 281.154 275.965 1.00 129.80 259 Bj 1 
+ATOM 1604 O OE2 . GLU Q 17 259 ? 136.592 283.278 275.878 1.00 129.80 259 Bj 1 
+ATOM 1605 N N   . LEU Q 17 260 ? 140.270 280.549 279.888 1.00 130.83 260 Bj 1 
+ATOM 1606 C CA  . LEU Q 17 260 ? 141.148 279.742 280.729 1.00 130.83 260 Bj 1 
+ATOM 1607 C C   . LEU Q 17 260 ? 141.669 280.562 281.901 1.00 130.83 260 Bj 1 
+ATOM 1608 O O   . LEU Q 17 260 ? 141.580 280.142 283.062 1.00 130.83 260 Bj 1 
+ATOM 1609 C CB  . LEU Q 17 260 ? 142.301 279.197 279.882 1.00 130.83 260 Bj 1 
+ATOM 1610 C CG  . LEU Q 17 260 ? 143.280 278.143 280.407 1.00 130.83 260 Bj 1 
+ATOM 1611 C CD1 . LEU Q 17 260 ? 143.986 277.497 279.232 1.00 130.83 260 Bj 1 
+ATOM 1612 C CD2 . LEU Q 17 260 ? 144.307 278.740 281.346 1.00 130.83 260 Bj 1 
+ATOM 1613 N N   . GLY Q 17 261 ? 142.232 281.735 281.610 1.00 132.72 261 Bj 1 
+ATOM 1614 C CA  . GLY Q 17 261 ? 142.661 282.625 282.674 1.00 132.72 261 Bj 1 
+ATOM 1615 C C   . GLY Q 17 261 ? 141.510 283.111 283.530 1.00 132.72 261 Bj 1 
+ATOM 1616 O O   . GLY Q 17 261 ? 141.689 283.389 284.720 1.00 132.72 261 Bj 1 
+ATOM 1617 N N   . ASP Q 17 262 ? 140.317 283.220 282.943 1.00 135.25 262 Bj 1 
+ATOM 1618 C CA  . ASP Q 17 262 ? 139.148 283.630 283.717 1.00 135.25 262 Bj 1 
+ATOM 1619 C C   . ASP Q 17 262 ? 138.742 282.558 284.722 1.00 135.25 262 Bj 1 
+ATOM 1620 O O   . ASP Q 17 262 ? 138.354 282.874 285.853 1.00 135.25 262 Bj 1 
+ATOM 1621 C CB  . ASP Q 17 262 ? 137.986 283.951 282.778 1.00 135.25 262 Bj 1 
+ATOM 1622 C CG  . ASP Q 17 262 ? 136.680 284.169 283.519 1.00 135.25 262 Bj 1 
+ATOM 1623 O OD1 . ASP Q 17 262 ? 136.568 285.178 284.246 1.00 135.25 262 Bj 1 
+ATOM 1624 O OD2 . ASP Q 17 262 ? 135.764 283.332 283.373 1.00 135.25 262 Bj 1 
+ATOM 1625 N N   . TYR Q 17 263 ? 138.823 281.286 284.330 1.00 135.63 263 Bj 1 
+ATOM 1626 C CA  . TYR Q 17 263 ? 138.387 280.204 285.207 1.00 135.63 263 Bj 1 
+ATOM 1627 C C   . TYR Q 17 263 ? 139.450 279.853 286.242 1.00 135.63 263 Bj 1 
+ATOM 1628 O O   . TYR Q 17 263 ? 139.148 279.738 287.435 1.00 135.63 263 Bj 1 
+ATOM 1629 C CB  . TYR Q 17 263 ? 138.020 278.968 284.383 1.00 135.63 263 Bj 1 
+ATOM 1630 C CG  . TYR Q 17 263 ? 136.748 279.113 283.580 1.00 135.63 263 Bj 1 
+ATOM 1631 C CD1 . TYR Q 17 263 ? 136.444 278.220 282.560 1.00 135.63 263 Bj 1 
+ATOM 1632 C CD2 . TYR Q 17 263 ? 135.849 280.139 283.842 1.00 135.63 263 Bj 1 
+ATOM 1633 C CE1 . TYR Q 17 263 ? 135.282 278.346 281.823 1.00 135.63 263 Bj 1 
+ATOM 1634 C CE2 . TYR Q 17 263 ? 134.685 280.272 283.109 1.00 135.63 263 Bj 1 
+ATOM 1635 C CZ  . TYR Q 17 263 ? 134.407 279.373 282.101 1.00 135.63 263 Bj 1 
+ATOM 1636 O OH  . TYR Q 17 263 ? 133.250 279.500 281.367 1.00 135.63 263 Bj 1 
+ATOM 1637 N N   . LEU Q 17 264 ? 140.698 279.676 285.808 1.00 134.80 264 Bj 1 
+ATOM 1638 C CA  . LEU Q 17 264 ? 141.750 279.206 286.706 1.00 134.80 264 Bj 1 
+ATOM 1639 C C   . LEU Q 17 264 ? 142.092 280.291 287.720 1.00 134.80 264 Bj 1 
+ATOM 1640 O O   . LEU Q 17 264 ? 142.757 281.278 287.390 1.00 134.80 264 Bj 1 
+ATOM 1641 C CB  . LEU Q 17 264 ? 142.981 278.790 285.908 1.00 134.80 264 Bj 1 
+ATOM 1642 C CG  . LEU Q 17 264 ? 142.804 277.524 285.068 1.00 134.80 264 Bj 1 
+ATOM 1643 C CD1 . LEU Q 17 264 ? 144.129 277.063 284.492 1.00 134.80 264 Bj 1 
+ATOM 1644 C CD2 . LEU Q 17 264 ? 142.169 276.422 285.898 1.00 134.80 264 Bj 1 
+ATOM 1645 N N   . LYS Q 17 265 ? 141.633 280.107 288.955 1.00 137.65 265 Bj 1 
+ATOM 1646 C CA  . LYS Q 17 265 ? 141.877 281.041 290.049 1.00 137.65 265 Bj 1 
+ATOM 1647 C C   . LYS Q 17 265 ? 143.260 280.904 290.689 1.00 137.65 265 Bj 1 
+ATOM 1648 O O   . LYS Q 17 265 ? 143.947 281.921 290.850 1.00 137.65 265 Bj 1 
+ATOM 1649 C CB  . LYS Q 17 265 ? 140.794 280.889 291.122 1.00 137.65 265 Bj 1 
+ATOM 1650 C CG  . LYS Q 17 265 ? 140.067 279.555 291.107 1.00 137.65 265 Bj 1 
+ATOM 1651 C CD  . LYS Q 17 265 ? 139.195 279.392 292.339 1.00 137.65 265 Bj 1 
+ATOM 1652 C CE  . LYS Q 17 265 ? 140.022 279.484 293.612 1.00 137.65 265 Bj 1 
+ATOM 1653 N NZ  . LYS Q 17 265 ? 141.088 278.445 293.660 1.00 137.65 265 Bj 1 
+ATOM 1654 N N   . PRO Q 17 266 ? 143.720 279.709 291.071 1.00 140.01 266 Bj 1 
+ATOM 1655 C CA  . PRO Q 17 266 ? 144.940 279.634 291.881 1.00 140.01 266 Bj 1 
+ATOM 1656 C C   . PRO Q 17 266 ? 146.183 279.907 291.050 1.00 140.01 266 Bj 1 
+ATOM 1657 O O   . PRO Q 17 266 ? 146.185 279.801 289.822 1.00 140.01 266 Bj 1 
+ATOM 1658 C CB  . PRO Q 17 266 ? 144.937 278.195 292.416 1.00 140.01 266 Bj 1 
+ATOM 1659 C CG  . PRO Q 17 266 ? 143.732 277.520 291.808 1.00 140.01 266 Bj 1 
+ATOM 1660 C CD  . PRO Q 17 266 ? 143.299 278.360 290.659 1.00 140.01 266 Bj 1 
+ATOM 1661 N N   . LYS Q 17 267 ? 147.260 280.264 291.753 1.00 148.42 267 Bj 1 
+ATOM 1662 C CA  . LYS Q 17 267 ? 148.508 280.602 291.080 1.00 148.42 267 Bj 1 
+ATOM 1663 C C   . LYS Q 17 267 ? 149.209 279.379 290.506 1.00 148.42 267 Bj 1 
+ATOM 1664 O O   . LYS Q 17 267 ? 150.039 279.526 289.603 1.00 148.42 267 Bj 1 
+ATOM 1665 C CB  . LYS Q 17 267 ? 149.447 281.333 292.041 1.00 148.42 267 Bj 1 
+ATOM 1666 C CG  . LYS Q 17 267 ? 149.947 280.481 293.195 1.00 148.42 267 Bj 1 
+ATOM 1667 C CD  . LYS Q 17 267 ? 150.971 281.233 294.030 1.00 148.42 267 Bj 1 
+ATOM 1668 C CE  . LYS Q 17 267 ? 151.539 280.354 295.132 1.00 148.42 267 Bj 1 
+ATOM 1669 N NZ  . LYS Q 17 267 ? 152.570 281.070 295.935 1.00 148.42 267 Bj 1 
+ATOM 1670 N N   . TYR Q 17 268 ? 148.900 278.181 291.005 1.00 155.87 268 Bj 1 
+ATOM 1671 C CA  . TYR Q 17 268 ? 149.550 276.982 290.487 1.00 155.87 268 Bj 1 
+ATOM 1672 C C   . TYR Q 17 268 ? 149.064 276.652 289.082 1.00 155.87 268 Bj 1 
+ATOM 1673 O O   . TYR Q 17 268 ? 149.833 276.147 288.255 1.00 155.87 268 Bj 1 
+ATOM 1674 C CB  . TYR Q 17 268 ? 149.315 275.807 291.434 1.00 155.87 268 Bj 1 
+ATOM 1675 C CG  . TYR Q 17 268 ? 149.991 275.984 292.771 1.00 155.87 268 Bj 1 
+ATOM 1676 C CD1 . TYR Q 17 268 ? 151.334 275.678 292.934 1.00 155.87 268 Bj 1 
+ATOM 1677 C CD2 . TYR Q 17 268 ? 149.290 276.466 293.867 1.00 155.87 268 Bj 1 
+ATOM 1678 C CE1 . TYR Q 17 268 ? 151.960 275.843 294.150 1.00 155.87 268 Bj 1 
+ATOM 1679 C CE2 . TYR Q 17 268 ? 149.907 276.633 295.090 1.00 155.87 268 Bj 1 
+ATOM 1680 C CZ  . TYR Q 17 268 ? 151.242 276.319 295.225 1.00 155.87 268 Bj 1 
+ATOM 1681 O OH  . TYR Q 17 268 ? 151.863 276.483 296.440 1.00 155.87 268 Bj 1 
+ATOM 1682 N N   . LEU Q 17 269 ? 147.796 276.926 288.793 1.00 143.98 269 Bj 1 
+ATOM 1683 C CA  . LEU Q 17 269 ? 147.256 276.720 287.458 1.00 143.98 269 Bj 1 
+ATOM 1684 C C   . LEU Q 17 269 ? 147.228 277.995 286.627 1.00 143.98 269 Bj 1 
+ATOM 1685 O O   . LEU Q 17 269 ? 147.115 277.912 285.399 1.00 143.98 269 Bj 1 
+ATOM 1686 C CB  . LEU Q 17 269 ? 145.845 276.130 287.545 1.00 143.98 269 Bj 1 
+ATOM 1687 C CG  . LEU Q 17 269 ? 145.752 274.727 288.149 1.00 143.98 269 Bj 1 
+ATOM 1688 C CD1 . LEU Q 17 269 ? 144.310 274.253 288.179 1.00 143.98 269 Bj 1 
+ATOM 1689 C CD2 . LEU Q 17 269 ? 146.624 273.751 287.375 1.00 143.98 269 Bj 1 
+ATOM 1690 N N   . ALA Q 17 270 ? 147.339 279.164 287.255 1.00 137.42 270 Bj 1 
+ATOM 1691 C CA  . ALA Q 17 270 ? 147.361 280.426 286.528 1.00 137.42 270 Bj 1 
+ATOM 1692 C C   . ALA Q 17 270 ? 148.680 280.671 285.810 1.00 137.42 270 Bj 1 
+ATOM 1693 O O   . ALA Q 17 270 ? 148.785 281.646 285.059 1.00 137.42 270 Bj 1 
+ATOM 1694 C CB  . ALA Q 17 270 ? 147.068 281.588 287.482 1.00 137.42 270 Bj 1 
+ATOM 1695 N N   . GLN Q 17 271 ? 149.681 279.820 286.021 1.00 132.72 271 Bj 1 
+ATOM 1696 C CA  . GLN Q 17 271 ? 150.970 279.944 285.357 1.00 132.72 271 Bj 1 
+ATOM 1697 C C   . GLN Q 17 271 ? 151.126 278.967 284.199 1.00 132.72 271 Bj 1 
+ATOM 1698 O O   . GLN Q 17 271 ? 152.241 278.789 283.699 1.00 132.72 271 Bj 1 
+ATOM 1699 C CB  . GLN Q 17 271 ? 152.102 279.749 286.366 1.00 132.72 271 Bj 1 
+ATOM 1700 C CG  . GLN Q 17 271 ? 152.097 280.762 287.495 1.00 132.72 271 Bj 1 
+ATOM 1701 C CD  . GLN Q 17 271 ? 153.182 280.502 288.519 1.00 132.72 271 Bj 1 
+ATOM 1702 O OE1 . GLN Q 17 271 ? 154.178 279.838 288.232 1.00 132.72 271 Bj 1 
+ATOM 1703 N NE2 . GLN Q 17 271 ? 152.994 281.024 289.725 1.00 132.72 271 Bj 1 
+ATOM 1704 N N   . VAL Q 17 272 ? 150.038 278.325 283.767 1.00 127.77 272 Bj 1 
+ATOM 1705 C CA  . VAL Q 17 272 ? 150.113 277.466 282.590 1.00 127.77 272 Bj 1 
+ATOM 1706 C C   . VAL Q 17 272 ? 150.313 278.305 281.335 1.00 127.77 272 Bj 1 
+ATOM 1707 O O   . VAL Q 17 272 ? 150.913 277.842 280.356 1.00 127.77 272 Bj 1 
+ATOM 1708 C CB  . VAL Q 17 272 ? 148.858 276.577 282.494 1.00 127.77 272 Bj 1 
+ATOM 1709 C CG1 . VAL Q 17 272 ? 147.619 277.418 282.237 1.00 127.77 272 Bj 1 
+ATOM 1710 C CG2 . VAL Q 17 272 ? 149.029 275.519 281.414 1.00 127.77 272 Bj 1 
+ATOM 1711 N N   . ARG Q 17 273 ? 149.836 279.552 281.344 1.00 126.48 273 Bj 1 
+ATOM 1712 C CA  . ARG Q 17 273 ? 150.044 280.452 280.218 1.00 126.48 273 Bj 1 
+ATOM 1713 C C   . ARG Q 17 273 ? 151.496 280.886 280.074 1.00 126.48 273 Bj 1 
+ATOM 1714 O O   . ARG Q 17 273 ? 151.838 281.516 279.067 1.00 126.48 273 Bj 1 
+ATOM 1715 C CB  . ARG Q 17 273 ? 149.146 281.684 280.353 1.00 126.48 273 Bj 1 
+ATOM 1716 C CG  . ARG Q 17 273 ? 147.662 281.390 280.204 1.00 126.48 273 Bj 1 
+ATOM 1717 C CD  . ARG Q 17 273 ? 146.993 281.126 281.543 1.00 126.48 273 Bj 1 
+ATOM 1718 N NE  . ARG Q 17 273 ? 146.890 282.333 282.357 1.00 126.48 273 Bj 1 
+ATOM 1719 C CZ  . ARG Q 17 273 ? 146.190 282.414 283.484 1.00 126.48 273 Bj 1 
+ATOM 1720 N NH1 . ARG Q 17 273 ? 145.525 281.357 283.930 1.00 126.48 273 Bj 1 
+ATOM 1721 N NH2 . ARG Q 17 273 ? 146.150 283.552 284.163 1.00 126.48 273 Bj 1 
+ATOM 1722 N N   . ARG Q 17 274 ? 152.349 280.573 281.051 1.00 119.98 274 Bj 1 
+ATOM 1723 C CA  . ARG Q 17 274 ? 153.770 280.876 280.920 1.00 119.98 274 Bj 1 
+ATOM 1724 C C   . ARG Q 17 274 ? 154.394 280.073 279.786 1.00 119.98 274 Bj 1 
+ATOM 1725 O O   . ARG Q 17 274 ? 155.151 280.611 278.970 1.00 119.98 274 Bj 1 
+ATOM 1726 C CB  . ARG Q 17 274 ? 154.489 280.596 282.239 1.00 119.98 274 Bj 1 
+ATOM 1727 C CG  . ARG Q 17 274 ? 155.996 280.753 282.164 1.00 119.98 274 Bj 1 
+ATOM 1728 C CD  . ARG Q 17 274 ? 156.653 280.440 283.497 1.00 119.98 274 Bj 1 
+ATOM 1729 N NE  . ARG Q 17 274 ? 158.106 280.552 283.422 1.00 119.98 274 Bj 1 
+ATOM 1730 C CZ  . ARG Q 17 274 ? 158.925 280.351 284.449 1.00 119.98 274 Bj 1 
+ATOM 1731 N NH1 . ARG Q 17 274 ? 158.434 280.026 285.638 1.00 119.98 274 Bj 1 
+ATOM 1732 N NH2 . ARG Q 17 274 ? 160.236 280.475 284.288 1.00 119.98 274 Bj 1 
+ATOM 1733 N N   . PHE Q 17 275 ? 154.086 278.781 279.719 1.00 124.86 275 Bj 1 
+ATOM 1734 C CA  . PHE Q 17 275 ? 154.571 277.923 278.649 1.00 124.86 275 Bj 1 
+ATOM 1735 C C   . PHE Q 17 275 ? 153.499 277.598 277.619 1.00 124.86 275 Bj 1 
+ATOM 1736 O O   . PHE Q 17 275 ? 153.784 276.886 276.652 1.00 124.86 275 Bj 1 
+ATOM 1737 C CB  . PHE Q 17 275 ? 155.151 276.626 279.226 1.00 124.86 275 Bj 1 
+ATOM 1738 C CG  . PHE Q 17 275 ? 154.189 275.853 280.081 1.00 124.86 275 Bj 1 
+ATOM 1739 C CD1 . PHE Q 17 275 ? 153.410 274.846 279.535 1.00 124.86 275 Bj 1 
+ATOM 1740 C CD2 . PHE Q 17 275 ? 154.073 276.123 281.434 1.00 124.86 275 Bj 1 
+ATOM 1741 C CE1 . PHE Q 17 275 ? 152.527 274.130 280.320 1.00 124.86 275 Bj 1 
+ATOM 1742 C CE2 . PHE Q 17 275 ? 153.191 275.411 282.224 1.00 124.86 275 Bj 1 
+ATOM 1743 C CZ  . PHE Q 17 275 ? 152.418 274.412 281.666 1.00 124.86 275 Bj 1 
+ATOM 1744 N N   . LEU Q 17 276 ? 152.279 278.098 277.799 1.00 117.83 276 Bj 1 
+ATOM 1745 C CA  . LEU Q 17 276 ? 151.240 277.932 276.795 1.00 117.83 276 Bj 1 
+ATOM 1746 C C   . LEU Q 17 276 ? 151.359 279.017 275.733 1.00 117.83 276 Bj 1 
+ATOM 1747 O O   . LEU Q 17 276 ? 151.592 280.188 276.045 1.00 117.83 276 Bj 1 
+ATOM 1748 C CB  . LEU Q 17 276 ? 149.857 277.977 277.444 1.00 117.83 276 Bj 1 
+ATOM 1749 C CG  . LEU Q 17 276 ? 148.658 277.885 276.498 1.00 117.83 276 Bj 1 
+ATOM 1750 C CD1 . LEU Q 17 276 ? 148.689 276.585 275.710 1.00 117.83 276 Bj 1 
+ATOM 1751 C CD2 . LEU Q 17 276 ? 147.359 278.018 277.275 1.00 117.83 276 Bj 1 
+ATOM 1752 N N   . LEU Q 17 277 ? 151.203 278.619 274.472 1.00 108.03 277 Bj 1 
+ATOM 1753 C CA  . LEU Q 17 277 ? 151.313 279.567 273.372 1.00 108.03 277 Bj 1 
+ATOM 1754 C C   . LEU Q 17 277 ? 150.175 280.577 273.422 1.00 108.03 277 Bj 1 
+ATOM 1755 O O   . LEU Q 17 277 ? 149.048 280.245 273.802 1.00 108.03 277 Bj 1 
+ATOM 1756 C CB  . LEU Q 17 277 ? 151.306 278.836 272.032 1.00 108.03 277 Bj 1 
+ATOM 1757 C CG  . LEU Q 17 277 ? 152.569 278.060 271.666 1.00 108.03 277 Bj 1 
+ATOM 1758 C CD1 . LEU Q 17 277 ? 152.537 277.695 270.195 1.00 108.03 277 Bj 1 
+ATOM 1759 C CD2 . LEU Q 17 277 ? 153.805 278.877 271.992 1.00 108.03 277 Bj 1 
+ATOM 1760 N N   . ASP Q 17 278 ? 150.474 281.816 273.030 1.00 106.80 278 Bj 1 
+ATOM 1761 C CA  . ASP Q 17 278 ? 149.461 282.864 273.029 1.00 106.80 278 Bj 1 
+ATOM 1762 C C   . ASP Q 17 278 ? 148.629 282.835 271.754 1.00 106.80 278 Bj 1 
+ATOM 1763 O O   . ASP Q 17 278 ? 147.422 283.101 271.794 1.00 106.80 278 Bj 1 
+ATOM 1764 C CB  . ASP Q 17 278 ? 150.123 284.231 273.199 1.00 106.80 278 Bj 1 
+ATOM 1765 C CG  . ASP Q 17 278 ? 151.058 284.283 274.390 1.00 106.80 278 Bj 1 
+ATOM 1766 O OD1 . ASP Q 17 278 ? 150.918 283.436 275.297 1.00 106.80 278 Bj 1 
+ATOM 1767 O OD2 . ASP Q 17 278 ? 151.932 285.174 274.420 1.00 106.80 278 Bj 1 
+ATOM 1768 N N   . LEU Q 17 279 ? 149.259 282.519 270.625 1.00 104.98 279 Bj 1 
+ATOM 1769 C CA  . LEU Q 17 279 ? 148.601 282.483 269.320 1.00 104.98 279 Bj 1 
+ATOM 1770 C C   . LEU Q 17 279 ? 147.938 283.817 268.987 1.00 104.98 279 Bj 1 
+ATOM 1771 O O   . LEU Q 17 279 ? 148.618 284.810 268.729 1.00 104.98 279 Bj 1 
+ATOM 1772 C CB  . LEU Q 17 279 ? 147.567 281.354 269.263 1.00 104.98 279 Bj 1 
+ATOM 1773 C CG  . LEU Q 17 279 ? 148.068 279.941 269.566 1.00 104.98 279 Bj 1 
+ATOM 1774 C CD1 . LEU Q 17 279 ? 147.007 278.919 269.200 1.00 104.98 279 Bj 1 
+ATOM 1775 C CD2 . LEU Q 17 279 ? 149.365 279.652 268.834 1.00 104.98 279 Bj 1 
+#

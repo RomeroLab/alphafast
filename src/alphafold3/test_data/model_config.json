@@ -1,0 +1,231 @@
+{
+  "evoformer": {
+    "max_relative_chain": 2,
+    "max_relative_idx": 32,
+    "msa_channel": 64,
+    "msa_stack": {
+      "msa_attention": {
+        "num_head": 8
+      },
+      "msa_transition": {
+        "num_intermediate_factor": 4,
+        "use_glu_kernel": true
+      },
+      "num_layer": 4,
+      "outer_product_mean": {
+        "chunk_size": 128,
+        "num_outer_channel": 32
+      },
+      "pair_attention": {
+        "num_head": 4
+      },
+      "pair_transition": {
+        "num_intermediate_factor": 4,
+        "use_glu_kernel": true
+      },
+      "shard_transition_blocks": true,
+      "triangle_multiplication_incoming": {
+        "equation": "kjc,kic->ijc",
+        "use_glu_kernel": true
+      },
+      "triangle_multiplication_outgoing": {
+        "equation": "ikc,jkc->ijc",
+        "use_glu_kernel": true
+      }
+    },
+    "num_msa": 1024,
+    "pair_channel": 128,
+    "pairformer": {
+      "block_remat": false,
+      "num_layer": 48,
+      "pair_attention": {
+        "num_head": 4
+      },
+      "pair_transition": {
+        "num_intermediate_factor": 4,
+        "use_glu_kernel": true
+      },
+      "remat_block_size": 8,
+      "shard_transition_blocks": true,
+      "single_attention": {
+        "key_dim": null,
+        "num_head": 16,
+        "value_dim": null
+      },
+      "single_transition": {
+        "num_intermediate_factor": 4,
+        "use_glu_kernel": true
+      },
+      "triangle_multiplication_incoming": {
+        "equation": "kjc,kic->ijc",
+        "use_glu_kernel": true
+      },
+      "triangle_multiplication_outgoing": {
+        "equation": "ikc,jkc->ijc",
+        "use_glu_kernel": true
+      }
+    },
+    "per_atom_conditioning": {
+      "atom_transformer": {
+        "attention": {
+          "key_dim": 128,
+          "num_head": 4,
+          "value_dim": 128
+        },
+        "num_blocks": 3,
+        "num_intermediate_factor": 2
+      },
+      "per_atom_channels": 128,
+      "per_atom_pair_channels": 16,
+      "per_token_channels": 384
+    },
+    "seq_channel": 384,
+    "template": {
+      "dgram_features": {
+        "max_bin": 50.75,
+        "min_bin": 3.25,
+        "num_bins": 39
+      },
+      "num_channels": 64,
+      "template_stack": {
+        "num_layer": 2,
+        "pair_attention": {
+          "num_head": 4
+        },
+        "pair_transition": {
+          "num_intermediate_factor": 2,
+          "use_glu_kernel": true
+        },
+        "shard_transition_blocks": true,
+        "single_attention": null,
+        "single_transition": null,
+        "triangle_multiplication_incoming": {
+          "equation": "kjc,kic->ijc",
+          "use_glu_kernel": true
+        },
+        "triangle_multiplication_outgoing": {
+          "equation": "ikc,jkc->ijc",
+          "use_glu_kernel": true
+        }
+      }
+    }
+  },
+  "global_config": {
+    "bfloat16": "all",
+    "final_init": "zeros",
+    "flash_attention_implementation": "triton",
+    "pair_attention_chunk_size": [
+      [
+        1536,
+        128
+      ],
+      [
+        null,
+        32
+      ]
+    ],
+    "pair_transition_shard_spec": [
+      [
+        2048,
+        null
+      ],
+      [
+        null,
+        1024
+      ]
+    ]
+  },
+  "heads": {
+    "confidence": {
+      "dgram_features": {
+        "max_bin": 50.75,
+        "min_bin": 3.25,
+        "num_bins": 39
+      },
+      "max_error_bin": 31.0,
+      "no_embedding_prob": 0.2,
+      "num_bins": 64,
+      "num_plddt_bins": 50,
+      "pae": {
+        "max_error_bin": 31.0,
+        "num_bins": 64
+      },
+      "pairformer": {
+        "num_layer": 4,
+        "pair_attention": {
+          "num_head": 4
+        },
+        "pair_transition": {
+          "num_intermediate_factor": 4,
+          "use_glu_kernel": true
+        },
+        "shard_transition_blocks": true,
+        "single_attention": {
+          "key_dim": null,
+          "num_head": 16,
+          "value_dim": null
+        },
+        "single_transition": {
+          "num_intermediate_factor": 4,
+          "use_glu_kernel": true
+        },
+        "triangle_multiplication_incoming": {
+          "equation": "kjc,kic->ijc",
+          "use_glu_kernel": true
+        },
+        "triangle_multiplication_outgoing": {
+          "equation": "ikc,jkc->ijc",
+          "use_glu_kernel": true
+        }
+      }
+    },
+    "diffusion": {
+      "atom_transformer": {
+        "attention": {
+          "key_dim": 128,
+          "num_head": 4,
+          "value_dim": 128
+        },
+        "num_blocks": 3,
+        "num_intermediate_factor": 2
+      },
+      "conditioning": {
+        "pair_channel": 128,
+        "prob": 0.8,
+        "seq_channel": 384
+      },
+      "eval": {
+        "gamma_0": 0.8,
+        "gamma_min": 1.0,
+        "noise_scale": 1.003,
+        "num_samples": 5,
+        "step_scale": 1.5,
+        "steps": 200
+      },
+      "eval_batch_dim_shard_size": 5,
+      "eval_batch_size": 5,
+      "per_atom_channels": 128,
+      "per_atom_pair_channels": 16,
+      "per_token_channels": 768,
+      "transformer": {
+        "attention": {
+          "key_dim": null,
+          "num_head": 16,
+          "value_dim": null
+        },
+        "block_remat": false,
+        "num_blocks": 24,
+        "num_intermediate_factor": 2,
+        "super_block_size": 4
+      }
+    },
+    "distogram": {
+      "first_break": 2.3125,
+      "last_break": 21.6875,
+      "num_bins": 64
+    }
+  },
+  "num_recycles": 10,
+  "return_distogram": false,
+  "return_embeddings": false
+}

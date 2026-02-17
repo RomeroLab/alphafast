@@ -1,0 +1,61 @@
+[build-system]
+requires = [
+    "scikit_build_core",
+    "pybind11",
+    "cmake>=3.28,<4",
+    "ninja",
+    "numpy",
+]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "alphafast"
+version = "1.0.0"
+requires-python = ">=3.12"
+readme = "README.md"
+license = {file = "LICENSE"}
+dependencies = [
+    "absl-py>=2.3.1",
+    "dm-haiku==0.0.16",
+    "jax==0.8.1",
+    "jax[cuda12]==0.8.1",
+    "numpy",
+    "rdkit==2024.3.5",
+    "setuptools==78.1.0",
+    "tokamax==0.0.8",
+    "tqdm",
+    "zstandard",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=6.0",
+]
+
+[tool.uv]
+package = true
+environments = [
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "sys_platform == 'linux' and platform_machine == 'aarch64'",
+]
+
+[tool.scikit-build]
+wheel.exclude = [
+    "**.pyx",
+    "**/CMakeLists.txt",
+    "**.cc",
+    "**.h"
+]
+sdist.include = [
+    "LICENSE",
+    "OUTPUT_TERMS_OF_USE.md",
+    "WEIGHTS_PROHIBITED_USE_POLICY.md",
+    "WEIGHTS_TERMS_OF_USE.md",
+]
+
+[tool.cibuildwheel]
+build = "cp3*-manylinux_x86_64"
+manylinux-x86_64-image = "manylinux_2_28"
+
+[project.scripts]
+build_data = "alphafold3.build_data:build_data"

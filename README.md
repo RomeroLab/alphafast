@@ -8,7 +8,7 @@ AlphaFast has **multi-GPU** capabilities capable of reaching throughput of **8s 
 
 For minimal setup or those without significant computational resources, see our [Modal Setup](#modal-setup) section for serverless inference at a cost of **$0.035** and time of **28s** per input.
 
-Check out our bioarxiv preprint [here]([https://www.biorxiv.org/content/10.64898/2026.02.17.706409v1.article-info](https://www.biorxiv.org/content/10.64898/2026.02.17.706409v1))!
+Check out our bioarxiv preprint [here](https://www.biorxiv.org/content/10.64898/2026.02.17.706409v1)!
 
 > **Disclaimer**: AlphaFast requires AlphaFold 3 model weights, which are subject to
 > [Google DeepMind's Terms of Use](WEIGHTS_TERMS_OF_USE.md).

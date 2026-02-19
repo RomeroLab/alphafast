@@ -4,7 +4,7 @@ This guide covers building AlphaFast from source for development or non-containe
 
 ## Prerequisites
 
-> **Note:** Building from source is only supported on **Linux** (x86_64 or aarch64). macOS and Windows are not supported.
+> **Note:** Building from source is only supported on **Linux**. macOS and Windows are not supported.
 
 - **Python** >= 3.12
 - **CUDA** 12.6 (toolkit and compatible driver >= 560.28.03)
@@ -72,7 +72,7 @@ Ensure `~/.local/bin` is in your `PATH`, or pass the binary paths explicitly wit
 
 ## Build System Details
 
-AlphaFast uses **scikit-build-core** as its build backend, which invokes CMake to compile C++ pybind11 extensions. The relevant files:
+AlphaFast uses **scikit-build-core** as its build backend, which invokes CMake to compile C++ pybind11 extensions. This should be the same as AlphaFold 3's build system. The relevant files:
 
 - **`pyproject.toml`**: Declares build dependencies (`scikit_build_core`, `pybind11`, `cmake`, `ninja`, `numpy`) and project metadata.
 - **`CMakeLists.txt`**: Defines the C++ build. Uses `FetchContent` to download and build abseil-cpp, pybind11, pybind11_abseil, libcifpp, and dssp. Compiles all `.cc` files under `src/alphafold3/` into a single `cpp` pybind11 module.
@@ -97,12 +97,6 @@ The Dockerfile:
 5. Installs Python dependencies via `uv sync`
 6. Builds the chemical components database via `uv run build_data`
 7. Sets `XLA_FLAGS` and `XLA_CLIENT_MEM_FRACTION` environment variables
-
-## Running Tests
-
-```bash
-uv run pytest
-```
 
 ## Model Weights
 

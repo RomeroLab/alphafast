@@ -230,7 +230,18 @@ If you use AlphaFast in your research, please cite both our work and AlphaFold 3
 ### AlphaFast Citation
 
 ```bibtex
-We will add the bioarxiv citation when the manuscript goes live.
+@article {Perry2026.02.17.706409,
+	author = {Perry, Benjamin C and Kim, Jeonghyeon and Romero, Philip A},
+	title = {AlphaFast: High-throughput AlphaFold 3 via GPU-accelerated MSA construction},
+	year = {2026},
+	doi = {10.64898/2026.02.17.706409},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {AlphaFold 3 (AF3) enables accurate biomolecular modeling but is limited by slow, CPU-bound multiple sequence alignment (MSA) generation. We introduce AlphaFast, a drop-in framework that integrates GPU-accelerated MMseqs2 sequence search to remove this bottleneck. AlphaFast achieves a 68.5x speedup in MSA construction and a 22.8x reduction in end-to-end runtime on a single GPU, and delivers predictions in 8 seconds per input on four GPUs while maintaining indistinguishable structural accuracy. A serverless deployment enables structure prediction for as little as $0.035 per input. Code is available at https://github.com/RomeroLab/alphafast.},
+	URL = {https://www.biorxiv.org/content/early/2026/02/18/2026.02.17.706409},
+	eprint = {https://www.biorxiv.org/content/early/2026/02/18/2026.02.17.706409.full.pdf},
+	journal = {bioRxiv}
+}
+
 ```
 
 ### AlphaFold 3 Citation

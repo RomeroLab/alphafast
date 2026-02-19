@@ -8,6 +8,8 @@ AlphaFast has **multi-GPU** capabilities capable of reaching throughput of **8s 
 
 For minimal setup or those without significant computational resources, see our [Modal Setup](#modal-setup) section for serverless inference at a cost of **$0.035** and time of **28s** per input.
 
+Check out our bioarxiv preprint [here](https://www.biorxiv.org/content/10.64898/2026.02.17.706409v1.article-info)!
+
 > **Disclaimer**: AlphaFast requires AlphaFold 3 model weights, which are subject to
 > [Google DeepMind's Terms of Use](WEIGHTS_TERMS_OF_USE.md).
 > You must apply for and receive weights directly from Google. This is not an officially supported Google product.
@@ -238,7 +240,6 @@ If you use AlphaFast in your research, please cite both our work and AlphaFold 3
 	publisher = {Cold Spring Harbor Laboratory},
 	abstract = {AlphaFold 3 (AF3) enables accurate biomolecular modeling but is limited by slow, CPU-bound multiple sequence alignment (MSA) generation. We introduce AlphaFast, a drop-in framework that integrates GPU-accelerated MMseqs2 sequence search to remove this bottleneck. AlphaFast achieves a 68.5x speedup in MSA construction and a 22.8x reduction in end-to-end runtime on a single GPU, and delivers predictions in 8 seconds per input on four GPUs while maintaining indistinguishable structural accuracy. A serverless deployment enables structure prediction for as little as $0.035 per input. Code is available at https://github.com/RomeroLab/alphafast.},
 	URL = {https://www.biorxiv.org/content/early/2026/02/18/2026.02.17.706409},
-	eprint = {https://www.biorxiv.org/content/early/2026/02/18/2026.02.17.706409.full.pdf},
 	journal = {bioRxiv}
 }
 

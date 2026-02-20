@@ -2,13 +2,15 @@
 
 # AlphaFast
 
-Ultra-high-throughput inference with [AlphaFold 3](https://github.com/google-deepmind/alphafold3). Replaces Jackhmmer with MMseqs2-GPU for **over 68x** speedup in homology search and **over 22x** speedup in end-to-end inference on a single H200 GPU.
+Ultra-high-throughput inference with [AlphaFold 3](https://github.com/google-deepmind/alphafold3). Replaces Jackhmmer with [MMseqs2-GPU](https://github.com/soedinglab/MMseqs2) for **over 68x** speedup in homology search and **over 22x** speedup in end-to-end inference on a single H200 GPU.
 
 AlphaFast has **multi-GPU** capabilities capable of reaching throughput of **8s per input** on 4 H200 GPUs, **4.5s per input** on 8 H200 GPUs, and even higher throughput on larger systems, scaling approximately linearly with number of devices.
 
 For minimal setup or those without significant computational resources, see our [Modal Setup](#modal-setup) section for serverless inference at a cost of **$0.035** and time of **28s** per input.
 
 Check out our bioarxiv preprint [here](https://www.biorxiv.org/content/10.64898/2026.02.17.706409v1)!
+
+Also check out the MMSeqs2-GPU paper [here](https://www.nature.com/articles/s41592-025-02819-8)!
 
 > **Disclaimer**: AlphaFast requires AlphaFold 3 model weights, which are subject to
 > [Google DeepMind's Terms of Use](WEIGHTS_TERMS_OF_USE.md).
@@ -227,12 +229,12 @@ For advanced flags, see [docs/advanced.md](docs/advanced.md).
 
 ## Citing This Work
 
-If you use AlphaFast in your research, please cite both our work and AlphaFold 3:
+If you use AlphaFast in your research, please cite, our work, AlphaFold 3, and MMSeqs2-GPU:
 
 ### AlphaFast Citation
 
 ```bibtex
-@article {Perry2026.02.17.706409,
+@article{Perry2026.02.17.706409,
 	author = {Perry, Benjamin C and Kim, Jeonghyeon and Romero, Philip A},
 	title = {AlphaFast: High-throughput AlphaFold 3 via GPU-accelerated MSA construction},
 	year = {2026},
@@ -257,6 +259,23 @@ If you use AlphaFast in your research, please cite both our work and AlphaFold 3
   number  = {8016},
   pages   = {493--500},
   doi     = {10.1038/s41586-024-07487-w}
+}
+```
+
+### MMseqs2-GPU Citation
+```bibtex
+@article{Kallenborn2025-fd,
+  title     = "{GPU}-accelerated homology search with {MMseqs2}",
+  author    = "Kallenborn, Felix and Chacon, Alejandro and Hundt, Christian and
+               Sirelkhatim, Hassan and Didi, Kieran and Cha, Sooyoung and
+               Dallago, Christian and Mirdita, Milot and Schmidt, Bertil and
+               Steinegger, Martin",
+  journal   = "Nat. Methods",
+  volume    =  22,
+  number    =  10,
+  pages     = "2024--2027",
+  year      =  2025,
+  doi       = "10.1038/s41592-025-02819-8",
 }
 ```
 

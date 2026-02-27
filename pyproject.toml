@@ -40,6 +40,7 @@ environments = [
 ]
 
 [tool.scikit-build]
+wheel.packages = ["src/alphafold3"]
 wheel.exclude = [
     "**.pyx",
     "**/CMakeLists.txt",

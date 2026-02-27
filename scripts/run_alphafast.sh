@@ -173,6 +173,7 @@ run_container() {
 
     if [ "$BACKEND" = "docker" ]; then
         docker run --rm \
+            --user "$(id -u):$(id -g)" \
             --gpus "device=${gpu_spec}" \
             -v "${DB_DIR}:/root/public_databases" \
             -v "${MMSEQS_DB_DIR}:/root/mmseqs_databases" \
@@ -262,6 +263,7 @@ else
 
     if [ "$BACKEND" = "docker" ]; then
         docker run --rm \
+            --user "$(id -u):$(id -g)" \
             --gpus all \
             -e CUDA_VISIBLE_DEVICES="${GPU_DEVICES}" \
             -v "${DB_DIR}:/root/public_databases" \

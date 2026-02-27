@@ -200,7 +200,7 @@ Modal provides serverless GPU inference with pay-per-second billing. A free host
 
 ```bash
 pip install modal && modal token new
-modal run modal/upload_weights.py --file /path/to/af3.bin.zst
+modal run modal/upload_weights.py --file /path/to/af3.bin.zst --no-extract
 
 # Run predictions using the free MSA server
 modal run modal/af3_predict.py --input protein.json \

@@ -11,8 +11,8 @@ This script uploads the model parameters to a Modal Volume in the user's
 account. You must first request access to the weights from Google DeepMind.
 
 Usage:
+    modal run modal/upload_weights.py --file ~/Downloads/af3.bin.zst --no-extract
     modal run modal/upload_weights.py --file ~/Downloads/af3_params.tar.zst
-    modal run modal/upload_weights.py --file ~/Downloads/af3.bin --no-extract
 
 Prerequisites:
     1. Request weights from: https://forms.gle/svvpY4u2jsHEwWYS6
@@ -133,7 +133,7 @@ def check_weights():
         print("Status: Volume is empty")
         print()
         print("To upload weights:")
-        print("  modal run modal/upload_weights.py --file ~/Downloads/af3_params.tar.zst")
+        print("  modal run modal/upload_weights.py --file ~/Downloads/af3.bin.zst --no-extract")
         return {"exists": False, "files": []}
 
     files = list(weights_path.rglob("*"))
@@ -141,7 +141,7 @@ def check_weights():
         print("Status: Volume is empty")
         print()
         print("To upload weights:")
-        print("  modal run modal/upload_weights.py --file ~/Downloads/af3_params.tar.zst")
+        print("  modal run modal/upload_weights.py --file ~/Downloads/af3.bin.zst --no-extract")
         return {"exists": False, "files": []}
 
     print("Volume contents:")
@@ -228,7 +228,7 @@ def main(
         print("Error: Please specify a weights file with --file")
         print()
         print("Usage:")
-        print("  modal run modal/upload_weights.py --file ~/Downloads/af3_params.tar.zst")
+        print("  modal run modal/upload_weights.py --file ~/Downloads/af3.bin.zst --no-extract")
         print()
         print("To check current status:")
         print("  modal run modal/upload_weights.py --status")

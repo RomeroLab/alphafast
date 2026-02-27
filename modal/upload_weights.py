@@ -44,70 +44,59 @@ upload_image = (
     volumes={WEIGHTS_MOUNT_PATH: weights_volume},
     timeout=1800,  # 30 minutes
 )
-def upload_weights_to_volume(
-    weights_data: bytes,
-    filename: str,
-    extract: bool = True,
-):
-    """Upload and optionally extract model weights to the volume."""
+def extract_weights_on_volume(filename: str):
+    """Extract an already-uploaded archive on the volume."""
     import subprocess
     import os
     from pathlib import Path
 
     weights_path = Path(WEIGHTS_MOUNT_PATH)
-    weights_path.mkdir(exist_ok=True)
-
     file_path = weights_path / filename
 
-    print(f"Writing {len(weights_data) / 1e9:.2f} GB to {file_path}")
+    if not file_path.exists():
+        raise RuntimeError(f"File {file_path} not found on volume")
 
-    # Write the file
-    with open(file_path, "wb") as f:
-        f.write(weights_data)
+    if filename.endswith(".tar.zst"):
+        print("Extracting tar.zst archive...")
+        result = subprocess.run(
+            ["tar", "--use-compress-program=zstd", "-xf", str(file_path), "-C", str(weights_path)],
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0:
+            print(f"Error extracting: {result.stderr}")
+            raise RuntimeError(f"Failed to extract {filename}")
+        os.remove(file_path)
+        print("Extraction complete, archive removed")
 
-    print(f"File written successfully")
+    elif filename.endswith(".tar.gz") or filename.endswith(".tgz"):
+        print("Extracting tar.gz archive...")
+        result = subprocess.run(
+            ["tar", "-xzf", str(file_path), "-C", str(weights_path)],
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0:
+            print(f"Error extracting: {result.stderr}")
+            raise RuntimeError(f"Failed to extract {filename}")
+        os.remove(file_path)
+        print("Extraction complete, archive removed")
 
-    # Extract if needed
-    if extract:
-        if filename.endswith(".tar.zst"):
-            print("Extracting tar.zst archive...")
-            result = subprocess.run(
-                ["tar", "--use-compress-program=zstd", "-xf", str(file_path), "-C", str(weights_path)],
-                capture_output=True,
-                text=True,
-            )
-            if result.returncode != 0:
-                print(f"Error extracting: {result.stderr}")
-                raise RuntimeError(f"Failed to extract {filename}")
-            # Remove the archive after extraction
-            os.remove(file_path)
-            print("Extraction complete, archive removed")
+    elif filename.endswith(".tar"):
+        print("Extracting tar archive...")
+        result = subprocess.run(
+            ["tar", "-xf", str(file_path), "-C", str(weights_path)],
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0:
+            print(f"Error extracting: {result.stderr}")
+            raise RuntimeError(f"Failed to extract {filename}")
+        os.remove(file_path)
+        print("Extraction complete, archive removed")
 
-        elif filename.endswith(".tar.gz") or filename.endswith(".tgz"):
-            print("Extracting tar.gz archive...")
-            result = subprocess.run(
-                ["tar", "-xzf", str(file_path), "-C", str(weights_path)],
-                capture_output=True,
-                text=True,
-            )
-            if result.returncode != 0:
-                print(f"Error extracting: {result.stderr}")
-                raise RuntimeError(f"Failed to extract {filename}")
-            os.remove(file_path)
-            print("Extraction complete, archive removed")
-
-        elif filename.endswith(".tar"):
-            print("Extracting tar archive...")
-            result = subprocess.run(
-                ["tar", "-xf", str(file_path), "-C", str(weights_path)],
-                capture_output=True,
-                text=True,
-            )
-            if result.returncode != 0:
-                print(f"Error extracting: {result.stderr}")
-                raise RuntimeError(f"Failed to extract {filename}")
-            os.remove(file_path)
-            print("Extraction complete, archive removed")
+    else:
+        print(f"No extraction needed for {filename}")
 
     # Commit the volume
     print("Committing volume...")
@@ -232,11 +221,7 @@ def main(
         return
 
     if clear:
-        response = input("Are you sure you want to clear the weights volume? [y/N] ")
-        if response.lower() == "y":
-            clear_weights.remote()
-        else:
-            print("Cancelled")
+        clear_weights.remote()
         return
 
     if file is None:
@@ -266,16 +251,18 @@ def main(
     print(f"Extract: {'No' if no_extract else 'Yes'}")
     print()
 
-    print("Reading file...")
-    with open(path, "rb") as f:
-        weights_data = f.read()
+    # Stream upload directly to volume (avoids loading entire file into memory)
+    print(f"Streaming upload to Modal Volume '{WEIGHTS_VOLUME_NAME}'...")
+    with weights_volume.batch_upload() as batch:
+        batch.put_file(path, f"/{path.name}")
+    print("Upload complete")
 
-    print(f"Uploading to Modal Volume '{WEIGHTS_VOLUME_NAME}'...")
-    upload_weights_to_volume.remote(
-        weights_data=weights_data,
-        filename=path.name,
-        extract=not no_extract,
-    )
+    # Extract on the remote side if needed
+    if not no_extract:
+        print("Extracting on remote...")
+        extract_weights_on_volume.remote(filename=path.name)
+    else:
+        print("Skipping extraction (--no-extract)")
 
     print()
     print("=" * 60)

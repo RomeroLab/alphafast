@@ -1,10 +1,15 @@
 # Git
 .git
 .gitignore
+.github
 
-# Output dirs
+# Output/Input dirs
 af_output/
 af_msa_output/
+af_input/
+*.json
+modal/
+jax_cache/
 
 # Docker files (not needed in build context)
 .dockerignore
@@ -13,6 +18,7 @@ af_msa_output/
 docs/
 notes/
 legal/
+logs/
 todo/
 CONTRIBUTING.md
 CHANGELOG.md
@@ -23,6 +29,7 @@ __pycache__/
 *.pyo
 *.egg-info/
 .eggs/
+.venv/
 dist/
 build/
 

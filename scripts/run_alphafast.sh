@@ -175,21 +175,21 @@ run_container() {
         docker run --rm \
             --user "$(id -u):$(id -g)" \
             --gpus "device=${gpu_spec}" \
-            -v "${DB_DIR}:/root/public_databases" \
-            -v "${MMSEQS_DB_DIR}:/root/mmseqs_databases" \
-            -v "${WEIGHTS_DIR}:/root/models" \
-            -v "${INPUT_DIR}:/root/af_input" \
-            -v "${OUTPUT_DIR}:/root/af_output" \
+            -v "${DB_DIR}:/data/public_databases" \
+            -v "${MMSEQS_DB_DIR}:/data/mmseqs_databases" \
+            -v "${WEIGHTS_DIR}:/data/models" \
+            -v "${INPUT_DIR}:/data/af_input" \
+            -v "${OUTPUT_DIR}:/data/af_output" \
             "$CONTAINER" \
             "$@"
     elif [ "$BACKEND" = "singularity" ]; then
         SINGULARITYENV_CUDA_VISIBLE_DEVICES="$gpu_spec" \
         singularity exec --nv \
-            --bind "${DB_DIR}:/root/public_databases" \
-            --bind "${MMSEQS_DB_DIR}:/root/mmseqs_databases" \
-            --bind "${WEIGHTS_DIR}:/root/models" \
-            --bind "${INPUT_DIR}:/root/af_input" \
-            --bind "${OUTPUT_DIR}:/root/af_output" \
+            --bind "${DB_DIR}:/data/public_databases" \
+            --bind "${MMSEQS_DB_DIR}:/data/mmseqs_databases" \
+            --bind "${WEIGHTS_DIR}:/data/models" \
+            --bind "${INPUT_DIR}:/data/af_input" \
+            --bind "${OUTPUT_DIR}:/data/af_output" \
             "$CONTAINER" \
             "$@"
     fi
@@ -212,10 +212,10 @@ if [ "$NUM_GPUS" -eq 1 ]; then
 
     run_container "$GPU_ID" \
         python /app/alphafold/run_data_pipeline.py \
-        --input_dir=/root/af_input \
-        --output_dir=/root/af_output \
-        --db_dir=/root/public_databases \
-        --mmseqs_db_dir=/root/mmseqs_databases \
+        --input_dir=/data/af_input \
+        --output_dir=/data/af_output \
+        --db_dir=/data/public_databases \
+        --mmseqs_db_dir=/data/mmseqs_databases \
         --use_mmseqs_gpu \
         --batch_size="$BATCH_SIZE" \
         2>&1 | tee "$PIPELINE_LOG"
@@ -244,9 +244,9 @@ if [ "$NUM_GPUS" -eq 1 ]; then
 
         run_container "$GPU_ID" \
             python /app/alphafold/run_alphafold.py \
-            --json_path="/root/af_output/${PROTEIN_NAME}/${PROTEIN_NAME}_data.json" \
+            --json_path="/data/af_output/${PROTEIN_NAME}/${PROTEIN_NAME}_data.json" \
             --norun_data_pipeline \
-            --output_dir="/root/af_output/${PROTEIN_NAME}" \
+            --output_dir="/data/af_output/${PROTEIN_NAME}" \
             --force_output_dir \
             2>&1 | tee -a "$INFERENCE_LOG"
     done
@@ -266,28 +266,28 @@ else
             --user "$(id -u):$(id -g)" \
             --gpus all \
             -e CUDA_VISIBLE_DEVICES="${GPU_DEVICES}" \
-            -v "${DB_DIR}:/root/public_databases" \
-            -v "${MMSEQS_DB_DIR}:/root/mmseqs_databases" \
-            -v "${WEIGHTS_DIR}:/root/models" \
-            -v "${INPUT_DIR}:/root/af_input" \
-            -v "${MSA_OUTPUT_DIR}:/root/af_msa_output" \
-            -v "${OUTPUT_DIR}:/root/af_output" \
+            -v "${DB_DIR}:/data/public_databases" \
+            -v "${MMSEQS_DB_DIR}:/data/mmseqs_databases" \
+            -v "${WEIGHTS_DIR}:/data/models" \
+            -v "${INPUT_DIR}:/data/af_input" \
+            -v "${MSA_OUTPUT_DIR}:/data/af_msa_output" \
+            -v "${OUTPUT_DIR}:/data/af_output" \
             "$CONTAINER" \
             bash -lc "cd /app/alphafold && ./scripts/run_multigpu.sh \
-                /root/af_input /root/af_msa_output /root/af_output \
+                /data/af_input /data/af_msa_output /data/af_output \
                 $NUM_GPUS $BATCH_SIZE $GPU_DEVICES"
     elif [ "$BACKEND" = "singularity" ]; then
         SINGULARITYENV_CUDA_VISIBLE_DEVICES="${GPU_DEVICES}" \
         singularity exec --nv \
-            --bind "${DB_DIR}:/root/public_databases" \
-            --bind "${MMSEQS_DB_DIR}:/root/mmseqs_databases" \
-            --bind "${WEIGHTS_DIR}:/root/models" \
-            --bind "${INPUT_DIR}:/root/af_input" \
-            --bind "${MSA_OUTPUT_DIR}:/root/af_msa_output" \
-            --bind "${OUTPUT_DIR}:/root/af_output" \
+            --bind "${DB_DIR}:/data/public_databases" \
+            --bind "${MMSEQS_DB_DIR}:/data/mmseqs_databases" \
+            --bind "${WEIGHTS_DIR}:/data/models" \
+            --bind "${INPUT_DIR}:/data/af_input" \
+            --bind "${MSA_OUTPUT_DIR}:/data/af_msa_output" \
+            --bind "${OUTPUT_DIR}:/data/af_output" \
             "$CONTAINER" \
             bash -lc "cd /app/alphafold && ./scripts/run_multigpu.sh \
-                /root/af_input /root/af_msa_output /root/af_output \
+                /data/af_input /data/af_msa_output /data/af_output \
                 $NUM_GPUS $BATCH_SIZE $GPU_DEVICES"
     fi
 fi

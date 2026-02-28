@@ -55,8 +55,8 @@ When using `run_alphafast.sh`, the batch size defaults to the number of input JS
 
 ```bash
 python run_data_pipeline.py \
-    --input_dir=/root/af_input \
-    --output_dir=/root/af_output \
+    --input_dir=/data/af_input \
+    --output_dir=/data/af_output \
     --batch_size=32 \
     ...
 ```

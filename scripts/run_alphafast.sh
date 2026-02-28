@@ -245,6 +245,7 @@ if [ "$NUM_GPUS" -eq 1 ]; then
         run_container "$GPU_ID" \
             python /app/alphafold/run_alphafold.py \
             --json_path="/data/af_output/${PROTEIN_NAME}/${PROTEIN_NAME}_data.json" \
+            --model_dir=/data/models \
             --norun_data_pipeline \
             --output_dir="/data/af_output/${PROTEIN_NAME}" \
             --force_output_dir \

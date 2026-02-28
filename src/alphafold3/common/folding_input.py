@@ -1523,7 +1523,13 @@ def load_fold_inputs_from_dir(input_dir: pathlib.Path) -> Iterator[Input]:
     Yields:
       The fold inputs from all JSON files in the input directory.
     """
-    for file_path in sorted(input_dir.glob("*.json")):
+    # Search top-level first, then subdirectories (for *_data.json from
+    # the data pipeline which writes to per-protein subdirectories).
+    json_files = sorted(input_dir.glob("*.json"))
+    if not json_files:
+        json_files = sorted(input_dir.glob("*/*.json"))
+
+    for file_path in json_files:
         if not file_path.is_file():
             continue
         # Skip index.json files created by benchmark scripts

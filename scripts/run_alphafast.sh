@@ -226,31 +226,14 @@ if [ "$NUM_GPUS" -eq 1 ]; then
     echo "Log: $INFERENCE_LOG"
     echo ""
 
-    DATA_FILES=$(find "$OUTPUT_DIR" -mindepth 2 -maxdepth 2 -name "*_data.json" -type f | sort)
-    TOTAL_FILES=$(echo "$DATA_FILES" | grep -c . || echo 0)
-
-    if [ "$TOTAL_FILES" -eq 0 ]; then
-        echo "ERROR: No *_data.json files found in $OUTPUT_DIR"
-        exit 1
-    fi
-
-    CURRENT=0
-    for data_json in $DATA_FILES; do
-        CURRENT=$((CURRENT + 1))
-        PROTEIN_DIR=$(dirname "$data_json")
-        PROTEIN_NAME=$(basename "$PROTEIN_DIR")
-
-        echo "[$CURRENT/$TOTAL_FILES] Inference: ${PROTEIN_NAME}" | tee -a "$INFERENCE_LOG"
-
-        run_container "$GPU_ID" \
-            python /app/alphafold/run_alphafold.py \
-            --json_path="/data/af_output/${PROTEIN_NAME}/${PROTEIN_NAME}_data.json" \
-            --model_dir=/data/models \
-            --norun_data_pipeline \
-            --output_dir="/data/af_output/${PROTEIN_NAME}" \
-            --force_output_dir \
-            2>&1 | tee -a "$INFERENCE_LOG"
-    done
+    run_container "$GPU_ID" \
+        python /app/alphafold/run_alphafold.py \
+        --input_dir=/data/af_output \
+        --model_dir=/data/models \
+        --norun_data_pipeline \
+        --output_dir=/data/af_output \
+        --force_output_dir \
+        2>&1 | tee "$INFERENCE_LOG"
 
 # ---------------------------------------------------------------------------
 # Multi-GPU mode: phase-separated parallel

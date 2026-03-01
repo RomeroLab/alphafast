@@ -1527,7 +1527,7 @@ def load_fold_inputs_from_dir(input_dir: pathlib.Path) -> Iterator[Input]:
     # the data pipeline which writes to per-protein subdirectories).
     json_files = sorted(input_dir.glob("*.json"))
     if not json_files:
-        json_files = sorted(input_dir.glob("*/*.json"))
+        json_files = sorted(input_dir.glob("*/*_data.json"))
 
     for file_path in json_files:
         if not file_path.is_file():

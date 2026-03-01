@@ -462,9 +462,7 @@ def main(_):
     output_paths = []
     data_pipeline = pipeline.DataPipeline(data_pipeline_config)
 
-    # Timing data collection for benchmarking
     pipeline_start_time = time.time()
-    per_protein_timings = []
     mode = (
         "batch"
         if (_BATCH_SIZE.value is not None and len(fold_inputs) > 1)
@@ -490,10 +488,7 @@ def main(_):
                 f"fold inputs {batch_start + 1} to {batch_end} ---\n"
             )
 
-            # Run batch processing with timing
-            batch_start_time = time.time()
             processed_inputs = data_pipeline.process_batch(batch)
-            batch_elapsed = time.time() - batch_start_time
 
             # Write output for each processed input
             for fold_input in processed_inputs:
@@ -509,20 +504,6 @@ def main(_):
                         data_json_path=output_path,
                     )
                 print(f"Fold job {fold_input.name} done.\n")
-
-                # Record per-protein timing (batch time divided among proteins)
-                num_chains = len(
-                    [c for c in fold_input.chains if hasattr(c, "sequence")]
-                )
-                per_protein_timings.append(
-                    {
-                        "name": fold_input.name,
-                        "num_chains": num_chains,
-                        "batch_id": batch_start // batch_size + 1,
-                        "batch_total_seconds": batch_elapsed,
-                        "proteins_in_batch": len(processed_inputs),
-                    }
-                )
     else:
         # Sequential mode: process each fold input individually (default)
         if _BATCH_SIZE.value is None:
@@ -530,13 +511,11 @@ def main(_):
             print("(Use --batch_size=N to enable batch processing)\n")
 
         for fold_input in fold_inputs:
-            protein_start_time = time.time()
             output_path = process_fold_input(
                 fold_input=fold_input,
                 data_pipeline_config=data_pipeline_config,
                 output_dir=_OUTPUT_DIR.value,
             )
-            protein_elapsed = time.time() - protein_start_time
             output_paths.append(output_path)
             if _QUEUE_DIR.value is not None:
                 _write_queue_token(
@@ -544,18 +523,6 @@ def main(_):
                     fold_input=fold_input,
                     data_json_path=output_path,
                 )
-
-            # Record per-protein timing
-            num_chains = len(
-                [c for c in fold_input.chains if hasattr(c, "sequence")]
-            )
-            per_protein_timings.append(
-                {
-                    "name": fold_input.name,
-                    "num_chains": num_chains,
-                    "total_seconds": protein_elapsed,
-                }
-            )
 
     pipeline_elapsed = time.time() - pipeline_start_time
 
@@ -581,32 +548,6 @@ def main(_):
         if num_unique_sequences > 0
         else 0
     )
-
-    # Write benchmark timing JSON
-    benchmark_timing = {
-        "benchmark_info": {
-            "mode": mode,
-            "batch_size": _BATCH_SIZE.value,
-            "mmseqs_threads": _MMSEQS_N_THREADS.value,
-            "use_mmseqs_gpu": _USE_MMSEQS_GPU.value,
-            "mmseqs_sequential": _MMSEQS_SEQUENTIAL.value,
-            "timestamp": datetime.datetime.now().isoformat(),
-        },
-        "summary": {
-            "num_fold_inputs": len(fold_inputs),
-            "num_unique_sequences": num_unique_sequences,
-            "total_chains": total_chains,
-            "total_seconds": pipeline_elapsed,
-            "per_input_seconds": per_input_seconds,
-            "per_unique_seq_seconds": per_unique_seq_seconds,
-        },
-        "per_protein": per_protein_timings,
-    }
-
-    timing_path = os.path.join(_OUTPUT_DIR.value, "benchmark_timing.json")
-    with open(timing_path, "w") as f:
-        json.dump(benchmark_timing, f, indent=2)
-    print(f"\nBenchmark timing written to: {timing_path}")
 
     # Print summary
     print("\n" + "=" * 60)

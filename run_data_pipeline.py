@@ -116,9 +116,11 @@ _MMSEQS_N_THREADS = flags.DEFINE_integer(
 )
 _MMSEQS_SEQUENTIAL = flags.DEFINE_bool(
     "mmseqs_sequential",
-    False,
+    True,
     "Run MMseqs2 database searches sequentially instead of in parallel. "
-    "Use this if you encounter GPU out-of-memory errors with parallel searches.",
+    "Sequential mode avoids GPU OOM by running one search at a time while "
+    "pipelining CPU post-processing. Use --nommseqs_sequential for parallel "
+    "searches when each GPU handles a single database (e.g., multi-GPU setups).",
 )
 
 # Temporary directory configuration (for HPC with slow network storage).

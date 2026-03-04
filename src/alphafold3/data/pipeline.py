@@ -295,7 +295,7 @@ class DataPipelineConfig:
     gpu_device: int | None = None  # Used for both MMseqs2 and Foldseek
     mmseqs_sensitivity: float = 7.5
     mmseqs_n_threads: int = dataclasses.field(default_factory=_default_mmseqs_threads)
-    mmseqs_sequential: bool = False
+    mmseqs_sequential: bool = True
 
     # Temporary directory for intermediate files (for HPC with slow network storage).
     # When set, MMseqs2/Foldseek temp files are written to this fast local storage

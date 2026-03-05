@@ -137,7 +137,7 @@ done
 
 # Report partition sizes
 for ((i=0; i<NUM_GPUS; i++)); do
-  PART_COUNT=$(find "${INPUT_DIR}/.partition_${i}" -maxdepth 1 -name "*.json" -type f 2>/dev/null | wc -l | tr -d ' ')
+  PART_COUNT=$(find "${INPUT_DIR}/.partition_${i}" -maxdepth 1 -name "*.json" \( -type f -o -type l \) 2>/dev/null | wc -l | tr -d ' ')
   echo "  GPU ${GPU_ARRAY[$i]}: ${PART_COUNT} inputs"
 done
 
@@ -157,7 +157,7 @@ for ((i=0; i<NUM_GPUS; i++)); do
   MSA_OUT="${MSA_OUTPUT_DIR}/partition_${i}"
   MSA_LOG="${LOG_DIR}/msa_gpu${GPU_IDX}_${TIMESTAMP}.log"
 
-  PART_COUNT=$(find "${PARTITION_DIR}" -maxdepth 1 -name "*.json" -type f 2>/dev/null | wc -l | tr -d ' ')
+  PART_COUNT=$(find "${PARTITION_DIR}" -maxdepth 1 -name "*.json" \( -type f -o -type l \) 2>/dev/null | wc -l | tr -d ' ')
   GPU_BATCH_SIZE="${BATCH_SIZE:-512}"
 
   echo "  Starting MSA on GPU ${GPU_IDX} (${PART_COUNT} inputs, batch_size=${GPU_BATCH_SIZE})"
@@ -250,7 +250,7 @@ done
 
 # Report fold partition sizes
 for ((i=0; i<NUM_GPUS; i++)); do
-  FOLD_COUNT=$(find "${MSA_OUTPUT_DIR}/.fold_partition_${i}" -maxdepth 1 -name "*.json" -type f 2>/dev/null | wc -l | tr -d ' ')
+  FOLD_COUNT=$(find "${MSA_OUTPUT_DIR}/.fold_partition_${i}" -maxdepth 1 -name "*.json" \( -type f -o -type l \) 2>/dev/null | wc -l | tr -d ' ')
   echo "  GPU ${GPU_ARRAY[$i]}: ${FOLD_COUNT} proteins"
 done
 

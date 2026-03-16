@@ -172,6 +172,9 @@ for ((i=0; i<NUM_GPUS; i++)); do
     --mmseqs_n_threads="$MMSEQS_THREADS" \
     --batch_size="$GPU_BATCH_SIZE" \
     ${TEMP_DIR:+--temp_dir="$TEMP_DIR"} \
+    --nhmmer_binary_path=/usr/bin/nhmmer \
+    --hmmalign_binary_path=/usr/bin/hmmalign \
+    --hmmbuild_binary_path=/usr/bin/hmmbuild \
     > "$MSA_LOG" 2>&1 &
   MSA_PIDS+=("$!")
   MSA_LOGS+=("$MSA_LOG")

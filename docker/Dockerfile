@@ -19,7 +19,7 @@ FROM nvidia/cuda:12.6.3-base-ubuntu24.04
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update --quiet \
     && apt-get install --yes --quiet python3.12 python3.12-dev \
-    && apt-get install --yes --quiet git wget gcc g++ make zlib1g-dev zstd pigz \
+    && apt-get install --yes --quiet git wget gcc g++ make zlib1g-dev zstd pigz hmmer \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv

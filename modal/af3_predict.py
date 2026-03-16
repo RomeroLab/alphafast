@@ -372,6 +372,9 @@ def predict_structure(
                     f"--mmseqs_db_dir={MMSEQS_DB_PATH}",
                     f"--batch_size={batch_size}",
                     "--use_mmseqs_gpu",
+                    "--nhmmer_binary_path=/usr/bin/nhmmer",
+                    "--hmmalign_binary_path=/usr/bin/hmmalign",
+                    "--hmmbuild_binary_path=/usr/bin/hmmbuild",
                 ]
             else:
                 cmd = [
@@ -381,6 +384,9 @@ def predict_structure(
                     f"--db_dir={DATABASE_MOUNT_PATH}",
                     f"--mmseqs_db_dir={MMSEQS_DB_PATH}",
                     "--use_mmseqs_gpu",
+                    "--nhmmer_binary_path=/usr/bin/nhmmer",
+                    "--hmmalign_binary_path=/usr/bin/hmmalign",
+                    "--hmmbuild_binary_path=/usr/bin/hmmbuild",
                 ]
             print(f"Command: {' '.join(cmd)}")
 
@@ -582,6 +588,9 @@ def run_msa_only(input_json: dict) -> dict:
             f"--db_dir={DATABASE_MOUNT_PATH}",
             f"--mmseqs_db_dir={MMSEQS_DB_PATH}",
             "--use_mmseqs_gpu",
+            "--nhmmer_binary_path=/usr/bin/nhmmer",
+            "--hmmalign_binary_path=/usr/bin/hmmalign",
+            "--hmmbuild_binary_path=/usr/bin/hmmbuild",
         ]
 
         result = subprocess.run(
@@ -677,6 +686,9 @@ def run_producer(
             f"--mmseqs_db_dir={MMSEQS_DB_PATH}",
             f"--batch_size={batch_size}",
             "--use_mmseqs_gpu",
+            "--nhmmer_binary_path=/usr/bin/nhmmer",
+            "--hmmalign_binary_path=/usr/bin/hmmalign",
+            "--hmmbuild_binary_path=/usr/bin/hmmbuild",
         ]
         print(f"Command: {' '.join(cmd)}")
 

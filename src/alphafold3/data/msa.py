@@ -283,7 +283,7 @@ class Msa:
 
 
 def get_msa_tool(
-    msa_tool_config: msa_config.MmseqsConfig,
+    msa_tool_config: msa_config.MmseqsConfig | msa_config.NhmmerConfig,
 ) -> msa_tool.MsaTool:
     """Returns the requested MSA tool."""
 
@@ -300,6 +300,21 @@ def get_msa_tool(
                 gpu_enabled=msa_tool_config.gpu_enabled,
                 gpu_device=msa_tool_config.gpu_device,
                 threads=msa_tool_config.threads,
+            )
+        case msa_config.NhmmerConfig():
+            from alphafold3.data.tools import nhmmer
+
+            return nhmmer.Nhmmer(
+                binary_path=msa_tool_config.binary_path,
+                hmmalign_binary_path=msa_tool_config.hmmalign_binary_path,
+                hmmbuild_binary_path=msa_tool_config.hmmbuild_binary_path,
+                database_path=msa_tool_config.database_config.path,
+                n_cpu=msa_tool_config.n_cpu,
+                e_value=msa_tool_config.e_value,
+                z_value=msa_tool_config.z_value,
+                max_sequences=msa_tool_config.max_sequences,
+                alphabet=msa_tool_config.alphabet,
+                max_threads=msa_tool_config.max_parallel_shards,
             )
         case _:
             raise ValueError(f"Unknown MSA tool: {msa_tool_config}.")

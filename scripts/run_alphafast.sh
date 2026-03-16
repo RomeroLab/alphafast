@@ -218,6 +218,9 @@ if [ "$NUM_GPUS" -eq 1 ]; then
         --mmseqs_db_dir=/data/mmseqs_databases \
         --use_mmseqs_gpu \
         --batch_size="$BATCH_SIZE" \
+        --nhmmer_binary_path=/usr/bin/nhmmer \
+        --hmmalign_binary_path=/usr/bin/hmmalign \
+        --hmmbuild_binary_path=/usr/bin/hmmbuild \
         2>&1 | tee "$PIPELINE_LOG"
 
     # Stage 2: Inference (loop over data JSONs)

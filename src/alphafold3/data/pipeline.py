@@ -93,6 +93,43 @@ def _get_protein_templates(
     return protein_templates
 
 
+# Cache to avoid re-running nhmmer for the same sequence in homomers.
+@functools.cache
+def _get_nhmmer_msa(
+    sequence: str,
+    msa_configs: tuple[msa_config.RunConfig, ...],
+    chain_poly_type: str,
+) -> str:
+    """Runs nhmmer search against multiple databases and returns merged A3M.
+
+    Args:
+        sequence: The nucleotide sequence to search.
+        msa_configs: Tuple of RunConfigs for nhmmer databases (tuple for
+            hashability with functools.cache).
+        chain_poly_type: The chain polymer type (e.g. RNA_CHAIN).
+
+    Returns:
+        Merged MSA in A3M format.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    def _search_db(run_config: msa_config.RunConfig) -> msa.Msa:
+        return msa.get_msa(
+            target_sequence=sequence,
+            run_config=run_config,
+            chain_poly_type=chain_poly_type,
+            deduplicate=False,
+        )
+
+    # Run searches in parallel (CPU-only, no GPU contention)
+    with ThreadPoolExecutor(max_workers=len(msa_configs)) as executor:
+        msas = list(executor.map(_search_db, msa_configs))
+
+    # Merge and deduplicate (order preserved from msa_configs)
+    merged = msa.Msa.from_multiple_msas(msas=msas, deduplicate=True)
+    return merged.to_a3m()
+
+
 # Cache to avoid re-running the MSA tools for the same sequence in homomers.
 @functools.cache
 def _get_protein_msa_and_templates(
@@ -336,6 +373,22 @@ class DataPipelineConfig:
     esmfold_chunk_size: int | None = None
     afdb_cache_dir: str | None = None
 
+    # Nhmmer configuration (for RNA MSA search via HMMER).
+    nhmmer_binary_path: str | None = None
+    hmmalign_binary_path: str | None = None
+    hmmbuild_binary_path: str | None = None
+    rnacentral_database_path: str | None = None
+    rfam_database_path: str | None = None
+    nt_database_path: str | None = None
+    nhmmer_n_cpu: int = 8
+    nhmmer_max_sequences: int = 10_000
+    # Per-database Z-values for sharded databases (megabases, float).
+    # Must be set when searching against sharded databases for correct e-values.
+    rnacentral_z_value: float | None = None
+    rfam_z_value: float | None = None
+    nt_z_value: float | None = None
+    nhmmer_max_parallel_shards: int | None = None
+
 
 class DataPipeline:
     """Runs the alignment tools and assembles the input features."""
@@ -500,6 +553,9 @@ class DataPipeline:
         # Set up Foldseek configuration (optional)
         self._foldseek_config = self._setup_foldseek_config(data_pipeline_config)
 
+        # Set up nhmmer configuration (for RNA MSA search)
+        self._setup_nhmmer_config(data_pipeline_config)
+
     def _setup_foldseek_config(
         self, data_pipeline_config: DataPipelineConfig
     ) -> msa_config.FoldseekTemplatesConfig | None:
@@ -601,6 +657,86 @@ class DataPipeline:
             ),
             afdb_cache_dir=data_pipeline_config.afdb_cache_dir,
             mode=internal_mode,
+        )
+
+    def _setup_nhmmer_config(
+        self, data_pipeline_config: DataPipelineConfig
+    ) -> None:
+        """Sets up nhmmer RunConfigs for RNA MSA search.
+
+        Checks if HMMER binaries are provided. If so, creates RunConfigs for
+        RNA databases (Rfam, RNAcentral, NT-RNA).
+        """
+        nhmmer_bin = data_pipeline_config.nhmmer_binary_path
+        hmmalign_bin = data_pipeline_config.hmmalign_binary_path
+        hmmbuild_bin = data_pipeline_config.hmmbuild_binary_path
+
+        if not (nhmmer_bin and hmmalign_bin and hmmbuild_bin):
+            self._nhmmer_enabled = False
+            self._rna_msa_configs: list[msa_config.RunConfig] = []
+            if any([nhmmer_bin, hmmalign_bin, hmmbuild_bin]):
+                logging.warning(
+                    "Partial HMMER configuration: all three binaries "
+                    "(nhmmer, hmmalign, hmmbuild) are required for RNA "
+                    "MSA search. Missing binaries will disable nhmmer."
+                )
+            return
+
+        self._nhmmer_enabled = True
+        n_cpu = data_pipeline_config.nhmmer_n_cpu
+        max_sequences = data_pipeline_config.nhmmer_max_sequences
+        max_parallel_shards = data_pipeline_config.nhmmer_max_parallel_shards
+
+        # RNA databases — order matters for merge: Rfam, RNAcentral, NT-RNA
+        # (matches original AF3 merge order)
+        self._rna_msa_configs = []
+        rna_dbs = [
+            ("rfam_rna", data_pipeline_config.rfam_database_path, data_pipeline_config.rfam_z_value),
+            ("rna_central_rna", data_pipeline_config.rnacentral_database_path, data_pipeline_config.rnacentral_z_value),
+            ("nt_rna", data_pipeline_config.nt_database_path, data_pipeline_config.nt_z_value),
+        ]
+        for db_name, db_path, z_value in rna_dbs:
+            if db_path:
+                self._rna_msa_configs.append(
+                    msa_config.RunConfig(
+                        config=msa_config.NhmmerConfig(
+                            binary_path=nhmmer_bin,
+                            hmmalign_binary_path=hmmalign_bin,
+                            hmmbuild_binary_path=hmmbuild_bin,
+                            database_config=msa_config.DatabaseConfig(
+                                name=db_name, path=db_path,
+                            ),
+                            n_cpu=n_cpu,
+                            e_value=1e-3,
+                            z_value=z_value,
+                            max_sequences=max_sequences,
+                            alphabet="rna",
+                            max_parallel_shards=max_parallel_shards,
+                        ),
+                        chain_poly_type=mmcif_names.RNA_CHAIN,
+                        crop_size=None,
+                    )
+                )
+
+        if self._rna_msa_configs:
+            logging.info(
+                "Nhmmer enabled for RNA MSA search (%d databases)",
+                len(self._rna_msa_configs),
+            )
+
+    def _run_nhmmer_search(
+        self,
+        sequence: str,
+        msa_configs: list[msa_config.RunConfig],
+        chain_poly_type: str,
+    ) -> str:
+        """Runs nhmmer search with caching for identical sequences (homomers)."""
+        # Delegate to cached module-level function. Convert list to tuple for
+        # hashability so functools.cache can memoize by sequence.
+        return _get_nhmmer_msa(
+            sequence=sequence,
+            msa_configs=tuple(msa_configs),
+            chain_poly_type=chain_poly_type,
         )
 
     def _setup_mmseqs_config(
@@ -954,8 +1090,8 @@ class DataPipeline:
     ) -> folding_input.RnaChain:
         """Processes a single RNA chain.
 
-        Note: RNA MSA search (via Nhmmer) is not supported in AlphaFast.
-        RNA chains will use an empty MSA or any pre-provided MSA.
+        Uses nhmmer for RNA MSA search if HMMER is configured. Otherwise
+        falls back to empty MSA or any pre-provided MSA.
         """
         if chain.unpaired_msa is not None:
             logging.info(
@@ -965,9 +1101,18 @@ class DataPipeline:
                 query_sequence=chain.sequence, chain_poly_type=mmcif_names.RNA_CHAIN
             ).to_a3m()
             unpaired_msa = chain.unpaired_msa or empty_msa
+        elif self._nhmmer_enabled and self._rna_msa_configs:
+            logging.info(
+                "Running nhmmer RNA MSA search for chain %s.", chain.id,
+            )
+            unpaired_msa = self._run_nhmmer_search(
+                sequence=chain.sequence,
+                msa_configs=self._rna_msa_configs,
+                chain_poly_type=mmcif_names.RNA_CHAIN,
+            )
         else:
             logging.warning(
-                "RNA MSA search is not supported in AlphaFast (requires HMMER). "
+                "RNA MSA search is not configured (requires HMMER). "
                 "Using empty MSA for RNA chain %s.", chain.id,
             )
             unpaired_msa = msa.Msa.from_empty(

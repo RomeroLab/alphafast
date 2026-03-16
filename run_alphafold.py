@@ -276,6 +276,75 @@ _AFDB_CACHE_DIR = flags.DEFINE_string(
     "If not set, structures are downloaded on-demand without caching.",
 )
 
+# Nhmmer configuration (for RNA MSA search via HMMER).
+_NHMMER_BINARY_PATH = flags.DEFINE_string(
+    "nhmmer_binary_path",
+    None,
+    "Path to the nhmmer binary (from HMMER suite). Required for RNA "
+    "MSA search. Install: conda install -c bioconda hmmer",
+)
+_HMMALIGN_BINARY_PATH = flags.DEFINE_string(
+    "hmmalign_binary_path",
+    None,
+    "Path to the hmmalign binary (from HMMER suite). Required for RNA "
+    "MSA search.",
+)
+_HMMBUILD_BINARY_PATH = flags.DEFINE_string(
+    "hmmbuild_binary_path",
+    None,
+    "Path to the hmmbuild binary (from HMMER suite). Required for RNA "
+    "MSA search.",
+)
+_RNACENTRAL_DATABASE_PATH = flags.DEFINE_string(
+    "rnacentral_database_path",
+    "${DB_DIR}/rnacentral_active_seq_id_90_cov_80_linclust.fasta",
+    "Path to the RNAcentral database FASTA for RNA MSA search.",
+)
+_RFAM_DATABASE_PATH = flags.DEFINE_string(
+    "rfam_database_path",
+    "${DB_DIR}/rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta",
+    "Path to the Rfam database FASTA for RNA MSA search.",
+)
+_NT_DATABASE_PATH = flags.DEFINE_string(
+    "nt_database_path",
+    "${DB_DIR}/nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta",
+    "Path to the NT database FASTA for RNA MSA search.",
+)
+_RNACENTRAL_Z_VALUE = flags.DEFINE_float(
+    "rnacentral_z_value",
+    None,
+    "Z-value (megabases) for RNAcentral database. Required for sharded databases.",
+)
+_RFAM_Z_VALUE = flags.DEFINE_float(
+    "rfam_z_value",
+    None,
+    "Z-value (megabases) for Rfam database. Required for sharded databases.",
+)
+_NT_Z_VALUE = flags.DEFINE_float(
+    "nt_z_value",
+    None,
+    "Z-value (megabases) for NT database. Required for sharded databases.",
+)
+_NHMMER_N_CPU = flags.DEFINE_integer(
+    "nhmmer_n_cpu",
+    8,
+    "Number of CPUs per nhmmer search.",
+    lower_bound=1,
+)
+_NHMMER_MAX_SEQUENCES = flags.DEFINE_integer(
+    "nhmmer_max_sequences",
+    10_000,
+    "Maximum number of sequences to return from nhmmer search.",
+    lower_bound=1,
+)
+_NHMMER_MAX_PARALLEL_SHARDS = flags.DEFINE_integer(
+    "nhmmer_max_parallel_shards",
+    None,
+    "Maximum number of database shards to search in parallel with nhmmer. "
+    "Only applicable if using sharded databases.",
+    lower_bound=1,
+)
+
 # Data pipeline configuration.
 _RESOLVE_MSA_OVERLAPS = flags.DEFINE_bool(
     "resolve_msa_overlaps",
@@ -515,6 +584,18 @@ def main(_):
     if _RUN_DATA_PIPELINE.value:
         expand_path = lambda x: replace_db_dir(x, DB_DIR.value)
 
+        def try_expand_path(x):
+            """Expand path, returning None if the database doesn't exist."""
+            try:
+                return replace_db_dir(x, DB_DIR.value)
+            except FileNotFoundError:
+                return None
+
+        # Resolve nhmmer database paths (optional — None if not found)
+        nhmmer_rnacentral = try_expand_path(_RNACENTRAL_DATABASE_PATH.value) if _NHMMER_BINARY_PATH.value else None
+        nhmmer_rfam = try_expand_path(_RFAM_DATABASE_PATH.value) if _NHMMER_BINARY_PATH.value else None
+        nhmmer_nt = try_expand_path(_NT_DATABASE_PATH.value) if _NHMMER_BINARY_PATH.value else None
+
         data_pipeline_config = pipeline.DataPipelineConfig(
             pdb_database_path=expand_path(_PDB_DATABASE_PATH.value),
             max_template_date=max_template_date,
@@ -547,6 +628,19 @@ def main(_):
             esmfold_device=_ESMFOLD_DEVICE.value,
             esmfold_chunk_size=_ESMFOLD_CHUNK_SIZE.value,
             afdb_cache_dir=_AFDB_CACHE_DIR.value,
+            # Nhmmer configuration (for RNA MSA search)
+            nhmmer_binary_path=_NHMMER_BINARY_PATH.value,
+            hmmalign_binary_path=_HMMALIGN_BINARY_PATH.value,
+            hmmbuild_binary_path=_HMMBUILD_BINARY_PATH.value,
+            rnacentral_database_path=nhmmer_rnacentral,
+            rfam_database_path=nhmmer_rfam,
+            nt_database_path=nhmmer_nt,
+            nhmmer_n_cpu=_NHMMER_N_CPU.value,
+            nhmmer_max_sequences=_NHMMER_MAX_SEQUENCES.value,
+            rnacentral_z_value=_RNACENTRAL_Z_VALUE.value,
+            rfam_z_value=_RFAM_Z_VALUE.value,
+            nt_z_value=_NT_Z_VALUE.value,
+            nhmmer_max_parallel_shards=_NHMMER_MAX_PARALLEL_SHARDS.value,
         )
     else:
         data_pipeline_config = None

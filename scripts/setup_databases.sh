@@ -155,7 +155,9 @@ for fasta_file in "${!PROTEIN_FASTAS[@]}"; do
 done
 echo ""
 
-# RNA databases (for RNA MSA search - not converted to MMseqs2)
+# RNA databases (for RNA MSA search via nhmmer - not converted to MMseqs2).
+# RNA MSA search requires HMMER suite (nhmmer, hmmalign, hmmbuild).
+# Install: conda install -c bioconda hmmer
 RNA_FASTAS=(
     "rnacentral_active_seq_id_90_cov_80_linclust.fasta"
     "nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta"

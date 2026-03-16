@@ -28,7 +28,7 @@
 #   - ~800 GB free disk space (250 GB download + 540 GB MMseqs2 padded)
 #
 # Requirements (--from-prebuilt mode):
-#   - huggingface-cli in PATH (pip install huggingface_hub)
+#   - hf CLI in PATH (curl -LsSf https://hf.co/cli/install.sh | bash)
 #   - zstd, tar in PATH
 #   - ~569 GB free disk space
 #
@@ -88,7 +88,7 @@ done
 if [ "$FROM_PREBUILT" = true ]; then
     # Check prerequisites for HF download
     MISSING=0
-    for cmd in huggingface-cli tar zstd; do
+    for cmd in tar zstd; do
         if ! command -v "$cmd" &> /dev/null; then
             echo "ERROR: $cmd is not installed or not in PATH."
             MISSING=1
@@ -97,7 +97,15 @@ if [ "$FROM_PREBUILT" = true ]; then
     if [ "$MISSING" -ne 0 ]; then
         echo ""
         echo "Install missing dependencies before running this script."
-        echo "  pip install huggingface_hub"
+        exit 1
+    fi
+
+    # Resolve hf CLI
+    if command -v hf &> /dev/null; then
+        HF_CLI="hf"
+    else
+        echo "ERROR: hf CLI is not installed."
+        echo "Install it with: curl -LsSf https://hf.co/cli/install.sh | bash"
         exit 1
     fi
 
@@ -116,7 +124,8 @@ if [ "$FROM_PREBUILT" = true ]; then
     # Step 1: Download entire dataset repo
     echo "=== Step 1: Download pre-built databases from HuggingFace ==="
     echo ""
-    huggingface-cli download "$HF_REPO" --repo-type dataset --local-dir "$TARGET_DIR"
+    $HF_CLI download "$HF_REPO" --repo-type dataset --local-dir "$TARGET_DIR"
+    echo ""
     echo ""
 
     # Step 2: Reassemble split .part* files

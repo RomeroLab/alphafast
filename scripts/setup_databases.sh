@@ -124,6 +124,11 @@ if [ "$FROM_PREBUILT" = true ]; then
     # Step 1: Download entire dataset repo
     echo "=== Step 1: Download pre-built databases from HuggingFace ==="
     echo ""
+    if [ -z "${HF_TOKEN:-}" ] && ! $HF_CLI auth status &> /dev/null; then
+        echo "TIP: You are not logged in to HuggingFace. For higher rate limits"
+        echo "     and faster downloads, run: hf auth login"
+        echo ""
+    fi
     $HF_CLI download "$HF_REPO" --repo-type dataset --local-dir "$TARGET_DIR"
     echo ""
     echo ""

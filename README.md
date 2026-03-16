@@ -50,6 +50,16 @@ Downloads and converts protein sequence databases to MMseqs2 GPU format.
 ./scripts/setup_databases.sh /path/to/databases
 ```
 
+**Alternatively**, download pre-built databases from HuggingFace (no padded conversion necessary):
+
+```bash
+# install HF CLI
+curl -LsSf https://hf.co/cli/install.sh | bash
+
+# run script
+./scripts/setup_databases.sh /path/to/databases --from-prebuilt
+```
+
 ### Step 4: Pull Container
 
 > **Optional:** To build the container from source instead, see [docs/building.md](docs/building.md).
@@ -138,6 +148,16 @@ sbatch scripts/setup_databases.sbatch /path/to/databases
 
 # Or run directly in an interactive session:
 ./scripts/setup_databases.sh /path/to/databases
+```
+
+**Alternatively**, download pre-built databases from HuggingFace (no padded conversion necessary):
+
+```bash
+# install HF CLI
+curl -LsSf https://hf.co/cli/install.sh | bash
+
+# run script
+./scripts/setup_databases.sh /path/to/databases --from-prebuilt
 ```
 
 ### Step 4: Pull Container
@@ -235,14 +255,14 @@ If you use AlphaFast in your research, please cite, our work, AlphaFold 3, and M
 
 ```bibtex
 @article{Perry2026.02.17.706409,
-	author = {Perry, Benjamin C and Kim, Jeonghyeon and Romero, Philip A},
-	title = {AlphaFast: High-throughput AlphaFold 3 via GPU-accelerated MSA construction},
-	year = {2026},
-	doi = {10.64898/2026.02.17.706409},
-	publisher = {Cold Spring Harbor Laboratory},
-	abstract = {AlphaFold 3 (AF3) enables accurate biomolecular modeling but is limited by slow, CPU-bound multiple sequence alignment (MSA) generation. We introduce AlphaFast, a drop-in framework that integrates GPU-accelerated MMseqs2 sequence search to remove this bottleneck. AlphaFast achieves a 68.5x speedup in MSA construction and a 22.8x reduction in end-to-end runtime on a single GPU, and delivers predictions in 8 seconds per input on four GPUs while maintaining indistinguishable structural accuracy. A serverless deployment enables structure prediction for as little as $0.035 per input. Code is available at https://github.com/RomeroLab/alphafast.},
-	URL = {https://www.biorxiv.org/content/early/2026/02/18/2026.02.17.706409},
-	journal = {bioRxiv}
+ author = {Perry, Benjamin C and Kim, Jeonghyeon and Romero, Philip A},
+ title = {AlphaFast: High-throughput AlphaFold 3 via GPU-accelerated MSA construction},
+ year = {2026},
+ doi = {10.64898/2026.02.17.706409},
+ publisher = {Cold Spring Harbor Laboratory},
+ abstract = {AlphaFold 3 (AF3) enables accurate biomolecular modeling but is limited by slow, CPU-bound multiple sequence alignment (MSA) generation. We introduce AlphaFast, a drop-in framework that integrates GPU-accelerated MMseqs2 sequence search to remove this bottleneck. AlphaFast achieves a 68.5x speedup in MSA construction and a 22.8x reduction in end-to-end runtime on a single GPU, and delivers predictions in 8 seconds per input on four GPUs while maintaining indistinguishable structural accuracy. A serverless deployment enables structure prediction for as little as $0.035 per input. Code is available at https://github.com/RomeroLab/alphafast.},
+ URL = {https://www.biorxiv.org/content/early/2026/02/18/2026.02.17.706409},
+ journal = {bioRxiv}
 }
 
 ```
@@ -263,6 +283,7 @@ If you use AlphaFast in your research, please cite, our work, AlphaFold 3, and M
 ```
 
 ### MMseqs2-GPU Citation
+
 ```bibtex
 @article{Kallenborn2025-fd,
   title     = "{GPU}-accelerated homology search with {MMseqs2}",

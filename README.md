@@ -16,7 +16,7 @@ Also check out the MMSeqs2-GPU paper [here](https://www.nature.com/articles/s415
 > [Google DeepMind's Terms of Use](WEIGHTS_TERMS_OF_USE.md).
 > You must apply for and receive weights directly from Google. This is not an officially supported Google product.
 >
-> **Note**: DNA/RNA MSA search is not currently supported, but we are rapidly working on this.
+> **Note**: RNA MSA search uses nhmmer (CPU-based). DNA chains use empty MSA, matching AlphaFold 3's native behavior.
 >
 ## Quick Start
 
@@ -42,7 +42,7 @@ business days. You will receive a file of compressed weights named `af3.bin.zst`
 
 Downloads and converts protein sequence databases to MMseqs2 GPU format.
 
-> **Important:** Point `path/to/databases` to a fast data drive (NVMe recommended). You will need a minimum of **800 GB** free disk space (250 GB download + 540 GB MMseqs2 padded databases).
+> **Important:** Point `path/to/databases` to a fast data drive (NVMe recommended). You will need a minimum of **800 GB** free disk space (250 GB download + 540 GB MMseqs2 padded databases). The optional MMseqs2 nucleotide index (`mmseqs createindex`) for RNA search requires **~100 GB peak RAM** during index building (uses `--split 4` for large databases) and adds ~500 GB of disk for the index files.
 >
 > **Prerequisite:** The `mmseqs` binary (GPU version), `wget`, `zstd`, and `tar` must be installed and in your `PATH` before running this script. See [docs/building.md](docs/building.md) for MMseqs2 installation instructions.
 
@@ -82,6 +82,31 @@ Create a directory of input `.json` files. See [docs/input_format.md](docs/input
     }
   ],
   "modelSeeds": [1,2,3],
+  "dialect": "alphafold3",
+  "version": 3
+}
+```
+
+**RNA-Protein Complex:**
+
+```json
+{
+  "name": "rna_protein",
+  "sequences": [
+    {
+      "protein": {
+        "id": ["A"],
+        "sequence": "MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSH"
+      }
+    },
+    {
+      "rna": {
+        "id": ["B"],
+        "sequence": "GGGGACUGCGUUCGCGCUUUCCCC"
+      }
+    }
+  ],
+  "modelSeeds": [1],
   "dialect": "alphafold3",
   "version": 3
 }

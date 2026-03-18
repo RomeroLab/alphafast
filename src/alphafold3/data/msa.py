@@ -300,6 +300,7 @@ def get_msa_tool(
                 gpu_enabled=msa_tool_config.gpu_enabled,
                 gpu_device=msa_tool_config.gpu_device,
                 threads=msa_tool_config.threads,
+                search_type=msa_tool_config.search_type,
             )
         case msa_config.NhmmerConfig():
             from alphafold3.data.tools import nhmmer
@@ -392,6 +393,7 @@ def get_msa_pipelined(
         gpu_enabled=run_config.config.gpu_enabled,
         gpu_device=run_config.config.gpu_device,
         threads=run_config.config.threads,
+        search_type=run_config.config.search_type,
     )
 
     # Get the future from pipelined query (GPU search runs now, post-processing async)
@@ -460,6 +462,7 @@ def get_msa_shared_db_pipelined(
             gpu_enabled=run_config.config.gpu_enabled,
             gpu_device=run_config.config.gpu_device,
             threads=run_config.config.threads,
+            search_type=run_config.config.search_type,
         )
 
         # Search using shared query DB (GPU search runs now, post-processing async)

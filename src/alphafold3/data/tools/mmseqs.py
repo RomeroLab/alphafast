@@ -72,6 +72,7 @@ class Mmseqs(msa_tool.MsaTool):
         gpu_device: int | None = None,
         threads: int = 8,
         temp_dir: str | None = None,
+        search_type: int | None = None,
         **unused_kwargs,
     ):
         """Initializes the Python MMseqs2 wrapper.
@@ -92,6 +93,8 @@ class Mmseqs(msa_tool.MsaTool):
           threads: Number of CPU threads for non-GPU parts of the search.
           temp_dir: Directory for temporary files. If None, uses system default.
             Set to fast local storage on HPC clusters for better performance.
+          search_type: MMseqs2 search type. None for auto-detect, 3 for nucleotide
+            search. GPU is not supported for nucleotide (search_type=3).
 
         Raises:
           RuntimeError: If MMseqs2 binary not found at the path.
@@ -99,6 +102,11 @@ class Mmseqs(msa_tool.MsaTool):
         """
         self._binary_path = binary_path
         subprocess_utils.check_binary_exists(path=self._binary_path, name="MMseqs2")
+        self._search_type = search_type
+        # For nucleotide search (search_type=3), MMseqs2 internally maps U→T
+        # via NucleotideMatrix, so queries with U work. However, all output
+        # uses the T alphabet — we must convert T→U in results for RNA.
+        self._is_nucleotide = (search_type == 3)
 
         self._database_path = database_path
         self._e_value = e_value
@@ -162,6 +170,7 @@ class Mmseqs(msa_tool.MsaTool):
             tmp_search.mkdir()
 
             # Step 1: Write query sequence to FASTA file
+            # MMseqs2 handles U→T internally via NucleotideMatrix.
             subprocess_utils.create_query_fasta_file(
                 sequence=target_sequence, path=str(query_fasta)
             )
@@ -198,6 +207,15 @@ class Mmseqs(msa_tool.MsaTool):
             a3m_file = output_dir / "0"
             if a3m_file.exists():
                 a3m_content = convert_aligned_fasta_to_a3m(a3m_file.read_text())
+                if self._is_nucleotide:
+                    # Convert T→U for RNA alphabet and replace the query
+                    # sequence line with the original (MMseqs2 may mask it
+                    # with X characters during result2msa).
+                    a3m_content = a3m_content.replace("T", "U").replace("t", "u")
+                    lines = a3m_content.split("\n")
+                    if len(lines) >= 2 and lines[0].startswith(">"):
+                        lines[1] = target_sequence
+                        a3m_content = "\n".join(lines)
             else:
                 # No hits found, return just the query sequence
                 logging.warning("No MSA hits found for query sequence.")
@@ -263,6 +281,7 @@ class Mmseqs(msa_tool.MsaTool):
         tmp_search.mkdir()
 
         # Step 1: Write query sequence to FASTA file
+        # MMseqs2 handles U→T internally via NucleotideMatrix.
         subprocess_utils.create_query_fasta_file(
             sequence=target_sequence, path=str(query_fasta)
         )
@@ -346,6 +365,12 @@ class Mmseqs(msa_tool.MsaTool):
             a3m_file = pathlib.Path(output_dir) / "0"
             if a3m_file.exists():
                 a3m_content = convert_aligned_fasta_to_a3m(a3m_file.read_text())
+                if self._is_nucleotide:
+                    a3m_content = a3m_content.replace("T", "U").replace("t", "u")
+                    lines = a3m_content.split("\n")
+                    if len(lines) >= 2 and lines[0].startswith(">"):
+                        lines[1] = target_sequence
+                        a3m_content = "\n".join(lines)
             else:
                 # No hits found, return just the query sequence
                 logging.warning("No MSA hits found for query sequence.")
@@ -417,7 +442,11 @@ class Mmseqs(msa_tool.MsaTool):
             str(self._max_sequences),
         ]
 
-        if self._gpu_enabled:
+        if self._search_type is not None:
+            cmd.extend(["--search-type", str(self._search_type)])
+
+        # GPU is not supported for nucleotide search (search_type=3).
+        if self._gpu_enabled and self._search_type != 3:
             cmd.extend(["--gpu", "1"])
 
         subprocess_utils.run(
@@ -595,6 +624,12 @@ class Mmseqs(msa_tool.MsaTool):
             a3m_file = output_path / "0"
             if a3m_file.exists():
                 a3m_content = convert_aligned_fasta_to_a3m(a3m_file.read_text())
+                if self._is_nucleotide:
+                    a3m_content = a3m_content.replace("T", "U").replace("t", "u")
+                    lines = a3m_content.split("\n")
+                    if len(lines) >= 2 and lines[0].startswith(">"):
+                        lines[1] = sequence
+                        a3m_content = "\n".join(lines)
             else:
                 logging.warning("No MSA hits found for sequence %s", seq_id)
                 a3m_content = f">{seq_id}\n{sequence}\n"

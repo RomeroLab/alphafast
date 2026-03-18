@@ -8,8 +8,9 @@
 # Download AlphaFold 3 databases and convert protein DBs to MMseqs2 GPU format.
 #
 # This is the single setup script for AlphaFast. It downloads all required
-# databases from Google Cloud Storage and converts the protein FASTA files to
-# MMseqs2 padded databases for GPU-accelerated MSA search.
+# databases from Google Cloud Storage: protein FASTA files are converted to
+# MMseqs2 padded databases for GPU-accelerated MSA search, and RNA FASTA files
+# are downloaded as-is for nhmmer-based RNA MSA search (HMMER suite).
 #
 # Usage:
 #   ./scripts/setup_databases.sh <target_dir> [--keep-fasta]
@@ -23,19 +24,28 @@
 #   - wget, zstd, tar in PATH
 #   - mmseqs (GPU version) in PATH
 #   - ~800 GB free disk space (250 GB download + 540 GB MMseqs2 padded)
+#   - (optional) nhmmer, hmmalign, hmmbuild for RNA MSA search
+#     Install: conda install -c bioconda hmmer
 #
 # Output directory structure:
 #   <target_dir>/
 #     mmcif_files/              # PDB structures for template retrieval
-#     uniref90_2022_05.fa       # Raw FASTA (if kept)
+#     uniref90_2022_05.fa       # Raw protein FASTA (if kept)
 #     mgy_clusters_2022_05.fa
 #     ...
+#     rnacentral_active_seq_id_90_cov_80_linclust.fasta   # RNA (nhmmer)
+#     rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta      # RNA (nhmmer)
+#     nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta  # RNA (nhmmer)
 #     mmseqs/
-#       uniref90_padded*        # MMseqs2 GPU-ready databases
+#       uniref90_padded*        # MMseqs2 GPU-ready databases (protein)
 #       mgnify_padded*
 #       small_bfd_padded*
 #       uniprot_padded*
 #       pdb_seqres_padded*
+#     mmseqs_rna/
+#       rfam*                   # MMseqs2 nucleotide databases (optional)
+#       rnacentral*
+#       nt_rna*
 
 set -euo pipefail
 
@@ -179,6 +189,61 @@ done
 echo ""
 
 # ---------------------------------------------------------------------------
+# Step 1b: Build MMseqs2 databases from RNA FASTA (for nucleotide search)
+# ---------------------------------------------------------------------------
+# These are optional — only needed if using --rna_mmseqs_db_dir instead of
+# nhmmer. MMseqs2 nucleotide search (--search-type 3, CPU-only) is faster
+# than nhmmer but does not support profile-based iterative search.
+# DNA chains do not require MSA search (AlphaFold 3 leaves them blank).
+echo "=== Step 1b: Build MMseqs2 RNA databases (optional) ==="
+echo ""
+
+RNA_MMSEQS_DIR="${TARGET_DIR}/mmseqs_rna"
+mkdir -p "$RNA_MMSEQS_DIR"
+
+declare -A RNA_MMSEQS_DATABASES=(
+    ["rfam"]="rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta"
+    ["rnacentral"]="rnacentral_active_seq_id_90_cov_80_linclust.fasta"
+    ["nt_rna"]="nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta"
+)
+
+for db_name in "${!RNA_MMSEQS_DATABASES[@]}"; do
+    source_fasta="${TARGET_DIR}/${RNA_MMSEQS_DATABASES[$db_name]}"
+    target_db="${RNA_MMSEQS_DIR}/${db_name}"
+
+    if [ -f "${target_db}.dbtype" ]; then
+        echo "SKIP: MMseqs2 RNA database ${db_name} already exists"
+        continue
+    fi
+
+    if [ ! -f "$source_fasta" ]; then
+        echo "SKIP: Source FASTA not found: $source_fasta"
+        continue
+    fi
+
+    echo "Creating MMseqs2 nucleotide database: $db_name"
+    time mmseqs createdb "$source_fasta" "$target_db"
+
+    # Build k-mer index for fast search. Without this, MMseqs2 rebuilds
+    # the index on every query, which is very slow for large databases.
+    # Use --split 4 for databases >10GB to avoid OOM (~372GB peak RAM unsplit).
+    if [ ! -f "${target_db}.idx" ]; then
+        echo "Creating search index for $db_name..."
+        idx_tmp=$(mktemp -d)
+        source_size_gb=$(du -g "${TARGET_DIR}/${RNA_MMSEQS_DATABASES[$db_name]}" 2>/dev/null | cut -f1)
+        split_flag=""
+        if [ "${source_size_gb:-0}" -gt 10 ]; then
+            split_flag="--split 4"
+            echo "  Using --split 4 for large database (${source_size_gb}G)"
+        fi
+        time mmseqs createindex "$target_db" "$idx_tmp" --search-type 3 $split_flag
+        rm -rf "$idx_tmp"
+    fi
+    echo "Done: $db_name"
+done
+echo ""
+
+# ---------------------------------------------------------------------------
 # Step 2: Convert protein FASTA to MMseqs2 padded format
 # ---------------------------------------------------------------------------
 echo "=== Step 2: Convert to MMseqs2 GPU format ==="
@@ -270,6 +335,24 @@ echo ""
 echo "Database directory:  $TARGET_DIR"
 echo "MMseqs2 directory:   $MMSEQS_DIR"
 echo "mmCIF directory:     ${TARGET_DIR}/mmcif_files"
+echo ""
+echo "RNA databases (for nhmmer):"
+for rna_f in "${RNA_FASTAS[@]}"; do
+    if [ -f "${TARGET_DIR}/${rna_f}" ]; then
+        echo "  OK: ${rna_f}"
+    else
+        echo "  MISSING: ${rna_f}"
+    fi
+done
+echo ""
+echo "RNA MMseqs2 databases (for --rna_mmseqs_db_dir, optional):"
+for rna_db in rfam rnacentral nt_rna; do
+    if [ -f "${RNA_MMSEQS_DIR}/${rna_db}.dbtype" ]; then
+        echo "  OK: ${rna_db}"
+    else
+        echo "  NOT BUILT: ${rna_db}"
+    fi
+done
 echo ""
 echo "Use these paths with run_alphafast.sh:"
 echo "  ./scripts/run_alphafast.sh \\"

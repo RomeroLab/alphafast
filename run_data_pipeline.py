@@ -323,6 +323,16 @@ _NHMMER_MAX_PARALLEL_SHARDS = flags.DEFINE_integer(
     lower_bound=1,
 )
 
+# MMseqs2 nucleotide search (alternative to nhmmer).
+_RNA_MMSEQS_DB_DIR = flags.DEFINE_string(
+    "rna_mmseqs_db_dir",
+    None,
+    "Directory containing MMseqs2 databases for RNA/DNA nucleotide search. "
+    "When set, uses MMseqs2 --search-type 3 (CPU-only) instead of nhmmer. "
+    "Databases must be pre-built with 'mmseqs createdb' from RNA FASTA files. "
+    "Expected databases: rfam, rnacentral, nt_rna (named by prefix).",
+)
+
 # Data pipeline configuration.
 _MAX_TEMPLATE_DATE = flags.DEFINE_string(
     "max_template_date",
@@ -552,6 +562,7 @@ def main(_):
         rfam_z_value=_RFAM_Z_VALUE.value,
         nt_z_value=_NT_Z_VALUE.value,
         nhmmer_max_parallel_shards=_NHMMER_MAX_PARALLEL_SHARDS.value,
+        rna_mmseqs_db_dir=_RNA_MMSEQS_DB_DIR.value,
     )
 
     # Process fold inputs - either in batch mode or sequentially

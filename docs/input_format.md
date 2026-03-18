@@ -138,9 +138,59 @@ Provide multiple seeds to generate independent structure samples:
 
 Alternatively, use the `--num_seeds` flag in `run_alphafold.py` to auto-generate N seeds from a single seed.
 
-## DNA/RNA Chains
+## RNA-Protein Complex
 
-DNA and RNA chain types are part of the AlphaFold 3 JSON schema but are not currently supported by AlphaFast. The MSA search for nucleotide chains requires HMMER (Jackhmmer/nhmmer), which is not included in the AlphaFast container. Nucleotide support is planned for a future release.
+RNA chains are supported with nhmmer-based MSA search against RNAcentral, Rfam, and NT databases:
+
+```json
+{
+  "name": "rna_protein",
+  "sequences": [
+    {
+      "protein": {
+        "id": ["A"],
+        "sequence": "MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSH"
+      }
+    },
+    {
+      "rna": {
+        "id": ["B"],
+        "sequence": "GGGGACUGCGUUCGCGCUUUCCCC"
+      }
+    }
+  ],
+  "modelSeeds": [1],
+  "dialect": "alphafold3",
+  "version": 3
+}
+```
+
+## DNA-Protein Complex
+
+DNA chains pass through with empty MSA, matching AlphaFold 3's native behavior (AF3 does not perform MSA search for DNA):
+
+```json
+{
+  "name": "dna_protein",
+  "sequences": [
+    {
+      "protein": {
+        "id": ["A"],
+        "sequence": "MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSH"
+      }
+    },
+    {
+      "dna": {
+        "id": ["B", "C"],
+        "sequence": "ACGTACGTACGT"
+      }
+    }
+  ],
+  "modelSeeds": [1],
+  "dialect": "alphafold3",
+  "version": 3
+}
+```
 
 ## Batch Processing
 

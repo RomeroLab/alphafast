@@ -126,6 +126,7 @@ class MmseqsConfig:
     gpu_device: int | None = None
     threads: int = 8
     temp_dir: str | None = None
+    search_type: int | None = None  # 3 for nucleotide search
 
 
 @dataclasses.dataclass(frozen=True, kw_only=True, slots=True)

@@ -82,6 +82,7 @@ class MmseqsBatch:
         gpu_device: int | None = None,
         threads: int = 8,
         temp_dir: str | None = None,
+        search_type: int | None = None,
     ):
         """Initialize batch searcher.
 
@@ -96,6 +97,7 @@ class MmseqsBatch:
             threads: CPU threads for search.
             temp_dir: Directory for temporary files. If None, uses system default.
                 Set to fast local storage on HPC clusters for better performance.
+            search_type: MMseqs2 search type. None for auto-detect, 3 for nucleotide.
         """
         self._binary_path = binary_path
         self._database_path = database_path
@@ -106,6 +108,8 @@ class MmseqsBatch:
         self._gpu_device = gpu_device
         self._threads = threads
         self._temp_dir = temp_dir
+        self._search_type = search_type
+        self._is_nucleotide = (search_type == 3)
 
         subprocess_utils.check_binary_exists(path=binary_path, name="MMseqs2")
 
@@ -276,7 +280,10 @@ class MmseqsBatch:
             str(self._max_sequences),
         ]
 
-        if self._gpu_enabled:
+        if self._search_type is not None:
+            cmd.extend(["--search-type", str(self._search_type)])
+
+        if self._gpu_enabled and self._search_type != 3:
             cmd.extend(["--gpu", "1"])
 
         subprocess_utils.run(

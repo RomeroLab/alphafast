@@ -60,11 +60,6 @@ from config import (
     WORKSPACE_VOLUME_NAME,
 )
 
-# Mount config.py into remote containers so the module-level import resolves
-_config_mount = modal.Mount.from_local_file(
-    local_path="modal/config.py", remote_path="/root/config.py"
-)
-
 
 # ── GPU resolution from CLI flags ─────────────────────────────────────
 
@@ -309,7 +304,7 @@ def collect_chunk_results(
         DATABASE_MOUNT_PATH: db_volume,
         WEIGHTS_MOUNT_PATH: weights_volume,
     },
-    mounts=[_config_mount],
+
     timeout=86400,  # 24 hours (Modal maximum)
     memory=65536,
 )
@@ -561,7 +556,7 @@ def predict_structure(
         DATABASE_MOUNT_PATH: db_volume,
         WEIGHTS_MOUNT_PATH: weights_volume,
     },
-    mounts=[_config_mount],
+
     timeout=3600 * 2,
     memory=32768,
 )
@@ -624,7 +619,7 @@ def run_msa_only(input_json: dict) -> dict:
         DATABASE_MOUNT_PATH: db_volume,
         WORKSPACE_MOUNT_PATH: workspace_volume,
     },
-    mounts=[_config_mount],
+
     timeout=PRODUCER_TIMEOUT,
     memory=32768,
 )
@@ -753,7 +748,7 @@ def run_producer(
         WEIGHTS_MOUNT_PATH: weights_volume,
         WORKSPACE_MOUNT_PATH: workspace_volume,
     },
-    mounts=[_config_mount],
+
     timeout=WARM_CONSUMER_TIMEOUT,
     memory=65536,
     scaledown_window=600,
@@ -918,7 +913,7 @@ class InferenceWorker:
         DATABASE_MOUNT_PATH: db_volume,
         WEIGHTS_MOUNT_PATH: weights_volume,
     },
-    mounts=[_config_mount],
+
     timeout=300,
 )
 def check_setup() -> dict:

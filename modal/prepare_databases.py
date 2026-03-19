@@ -26,11 +26,6 @@ from pathlib import Path
 
 from config import HF_PREBUILT_REPO
 
-# Mount config.py into remote containers so the module-level import resolves
-_config_mount = modal.Mount.from_local_file(
-    local_path="modal/config.py", remote_path="/root/config.py"
-)
-
 # =============================================================================
 # CONFIGURATION
 # =============================================================================
@@ -81,6 +76,7 @@ db_volume = modal.Volume.from_name(DATABASE_VOLUME_NAME, create_if_missing=True)
 download_image = (
     modal.Image.debian_slim(python_version="3.12")
     .apt_install("wget", "zstd", "pigz", "tar", "curl")
+    .add_local_python_source("config")
 )
 
 # Image with MMseqs2 for database conversion
@@ -93,6 +89,7 @@ mmseqs_image = (
         "cp mmseqs/bin/mmseqs /usr/local/bin/",
         "rm -rf mmseqs mmseqs.tar.gz",
     )
+    .add_local_python_source("config")
 )
 
 # Image with huggingface_hub for pre-built DB download
@@ -100,6 +97,7 @@ hf_image = (
     modal.Image.debian_slim(python_version="3.12")
     .apt_install("tar", "zstd")
     .pip_install("huggingface_hub")
+    .add_local_python_source("config")
 )
 
 
@@ -110,7 +108,7 @@ hf_image = (
 @app.function(
     image=hf_image,
     volumes={DATABASE_MOUNT_PATH: db_volume},
-    mounts=[_config_mount],
+
     timeout=3600 * 24,  # 24 hours
     cpu=4,
     memory=16384,  # 16GB RAM
@@ -265,7 +263,7 @@ def download_from_hf():
 @app.function(
     image=download_image,
     volumes={DATABASE_MOUNT_PATH: db_volume},
-    mounts=[_config_mount],
+
     timeout=3600 * 24,  # 24 hours
     cpu=8,  # More CPUs for parallel downloads
     memory=32768,  # 32GB RAM
@@ -360,7 +358,7 @@ MMSEQS_DB_ORDER = ["pdb_seqres", "small_bfd", "uniprot", "uniref90", "mgnify"]
 @app.function(
     image=mmseqs_image,
     volumes={DATABASE_MOUNT_PATH: db_volume},
-    mounts=[_config_mount],
+
     timeout=3600 * 24,  # 24 hours
     cpu=8,
     memory=65536,  # 64GB RAM (MMseqs2 uses streaming, doesn't need full DB in memory)
@@ -642,7 +640,7 @@ def convert_to_mmseqs():
 @app.function(
     image=download_image,
     volumes={DATABASE_MOUNT_PATH: db_volume},
-    mounts=[_config_mount],
+
     timeout=300,
 )
 def check_status():

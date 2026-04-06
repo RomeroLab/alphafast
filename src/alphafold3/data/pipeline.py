@@ -1254,10 +1254,7 @@ class DataPipeline:
             logging.info(
                 "Using provided MSA for RNA chain %s.", chain.id,
             )
-            empty_msa = msa.Msa.from_empty(
-                query_sequence=chain.sequence, chain_poly_type=mmcif_names.RNA_CHAIN
-            ).to_a3m()
-            unpaired_msa = chain.unpaired_msa or empty_msa
+            unpaired_msa = chain.unpaired_msa
         elif self._nhmmer_enabled and self._rna_msa_configs:
             logging.info(
                 "Running nhmmer RNA MSA search for chain %s.", chain.id,
@@ -1350,9 +1347,15 @@ class DataPipeline:
         if rna_executor is not None:
             rna_executor.shutdown(wait=False)
 
-        # Other chains pass through unchanged.
+        # Other chains (DNA, ligands, etc.) pass through unchanged.
         for idx in other_indices:
-            processed_chains[idx] = fold_input.chains[idx]
+            chain = fold_input.chains[idx]
+            if isinstance(chain, folding_input.DnaChain):
+                logging.info(
+                    "DNA chain %s: using empty MSA (no search), matching "
+                    "AlphaFold 3 behavior.", chain.id,
+                )
+            processed_chains[idx] = chain
 
         # Reassemble in original chain order.
         ordered_chains = [processed_chains[i] for i in range(len(fold_input.chains))]

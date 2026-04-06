@@ -363,6 +363,14 @@ def predict_structure(
         if run_msa:
             msa_start = _time.time()
             print("Stage 1: Running MSA and template search...")
+            rna_db_flags = [
+                "--nhmmer_binary_path=/usr/bin/nhmmer",
+                "--hmmalign_binary_path=/usr/bin/hmmalign",
+                "--hmmbuild_binary_path=/usr/bin/hmmbuild",
+                f"--rnacentral_database_path={DATABASE_MOUNT_PATH}/rnacentral_active_seq_id_90_cov_80_linclust.fasta",
+                f"--rfam_database_path={DATABASE_MOUNT_PATH}/rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta",
+                f"--nt_database_path={DATABASE_MOUNT_PATH}/nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta",
+            ]
             if is_batch:
                 cmd = [
                     "python", "run_data_pipeline.py",
@@ -372,9 +380,7 @@ def predict_structure(
                     f"--mmseqs_db_dir={MMSEQS_DB_PATH}",
                     f"--batch_size={batch_size}",
                     "--use_mmseqs_gpu",
-                    "--nhmmer_binary_path=/usr/bin/nhmmer",
-                    "--hmmalign_binary_path=/usr/bin/hmmalign",
-                    "--hmmbuild_binary_path=/usr/bin/hmmbuild",
+                    *rna_db_flags,
                 ]
             else:
                 cmd = [
@@ -384,9 +390,7 @@ def predict_structure(
                     f"--db_dir={DATABASE_MOUNT_PATH}",
                     f"--mmseqs_db_dir={MMSEQS_DB_PATH}",
                     "--use_mmseqs_gpu",
-                    "--nhmmer_binary_path=/usr/bin/nhmmer",
-                    "--hmmalign_binary_path=/usr/bin/hmmalign",
-                    "--hmmbuild_binary_path=/usr/bin/hmmbuild",
+                    *rna_db_flags,
                 ]
             print(f"Command: {' '.join(cmd)}")
 
@@ -591,6 +595,9 @@ def run_msa_only(input_json: dict) -> dict:
             "--nhmmer_binary_path=/usr/bin/nhmmer",
             "--hmmalign_binary_path=/usr/bin/hmmalign",
             "--hmmbuild_binary_path=/usr/bin/hmmbuild",
+            f"--rnacentral_database_path={DATABASE_MOUNT_PATH}/rnacentral_active_seq_id_90_cov_80_linclust.fasta",
+            f"--rfam_database_path={DATABASE_MOUNT_PATH}/rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta",
+            f"--nt_database_path={DATABASE_MOUNT_PATH}/nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta",
         ]
 
         result = subprocess.run(
@@ -689,6 +696,9 @@ def run_producer(
             "--nhmmer_binary_path=/usr/bin/nhmmer",
             "--hmmalign_binary_path=/usr/bin/hmmalign",
             "--hmmbuild_binary_path=/usr/bin/hmmbuild",
+            f"--rnacentral_database_path={DATABASE_MOUNT_PATH}/rnacentral_active_seq_id_90_cov_80_linclust.fasta",
+            f"--rfam_database_path={DATABASE_MOUNT_PATH}/rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta",
+            f"--nt_database_path={DATABASE_MOUNT_PATH}/nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta",
         ]
         print(f"Command: {' '.join(cmd)}")
 
@@ -948,6 +958,20 @@ def check_setup() -> dict:
         if not exists:
             db_ok = False
 
+    # RNA FASTA databases (for nhmmer-based RNA MSA search)
+    required_rna_fastas = [
+        "rnacentral_active_seq_id_90_cov_80_linclust.fasta",
+        "rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta",
+        "nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta",
+    ]
+    rna_ok = True
+    for rna_db in required_rna_fastas:
+        exists = (db_path / rna_db).exists()
+        status["databases"]["details"][rna_db] = exists
+        if not exists:
+            rna_ok = False
+    status["databases"]["rna_ready"] = rna_ok
+
     status["databases"]["ready"] = db_ok
 
     weights_path = Path(WEIGHTS_MOUNT_PATH)
@@ -963,9 +987,16 @@ def check_setup() -> dict:
     print("Setup Status Check")
     print("=" * 60)
     print()
-    print(f"Databases: {'READY' if status['databases']['ready'] else 'NOT READY'}")
+    print(f"Protein databases: {'READY' if status['databases']['ready'] else 'NOT READY'}")
     for name, exists in status["databases"]["details"].items():
-        print(f"  {'[OK]' if exists else '[MISSING]'} {name}")
+        if name.endswith(".dbtype"):
+            print(f"  {'[OK]' if exists else '[MISSING]'} {name}")
+    print()
+    rna_ready = status["databases"].get("rna_ready", False)
+    print(f"RNA databases: {'READY' if rna_ready else 'NOT READY'}")
+    for name, exists in status["databases"]["details"].items():
+        if name.endswith(".fasta"):
+            print(f"  {'[OK]' if exists else '[MISSING]'} {name}")
     print()
     print(f"Weights: {'READY' if status['weights']['ready'] else 'NOT READY'}")
     if status["weights"]["details"]["files"]:
@@ -975,7 +1006,12 @@ def check_setup() -> dict:
         print("  [MISSING] No model files found")
     print()
     if status["databases"]["ready"] and status["weights"]["ready"]:
-        print("Status: Ready to run predictions!")
+        if rna_ready:
+            print("Status: Ready to run predictions (protein + RNA/DNA)!")
+        else:
+            print("Status: Ready for protein-only predictions.")
+            print("  RNA/DNA inputs will use empty MSA (RNA databases missing).")
+            print("  To fix: modal run modal/prepare_databases.py")
     else:
         print("Status: Setup incomplete")
         if not status["databases"]["ready"]:

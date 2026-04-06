@@ -52,6 +52,7 @@ MMSEQS_THREADS="${7:-}"
 
 export DB_DIR="${DB_DIR:-/data/public_databases}"
 export MMSEQS_DB_DIR="${MMSEQS_DB_DIR:-/data/mmseqs_databases}"
+export RNA_MMSEQS_DB_DIR="${RNA_MMSEQS_DB_DIR:-}"
 export MODEL_DIR="${MODEL_DIR:-/data/models}"
 export LOG_DIR="${LOG_DIR:-${AF_OUTPUT_DIR}/logs}"
 RUN_DATA_PIPELINE_PATH="${RUN_DATA_PIPELINE_PATH:-/app/alphafold/run_data_pipeline.py}"
@@ -175,6 +176,7 @@ for ((i=0; i<NUM_GPUS; i++)); do
     --nhmmer_binary_path=/usr/bin/nhmmer \
     --hmmalign_binary_path=/usr/bin/hmmalign \
     --hmmbuild_binary_path=/usr/bin/hmmbuild \
+    ${RNA_MMSEQS_DB_DIR:+--rna_mmseqs_db_dir="$RNA_MMSEQS_DB_DIR"} \
     > "$MSA_LOG" 2>&1 &
   MSA_PIDS+=("$!")
   MSA_LOGS+=("$MSA_LOG")

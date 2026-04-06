@@ -42,7 +42,7 @@ business days. You will receive a file of compressed weights named `af3.bin.zst`
 
 Downloads and converts protein sequence databases to MMseqs2 GPU format.
 
-> **Important:** Point `path/to/databases` to a fast data drive (NVMe recommended). You will need a minimum of **800 GB** free disk space (250 GB download + 540 GB MMseqs2 padded databases). The optional MMseqs2 nucleotide index (`mmseqs createindex`) for RNA search requires **~100 GB peak RAM** during index building (uses `--split 4` for large databases) and adds ~500 GB of disk for the index files.
+> **Important:** Point `path/to/databases` to a fast data drive (NVMe recommended). You will need a minimum of **1.1 TB** free disk space for the default setup (250 GB download + 540 GB protein MMseqs2 padded + 234 GB mmCIF + 89 GB RNA FASTA). The optional MMseqs2 nucleotide databases for faster RNA search add ~865 GB (use `--rna_mmseqs_db_dir`). For pre-built databases from HuggingFace, use `--from-prebuilt` to skip conversion.
 >
 > **Prerequisite:** The `mmseqs` binary (GPU version), `wget`, `zstd`, and `tar` must be installed and in your `PATH` before running this script. See [docs/building.md](docs/building.md) for MMseqs2 installation instructions.
 
@@ -154,7 +154,7 @@ At large batch sizes, every GPU is 100% utilized in each phase, achieving near-l
 
 ### Step 3: Install Databases
 >
-> **Important:** Point `path/to/databases` to a high speed volume with fast network transfer. You will need a minimum of **800 GB** free disk space on this partition (250 GB download + 540 GB MMseqs2 padded databases). AlphaFast will spend roughly ~1 hour to copy the databases to a local NVMe volume (often called `/scratch` on HPC systems). If this is not available, then make sure the databases are on the fastest I/O partition possible.
+> **Important:** Point `path/to/databases` to a high speed volume with fast network transfer. You will need a minimum of **1.1 TB** free disk space on this partition (250 GB download + 540 GB MMseqs2 padded + 234 GB mmCIF + 89 GB RNA FASTA). Use `--from-prebuilt` to download pre-built databases from HuggingFace. AlphaFast will spend roughly ~1 hour to copy the databases to a local NVMe volume (often called `/scratch` on HPC systems). If this is not available, then make sure the databases are on the fastest I/O partition possible.
 > **Note:** You may need to edit the SLURM directives to match your university's specific HPC formatting.
 
 ```bash

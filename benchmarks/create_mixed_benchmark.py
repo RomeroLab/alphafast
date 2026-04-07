@@ -7,370 +7,446 @@
 
 """Create a mixed-type benchmark test set from PDB mmCIF files.
 
-Samples 40 structures across 5 categories:
-  - protein-monomer: 1 protein chain, no other polymer chains
-  - protein-protein: ≥2 protein chains, no RNA/DNA
-  - protein-ligand:  1 protein chain + ≥1 ligand, no RNA/DNA
-  - protein-rna:     ≥1 protein chain + ≥1 RNA chain
-  - protein-dna:     ≥1 protein chain + ≥1 DNA chain (no RNA)
+Extends create_benchmark_test_set.py with RNA and DNA categories.
+
+Samples structures across 5 categories:
+  - protein-monomer:  1 protein chain, no RNA/DNA, no meaningful ligands
+  - protein-ligand:   1 protein chain + ≥1 real ligand, no RNA/DNA
+  - protein-protein:  ≥2 protein chains, no RNA/DNA
+  - protein-rna:      ≥1 protein chain + ≥1 RNA chain
+  - protein-dna:      ≥1 protein chain + ≥1 DNA chain (no RNA)
+
+Requires alphafold3 module (run inside Docker container or with uv run).
 
 Usage:
+    # Inside Docker
     python benchmarks/create_mixed_benchmark.py \
+        --mmcif_dir /root/mmcif_files \
+        --output_dir benchmarks/benchmark_set_mixed_40 \
+        --samples_per_category 8
+
+    # With uv
+    uv run python benchmarks/create_mixed_benchmark.py \
         --mmcif_dir /path/to/mmcif_files \
         --output_dir benchmarks/benchmark_set_mixed_40
-
-    # Custom samples per category
-    python benchmarks/create_mixed_benchmark.py \
-        --mmcif_dir /path/to/mmcif_files \
-        --output_dir benchmarks/benchmark_set_mixed_40 \
-        --samples_per_category 8 \
-        --seed 42
 """
 
 import argparse
-import glob
-import gzip
+import dataclasses
+import datetime
 import json
+import logging
 import os
 import random
-import re
-import string
 import sys
-from collections import defaultdict
+from collections.abc import Sequence
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from pathlib import Path
+from typing import Any
+
+from alphafold3.structure import mmcif as mmcif_lib
 
 
-# ── mmCIF parsing helpers ─────────────────────────────────────────────
+# Common crystallization artifacts / ions / buffers to exclude from ligand count.
+# Without this filter, almost every PDB structure has ligand_count > 0 and the
+# protein-monomer category is effectively empty.
+_ARTIFACT_CCD_CODES = frozenset({
+    # Ions
+    "NA", "CL", "MG", "ZN", "CA", "K", "MN", "FE", "FE2", "CO", "NI",
+    "CU", "CU1", "CD", "IOD", "BR", "XE",
+    # Common buffers / cryo / crystallization agents
+    "SO4", "PO4", "GOL", "EDO", "PEG", "PGE", "MPD", "DMS", "ACT",
+    "FMT", "TRS", "CIT", "BME", "MES", "EPE", "IMD", "SCN", "NO3",
+    "AZI", "1PE", "P6G", "MLI", "TAR", "SUC", "NH4",
+    # Unknown ligand placeholder — zero atoms, crashes inference
+    "UNL",
+    # Water
+    "HOH", "DOD",
+})
+
+CATEGORIES = [
+    "protein-monomer",
+    "protein-ligand",
+    "protein-protein",
+    "protein-rna",
+    "protein-dna",
+]
 
 
-def _read_mmcif(path: str) -> str:
-    """Read an mmCIF file (plain or gzipped)."""
-    if path.endswith(".gz"):
-        import gzip as gz
-        with gz.open(path, "rt", encoding="utf-8", errors="replace") as f:
-            return f.read()
-    with open(path, "r", encoding="utf-8", errors="replace") as f:
-        return f.read()
+@dataclasses.dataclass
+class StructureInfo:
+    """Information about a PDB structure for categorization."""
+
+    pdb_id: str
+    release_date: datetime.date
+    resolution: float | None
+    num_protein_chains: int
+    num_rna_chains: int
+    num_dna_chains: int
+    num_ligands: int
+    protein_sequences: dict[str, str]  # chain_id -> sequence
+    rna_sequences: dict[str, str]
+    dna_sequences: dict[str, str]
+    ligand_ccd_ids: list[str]  # only real ligands (artifacts excluded)
+    total_residues: int
+    mmcif_path: str
+    category: str = ""
 
 
-def _parse_loop_block(text: str, required_field: str) -> list[dict[str, str]]:
-    """Parse a CIF loop_ block that contains the required_field.
+def parse_mmcif_for_info(
+    mmcif_path: str, cutoff_date: datetime.date
+) -> StructureInfo | None:
+    """Parse an mmCIF file and extract structure information."""
+    try:
+        with open(mmcif_path, "r") as f:
+            mmcif_string = f.read()
 
-    Returns a list of row dicts keyed by column name.
-    """
-    # Find the loop_ block containing the required field
-    loop_pat = re.compile(r"loop_\s*\n((?:_\S+\s*\n)+)((?:(?!loop_|_\S+\.).*\n?)*)", re.MULTILINE)
-    for m in loop_pat.finditer(text):
-        col_block = m.group(1)
-        columns = [c.strip() for c in col_block.strip().split("\n") if c.strip()]
-        if required_field not in columns:
-            continue
-        data_block = m.group(2).strip()
-        if not data_block:
-            continue
-        # Parse data rows — simple token splitting (handles single-quoted values)
-        rows = []
-        tokens = _tokenize_cif(data_block)
-        ncols = len(columns)
-        for i in range(0, len(tokens) - ncols + 1, ncols):
-            row = {columns[j]: tokens[i + j] for j in range(ncols)}
-            rows.append(row)
-        return rows
-    return []
+        mmcif = mmcif_lib.from_string(mmcif_string)
 
+        # Get release date
+        release_date_str = mmcif_lib.get_release_date(mmcif)
+        if not release_date_str:
+            return None
 
-def _tokenize_cif(text: str) -> list[str]:
-    """Tokenize CIF data values, handling single-quoted and semicolon-delimited strings."""
-    tokens = []
-    i = 0
-    n = len(text)
-    while i < n:
-        c = text[i]
-        if c in (" ", "\t", "\r", "\n"):
-            i += 1
-        elif c == "#":
-            # Comment — skip to end of line
-            while i < n and text[i] != "\n":
-                i += 1
-        elif c in ("'", '"'):
-            # Quoted string
-            quote = c
-            i += 1
-            start = i
-            while i < n and not (text[i] == quote and (i + 1 >= n or text[i + 1] in (" ", "\t", "\r", "\n"))):
-                i += 1
-            tokens.append(text[start:i])
-            if i < n:
-                i += 1  # skip closing quote
-        elif c == ";":
-            # Multi-line string (starts with ; at beginning of line)
-            i += 1
-            start = i
-            while i < n:
-                nl = text.find("\n;", i)
-                if nl == -1:
-                    i = n
-                    break
-                i = nl + 2
-                break
-            tokens.append(text[start:i - 2].strip() if i > start else "")
-        else:
-            start = i
-            while i < n and text[i] not in (" ", "\t", "\r", "\n"):
-                i += 1
-            tokens.append(text[start:i])
-    return tokens
+        release_date = datetime.date.fromisoformat(release_date_str)
+        if release_date > cutoff_date:
+            return None
 
+        # Get resolution
+        resolution = mmcif_lib.get_resolution(mmcif)
 
-def _get_single_value(text: str, field: str) -> str | None:
-    """Get a single (non-loop) CIF field value."""
-    pat = re.compile(rf"^{re.escape(field)}\s+(\S+)", re.MULTILINE)
-    m = pat.search(text)
-    if m:
-        val = m.group(1).strip("'\"")
-        return val if val not in ("?", ".") else None
-    return None
+        # Get entity information
+        entity_ids = mmcif.get("_entity.id", [])
+        entity_types = mmcif.get("_entity.type", [])
+        entity_type_by_id = dict(zip(entity_ids, entity_types))
 
+        # Get polymer types and sequences
+        poly_entity_ids = mmcif.get("_entity_poly.entity_id", [])
+        poly_types = mmcif.get("_entity_poly.type", [])
+        poly_type_by_entity_id = dict(zip(poly_entity_ids, poly_types))
 
-# ── Structure classification ──────────────────────────────────────────
+        poly_seqs = mmcif.get("_entity_poly.pdbx_seq_one_letter_code_can", [])
+        poly_seq_by_entity_id = dict(zip(poly_entity_ids, poly_seqs))
 
+        # Map chains to entities
+        chain_ids = mmcif.get("_struct_asym.id", [])
+        chain_entity_ids = mmcif.get("_struct_asym.entity_id", [])
+        entity_by_chain = dict(zip(chain_ids, chain_entity_ids))
 
-def classify_structure(mmcif_text: str) -> dict:
-    """Classify a PDB structure by chain composition.
+        # Count chain types and extract sequences
+        protein_sequences = {}
+        rna_sequences = {}
+        dna_sequences = {}
+        total_residues = 0
 
-    Returns dict with:
-        pdb_id, resolution, n_protein, n_rna, n_dna, n_ligand,
-        total_residues, category, release_date
-    """
-    info = {
-        "pdb_id": None,
-        "resolution": None,
-        "n_protein": 0,
-        "n_rna": 0,
-        "n_dna": 0,
-        "n_ligand": 0,
-        "total_residues": 0,
-        "category": None,
-        "release_date": None,
-    }
+        for chain_id, entity_id in entity_by_chain.items():
+            entity_type = entity_type_by_id.get(entity_id, "")
+            poly_type = poly_type_by_entity_id.get(entity_id, "").lower()
 
-    # PDB ID
-    info["pdb_id"] = _get_single_value(mmcif_text, "_entry.id")
-
-    # Resolution
-    res_str = _get_single_value(mmcif_text, "_refine.ls_d_res_high")
-    if res_str is None:
-        res_str = _get_single_value(mmcif_text, "_em_3d_reconstruction.resolution")
-    if res_str is not None:
-        try:
-            info["resolution"] = float(res_str)
-        except ValueError:
-            pass
-
-    # Release date
-    info["release_date"] = _get_single_value(
-        mmcif_text, "_pdbx_audit_revision_history.revision_date"
-    )
-
-    # Entity types from _entity_poly.type
-    entity_rows = _parse_loop_block(mmcif_text, "_entity_poly.type")
-    entity_types = {}  # entity_id -> type
-    entity_seqs = {}   # entity_id -> sequence length
-
-    for row in entity_rows:
-        eid = row.get("_entity_poly.entity_id", "")
-        etype = row.get("_entity_poly.type", "").lower()
-        seq = row.get("_entity_poly.pdbx_seq_one_letter_code_can", "")
-        # Clean sequence
-        seq = seq.replace("\n", "").replace(" ", "").replace("?", "")
-        entity_types[eid] = etype
-        entity_seqs[eid] = len(seq)
-
-    # Count chains per entity from _pdbx_entity_poly_na_nonstandard or _struct_asym
-    asym_rows = _parse_loop_block(mmcif_text, "_struct_asym.entity_id")
-    chain_entity_map = {}
-    for row in asym_rows:
-        chain_id = row.get("_struct_asym.id", "")
-        eid = row.get("_struct_asym.entity_id", "")
-        chain_entity_map[chain_id] = eid
-
-    # Count unique polymer chains and non-polymer entities
-    protein_chains = 0
-    rna_chains = 0
-    dna_chains = 0
-    total_residues = 0
-
-    counted_entities = set()
-    for chain_id, eid in chain_entity_map.items():
-        etype = entity_types.get(eid, "")
-        seq_len = entity_seqs.get(eid, 0)
-
-        if "polypeptide" in etype:
-            protein_chains += 1
-            total_residues += seq_len
-        elif "polyribonucleotide" in etype and "deoxy" not in etype:
-            rna_chains += 1
-            total_residues += seq_len
-        elif "polydeoxyribonucleotide" in etype:
-            dna_chains += 1
-            total_residues += seq_len
-
-    # Count non-polymer entities (ligands), excluding common crystallization
-    # artifacts and ions that are not biologically meaningful ligands.
-    # Without this filter, almost every structure has ligand_count > 0 (due to
-    # buffer/cryo molecules), making the protein-monomer category nearly empty.
-    _ARTIFACT_CCD_CODES = frozenset({
-        # Ions
-        "NA", "CL", "MG", "ZN", "CA", "K", "MN", "FE", "FE2", "CO", "NI",
-        "CU", "CU1", "CD", "IOD", "BR", "XE",
-        # Common buffers / cryo / crystallization agents
-        "SO4", "PO4", "GOL", "EDO", "PEG", "PGE", "MPD", "DMS", "ACT",
-        "FMT", "TRS", "CIT", "BME", "MES", "EPE", "IMD", "SCN", "NO3",
-        "AZI", "1PE", "P6G", "MLI", "TAR", "SUC", "NH4",
-        # Water-like
-        "HOH", "DOD",
-    })
-    entity_all = _parse_loop_block(mmcif_text, "_entity.type")
-    nonpoly_entity_ids = set()
-    for row in entity_all:
-        etype = row.get("_entity.type", "").lower()
-        if etype == "non-polymer":
-            nonpoly_entity_ids.add(row.get("_entity.id", ""))
-        # water entities are skipped
-
-    # Resolve CCD codes for non-polymer entities to filter artifacts
-    ligand_rows = _parse_loop_block(mmcif_text, "_pdbx_entity_nonpoly.comp_id")
-    entity_ccd_map = {}
-    for row in ligand_rows:
-        eid = row.get("_pdbx_entity_nonpoly.entity_id", "")
-        ccd = row.get("_pdbx_entity_nonpoly.comp_id", "")
-        if ccd and ccd not in ("?", "."):
-            entity_ccd_map[eid] = ccd
-
-    ligand_count = 0
-    for eid in nonpoly_entity_ids:
-        ccd = entity_ccd_map.get(eid, "")
-        if not ccd:
-            continue  # no CCD code resolved — skip (likely an artifact)
-        if ccd.upper() not in _ARTIFACT_CCD_CODES:
-            ligand_count += 1
-
-    info["n_protein"] = protein_chains
-    info["n_rna"] = rna_chains
-    info["n_dna"] = dna_chains
-    info["n_ligand"] = ligand_count
-    info["total_residues"] = total_residues
-
-    # Classify
-    if protein_chains >= 1 and rna_chains >= 1:
-        info["category"] = "protein-rna"
-    elif protein_chains >= 1 and dna_chains >= 1 and rna_chains == 0:
-        info["category"] = "protein-dna"
-    elif protein_chains >= 2 and rna_chains == 0 and dna_chains == 0:
-        info["category"] = "protein-protein"
-    elif protein_chains == 1 and ligand_count >= 1 and rna_chains == 0 and dna_chains == 0:
-        info["category"] = "protein-ligand"
-    elif protein_chains == 1 and rna_chains == 0 and dna_chains == 0 and ligand_count == 0:
-        info["category"] = "protein-monomer"
-    else:
-        info["category"] = None  # doesn't fit any target category
-
-    return info
-
-
-# ── JSON generation ───────────────────────────────────────────────────
-
-
-def _seq_to_json_chain(entity_type: str, sequence: str, chain_id: str) -> dict:
-    """Convert a sequence to AF3 JSON chain format."""
-    if "polypeptide" in entity_type:
-        return {"protein": {"id": chain_id, "sequence": sequence}}
-    elif "polyribonucleotide" in entity_type and "deoxy" not in entity_type:
-        return {"rna": {"id": chain_id, "sequence": sequence}}
-    elif "polydeoxyribonucleotide" in entity_type:
-        return {"dna": {"id": chain_id, "sequence": sequence}}
-    return None
-
-
-def generate_af3_json(mmcif_text: str, pdb_id: str) -> dict | None:
-    """Generate AF3 JSON input from mmCIF content.
-
-    Returns the JSON dict or None if the structure can't be converted.
-    """
-    entity_rows = _parse_loop_block(mmcif_text, "_entity_poly.type")
-    asym_rows = _parse_loop_block(mmcif_text, "_struct_asym.entity_id")
-
-    # Map entity_id -> (type, sequence)
-    entity_info = {}
-    for row in entity_rows:
-        eid = row.get("_entity_poly.entity_id", "")
-        etype = row.get("_entity_poly.type", "").lower()
-        seq = row.get("_entity_poly.pdbx_seq_one_letter_code_can", "")
-        seq = seq.replace("\n", "").replace(" ", "").replace("?", "")
-        entity_info[eid] = (etype, seq)
-
-    # Map chain -> entity
-    chain_entity = {}
-    for row in asym_rows:
-        chain_id = row.get("_struct_asym.id", "")
-        eid = row.get("_struct_asym.entity_id", "")
-        chain_entity[chain_id] = eid
-
-    # Collect non-polymer entities for ligands
-    entity_all = _parse_loop_block(mmcif_text, "_entity.type")
-    nonpolymer_entities = set()
-    for row in entity_all:
-        if row.get("_entity.type", "").lower() == "non-polymer":
-            nonpolymer_entities.add(row.get("_entity.id", ""))
-
-    # Get ligand CCD codes from _pdbx_entity_nonpoly.comp_id
-    ligand_rows = _parse_loop_block(mmcif_text, "_pdbx_entity_nonpoly.comp_id")
-    entity_ccd = {}
-    for row in ligand_rows:
-        eid = row.get("_pdbx_entity_nonpoly.entity_id", "")
-        ccd = row.get("_pdbx_entity_nonpoly.comp_id", "")
-        if ccd and ccd not in ("?", "."):
-            entity_ccd[eid] = ccd
-
-    # Build chain list (assign IDs A, B, C, ...)
-    chain_letters = list(string.ascii_uppercase)
-    sequences = []
-    letter_idx = 0
-
-    for chain_id, eid in sorted(chain_entity.items()):
-        if letter_idx >= len(chain_letters):
-            break
-        if eid in entity_info:
-            etype, seq = entity_info[eid]
-            if not seq:
+            if entity_type != "polymer":
                 continue
-            chain_json = _seq_to_json_chain(etype, seq, chain_letters[letter_idx])
-            if chain_json:
-                sequences.append(chain_json)
-                letter_idx += 1
-        elif eid in nonpolymer_entities:
-            ccd_code = entity_ccd.get(eid)
-            if ccd_code:
-                sequences.append({
-                    "ligand": {
-                        "id": chain_letters[letter_idx],
-                        "ccdCodes": [ccd_code],
-                    }
-                })
-                letter_idx += 1
 
-    if not sequences:
+            seq = poly_seq_by_entity_id.get(entity_id, "")
+            seq = "".join(c for c in seq if c.isalpha())
+
+            if "polypeptide" in poly_type:
+                protein_sequences[chain_id] = seq
+                total_residues += len(seq)
+            elif "polyribonucleotide" in poly_type and "deoxy" not in poly_type:
+                rna_sequences[chain_id] = seq
+                total_residues += len(seq)
+            elif "polydeoxyribonucleotide" in poly_type:
+                dna_sequences[chain_id] = seq
+                total_residues += len(seq)
+
+        # Get ligand CCD IDs (excluding artifacts)
+        nonpoly_entity_ids = [
+            eid for eid, etype in entity_type_by_id.items() if etype == "non-polymer"
+        ]
+        comp_ids = mmcif.get("_pdbx_entity_nonpoly.comp_id", [])
+        entity_nonpoly_ids = mmcif.get("_pdbx_entity_nonpoly.entity_id", [])
+
+        ligand_ccd_ids = []
+        for comp_id, entity_id in zip(comp_ids, entity_nonpoly_ids):
+            if entity_id in nonpoly_entity_ids:
+                if comp_id.upper() not in _ARTIFACT_CCD_CODES:
+                    ligand_ccd_ids.append(comp_id)
+
+        pdb_id = Path(mmcif_path).stem.lower()
+
+        return StructureInfo(
+            pdb_id=pdb_id,
+            release_date=release_date,
+            resolution=resolution,
+            num_protein_chains=len(protein_sequences),
+            num_rna_chains=len(rna_sequences),
+            num_dna_chains=len(dna_sequences),
+            num_ligands=len(ligand_ccd_ids),
+            protein_sequences=protein_sequences,
+            rna_sequences=rna_sequences,
+            dna_sequences=dna_sequences,
+            ligand_ccd_ids=ligand_ccd_ids,
+            total_residues=total_residues,
+            mmcif_path=mmcif_path,
+        )
+
+    except Exception as e:
+        logging.debug(f"Error parsing {mmcif_path}: {e}")
         return None
 
+
+def categorize_structure(info: StructureInfo) -> str | None:
+    """Categorize a structure into one of 5 categories."""
+    if info.num_protein_chains == 0:
+        return None
+
+    # RNA/DNA categories take priority
+    if info.num_protein_chains >= 1 and info.num_rna_chains >= 1:
+        return "protein-rna"
+    if info.num_protein_chains >= 1 and info.num_dna_chains >= 1:
+        return "protein-dna"
+
+    # Protein-only categories
+    if info.num_protein_chains >= 2:
+        return "protein-protein"
+    if info.num_protein_chains == 1 and info.num_ligands >= 1:
+        return "protein-ligand"
+    if info.num_protein_chains == 1 and info.num_ligands == 0:
+        return "protein-monomer"
+
+    return None
+
+
+def filter_structure(
+    info: StructureInfo,
+    max_resolution: float = 3.0,
+    min_seq_length: int = 50,
+    max_seq_length: int = 500,
+    max_total_residues: int = 1500,
+) -> bool:
+    """Filter structure based on quality criteria."""
+    if info.resolution is not None and info.resolution > max_resolution:
+        return False
+
+    # Check protein sequence lengths
+    for seq in info.protein_sequences.values():
+        if len(seq) < min_seq_length or len(seq) > max_seq_length:
+            return False
+
+    if info.total_residues > max_total_residues:
+        return False
+
+    return True
+
+
+def create_af3_input_json(info: StructureInfo) -> dict[str, Any]:
+    """Create AF3-compatible input JSON from structure info."""
+    sequences = []
+    chain_idx = 0
+
+    # Add protein chains
+    for chain_id, sequence in sorted(info.protein_sequences.items()):
+        chain_label = chr(ord("A") + chain_idx)
+        sequences.append({"protein": {"id": [chain_label], "sequence": sequence}})
+        chain_idx += 1
+
+    # Add RNA chains
+    for chain_id, sequence in sorted(info.rna_sequences.items()):
+        chain_label = chr(ord("A") + chain_idx)
+        sequences.append({"rna": {"id": [chain_label], "sequence": sequence}})
+        chain_idx += 1
+
+    # Add DNA chains
+    for chain_id, sequence in sorted(info.dna_sequences.items()):
+        chain_label = chr(ord("A") + chain_idx)
+        sequences.append({"dna": {"id": [chain_label], "sequence": sequence}})
+        chain_idx += 1
+
+    # Add ligands (artifacts already filtered out)
+    for ccd_id in info.ligand_ccd_ids:
+        if chain_idx >= 26:
+            break
+        chain_label = chr(ord("A") + chain_idx)
+        sequences.append({"ligand": {"id": chain_label, "ccdCodes": [ccd_id]}})
+        chain_idx += 1
+
     return {
-        "name": pdb_id,
-        "modelSeeds": [42],
+        "name": info.pdb_id,
+        "modelSeeds": [1],
         "sequences": sequences,
         "dialect": "alphafold3",
-        "version": 2,
+        "version": 3,
     }
 
 
-# ── Main ──────────────────────────────────────────────────────────────
+def scan_mmcif_directory(
+    mmcif_dir: str, cutoff_date: datetime.date, num_workers: int = 8
+) -> list[StructureInfo]:
+    """Scan mmCIF directory and extract structure information in parallel."""
+    mmcif_files = list(Path(mmcif_dir).glob("*.cif"))
+    logging.info(f"Found {len(mmcif_files)} mmCIF files to scan")
+
+    results = []
+    processed = 0
+
+    with ProcessPoolExecutor(max_workers=num_workers) as executor:
+        futures = {
+            executor.submit(parse_mmcif_for_info, str(f), cutoff_date): f
+            for f in mmcif_files
+        }
+
+        for future in as_completed(futures):
+            processed += 1
+            if processed % 10000 == 0:
+                logging.info(
+                    f"Processed {processed}/{len(mmcif_files)} files, "
+                    f"found {len(results)} valid structures"
+                )
+
+            result = future.result()
+            if result is not None:
+                results.append(result)
+
+    logging.info(f"Scan complete: found {len(results)} structures on or before {cutoff_date}")
+    return results
+
+
+def _compute_per_category_counts(
+    total_samples: int, category_names: Sequence[str]
+) -> dict[str, int]:
+    """Distribute total_samples across categories as evenly as possible."""
+    sorted_cats = sorted(category_names)
+    base = total_samples // len(sorted_cats)
+    remainder = total_samples % len(sorted_cats)
+    return {
+        cat: base + (1 if i < remainder else 0) for i, cat in enumerate(sorted_cats)
+    }
+
+
+def create_test_set(
+    mmcif_dir: str,
+    output_dir: str,
+    cutoff_date: datetime.date,
+    samples_per_category: int | None = None,
+    total_samples: int | None = None,
+    max_resolution: float = 3.0,
+    min_seq_length: int = 50,
+    max_seq_length: int = 500,
+    max_total_residues: int = 1500,
+    num_workers: int = 8,
+    seed: int = 42,
+):
+    """Create the benchmark test set."""
+    random.seed(seed)
+
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+
+    # Scan mmCIF directory
+    logging.info("Scanning mmCIF directory...")
+    structures = scan_mmcif_directory(mmcif_dir, cutoff_date, num_workers)
+
+    # Categorize and filter
+    logging.info("Categorizing and filtering structures...")
+    categories: dict[str, list[StructureInfo]] = {cat: [] for cat in CATEGORIES}
+
+    for info in structures:
+        category = categorize_structure(info)
+        if category is None or category not in categories:
+            continue
+        if not filter_structure(
+            info, max_resolution, min_seq_length, max_seq_length, max_total_residues
+        ):
+            continue
+        info.category = category
+        categories[category].append(info)
+
+    logging.info("Categorized structures:")
+    for cat in CATEGORIES:
+        logging.info(f"  {cat}: {len(categories[cat])} structures")
+
+    # Compute per-category sample counts
+    if total_samples is not None:
+        per_category_counts = _compute_per_category_counts(
+            total_samples, CATEGORIES
+        )
+        logging.info(f"Distributing {total_samples} total samples: {per_category_counts}")
+    else:
+        if samples_per_category is None:
+            samples_per_category = 8
+        per_category_counts = {cat: samples_per_category for cat in CATEGORIES}
+
+    # Sample
+    sampled = {}
+    for category, items in categories.items():
+        target = per_category_counts[category]
+        if len(items) <= target:
+            sampled[category] = items
+            logging.warning(
+                f"  {category}: only {len(items)} available, "
+                f"using all (requested {target})"
+            )
+        else:
+            sampled[category] = random.sample(items, target)
+            logging.info(f"  {category}: sampled {target} from {len(items)}")
+
+    # Save JSON files with category prefix (flat structure)
+    index = {
+        "cutoff_date": cutoff_date.isoformat(),
+        "samples_per_category": per_category_counts,
+        "total_samples": total_samples,
+        "filters": {
+            "max_resolution": max_resolution,
+            "min_seq_length": min_seq_length,
+            "max_seq_length": max_seq_length,
+            "max_total_residues": max_total_residues,
+        },
+        "categories": {},
+        "total_count": 0,
+    }
+
+    for category, items in sampled.items():
+        # Use underscore prefix for file names (protein-rna -> protein_rna)
+        cat_prefix = category.replace("-", "_")
+        category_index = []
+
+        for info in items:
+            af3_input = create_af3_input_json(info)
+
+            json_filename = f"{cat_prefix}_{info.pdb_id}_input.json"
+            json_path = output_path / json_filename
+            with open(json_path, "w") as f:
+                json.dump(af3_input, f, indent=2)
+
+            entry = {
+                "pdb_id": info.pdb_id,
+                "category": category,
+                "release_date": info.release_date.isoformat(),
+                "resolution": info.resolution,
+                "num_protein_chains": info.num_protein_chains,
+                "num_rna_chains": info.num_rna_chains,
+                "num_dna_chains": info.num_dna_chains,
+                "num_ligands": info.num_ligands,
+                "total_residues": info.total_residues,
+                "input_json": json_filename,
+                "ground_truth_mmcif": info.mmcif_path,
+            }
+            category_index.append(entry)
+
+        index["categories"][category] = category_index
+        index["total_count"] += len(items)
+
+    # Save master index
+    index_path = output_path / "index.json"
+    with open(index_path, "w") as f:
+        json.dump(index, f, indent=2)
+
+    logging.info(f"\nTest set created at {output_dir}")
+    logging.info(f"Total structures: {index['total_count']}")
+    for cat in CATEGORIES:
+        n = len(sampled.get(cat, []))
+        logging.info(f"  {cat}: {n}")
+    logging.info(f"Index file: {index_path}")
 
 
 def main():
@@ -379,144 +455,77 @@ def main():
     )
     parser.add_argument(
         "--mmcif_dir", required=True,
-        help="Directory containing mmCIF files (*.cif or *.cif.gz)",
+        help="Directory containing mmCIF files (*.cif)",
     )
     parser.add_argument(
         "--output_dir", required=True,
         help="Output directory for AF3 JSON files",
     )
     parser.add_argument(
-        "--samples_per_category", type=int, default=8,
+        "--cutoff_date", type=str, default="2021-09-30",
+        help="Only include structures released on or before this date (default: 2021-09-30)",
+    )
+    sample_group = parser.add_mutually_exclusive_group()
+    sample_group.add_argument(
+        "--samples_per_category", type=int, default=None,
         help="Number of samples per category (default: 8)",
     )
-    parser.add_argument(
-        "--seed", type=int, default=42,
-        help="Random seed for reproducibility (default: 42)",
+    sample_group.add_argument(
+        "--total_samples", type=int, default=None,
+        help="Total number of samples, distributed evenly across 5 categories.",
     )
     parser.add_argument(
         "--max_resolution", type=float, default=3.0,
         help="Maximum resolution in Angstroms (default: 3.0)",
     )
     parser.add_argument(
-        "--min_residues", type=int, default=50,
-        help="Minimum total residues (default: 50)",
+        "--min_seq_length", type=int, default=50,
+        help="Minimum protein sequence length per chain (default: 50)",
     )
     parser.add_argument(
-        "--max_residues", type=int, default=1500,
-        help="Maximum total residues (default: 1500)",
+        "--max_seq_length", type=int, default=500,
+        help="Maximum protein sequence length per chain (default: 500)",
     )
     parser.add_argument(
-        "--max_template_date", default="2021-09-30",
-        help="Maximum release date (default: 2021-09-30)",
+        "--max_total_residues", type=int, default=1500,
+        help="Maximum total residues across all chains (default: 1500)",
+    )
+    parser.add_argument(
+        "--num_workers", type=int, default=8,
+        help="Number of parallel workers for scanning (default: 8)",
+    )
+    parser.add_argument(
+        "--seed", type=int, default=42,
+        help="Random seed for sampling (default: 42)",
+    )
+    parser.add_argument(
+        "--verbose", action="store_true",
+        help="Enable verbose logging",
     )
     args = parser.parse_args()
 
-    categories = [
-        "protein-monomer",
-        "protein-protein",
-        "protein-ligand",
-        "protein-rna",
-        "protein-dna",
-    ]
+    log_level = logging.DEBUG if args.verbose else logging.INFO
+    logging.basicConfig(
+        level=log_level,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
 
-    # Find all mmCIF files
-    patterns = [
-        os.path.join(args.mmcif_dir, "*.cif"),
-        os.path.join(args.mmcif_dir, "*.cif.gz"),
-        os.path.join(args.mmcif_dir, "**", "*.cif"),
-        os.path.join(args.mmcif_dir, "**", "*.cif.gz"),
-    ]
-    mmcif_files = set()
-    for pattern in patterns:
-        mmcif_files.update(glob.glob(pattern, recursive=True))
-    mmcif_files = sorted(mmcif_files)
+    cutoff_date = datetime.date.fromisoformat(args.cutoff_date)
 
-    if not mmcif_files:
-        print(f"ERROR: No mmCIF files found in {args.mmcif_dir}")
-        sys.exit(1)
-
-    print(f"Found {len(mmcif_files)} mmCIF files")
-    print(f"Filters: resolution ≤ {args.max_resolution}Å, "
-          f"residues {args.min_residues}-{args.max_residues}, "
-          f"date ≤ {args.max_template_date}")
-    print()
-
-    # Classify all structures
-    candidates = defaultdict(list)
-    processed = 0
-    errors = 0
-
-    for path in mmcif_files:
-        processed += 1
-        if processed % 1000 == 0:
-            counts = {k: len(v) for k, v in candidates.items()}
-            print(f"  Processed {processed}/{len(mmcif_files)} files... {counts}")
-
-        try:
-            text = _read_mmcif(path)
-            info = classify_structure(text)
-        except Exception:
-            errors += 1
-            continue
-
-        # Apply filters
-        if info["category"] is None:
-            continue
-        if info["resolution"] is None or info["resolution"] > args.max_resolution:
-            continue
-        if info["total_residues"] < args.min_residues or info["total_residues"] > args.max_residues:
-            continue
-        if info["release_date"] and info["release_date"] > args.max_template_date:
-            continue
-
-        info["path"] = path
-        candidates[info["category"]].append(info)
-
-    print()
-    print("Candidates per category:")
-    for cat in categories:
-        print(f"  {cat}: {len(candidates[cat])}")
-    print(f"  (errors: {errors})")
-    print()
-
-    # Sample
-    random.seed(args.seed)
-    selected = {}
-    for cat in categories:
-        pool = candidates[cat]
-        n = min(args.samples_per_category, len(pool))
-        if n < args.samples_per_category:
-            print(f"WARNING: Only {n} candidates for {cat} "
-                  f"(requested {args.samples_per_category})")
-        selected[cat] = random.sample(pool, n)
-
-    # Generate AF3 JSON files
-    os.makedirs(args.output_dir, exist_ok=True)
-    total_written = 0
-
-    for cat in categories:
-        for info in selected[cat]:
-            pdb_id = info["pdb_id"] or os.path.basename(info["path"]).split(".")[0]
-            text = _read_mmcif(info["path"])
-            af3_json = generate_af3_json(text, pdb_id)
-            if af3_json is None:
-                print(f"  SKIP: Could not generate JSON for {pdb_id}")
-                continue
-
-            output_path = os.path.join(args.output_dir, f"{pdb_id}.json")
-            with open(output_path, "w") as f:
-                json.dump(af3_json, f, indent=2)
-            total_written += 1
-
-    # Summary
-    print(f"\nBenchmark test set created: {total_written} files")
-    print(f"Output directory: {args.output_dir}")
-    print()
-    print("Per-category breakdown:")
-    for cat in categories:
-        items = selected[cat]
-        pdb_ids = [i["pdb_id"] or "?" for i in items]
-        print(f"  {cat} ({len(items)}): {', '.join(pdb_ids)}")
+    create_test_set(
+        mmcif_dir=args.mmcif_dir,
+        output_dir=args.output_dir,
+        cutoff_date=cutoff_date,
+        samples_per_category=args.samples_per_category,
+        total_samples=args.total_samples,
+        max_resolution=args.max_resolution,
+        min_seq_length=args.min_seq_length,
+        max_seq_length=args.max_seq_length,
+        max_total_residues=args.max_total_residues,
+        num_workers=args.num_workers,
+        seed=args.seed,
+    )
 
 
 if __name__ == "__main__":

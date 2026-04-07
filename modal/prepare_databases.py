@@ -76,6 +76,7 @@ db_volume = modal.Volume.from_name(DATABASE_VOLUME_NAME, create_if_missing=True)
 download_image = (
     modal.Image.debian_slim(python_version="3.12")
     .apt_install("wget", "zstd", "pigz", "tar", "curl")
+    .add_local_python_source("config")
 )
 
 # Image with MMseqs2 for database conversion
@@ -88,6 +89,7 @@ mmseqs_image = (
         "cp mmseqs/bin/mmseqs /usr/local/bin/",
         "rm -rf mmseqs mmseqs.tar.gz",
     )
+    .add_local_python_source("config")
 )
 
 # Image with huggingface_hub for pre-built DB download
@@ -95,6 +97,7 @@ hf_image = (
     modal.Image.debian_slim(python_version="3.12")
     .apt_install("tar", "zstd")
     .pip_install("huggingface_hub")
+    .add_local_python_source("config")
 )
 
 

@@ -99,13 +99,21 @@ done
 # ---------------------------------------------------------------------------
 MISSING=0
 if $FROM_PREBUILT; then
-    for cmd in hf tar zstd; do
+    # Detect HuggingFace CLI: prefer Rust 'hf' but also accept Python 'huggingface-cli'
+    HF_CMD=""
+    if command -v hf &> /dev/null; then
+        HF_CMD="hf"
+    elif command -v huggingface-cli &> /dev/null; then
+        HF_CMD="huggingface-cli"
+    else
+        echo "ERROR: HuggingFace CLI not found."
+        echo "  Install Rust CLI (recommended): curl -LsSf https://hf.co/cli/install.sh | bash -s"
+        echo "  Or Python CLI: pip install huggingface_hub[cli]"
+        MISSING=1
+    fi
+    for cmd in tar zstd; do
         if ! command -v "$cmd" &> /dev/null; then
-            if [ "$cmd" = "hf" ]; then
-                echo "ERROR: $cmd is not installed. Install with: curl -LsSf https://hf.co/cli/install.sh | bash -s"
-            else
-                echo "ERROR: $cmd is not installed or not in PATH."
-            fi
+            echo "ERROR: $cmd is not installed or not in PATH."
             MISSING=1
         fi
     done
@@ -177,7 +185,7 @@ if $FROM_PREBUILT; then
         echo "SKIP: mmcif_files already exists"
     else
         echo "Downloading mmCIF structures..."
-        hf download "$HF_REPO" --repo-type dataset --include "mmcif_files.tar.zst.*" --local-dir "$TARGET_DIR"
+        $HF_CMD download "$HF_REPO" --repo-type dataset --include "mmcif_files.tar.zst.*" --local-dir "$TARGET_DIR"
         # Reassemble and extract
         cat "${TARGET_DIR}/mmcif_files.tar.zst.part"* | tar --use-compress-program=zstd -xf - --directory="$TARGET_DIR"
         rm -f "${TARGET_DIR}/mmcif_files.tar.zst.part"*
@@ -190,7 +198,7 @@ if $FROM_PREBUILT; then
         echo "SKIP: Protein MMseqs2 databases already exist"
     else
         echo "Downloading protein MMseqs2 padded databases..."
-        hf download "$HF_REPO" --repo-type dataset --include "mmseqs/*" --local-dir "$TARGET_DIR"
+        $HF_CMD download "$HF_REPO" --repo-type dataset --include "mmseqs/*" --local-dir "$TARGET_DIR"
         echo "Done: Protein MMseqs2 databases"
     fi
     echo ""
@@ -202,14 +210,14 @@ if $FROM_PREBUILT; then
             echo "SKIP: RNA MMseqs2 databases already exist"
         else
             echo "Downloading RNA MMseqs2 nucleotide databases (pre-indexed)..."
-            hf download "$HF_REPO" --repo-type dataset --include "mmseqs_rna/*" --local-dir "$TARGET_DIR"
+            $HF_CMD download "$HF_REPO" --repo-type dataset --include "mmseqs_rna/*" --local-dir "$TARGET_DIR"
             echo "Done: RNA MMseqs2 databases"
         fi
         echo ""
 
         # Download RNA FASTA databases (for nhmmer fallback)
         echo "Downloading RNA FASTA databases (for nhmmer fallback)..."
-        hf download "$HF_REPO" --repo-type dataset --include "*.fasta" --include "*.fasta.*" --local-dir "$TARGET_DIR"
+        $HF_CMD download "$HF_REPO" --repo-type dataset --include "*.fasta" --include "*.fasta.*" --local-dir "$TARGET_DIR"
         # Reassemble any split files
         for part_prefix in "${TARGET_DIR}"/*.fasta.part00; do
             if [ -f "$part_prefix" ]; then

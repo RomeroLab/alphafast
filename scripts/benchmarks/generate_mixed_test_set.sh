@@ -98,6 +98,7 @@ echo "=========================================="
 echo ""
 
 mkdir -p "$OUTPUT_DIR"
+OUTPUT_DIR="$(cd "$OUTPUT_DIR" && pwd)"
 
 COMMON_ARGS="--cutoff_date=2021-09-30 --max_resolution=3.0 --min_seq_length=50 --max_seq_length=500 --max_total_residues=1500 --num_workers=$NUM_WORKERS --seed=$SEED"
 

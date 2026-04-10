@@ -253,6 +253,10 @@ Modal provides serverless GPU inference with pay-per-second billing.
 
 ```bash
 pip install modal && modal token new
+
+# Recommended for HuggingFace-backed database downloads on Modal
+modal secret create huggingface HF_TOKEN=hf_your_token_here
+
 modal run modal/upload_weights.py --file /path/to/af3.bin.zst --no-extract
 modal run modal/prepare_databases.py
 
@@ -265,6 +269,8 @@ modal run modal/prepare_databases.py --from-source
 # Run predictions
 modal run modal/af3_predict.py --input protein.json
 ```
+
+`modal/prepare_databases.py` expects a Modal secret named `huggingface` containing `HF_TOKEN`, and passes it through to Hugging Face for authenticated downloads with higher rate limits.
 
 See [docs/modal.md](docs/modal.md) for the full CLI reference, batch processing, multi-GPU modes, and cost estimates.
 

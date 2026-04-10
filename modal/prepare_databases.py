@@ -121,6 +121,7 @@ hf_image = (
 @app.function(
     image=hf_image,
     volumes={DATABASE_MOUNT_PATH: db_volume},
+    secrets=[modal.Secret.from_name("huggingface")],
     timeout=3600 * 24,  # 24 hours
     cpu=4,
     memory=16384,  # 16GB RAM

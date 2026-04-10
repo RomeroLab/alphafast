@@ -8,7 +8,7 @@
 # Universal AlphaFast run script.
 #
 # Supports Docker and Singularity backends with automatic detection.
-# Handles single-GPU (two-stage) and multi-GPU (producer-consumer) modes.
+# Handles single-GPU and phase-separated multi-GPU modes.
 #
 # Usage:
 #   # Single GPU (device 0, the default)
@@ -69,11 +69,12 @@ usage() {
     echo "                        (default: romerolabduke/alphafast:latest)"
     echo "  --batch_size N        MSA batch size (default: auto = number of inputs)"
     echo "  --backend TYPE        Force 'docker' or 'singularity' (default: auto-detect)"
-    echo "  --rna_mmseqs_db_dir DIR  Use MMseqs2 nucleotide search instead of nhmmer"
-    echo "                        for RNA MSA. Requires pre-built databases from"
-    echo "                        scripts/build_rna_mmseqs_dbs.sh"
-    echo "                        Auto-detected from <db_dir>/mmseqs_rna/ if present."
-    echo "  --use_nhmmer          Force nhmmer for RNA MSA search (skip MMseqs2 auto-detect)"
+    echo "  --rna_mmseqs_db_dir DIR  Override RNA MMseqs2 database directory."
+    echo "                        By default, AlphaFast auto-detects <db_dir>/mmseqs_rna"
+    echo "                        and uses MMseqs2 nucleotide search for RNA MSA."
+    echo "  --use_nhmmer          Force nhmmer for RNA MSA search instead of RNA MMseqs2."
+    echo "                        Requires RNA FASTA fallback files, e.g. created with"
+    echo "                        setup_databases.sh --include-nhmmer."
     exit 1
 }
 

@@ -417,7 +417,7 @@ else
     "rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta"
   )
 
-  if [ "$DOWNLOAD_RNA_FASTA" = true ]; then
+  if [ "$DOWNLOAD_RNA_MMSEQS" = true ] || [ "$DOWNLOAD_RNA_FASTA" = true ]; then
     for fasta_file in "${RNA_FASTAS[@]}"; do
       target_path="${TARGET_DIR}/${fasta_file}"
       if [ -f "$target_path" ]; then
@@ -431,7 +431,7 @@ else
       fi
     done
   elif [ "$INSTALL_MODE" = "rna-only" ] || [ "$INSTALL_MODE" = "all" ]; then
-    echo "SKIP: RNA FASTA downloads (use --include-nhmmer to download them)"
+    echo "SKIP: RNA downloads (RNA mode disabled)"
   else
     echo "SKIP: RNA FASTA downloads (--protein-only mode)"
   fi
@@ -576,6 +576,15 @@ else
         rm -f "$target_path"
       fi
     done
+    if [ "$DOWNLOAD_RNA_FASTA" = false ]; then
+      for fasta_file in "${RNA_FASTAS[@]}"; do
+        target_path="${TARGET_DIR}/${fasta_file}"
+        if [ -f "$target_path" ]; then
+          echo "Removing: $target_path"
+          rm -f "$target_path"
+        fi
+      done
+    fi
     echo ""
   fi
 

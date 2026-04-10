@@ -40,9 +40,9 @@
 #       rfam*                   # MMseqs2 nucleotide databases (default RNA search)
 #       rnacentral*
 #       nt_rna*
-#     rnacentral_active_seq_id_90_cov_80_linclust.fasta   # RNA FASTA (nhmmer fallback)
-#     rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta      # RNA FASTA (nhmmer fallback)
-#     nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta  # RNA FASTA (nhmmer fallback)
+#     rnacentral_active_seq_id_90_cov_80_linclust.fasta   # RNA FASTA (optional nhmmer fallback)
+#     rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta      # RNA FASTA (optional nhmmer fallback)
+#     nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta  # RNA FASTA (optional nhmmer fallback)
 
 set -euo pipefail
 
@@ -66,11 +66,12 @@ usage() {
   echo "                       Requires wget, zstd, tar, mmseqs in PATH."
   echo "  --protein-only       Download only protein databases and mmCIF structures."
   echo "                       Skips RNA databases (both FASTA and MMseqs2)."
-  echo "  --all                Download everything: protein + RNA databases (default)"
+  echo "  --all                Download protein DBs plus RNA MMseqs2 DBs (default)"
   echo "  --rna-mmseqs-only    Download/build RNA MMseqs2 databases, skip RNA FASTA fallback."
   echo "  --rna-fasta-only     Download RNA FASTA fallback only, skip RNA MMseqs2 databases."
+  echo "  --get-nhmmer-data    Download RNA FASTA fallback databases for nhmmer."
   echo "  --skip-rna-mmseqs    Skip RNA MMseqs2 databases."
-  echo "  --skip-rna-fasta     Skip RNA FASTA fallback databases."
+  echo "  --skip-rna-fasta     Skip RNA FASTA fallback databases (default)."
   echo "  --keep-fasta         Keep raw FASTA files after conversion (default, --from-source only)"
   echo "  --no-keep-fasta      Remove raw FASTA files after conversion (--from-source only)"
   exit 1
@@ -87,7 +88,7 @@ KEEP_FASTA=true
 FROM_PREBUILT=true # HuggingFace is the default
 DB_SCOPE="all"     # "all" or "protein-only"
 DOWNLOAD_RNA_MMSEQS=true
-DOWNLOAD_RNA_FASTA=true
+DOWNLOAD_RNA_FASTA=false
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
@@ -128,6 +129,10 @@ while [ "$#" -gt 0 ]; do
   --rna-fasta-only)
     DB_SCOPE="all"
     DOWNLOAD_RNA_MMSEQS=false
+    DOWNLOAD_RNA_FASTA=true
+    shift
+    ;;
+  --get-nhmmer-data)
     DOWNLOAD_RNA_FASTA=true
     shift
     ;;
@@ -322,7 +327,7 @@ if $FROM_PREBUILT; then
     echo "Done: RNA FASTA databases"
     echo ""
   elif [ "$DB_SCOPE" = "all" ]; then
-    echo "SKIP: RNA FASTA databases (--skip-rna-fasta or --rna-mmseqs-only)"
+    echo "SKIP: RNA FASTA databases (--skip-rna-fasta default or --rna-mmseqs-only)"
     echo ""
   else
     echo "SKIP: RNA databases (--protein-only mode)"
@@ -403,7 +408,7 @@ else
       fi
     done
   elif [ "$DB_SCOPE" = "all" ]; then
-    echo "SKIP: RNA FASTA downloads (--skip-rna-fasta or --rna-mmseqs-only)"
+    echo "SKIP: RNA FASTA downloads (--skip-rna-fasta default or --rna-mmseqs-only)"
   else
     echo "SKIP: RNA FASTA downloads (--protein-only mode)"
   fi

@@ -9,6 +9,7 @@
 from concurrent import futures
 import os
 import pathlib
+import re
 import shutil
 import tempfile
 import time
@@ -468,11 +469,12 @@ class MmseqsTemplate:
 
         Returns:
           Dictionary mapping target_id to (tstart, tend, tlen) tuple.
-          tstart/tend are 1-indexed alignment coordinates in the target.
+          tstart/tend are 1-indexed inclusive alignment coordinates in the
+          target sequence.
           tlen is the full length of the target sequence.
         """
         # Output format: target, tstart, tend, tlen
-        # tstart and tend are 0-indexed in MMseqs2 output
+        # MMseqs2 documents tstart/tend as 1-indexed alignment coordinates.
         cmd = [
             self._binary_path,
             "convertalis",
@@ -500,9 +502,8 @@ class MmseqsTemplate:
                     parts = line.strip().split("\t")
                     if len(parts) >= 4:
                         target_id = parts[0]
-                        # Convert from 0-indexed to 1-indexed
-                        tstart = int(parts[1]) + 1
-                        tend = int(parts[2])  # end is already exclusive in MMseqs2
+                        tstart = int(parts[1])
+                        tend = int(parts[2])
                         tlen = int(parts[3])
                         # Store first occurrence (best hit) for each target
                         if target_id not in alignment_info:
@@ -526,7 +527,7 @@ class MmseqsTemplate:
         Converts MMseqs2 A3M headers from:
           >101m_A mol:protein length:154
         To the format expected by templates.py:
-          >101m_A/1-154 [subseq from] mol:protein length:154
+          >101m_A/35-188 [subseq from] mol:protein length:154
 
         Args:
           raw_a3m: Raw A3M string from MMseqs2.
@@ -578,33 +579,62 @@ class MmseqsTemplate:
             # Extract target ID (first space-separated token)
             parts = header.split(" ", 1)
             full_target_id = parts[0]
+            existing_match = re.fullmatch(
+                r"(?P<target>[^/]+)/(?P<start>\d+)-(?P<end>\d+)", full_target_id
+            )
+            existing_start = (
+                int(existing_match["start"]) if existing_match is not None else None
+            )
+            existing_end = (
+                int(existing_match["end"]) if existing_match is not None else None
+            )
 
             # result2msa may already add /start-end to the header, so strip it
             # for lookup. E.g., "5iby_A/2-23" -> "5iby_A"
-            if "/" in full_target_id:
-                base_target_id = full_target_id.split("/")[0]
+            if existing_match is not None:
+                base_target_id = existing_match["target"]
             else:
                 base_target_id = full_target_id
 
-            # Look up alignment info - try both full ID (with range) and base ID
-            if full_target_id in alignment_info:
-                _, _, full_length = alignment_info[full_target_id]
-            elif base_target_id in alignment_info:
-                _, _, full_length = alignment_info[base_target_id]
-            else:
-                full_length = len(sequence)  # Fallback to sequence length
-
-            # The template parser validates: len(matching_sequence) == end_index - start_index
-            # where matching_sequence = hmmsearch_sequence.replace('-', '').upper()
-            # So we must count length the same way (excluding gap characters)
+            # The template parser validates against the ungapped hit sequence length,
+            # counting lowercase insertions as residues but excluding '-' gaps.
             seq_length = len(sequence.replace("-", ""))
 
-            # Format: >PDBID_CHAIN/START-END [subseq from] mol:protein length:N
-            # The template parser does: start_index = start - 1, end_index = end
-            # Validation: len(seq) == end_index - start_index == end - (start - 1) == end - start + 1
-            # For seq starting at position 1: end - 1 + 1 = end = seq_length
-            # So we use /1-{seq_length} to match the processed sequence length
-            new_header = f">{base_target_id}/1-{seq_length} [subseq from] mol:protein length:{full_length}"
+            header_length_match = re.search(r"\blength:(\d+)\b", header)
+            parsed_full_length = (
+                int(header_length_match.group(1))
+                if header_length_match is not None
+                else None
+            )
+
+            # Look up alignment info - try both full ID (with range) and base ID.
+            start = end = None
+            if full_target_id in alignment_info:
+                start, end, full_length = alignment_info[full_target_id]
+            elif base_target_id in alignment_info:
+                start, end, full_length = alignment_info[base_target_id]
+            elif existing_start is not None and existing_end is not None:
+                start, end = existing_start, existing_end
+                full_length = parsed_full_length or seq_length
+            else:
+                full_length = parsed_full_length or seq_length
+
+            if start is None or end is None:
+                raise ValueError(
+                    "Missing MMseqs template coordinates for "
+                    f"{base_target_id}; cannot build template header"
+                )
+            if seq_length != (end - start + 1):
+                raise ValueError(
+                    "MMseqs template coordinates do not match ungapped hit length "
+                    f"for {base_target_id}: got range {start}-{end} but sequence "
+                    f"length {seq_length}"
+                )
+
+            new_header = (
+                f">{base_target_id}/{start}-{end} [subseq from] "
+                f"mol:protein length:{full_length}"
+            )
 
             logging.info(
                 "Reformatted header: %s -> %s (seq_len=%d)",

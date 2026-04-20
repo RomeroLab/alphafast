@@ -13,23 +13,18 @@
 # build MMseqs databases locally.
 #
 # Usage:
-<<<<<<< HEAD
-#   ./scripts/setup_databases.sh <target_dir> [--keep-fasta]
-#   ./scripts/setup_databases.sh <target_dir> --from-prebuilt
-#
-# Arguments:
-#   target_dir:      Directory where databases will be downloaded and converted
-#   --keep-fasta:    Keep raw FASTA files after MMseqs2 conversion (default: keep)
-#                    Use --no-keep-fasta to remove them after conversion
-#   --from-prebuilt: Download pre-built MMseqs2 GPU databases from HuggingFace
-#                    (~569 GB, no conversion needed, requires pip: huggingface_hub)
-#
-# Requirements (default mode):
-=======
 #   ./scripts/setup_databases.sh <target_dir> [OPTIONS]
 #
 # Arguments:
 #   target_dir:    Directory where databases will be stored
+#
+# Options:
+#   --protein-only    Download/build only protein databases and mmCIF structures
+#   --rna-only        Download/build only RNA databases
+#   --include-nhmmer  Download/build RNA FASTA fallback files
+#   --from-source     Download raw databases from Google Cloud Storage and build locally
+#   --keep-fasta      Keep raw FASTA files after conversion (--from-source only)
+#   --no-keep-fasta   Remove raw FASTA files after conversion (--from-source only)
 #
 # Requirements (default / HuggingFace mode):
 #   - hf CLI (HuggingFace): curl -LsSf https://hf.co/cli/install.sh | bash -s
@@ -37,7 +32,6 @@
 #   - ~800 GB free disk space
 #
 # Requirements (--from-source mode):
->>>>>>> feature/rna-nhmmer
 #   - wget, zstd, tar in PATH
 #   - mmseqs (GPU version) in PATH
 #   - ~800 GB free disk space (250 GB download + 540 GB MMseqs2 padded)

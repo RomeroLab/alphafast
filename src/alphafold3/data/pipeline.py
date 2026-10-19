@@ -1709,12 +1709,15 @@ class DataPipeline:
                                 for hit, struc in template_hits.get_hits_with_structures()
                             ]
 
+                            # Preserve any user-supplied templates from the input JSON.
+                            user_templates = list(chain.templates) if chain.templates else []
+
                             # Get Foldseek templates and merge
                             foldseek_tmpls = self._get_foldseek_templates(
                                 chain.sequence
                             )
                             templates = self._merge_templates(
-                                pdb_templates, foldseek_tmpls
+                                user_templates + pdb_templates, foldseek_tmpls
                             )
 
                             processed_chain = folding_input.ProteinChain(
